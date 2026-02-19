@@ -119,7 +119,7 @@ const RACES = {
         rp: 'https://www.racingpost.com/cheltenham-festival/cheltenham-gold-cup/'
     },
     'hunters': {
-        oc: 'https://www.oddschecker.com/cheltenham-festival/foxhunter-chase/winner',
+        oc: 'https://www.oddschecker.com/cheltenham-festival/hunters-chase/winner',
         rp: 'https://www.racingpost.com/cheltenham-festival/st-james-s-place-festival-hunter-chase/'
     },
     'mareschase': {
