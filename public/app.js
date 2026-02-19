@@ -346,7 +346,45 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }
 
-                horse.compositeScore = consensusScore + valueScore + expertScore + formScore + ageScore + orScore + trainerScore + weightScore;
+                // 9. Elite Trainer & Jockey Combo (The "Super Team" Bonus)
+                let comboScore = 0;
+                const eliteCombos = [
+                    { t: 'mullins', j: 'townend' },
+                    { t: 'henderson', j: 'boinville' },
+                    { t: 'elliott', j: 'kennedy' },
+                    { t: 'nicholls', j: 'cobden' },
+                    { t: 'bromhead', j: 'blackmore' }
+                ];
+
+                if (horse.trainer && horse.jockey) {
+                    const t = horse.trainer.toLowerCase();
+                    const j = horse.jockey.toLowerCase();
+
+                    if (eliteCombos.some(c => t.includes(c.t) && j.includes(c.j))) {
+                        comboScore = 25; // MASSIVE bonus for proven deadly duos
+                        horse.isEliteCombo = true;
+                    }
+                }
+
+                // 10. Course & Distance Specialist (Horses for Courses)
+                let cdScore = 0;
+                if (horse.courseDistanceWin) {
+                    if (horse.courseDistanceWin === 'CD') cdScore = 20; // Proven over this track AND trip
+                    else if (horse.courseDistanceWin === 'C') cdScore = 15; // Loves Cheltenham
+                    else if (horse.courseDistanceWin === 'D') cdScore = 5; // Proven stayer/sprinter
+                }
+
+                // 11. Smart Money Velocity (Real-time momentum)
+                let velocityScore = 0;
+                if (horse.velocity && horse.velocity < -0.1) {
+                    // Dropping more than 0.1 pts per minute is significant
+                    velocityScore = Math.abs(horse.velocity) * 50; // Scale up the impact
+                    // Cap at 30 pts
+                    if (velocityScore > 30) velocityScore = 30;
+                    horse.highVelocity = true;
+                }
+
+                horse.compositeScore = consensusScore + valueScore + expertScore + formScore + ageScore + orScore + trainerScore + weightScore + comboScore + cdScore + velocityScore;
             });
 
             // Sort by Market Consensus (Implied Probability DESC / Average Odds ASC)
@@ -462,6 +500,10 @@ document.addEventListener('DOMContentLoaded', () => {
                                     ${horse.disagreement ? '<span class="disagreement-badge" title="High Bookmaker Disagreement: Possible Hidden Edge">⚠️ DISAGREEMENT</span>' : ''}
                                     ${myPick && horse.name === myPick.name ? '<span class="pick-badge">🏆 TOP PICK</span>' : ''}
                                     ${(!myPick || horse.name !== myPick.name) && horse.compositeScore > 80 ? '<span class="pick-badge" style="background: linear-gradient(135deg, #444, #666);">⭐ CONTENDER</span>' : ''}
+                                </div>
+                                    ${horse.isEliteCombo ? '<span class="strategy-badge expert" style="background:rgba(255,215,0,0.2); border-color:var(--accent-gold); color:var(--accent-gold);">⚡ DEADLY DUO</span>' : ''}
+                                    ${horse.courseDistanceWin === 'CD' ? '<span class="strategy-badge" style="background:rgba(0,255,136,0.15); color:#00ff88;">🏰 TRACK SPECIALIST</span>' : ''}
+                                    ${horse.highVelocity ? '<span class="strategy-badge" style="background:rgba(255,0,255,0.2); color:#ff00ff; border:1px solid #ff00ff;">🚀 VELOCITY MOVE</span>' : ''}
                                 </div>
                                 ${horse.isHot ? '<span class="strategy-badge" style="background:rgba(255,69,0,0.2); color:#ff4500; border:1px solid #ff4500;">🔥 HOT FORM</span>' : ''}
                                 ${horse.isCold ? '<span class="strategy-badge" style="background:rgba(0,191,255,0.2); color:#00bfff; border:1px solid #00bfff;">❄️ COLD</span>' : ''}

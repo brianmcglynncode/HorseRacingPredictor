@@ -149,6 +149,29 @@ async function scrapeRacingPost(url) {
                     trainer = cells[4].innerText.replace('T:', '').trim();
                 }
 
+                // Jockey Extraction
+                let jockey = null;
+                const jockeyEl = row.querySelector("[class*='RunnersTableRow_jockey_name']");
+                if (jockeyEl) {
+                    jockey = jockeyEl.innerText.trim();
+                } else if (cells[4]) {
+                    // Fallback: sometimes J: Name
+                    const txt = cells[4].innerText;
+                    if (txt.includes('J:')) {
+                        jockey = txt.split('J:')[1].trim();
+                    }
+                }
+
+                // Course & Distance Indicators (C, D, CD)
+                // Often in the name cell or a specific badge
+                let courseDistanceWin = null; // 'C', 'D', 'CD', or null
+                if (nameEl) {
+                    const text = nameEl.innerText;
+                    if (text.match(/\bCD\b/)) courseDistanceWin = 'CD';
+                    else if (text.match(/\bC\b/)) courseDistanceWin = 'C';
+                    else if (text.match(/\bD\b/)) courseDistanceWin = 'D';
+                }
+
                 let rpr = null;
                 let age = null;
                 let weight = null;
@@ -161,7 +184,7 @@ async function scrapeRacingPost(url) {
                     rpr = cells[8] ? cells[8].innerText.replace(/\n/g, '').trim() : null;
                 }
 
-                if (name) data.push({ name, form, trainer, rpr, age, weight, officialRating });
+                if (name) data.push({ name, form, trainer, jockey, courseDistanceWin, rpr, age, weight, officialRating });
             });
             return data;
         });
@@ -267,6 +290,8 @@ async function scrapeCheltenhamFestival(raceUrl, rpUrl) {
                 if (expertHorse) {
                     horse.form = expertHorse.form;
                     horse.trainer = expertHorse.trainer;
+                    horse.jockey = expertHorse.jockey; // Sync Jockey
+                    horse.courseDistanceWin = expertHorse.courseDistanceWin; // Sync C/D
                     horse.rpr = expertHorse.rpr;
                     horse.age = expertHorse.age;
                     horse.weight = expertHorse.weight;

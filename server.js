@@ -185,28 +185,54 @@ function processRaceData(raceId, scrapedData) {
 
     raceData.horses.forEach(horse => {
         const bestOdds = getBestOdds(horse);
+        const name = horse.name;
 
         // If first run or new horse, set opening line
-        if (!history.openingLines[horse.name] && bestOdds > 0) {
-            history.openingLines[horse.name] = bestOdds;
+        if (!history.openingLines[name] && bestOdds > 0) {
+            history.openingLines[name] = bestOdds;
+            // Initialize velocity tracking
+            if (!history.velocityTracking) history.velocityTracking = {};
+            history.velocityTracking[name] = { lastOdds: bestOdds, lastTime: Date.now() };
         }
 
-        const open = history.openingLines[horse.name];
+        const open = history.openingLines[name];
 
-        // 2. Identify Steamers and Drifters
+        // 2. Identify Steamers and Drifters (Classic)
         if (open && bestOdds > 0) {
             if (bestOdds < open) {
-                // Odds dropped -> Steamer (Good)
                 horse.marketMove = 'steamer';
                 horse.movePercent = Math.round(((open - bestOdds) / open) * 100);
             } else if (bestOdds > open) {
-                // Odds rose -> Drifter (Bad)
                 horse.marketMove = 'drifter';
                 horse.movePercent = Math.round(((bestOdds - open) / open) * 100);
             } else {
                 horse.marketMove = 'stable';
             }
             horse.openingOdds = open;
+        }
+
+        // 3. VELOCITY TRACKING (Smart Money Detector)
+        // Calculate points dropped per minute
+        if (history.velocityTracking && history.velocityTracking[name]) {
+            const track = history.velocityTracking[name];
+            const nowTime = Date.now();
+            const timeDiffMinutes = (nowTime - track.lastTime) / 60000;
+
+            if (timeDiffMinutes > 0.5) { // Only update velocity if enough time passed
+                const oddsDiff = bestOdds - track.lastOdds;
+                // Velocity = Points per Minute
+                // Negative = Steaming (Dropping)
+                const velocity = oddsDiff / timeDiffMinutes;
+
+                horse.velocity = velocity; // Sent to frontend
+
+                // Update tracker
+                track.lastOdds = bestOdds;
+                track.lastTime = nowTime;
+            } else {
+                // Keep previous velocity if too soon to update
+                horse.velocity = 0;
+            }
         }
     });
 
