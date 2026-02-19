@@ -250,7 +250,10 @@ async function startBackgroundScraper() {
 
     const runScrapeLoop = async () => {
         console.log("🕰️ Time Machine: Hourly update triggered.");
-        const raceIds = Object.keys(RACES);
+        // Prioritize Wednesday races (Day 2) to ensure data is fresh
+        const wednesdayRaces = ['ballymore', 'brown', 'coral', 'championchase', 'cross', 'grandannual', 'bumper'];
+        const otherRaces = Object.keys(RACES).filter(r => !wednesdayRaces.includes(r));
+        const raceIds = [...wednesdayRaces, ...otherRaces];
 
         for (const raceId of raceIds) {
             try {
