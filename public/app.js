@@ -71,7 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function resetView() {
         racesGrid.classList.remove('hidden');
         racesGrid.innerHTML = `
-            <p class="disclaimer-text">Please gamble responsibly — I am AI but I can’t predict crashes, chaos, or miracles.</p>
             <div class="empty-action">
                 <span class="pulse-icon">👆</span> Please select a race above
             </div>
@@ -385,7 +384,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="pick-header">
                             <span class="trophy-icon">🏆</span>
                             <div>
-                                <div class="pick-label">FESTIVAL NAP (WINNER)</div>
+                                <div class="pick-label">MY PICK (WINNER)</div>
                                 <h3>${myPick.name}</h3>
                             </div>
                         </div>
@@ -422,7 +421,7 @@ document.addEventListener('DOMContentLoaded', () => {
             let tableHeader = `
                 <thead>
                     <tr>
-                        <th class="sticky-col">Horse (Market Consensus)</th>
+                        <th class="sticky-col">Horse <span class="market-consensus-label">(Market Consensus)</span></th>
                         <th>TS</th>
                         <th>OR</th>
                         <th>RPR</th>
@@ -499,7 +498,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ${myPickHtml}
                 <div class="race-header-large">
                     <h2>
-                        ${race.name}
+                        ${race.name.replace(/Betting Odds[-–—]?\s*Winner/gi, '').trim()}
                         <span class="last-updated">🕒 Updated: ${timeAgo}</span>
                     </h2>
                     <div class="badges">

@@ -237,19 +237,30 @@ async function startBackgroundScraper() {
                     console.log(`✅ Update: Saved snapshot for ${raceId}`);
                 }
 
-                // Wait 45 seconds between races to be safe and polite
-                await new Promise(r => setTimeout(r, 45000));
+                // RANDOM DELAY BETWEEN RACES (30s - 90s)
+                // Breaks fixed pattern
+                const raceDelay = Math.floor(Math.random() * 60000) + 30000;
+                console.log(`⏳ Waiting ${(raceDelay / 1000).toFixed(1)}s before next race...`);
+                await new Promise(r => setTimeout(r, raceDelay));
+
             } catch (e) {
                 console.error(`❌ Update Failed for ${raceId}:`, e);
+                // Wait longer on error
+                await new Promise(r => setTimeout(r, 60000));
             }
         }
+
+        // SCHEDULE NEXT RUN (Randomized: 50 - 70 minutes)
+        // Breaks fixed hourly pattern
+        // Base 1 hour +/- 10 mins
+        const nextRunDelay = (1000 * 60 * 60) + (Math.floor(Math.random() * (1000 * 60 * 20)) - (1000 * 60 * 10));
+
+        console.log(`💤 Sleeping for ${(nextRunDelay / 1000 / 60).toFixed(1)} minutes until next cycle...`);
+        setTimeout(runScrapeLoop, nextRunDelay);
     };
 
     // Run IMMEDIATELY on startup
     runScrapeLoop();
-
-    // Then schedule every hour
-    setInterval(runScrapeLoop, 1000 * 60 * 60); // Run every hour (3600000 ms)
 }
 
 // Start the engine
