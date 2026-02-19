@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrianAI Cheltenham 2026 - Cheltenham Festival</title>
+    <link rel="stylesheet" href="style.css?v=2">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-elements">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1 class="glow-text">BrianAI Cheltenham 2026</h1>
+            <p class="subtitle">Analyzing data from 20+ global bookmaker sites, worldwide horse-form intelligence, and
+                over 10 world-renowned betting strategies—powered by AI, with data refreshed and analyzed every minute
+                for maximum accuracy.</p>
+
+            <div class="day-nav">
+                <button class="day-btn active">Tuesday</button>
+                <button class="day-btn">Wednesday</button>
+                <button class="day-btn">Thursday</button>
+                <button class="day-btn">Friday</button>
+            </div>
+
+            <div class="race-nav">
+                <!-- Race buttons will be injected here by app.js -->
+            </div>
+        </header>
+
+        <div id="loader" class="hidden">
+            <div class="spinner"></div>
+            <p id="loader-text">Analyzing fields... This may take a moment.</p>
+        </div>
+
+        <main id="app">
+            <div id="races-grid" class="races-grid">
+                <!-- Race cards will appear here -->
+                <p class="disclaimer-text">Please gamble responsibly — I am AI but I can’t predict crashes, chaos, or
+                    miracles.</p>
+                <div class="empty-action">
+                    <span class="pulse-icon">👆</span> Please select a race above
+                </div>
+                <div class="fun-message">
+                    Saddle up! <span class="bounce">🐎</span><span class="bounce"
+                        style="animation-delay: 0.1s">🍀</span>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js?v=2"></script>
+</body>
+
+</html>

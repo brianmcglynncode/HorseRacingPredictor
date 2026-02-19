@@ -1,0 +1,294 @@
+const express = require('express');
+const { scrapeCheltenhamFestival } = require('./scraper');
+const app = express();
+const port = 3000;
+
+app.use(express.static('public'));
+app.use(express.json());
+
+const fs = require('fs');
+const path = require('path');
+
+// Race Configuration Map (Full Festival Card)
+const RACES = {
+    // --- TUESDAY (Day 1) ---
+    'supreme': {
+        oc: 'https://www.oddschecker.com/cheltenham-festival/supreme-novices-hurdle/winner',
+        rp: 'https://www.racingpost.com/cheltenham-festival/supreme-novices-hurdle/'
+    },
+    'arkle': {
+        oc: 'https://www.oddschecker.com/cheltenham-festival/arkle-chase/winner',
+        rp: 'https://www.racingpost.com/cheltenham-festival/arkle-novices-chase/'
+    },
+    'ultima': {
+        oc: 'https://www.oddschecker.com/cheltenham-festival/ultima-handicap-chase/winner',
+        rp: 'https://www.racingpost.com/cheltenham-festival/ultima-handicap-chase/'
+    },
+    'champion': {
+        oc: 'https://www.oddschecker.com/cheltenham-festival/champion-hurdle/winner',
+        rp: 'https://www.racingpost.com/cheltenham-festival/champion-hurdle/'
+    },
+    'mares': {
+        oc: 'https://www.oddschecker.com/cheltenham-festival/mares-hurdle/winner',
+        rp: 'https://www.racingpost.com/cheltenham-festival/mares-hurdle/'
+    },
+    'boodles': {
+        oc: 'https://www.oddschecker.com/cheltenham-festival/hallgarten-and-novum-wines-juvenile-handicap-hurdle/winner',
+        rp: 'https://www.racingpost.com/cheltenham-festival/boodles-juvenile-handicap-hurdle/'
+    },
+    'national': {
+        oc: 'https://www.oddschecker.com/cheltenham-festival/national-hunt-novices-chase/winner',
+        rp: 'https://www.racingpost.com/cheltenham-festival/national-hunt-chase/'
+    },
+
+    // --- WEDNESDAY (Day 2) ---
+    'ballymore': {
+        oc: 'https://www.oddschecker.com/cheltenham-festival/gallagher-novices-hurdle/winner',
+        rp: 'https://www.racingpost.com/cheltenham-festival/gallagher-novices-hurdle/'
+    },
+    'brown': {
+        oc: 'https://www.oddschecker.com/cheltenham-festival/brown-advisory-novices-chase/winner',
+        rp: 'https://www.racingpost.com/cheltenham-festival/brown-advisory-novices-chase/'
+    },
+    'coral': {
+        oc: 'https://www.oddschecker.com/cheltenham-festival/coral-cup/winner',
+        rp: 'https://www.racingpost.com/cheltenham-festival/coral-cup/'
+    },
+    'championchase': {
+        oc: 'https://www.oddschecker.com/cheltenham-festival/queen-mother-champion-chase/winner',
+        rp: 'https://www.racingpost.com/cheltenham-festival/queen-mother-champion-chase/'
+    },
+    'cross': {
+        oc: 'https://www.oddschecker.com/cheltenham-festival/cross-country-chase/winner',
+        rp: 'https://www.racingpost.com/cheltenham-festival/cross-country-chase/'
+    },
+    'grandannual': {
+        oc: 'https://www.oddschecker.com/cheltenham-festival/grand-annual-chase/winner',
+        rp: 'https://www.racingpost.com/cheltenham-festival/grand-annual-chase/'
+    },
+    'bumper': {
+        oc: 'https://www.oddschecker.com/cheltenham-festival/champion-bumper/winner',
+        rp: 'https://www.racingpost.com/cheltenham-festival/champion-bumper/'
+    },
+
+    // --- THURSDAY (Day 3) ---
+    'turners': {
+        oc: 'https://www.oddschecker.com/cheltenham-festival/turners-novices-chase/winner',
+        rp: 'https://www.racingpost.com/cheltenham-festival/turners-novices-chase/'
+    },
+    'pertemps': {
+        oc: 'https://www.oddschecker.com/cheltenham-festival/pertemps-network-final/winner',
+        rp: 'https://www.racingpost.com/cheltenham-festival/pertemps-network-final/'
+    },
+    'ryanair': {
+        oc: 'https://www.oddschecker.com/cheltenham-festival/ryanair-chase/winner',
+        rp: 'https://www.racingpost.com/cheltenham-festival/ryanair-chase/'
+    },
+    'stayers': {
+        oc: 'https://www.oddschecker.com/cheltenham-festival/stayers-hurdle/winner',
+        rp: 'https://www.racingpost.com/cheltenham-festival/stayers-hurdle/'
+    },
+    'plate': {
+        oc: 'https://www.oddschecker.com/cheltenham-festival/festival-plate/winner',
+        rp: 'https://www.racingpost.com/cheltenham-festival/improving-handicap-chase/' // Often plate
+    },
+    'maresnovice': {
+        oc: 'https://www.oddschecker.com/cheltenham-festival/mares-novices-hurdle/winner',
+        rp: 'https://www.racingpost.com/cheltenham-festival/mares-novices-hurdle/'
+    },
+    'kimmuir': {
+        oc: 'https://www.oddschecker.com/cheltenham-festival/kim-muir-challenge-cup/winner',
+        rp: 'https://www.racingpost.com/cheltenham-festival/kim-muir-challenge-cup/'
+    },
+
+    // --- FRIDAY (Day 4) ---
+    'triumph': {
+        oc: 'https://www.oddschecker.com/cheltenham-festival/triumph-hurdle/winner',
+        rp: 'https://www.racingpost.com/cheltenham-festival/triumph-hurdle/'
+    },
+    'county': {
+        oc: 'https://www.oddschecker.com/cheltenham-festival/county-hurdle/winner',
+        rp: 'https://www.racingpost.com/cheltenham-festival/county-handicap-hurdle/'
+    },
+    'bartlett': {
+        oc: 'https://www.oddschecker.com/cheltenham-festival/albert-bartlett-novices-hurdle/winner',
+        rp: 'https://www.racingpost.com/cheltenham-festival/albert-bartlett-novices-hurdle/'
+    },
+    'goldcup': {
+        oc: 'https://www.oddschecker.com/cheltenham-festival/cheltenham-gold-cup/winner',
+        rp: 'https://www.racingpost.com/cheltenham-festival/cheltenham-gold-cup/'
+    },
+    'hunters': {
+        oc: 'https://www.oddschecker.com/cheltenham-festival/foxhunter-chase/winner',
+        rp: 'https://www.racingpost.com/cheltenham-festival/st-james-s-place-festival-hunter-chase/'
+    },
+    'mareschase': {
+        oc: 'https://www.oddschecker.com/cheltenham-festival/mares-chase/winner',
+        rp: 'https://www.racingpost.com/cheltenham-festival/mares-chase/'
+    },
+    'martinpipe': {
+        oc: 'https://www.oddschecker.com/cheltenham-festival/martin-pipe-handicap-hurdle/winner',
+        rp: 'https://www.racingpost.com/cheltenham-festival/martin-pipe-conditional-jockeys-handicap-hurdle/'
+    }
+};
+
+const HISTORY_FILE = path.join(__dirname, 'history.json');
+let raceHistory = { races: {} };
+
+// Load history on startup
+try {
+    if (fs.existsSync(HISTORY_FILE)) {
+        raceHistory = JSON.parse(fs.readFileSync(HISTORY_FILE, 'utf8'));
+    }
+} catch (err) {
+    console.error("Error loading history:", err);
+}
+
+function saveHistory() {
+    try {
+        fs.writeFileSync(HISTORY_FILE, JSON.stringify(raceHistory, null, 2));
+    } catch (err) {
+        console.error("Error saving history:", err);
+    }
+}
+
+function getBestOdds(horse) {
+    // Helper to find best decimal odds from bookmakers
+    let best = 0;
+    if (horse.odds) {
+        Object.values(horse.odds).forEach(o => {
+            if (o.decimal > best) best = o.decimal;
+        });
+    }
+    return best;
+}
+
+function processRaceData(raceId, scrapedData) {
+    const now = new Date().toISOString();
+
+    // Ensure race entry exists
+    if (!raceHistory.races[raceId]) {
+        raceHistory.races[raceId] = {
+            openingLines: {},
+            lastUpdated: null,
+            latestData: null
+        };
+    }
+
+    const history = raceHistory.races[raceId];
+    const raceData = scrapedData[0]; // Assuming single race array
+
+    if (!raceData || !raceData.horses) return scrapedData;
+
+    // 1. Set Opening Lines if not set (Baseline)
+    let isFirstRun = Object.keys(history.openingLines).length === 0;
+
+    raceData.horses.forEach(horse => {
+        const bestOdds = getBestOdds(horse);
+
+        // If first run or new horse, set opening line
+        if (!history.openingLines[horse.name] && bestOdds > 0) {
+            history.openingLines[horse.name] = bestOdds;
+        }
+
+        const open = history.openingLines[horse.name];
+
+        // 2. Identify Steamers and Drifters
+        if (open && bestOdds > 0) {
+            if (bestOdds < open) {
+                // Odds dropped -> Steamer (Good)
+                horse.marketMove = 'steamer';
+                horse.movePercent = Math.round(((open - bestOdds) / open) * 100);
+            } else if (bestOdds > open) {
+                // Odds rose -> Drifter (Bad)
+                horse.marketMove = 'drifter';
+                horse.movePercent = Math.round(((bestOdds - open) / open) * 100);
+            } else {
+                horse.marketMove = 'stable';
+            }
+            horse.openingOdds = open;
+        }
+    });
+
+    // Save snapshot
+    history.latestData = scrapedData;
+    history.lastUpdated = now;
+    saveHistory();
+
+    return scrapedData;
+}
+
+// Background Scraper Loop (The Time Machine Engine)
+async function startBackgroundScraper() {
+    console.log("🕰️ Time Machine: Starting background scraper loop...");
+
+    const runScrapeLoop = async () => {
+        console.log("🕰️ Time Machine: Hourly update triggered.");
+        const raceIds = Object.keys(RACES);
+
+        for (const raceId of raceIds) {
+            try {
+                const raceConfig = RACES[raceId];
+                console.log(`🕰️ Update: Scraping ${raceId}...`);
+                const data = await scrapeCheltenhamFestival(raceConfig.oc, raceConfig.rp);
+
+                if (data && data.length > 0) {
+                    processRaceData(raceId, data);
+                    console.log(`✅ Update: Saved snapshot for ${raceId}`);
+                }
+
+                // Wait 45 seconds between races to be safe and polite
+                await new Promise(r => setTimeout(r, 45000));
+            } catch (e) {
+                console.error(`❌ Update Failed for ${raceId}:`, e);
+            }
+        }
+    };
+
+    // Run IMMEDIATELY on startup
+    runScrapeLoop();
+
+    // Then schedule every hour
+    setInterval(runScrapeLoop, 1000 * 60 * 60); // Run every hour (3600000 ms)
+}
+
+// Start the engine
+startBackgroundScraper();
+
+app.get('/api/scrape', async (req, res) => {
+    try {
+        const raceId = req.query.raceId || 'supreme';
+        const raceConfig = RACES[raceId];
+
+        if (!raceConfig) {
+            return res.status(400).json({ success: false, error: 'Invalid race ID' });
+        }
+
+        // Check cache first
+        const history = raceHistory.races[raceId];
+        const isStale = !history || !history.lastUpdated || (new Date() - new Date(history.lastUpdated) > 1000 * 60 * 60); // 1 hour stale check
+
+        // Use cached data if available (User wants "snapshot" served on click)
+        // If it's the very first time (no history), we MUST scrape.
+        if (history && history.latestData) {
+            console.log(`⚡ Time Machine: Serving snapshot for ${raceId} (Last updated: ${history.lastUpdated})`);
+            return res.json({ success: true, data: history.latestData, lastUpdated: history.lastUpdated, cached: true });
+        }
+
+        console.log(`Starting Live Scrape for ${raceId} (No history found)...`);
+        const data = await scrapeCheltenhamFestival(raceConfig.oc, raceConfig.rp);
+
+        // Process and save
+        const processedData = processRaceData(raceId, data);
+
+        res.json({ success: true, data: processedData, lastUpdated: new Date().toISOString(), cached: false });
+
+    } catch (error) {
+        console.error('Scrape failed:', error);
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
+
+app.listen(port, () => {
+    console.log(`Horse Racing Predictor running at http://localhost:${port}`);
+});

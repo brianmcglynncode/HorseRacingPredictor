@@ -1,0 +1,865 @@
+:root {
+    --bg-color: #0d1117;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --accent-gold: #ffd700;
+    --accent-green: #00ff88;
+    --text-main: #e0e0e0;
+    --text-dim: #a0a0a0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.background-elements {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.blob {
+    position: absolute;
+    filter: blur(100px);
+    opacity: 0.3;
+    border-radius: 50%;
+}
+
+.blob-1 {
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, var(--accent-gold), transparent);
+    top: -100px;
+    left: -100px;
+}
+
+.blob-2 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, var(--accent-green), transparent);
+    bottom: -50px;
+    right: -50px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+h1.glow-text {
+    font-family: 'Outfit', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    background: linear-gradient(to right, #fff, var(--accent-gold));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: var(--text-dim);
+    font-size: 1rem;
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+/* Day Navigation */
+.day-nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.day-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-dim);
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.day-btn:hover {
+    border-color: var(--accent-gold);
+    color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.day-btn.active {
+    background: var(--accent-gold);
+    color: #000;
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+    font-weight: 800;
+}
+
+/* Race Navigation */
+.race-nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.race-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 100px;
+    backdrop-filter: blur(10px);
+}
+
+.race-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.race-btn.active {
+    background: linear-gradient(135deg, var(--accent-gold), #e6c200);
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+.race-btn .race-time {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    margin-bottom: 2px;
+    font-family: 'Inter', sans-serif;
+}
+
+.race-btn.active .race-time {
+    color: #333;
+    font-weight: 600;
+}
+
+.race-btn .race-name {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.race-btn.active .race-name {
+    color: #000;
+}
+
+/* Loader */
+.hidden {
+    display: none !important;
+}
+
+#loader {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    border-top: 4px solid var(--accent-gold);
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Odds Table Styles */
+.race-container {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.race-header-large h2 {
+    color: var(--accent-gold);
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    border-radius: 10px;
+}
+
+.odds-table {
+    width: 100%;
+    border-collapse: collapse;
+    white-space: nowrap;
+}
+
+.odds-table th,
+.odds-table td {
+    padding: 12px 15px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.odds-table th {
+    background: rgba(0, 0, 0, 0.3);
+    color: var(--text-dim);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Sticky First Column */
+.sticky-col {
+    position: sticky;
+    left: 0;
+    background: #161b22;
+    /* Must filter out transparency for sticky to hide scrolling content */
+    z-index: 10;
+    text-align: left !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.horse-name-cell {
+    color: #fff;
+    font-weight: 500;
+}
+
+.odds-cell {
+    color: var(--accent-green);
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    cursor: default;
+    transition: background 0.2s;
+}
+
+.odds-cell:hover {
+    background: rgba(0, 255, 136, 0.1);
+}
+
+/* Value Bet Highlighting */
+.value-bet {
+    border: 2px solid var(--accent-gold) !important;
+    background: rgba(255, 215, 0, 0.1);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+    position: relative;
+    font-weight: 800;
+    color: var(--accent-gold);
+}
+
+.value-bet::after {
+    content: '★';
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    font-size: 10px;
+    color: var(--accent-gold);
+}
+
+.avg-odds {
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    margin-top: 4px;
+    font-weight: 400;
+}
+
+/* Strategy Badges */
+.badges {
+    display: inline-flex;
+    gap: 10px;
+}
+
+.strategy-badge {
+    background: rgba(0, 255, 136, 0.1);
+    color: var(--accent-green);
+    padding: 3px 8px;
+    border-radius: 20px;
+    font-size: 0.65rem;
+    border: 1px solid rgba(0, 255, 136, 0.3);
+    vertical-align: middle;
+    font-weight: 600;
+}
+
+.strategy-badge.consensus {
+    background: rgba(255, 0, 255, 0.1);
+    color: #ff00ff;
+    border-color: rgba(255, 0, 255, 0.3);
+}
+
+/* Consensus / Implied Prob */
+.consensus-bar-container {
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    margin-top: 5px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.consensus-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #ff00ff, #00ff88);
+}
+
+.horse-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.fav-badge {
+    background: var(--accent-gold);
+    color: #000;
+    font-size: 0.6rem;
+    font-weight: 800;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 8px;
+}
+
+/* Ranks */
+.rank-1 {
+    border-left: 3px solid var(--accent-gold) !important;
+}
+
+.rank-2 {
+    border-left: 3px solid silver !important;
+}
+
+.rank-3 {
+    border-left: 3px solid #cd7f32 !important;
+}
+
+.races-grid {
+    display: block;
+    /* Override grid for full width tables */
+}
+
+/* Horse List */
+.horse-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+.horse-list::-webkit-scrollbar {
+    width: 5px;
+}
+
+.horse-list::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+.horse-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.02);
+    padding: 10px 15px;
+    border-radius: 10px;
+    transition: background 0.2s;
+}
+
+.horse-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.horse-name {
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.horse-odds {
+    background: rgba(0, 255, 136, 0.1);
+    color: var(--accent-green);
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9rem;
+}
+
+/* Add Responsive Design */
+@media (max-width: 768px) {
+    h1.glow-text {
+        font-size: 2.5rem;
+    }
+
+    .races-grid {
+        display: block;
+        width: 100%;
+    }
+
+    .race-container {
+        padding: 15px;
+        overflow: hidden;
+    }
+
+    .table-wrapper {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* Expert Insight Styles */
+.form-cell {
+    font-family: 'Courier New', monospace;
+    letter-spacing: -0.5px;
+    color: #fff;
+    font-size: 0.85rem;
+}
+
+.rpr-high {
+    color: var(--accent-gold);
+    font-weight: 800;
+    font-size: 1.1rem;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.rpr-normal {
+    color: var(--text-dim);
+}
+
+.trainer-cell {
+    font-size: 0.85rem;
+    color: var(--text-main);
+    max-width: 150px;
+    white-space: normal;
+    /* Allow wrapping for long trainer names */
+}
+
+.strategy-badge.expert {
+    background: rgba(100, 149, 237, 0.1);
+    color: #6495ed;
+    border-color: rgba(100, 149, 237, 0.3);
+}
+
+.disagreement-badge {
+    background: rgba(255, 69, 0, 0.2);
+    color: #ff4500;
+    /* OrangeRed */
+    font-size: 0.6rem;
+    font-weight: 800;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 8px;
+    border: 1px solid rgba(255, 69, 0, 0.4);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.7;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.7;
+    }
+}
+
+/* MY PICK Card */
+.my-pick-card {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(0, 0, 0, 0.6));
+    border: 2px solid var(--accent-gold);
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    /* Allow wrapping for EW section */
+    gap: 30px;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.main-pick-section {
+    flex: 2;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ew-section {
+    flex: 1;
+    min-width: 250px;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .ew-section {
+        border-left: none;
+        padding-left: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 20px;
+    }
+}
+
+.pick-label {
+    color: var(--accent-gold);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.my-pick-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--accent-gold);
+}
+
+.pick-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.trophy-icon {
+    font-size: 2.5rem;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.pick-header h3 {
+    font-size: 2rem;
+    font-family: 'Outfit', sans-serif;
+    background: linear-gradient(to right, #ffd700, #fff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+}
+
+.pick-stats {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.pick-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    font-family: 'Outfit', sans-serif;
+}
+
+.stat-value.score {
+    color: var(--accent-gold);
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.pick-warning {
+    margin-top: 15px;
+    color: #ff4500;
+    font-size: 0.9rem;
+    font-weight: 600;
+    background: rgba(255, 69, 0, 0.1);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.score-cell {
+    font-weight: bold;
+    color: var(--accent-gold);
+    font-family: 'Outfit', sans-serif;
+}
+
+.pick-badge {
+    background: linear-gradient(135deg, #ff4500, #ff8c00);
+    color: white;
+    font-size: 0.6rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 8px;
+    font-weight: 800;
+}
+
+.pick-badge-row {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+/* Each Way Styles */
+.ew-title {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    font-family: 'Outfit', sans-serif;
+}
+
+.ew-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ew-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.2s;
+}
+
+.ew-card:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.ew-name {
+    font-weight: 600;
+    color: #fff;
+    font-size: 0.95rem;
+}
+
+.ew-details {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.ew-odds {
+    color: var(--accent-green);
+    font-weight: 700;
+    font-family: 'Outfit', sans-serif;
+}
+
+.ew-score {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+}
+
+/* Detailed Horse Stats Inline */
+.horse-detailed-stats {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px;
+    font-family: 'Inter', sans-serif;
+}
+
+.horse-detailed-stats .separator {
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 0.6rem;
+}
+
+.trainer-inline {
+    color: #bbb;
+    font-style: italic;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 150px;
+}
+
+/* Empty State / Welcome Screen */
+.disclaimer-text {
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    padding: 20px;
+    margin-top: 40px;
+    font-style: italic;
+    opacity: 0.7;
+}
+
+.empty-action {
+    text-align: center;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 20px 0;
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.pulse-icon {
+    font-size: 2rem;
+    animation: pulse-point 1.5s infinite;
+}
+
+@keyframes pulse-point {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.fun-message {
+    text-align: center;
+    font-size: 2.5rem;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 800;
+    background: linear-gradient(to right, #fff, var(--accent-gold), #fff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Time Machine & Market Movers */
+.last-updated {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    margin-left: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.mover-badge {
+    font-size: 0.75rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 8px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.mover-badge.steamer {
+    background: rgba(255, 69, 58, 0.15);
+    color: #ff453a;
+    border: 1px solid rgba(255, 69, 58, 0.3);
+}
+
+.mover-badge.drifter {
+    background: rgba(94, 236, 255, 0.15);
+    color: #5eecff;
+    border: 1px solid rgba(94, 236, 255, 0.3);
+}
+
+.opening-line {
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    margin-left: 4px;
+    font-weight: normal;
+}
+
+.bounce {
+    font-size: 3rem;
+    display: inline-block;
+    animation: bounce 2s infinite ease-in-out;
+    -webkit-text-fill-color: initial;
+    /* allow emoji colors */
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}

@@ -1,0 +1,50 @@
+Strategy: The "Smart Money" Time Machine
+
+Here is the plan to capture Closing Line Strength, which is indeed one of the most powerful signals in betting.
+
+1. How it will work (The Architecture)
+We need to build a "Time Machine" because a single webpage visit only tells us now, not then.
+
+The Vault (history.json): I will create a system that saves a "snapshot" of the odds every time we scrape.
+The Baseline: The first time you run the scraper for a race (e.g., in the morning), that becomes our "Opening Line".
+The Signal: Every subsequent scrape compares the Current Odds vs. Opening Odds.
+📉 Steamer (Good): Odds are dropping (e.g., 5.0 $\to$ 3.5). This means heavy money is being bet. We will boost this horse's score.
+📈 Drifter (Bad): Odds are rising (e.g., 3.0 $\to$ 5.5). The market doesn't like them. We will penalize.
+2. How YOU help (The "Sentinel" Role)
+Since this runs on your local machine, the "Time Machine" only runs when your computer is on.
+
+Option A (Manual): You leave the server running and click "Analyze" every hour or so manually.
+Option B (Automatic): I can build a "Auto-Scrape" toggle. You turn it on, leave the tab open, and it scrapes every 10 minutes automatically in the background.
+Shall I implement Option B (Auto-Scrape) so you can just leave it running and build up that rich data history?
+
+
+Here are 4 advanced strategies we can layer on top of your Time-Series data to take accuracy to the next level.
+
+Since we will have a "movie" of the market instead of just a "snapshot," we can spot these patterns:
+
+1. The "Sharp vs. Soft" Divergence 🧠
+The Concept: Not all bookies are equal. "Sharp" bookies (like Pinnacle or the Betfair Exchange) are smarter and react to injury news/insider info first. "Soft" bookies (like Paddy Power/SkyBet) react slower and attract the general public.
+The Signal:
+✅ BULLISH: Sharp odds drop (e.g., 4.0 $\to$ 3.5) but Soft odds stay high (4.0). Action: Bet immediately at the Soft bookie (Value).
+❌ BEARISH: Soft odds drop (public hype) but Sharp odds stay high or drift. Action: Avoid. It's "dumb money."
+
+2. The "Fake Drift" (The U-Turn) ↩️
+The Concept: Sometimes insiders let a horse "drift" (odds get worse) all morning to get a better price, then hammer it 10 minutes before the race.
+The Signal:
+09:00: Odds 5.0
+13:00: Odds 8.0 (Drifting... public ignores it)
+13:50 (10 mins to post): Odds crash to 4.5.
+Action: This "U-Turn" is often the strongest signal of all. We can detect this Price Velocity change instantly.
+
+3. The "Trainer Steam" Effect 🚂
+The Concept: Markets are emotional. If Willie Mullins wins the 1:30 race, the public will blindly bet his horse in the 2:10 race, crashing its odds artificially.
+The Signal:
+If a Trainer has a winner in the previous race, watch their next runner.
+Fade Strategy: If the odds shorten purely because of the previous win (no other data support), the horse is likely Overvalued. We bet against it (or look for value elsewhere).
+
+4. Support & Resistance Levels (Technical Analysis) 📊
+The Concept: Just like stock trading, odds have psychological barriers.
+The Signal:
+A horse might bounce off 3.0 (2/1) multiple times. If it finally breaks below 3.0, it often free-falls to 2.5 or lower.
+We can program the bot to alert you: "Horse X just broke the 3.0 resistance level - Steam is building!"
+which of these sounds most exciting to you? (I personally love #2, the "U-Turn", as it catches the bookies off guard).
