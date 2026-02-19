@@ -277,22 +277,45 @@ app.get('/api/scrape', async (req, res) => {
 
         // Check cache first
         const history = raceHistory.races[raceId];
-        const isStale = !history || !history.lastUpdated || (new Date() - new Date(history.lastUpdated) > 1000 * 60 * 60); // 1 hour stale check
 
-        // Use cached data if available (User wants "snapshot" served on click)
-        // If it's the very first time (no history), we MUST scrape.
+        // POLICY: Always serve cached data if it exists. 
+        // We rely on the background scraper loop to update it every hour.
+        // This ensures the user sees data INSTANTLY (sub-10ms) instead of waiting 10-20s.
         if (history && history.latestData) {
             console.log(`⚡ Time Machine: Serving snapshot for ${raceId} (Last updated: ${history.lastUpdated})`);
             return res.json({ success: true, data: history.latestData, lastUpdated: history.lastUpdated, cached: true });
         }
 
-        console.log(`Starting Live Scrape for ${raceId} (No history found)...`);
-        const data = await scrapeCheltenhamFestival(raceConfig.oc, raceConfig.rp);
+        // Only scrape live if we have NEVER scraped this race before (Cold Start)
+        console.log(`Starting Cold Start Scrape for ${raceId} (No history found)...`);
 
-        // Process and save
-        const processedData = processRaceData(raceId, data);
+        // Timeout Promise to enforce 10s max wait
+        const timeout = new Promise((_, reject) =>
+            setTimeout(() => reject(new Error("Scrape timeout exceeded 10s")), 10000)
+        );
 
-        res.json({ success: true, data: processedData, lastUpdated: new Date().toISOString(), cached: false });
+        try {
+            // Race the scrape against the timeout
+            const data = await Promise.race([
+                scrapeCheltenhamFestival(raceConfig.oc, raceConfig.rp),
+                timeout
+            ]);
+
+            // Process and save
+            const processedData = processRaceData(raceId, data);
+            res.json({ success: true, data: processedData, lastUpdated: new Date().toISOString(), cached: false });
+
+        } catch (error) {
+            console.error(`Scrape failed or timed out for ${raceId}:`, error);
+
+            // If it timed out but we have ANY old data (edge case), return that? 
+            // Currently we already returned above if history existed.
+            // So this is a true failure on a fresh race.
+            res.status(500).json({
+                success: false,
+                error: "Data retrieval timed out. Please try again in a moment as background scraping continues."
+            });
+        }
 
     } catch (error) {
         console.error('Scrape failed:', error);

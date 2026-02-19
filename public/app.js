@@ -140,11 +140,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Artificial delay for "Cinematic Analysis" feel (requested by user)
             // Even if cached, we make it look like we're crunching numbers
+            // Random crunch time between 3000ms and 4500ms
             const elapsed = Date.now() - startTime;
-            const minDelay = 3500; // Increased to 3.5s to let the user see the cool messages
-            if (elapsed < minDelay) {
-                await new Promise(r => setTimeout(r, minDelay - elapsed));
+            const crunchTime = Math.floor(Math.random() * 1500) + 3000;
+
+            if (elapsed < crunchTime) {
+                await new Promise(r => setTimeout(r, crunchTime - elapsed));
             }
+
+            // Show final success message briefly
+            loaderText.textContent = "✅ Finalizing Predictions...";
+            await new Promise(r => setTimeout(r, 600)); // Short pause on final message
+
 
             if (result.success && result.data.length > 0) {
                 console.log("Received Data:", result.data);
