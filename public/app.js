@@ -393,9 +393,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // 12. NLP Going Analysis (NEW: Ground Suitability)
                 let goingScore = 0;
-                // Fix: Access raceGoing from 'result.data' array, not 'result' object directly
-                const raceData = result.data;
-                const raceGoing = raceData && raceData.length > 0 && raceData[0].raceGoing ? raceData[0].raceGoing.toLowerCase() : "";
+                // Fix: Access raceGoing from the 'races' array passed to this function
+                // Note: 'races' corresponds to 'result.data' from the fetch
+                const raceGoing = races && races.length > 0 && races[0].raceGoing ? races[0].raceGoing.toLowerCase() : "";
                 const spotlight = horse.spotlight ? horse.spotlight.toLowerCase() : "";
 
                 if (raceGoing && spotlight) {
