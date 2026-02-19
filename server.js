@@ -294,7 +294,9 @@ startBackgroundScraper();
 
 app.get('/api/scrape', async (req, res) => {
     try {
-        const raceId = req.query.raceId || 'supreme';
+        let raceId = req.query.raceId || 'supreme';
+        raceId = raceId.trim(); // Sanitize input
+
         const raceConfig = RACES[raceId];
 
         if (!raceConfig) {
@@ -302,7 +304,24 @@ app.get('/api/scrape', async (req, res) => {
         }
 
         // Check cache first
-        const history = raceHistory.races[raceId];
+        let history = raceHistory.races[raceId];
+
+        // ROBUSTNESS FIX: If not in memory, try reloading from disk once
+        if (!history || !history.latestData) {
+            console.log(`⚠️ Memory Miss for ${raceId}: Checking disk for latest history...`);
+            try {
+                if (fs.existsSync(HISTORY_FILE)) {
+                    const diskHistory = JSON.parse(fs.readFileSync(HISTORY_FILE, 'utf8'));
+                    if (diskHistory.races && diskHistory.races[raceId]) {
+                        console.log(`✅ Disk Hit! Loaded ${raceId} from history.json`);
+                        raceHistory = diskHistory; // Sync memory with disk
+                        history = raceHistory.races[raceId];
+                    }
+                }
+            } catch (e) {
+                console.error("Failed to reload history from disk:", e);
+            }
+        }
 
         // POLICY: Always serve cached data if it exists. 
         // We rely on the background scraper loop to update it every hour.
