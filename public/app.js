@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const loadingMessages = [
             `<span><img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg" style="height:16px; vertical-align:middle; margin-right:8px; filter: invert(1);"> o3 (High-Reasoning) analyzing betting patterns...</span>`,
             `<span><img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Anthropic_logo.svg" style="height:16px; vertical-align:middle; margin-right:8px; filter: invert(1);"> Claude 3.7 Opus checking expert form...</span>`,
-            `<span><img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Google_Gemini_logo.svg" style="height:16px; vertical-align:middle; margin-right:8px;"> Gemini 2.0 Pro cross-referencing market moves...</span>`,
+            `<span><img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Google_Gemini_logo.svg" style="height:16px; vertical-align:middle; margin-right:8px;"> 2.0 Pro cross-referencing market moves...</span>`,
             `<span><img src="https://upload.wikimedia.org/wikipedia/commons/5/57/X_logo_2023_%28white%29.png" style="height:16px; vertical-align:middle; margin-right:8px;"> Grok 3 calculating velocity metrics...</span>`
         ];
 
