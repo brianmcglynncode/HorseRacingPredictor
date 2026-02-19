@@ -72,10 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
         racesGrid.classList.remove('hidden');
         racesGrid.innerHTML = `
             <div class="empty-action">
-                <span class="pulse-icon">👆</span> Please select a race above
-            </div>
-            <div class="fun-message">
-                Saddle up! <span class="bounce">🐎</span><span class="bounce" style="animation-delay: 0.1s">🍀</span>
+                <!-- Clean Initial State -->
             </div>
         `;
     }
