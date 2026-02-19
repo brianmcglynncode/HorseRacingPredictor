@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
             timeAgo = diff < 1 ? 'Just now' : `${diff}m ago`;
         }
 
-        races.forEach(race => {
+        races.forEach((race, index) => {
             const container = document.createElement('div');
             container.className = 'race-container';
 
@@ -482,15 +482,80 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="strategy-badge expert">Expert Insight Active</div>
                     </div>
                 </div>
-                <div class="table-wrapper">
+                
+                <!-- Synced Scrollbar TOP -->
+                <div class="sync-scroll-container" id="scroll-top-${index}">
+                    <div class="scroll-spacer"></div>
+                </div>
+
+                <div class="table-wrapper" id="table-wrapper-${index}">
                     <table class="odds-table">
                         ${tableHeader}
                         ${tableBody}
                     </table>
                 </div>
+
+                <!-- Synced Scrollbar BOTTOM -->
+                <div class="sync-scroll-container" id="scroll-bottom-${index}">
+                    <div class="scroll-spacer"></div>
+                </div>
             `;
 
             racesGrid.appendChild(container);
+
+            // Initialize Scrolled Sync Logic
+            setTimeout(() => {
+                const tableWrapper = document.getElementById(`table-wrapper-${index}`);
+                const scrollTop = document.getElementById(`scroll-top-${index}`);
+                const scrollBottom = document.getElementById(`scroll-bottom-${index}`);
+                const stickyCol = tableWrapper.querySelector('.sticky-col');
+
+                if (tableWrapper && scrollTop && scrollBottom && stickyCol) {
+                    const stickyWidth = stickyCol.offsetWidth;
+                    const scrollWidth = tableWrapper.scrollWidth;
+                    const clientWidth = tableWrapper.clientWidth;
+
+                    // Only show custom scrollbars if scrolling is needed
+                    if (scrollWidth > clientWidth) {
+                        // Offset the scrollbars to start after the sticky column
+                        scrollTop.style.marginLeft = `${stickyWidth}px`;
+                        scrollTop.style.width = `calc(100% - ${stickyWidth}px)`;
+
+                        scrollBottom.style.marginLeft = `${stickyWidth}px`;
+                        scrollBottom.style.width = `calc(100% - ${stickyWidth}px)`;
+
+                        // Set the inner spacer width to match the FULL table scroll width
+                        // Because the container is narrower (offset by sticky), scrolling this full width inside it
+                        // will behave identically to the table scrolling inside its full-width wrapper (which is also clipped).
+                        const totalScrollWidth = tableWrapper.scrollWidth;
+                        scrollTop.querySelector('.scroll-spacer').style.width = `${totalScrollWidth}px`;
+                        scrollBottom.querySelector('.scroll-spacer').style.width = `${totalScrollWidth}px`;
+
+                        // Sync Logic with Loop Prevention
+                        let isSyncing = false;
+
+                        const syncHelper = (source, target1, target2) => {
+                            if (isSyncing) return;
+                            isSyncing = true;
+
+                            target1.scrollLeft = source.scrollLeft;
+                            target2.scrollLeft = source.scrollLeft;
+
+                            // Reset flag after a brief moment
+                            requestAnimationFrame(() => {
+                                isSyncing = false;
+                            });
+                        };
+
+                        tableWrapper.addEventListener('scroll', () => syncHelper(tableWrapper, scrollTop, scrollBottom));
+                        scrollTop.addEventListener('scroll', () => syncHelper(scrollTop, tableWrapper, scrollBottom));
+                        scrollBottom.addEventListener('scroll', () => syncHelper(scrollBottom, tableWrapper, scrollTop));
+                    } else {
+                        scrollTop.style.display = 'none';
+                        scrollBottom.style.display = 'none';
+                    }
+                }
+            }, 100); // Slight delay for rendering
         });
     }
 });
