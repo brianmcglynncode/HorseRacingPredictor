@@ -391,7 +391,35 @@ document.addEventListener('DOMContentLoaded', () => {
                     horse.highVelocity = true;
                 }
 
-                horse.compositeScore = consensusScore + valueScore + expertScore + formScore + ageScore + orScore + trainerScore + weightScore + comboScore + cdScore + velocityScore;
+                // 12. NLP Going Analysis (NEW: Ground Suitability)
+                let goingScore = 0;
+                const raceGoing = result.length > 0 && result[0].raceGoing ? result[0].raceGoing.toLowerCase() : "";
+                const spotlight = horse.spotlight ? horse.spotlight.toLowerCase() : "";
+
+                if (raceGoing && spotlight) {
+                    const isSoft = raceGoing.includes('soft') || raceGoing.includes('heavy');
+                    const isGood = raceGoing.includes('good') || raceGoing.includes('firm');
+
+                    if (isSoft) {
+                        if (spotlight.includes('won on soft') || spotlight.includes('acts on heavy') || spotlight.includes('mudlark')) {
+                            goingScore = 15; // Loves the mud
+                            horse.groundSuitability = 'perfect';
+                        } else if (spotlight.includes('needs good') || spotlight.includes('better ground')) {
+                            goingScore = -20; // Hates the mud
+                            horse.groundSuitability = 'poor';
+                        }
+                    } else if (isGood) {
+                        if (spotlight.includes('won on good') || spotlight.includes('top of the ground')) {
+                            goingScore = 15;
+                            horse.groundSuitability = 'perfect';
+                        } else if (spotlight.includes('needs soft') || spotlight.includes('wants rain')) {
+                            goingScore = -20;
+                            horse.groundSuitability = 'poor';
+                        }
+                    }
+                }
+
+                horse.compositeScore = consensusScore + valueScore + expertScore + formScore + ageScore + orScore + trainerScore + weightScore + comboScore + cdScore + velocityScore + goingScore;
             });
 
             // Sort by Market Consensus (Implied Probability DESC / Average Odds ASC)

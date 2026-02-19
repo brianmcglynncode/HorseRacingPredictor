@@ -180,6 +180,7 @@ async function scrapeRacingPost(url) {
                 let age = null;
                 let weight = null;
                 let officialRating = null;
+                let spotlight = "";
 
                 if (cells.length >= 9) {
                     age = cells[5] ? cells[5].innerText.replace(/\n/g, '').trim() : null;
@@ -188,8 +189,23 @@ async function scrapeRacingPost(url) {
                     rpr = cells[8] ? cells[8].innerText.replace(/\n/g, '').trim() : null;
                 }
 
-                if (name) data.push({ name, form, trainer, jockey, courseDistanceWin, rpr, age, weight, officialRating });
+                // Spotlight / Comment Extraction (Hidden in new RP layout, check for expandable or specific class)
+                const commentEl = row.querySelector('.RunnersTableRow_spotlight__text') || row.querySelector('td.comment');
+                if (commentEl) {
+                    spotlight = commentEl.innerText.trim();
+                }
+
+                if (name) data.push({ name, form, trainer, jockey, courseDistanceWin, rpr, age, weight, officialRating, spotlight });
             });
+
+            // Extract Current Going from Page Header
+            // Often "Good to Soft" etc.
+            const goingEl = document.querySelector('.RaceHeader_going__info') || document.querySelector('.Rp-RaceHeader__going');
+            const raceGoing = goingEl ? goingEl.innerText.trim() : "Unknown";
+
+            // Attach going to first horse (hacky but works for whole race context)
+            if (data.length > 0) data[0].raceGoing = raceGoing;
+
             return data;
         });
 
