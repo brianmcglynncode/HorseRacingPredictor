@@ -1,7 +1,7 @@
 const express = require('express');
 const { scrapeCheltenhamFestival } = require('./scraper');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(express.static('public'));
 app.use(express.json());
@@ -289,6 +289,6 @@ app.get('/api/scrape', async (req, res) => {
     }
 });
 
-app.listen(port, () => {
-    console.log(`Horse Racing Predictor running at http://localhost:${port}`);
+app.listen(port, '0.0.0.0', () => {
+    console.log(`Horse Racing Predictor running at http://0.0.0.0:${port}`);
 });
