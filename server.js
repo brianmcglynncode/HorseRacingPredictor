@@ -73,7 +73,7 @@ const RACES = {
 
     // --- THURSDAY (Day 3) ---
     'turners': {
-        oc: 'https://www.oddschecker.com/cheltenham-festival/turners-novices-chase/winner',
+        oc: 'https://www.oddschecker.com/cheltenham-festival/turners-novices-hurdle/winner',
         rp: 'https://www.racingpost.com/cheltenham-festival/turners-novices-chase/'
     },
     'pertemps': {
@@ -89,7 +89,7 @@ const RACES = {
         rp: 'https://www.racingpost.com/cheltenham-festival/stayers-hurdle/'
     },
     'plate': {
-        oc: 'https://www.oddschecker.com/cheltenham-festival/festival-plate/winner',
+        oc: 'https://www.oddschecker.com/cheltenham-festival/trustatrader-plate/winner',
         rp: 'https://www.racingpost.com/cheltenham-festival/improving-handicap-chase/' // Often plate
     },
     'maresnovice': {
