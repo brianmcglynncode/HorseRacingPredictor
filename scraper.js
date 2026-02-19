@@ -66,9 +66,9 @@ async function scrapeWithRetry(url, scrapeFunction, maxRetries = 3) {
                 'Referer': 'https://www.google.co.uk/'
             });
 
-            // 3. RANDOM DELAY BEFORE NAVIGATION (Increased)
-            // Wait between 2 and 5 seconds
-            const setupDelay = Math.floor(Math.random() * 3000) + 2000;
+            // 3. RANDOM DELAY BEFORE NAVIGATION (Increased significantly)
+            // Wait between 3 and 8 seconds to avoid rapid-fire detection
+            const setupDelay = Math.floor(Math.random() * 5000) + 3000;
             await delay(setupDelay);
 
             console.log(`Attempt ${i + 1}/${maxRetries}: Navigating to ${url}... (UA: ${userAgent.substring(0, 20)}...)`);
@@ -89,7 +89,11 @@ async function scrapeWithRetry(url, scrapeFunction, maxRetries = 3) {
         } catch (error) {
             console.error(`Attempt ${i + 1} failed: ${error.message}`);
             if (i === maxRetries - 1) throw error; // Throw if last attempt
-            await delay(3000); // Wait 3s before retry
+
+            // Exponential Backoff / Increased Retry Delay
+            const retryDelay = 10000 + (i * 5000); // 10s, 15s, 20s...
+            console.log(`Waiting ${(retryDelay / 1000)}s before retry...`);
+            await delay(retryDelay);
         } finally {
             await browser.close();
         }
