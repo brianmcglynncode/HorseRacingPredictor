@@ -917,3 +917,250 @@ h1.glow-text {
         transform: translateY(-15px);
     }
 }
+
+/* --- MOBILE ADAPTIVE UPDATE --- */
+/* Optimized for iPhone/Android Portrait & Landscape */
+@media (max-width: 768px) {
+
+    /* 1. Global Container Fixes */
+    .container {
+        padding: 20px 10px;
+        /* Tighter margins */
+        overflow-x: hidden;
+        /* Prevent horizontal wiggle */
+    }
+
+    /* 2. Header & Typography */
+    h1.glow-text {
+        font-size: 2.2rem;
+        line-height: 1.1;
+        margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+        padding: 0 5px;
+        margin-bottom: 20px;
+    }
+
+    /* 3. Navigation: Clean Horizontal Swipe */
+    .day-nav {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start;
+        gap: 8px;
+        padding: 5px 15px 15px 15px;
+        /* Padding for shadow */
+        margin: 0 -20px 10px -20px;
+        /* Bleed to full edge */
+        -webkit-overflow-scrolling: touch;
+        scroll-padding: 15px;
+    }
+
+    .race-nav {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start;
+        gap: 10px;
+        padding: 5px 15px 15px 15px;
+        margin: 0 -20px 20px -20px;
+        -webkit-overflow-scrolling: touch;
+        scroll-padding: 15px;
+    }
+
+    /* Hide scrollbars */
+    .day-nav::-webkit-scrollbar,
+    .race-nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .day-btn {
+        flex: 0 0 auto;
+        /* Don't shrink */
+        padding: 8px 16px;
+        font-size: 0.8rem;
+        background: rgba(255, 255, 255, 0.08);
+        /* Better contrast */
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .day-btn.active {
+        background: var(--accent-gold);
+        color: #000;
+        box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3);
+    }
+
+    .race-btn {
+        flex: 0 0 auto;
+        min-width: 85px;
+        padding: 8px;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(5px);
+    }
+
+    /* 4. Odds Table: Compact & Native Scroll */
+    .race-container {
+        padding: 15px 0;
+        /* Remove side padding to give table max width */
+        background: transparent;
+        /* Cleaner look on mobile */
+        border: none;
+    }
+
+    .table-wrapper {
+        border-radius: 0;
+        /* Full bleed */
+        margin: 0 -10px;
+        /* Counteract container padding if any */
+        scrollbar-width: none;
+    }
+
+    /* Sticky Column Refinement */
+    .sticky-col {
+        min-width: 110px;
+        max-width: 120px;
+        padding: 8px 10px !important;
+        background: #0d1117;
+        /* Match body bg */
+        border-right: 1px solid rgba(255, 255, 255, 0.15);
+        position: sticky;
+        left: 0;
+        z-index: 20;
+    }
+
+    /* 5. BADGE OPTIMIZATION FOR MOBILE */
+    /* Make them tiny and stackable */
+    .horse-name-cell .badges-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3px;
+        margin-top: 4px;
+    }
+
+    .mover-badge,
+    .pick-badge,
+    .fav-badge,
+    .strategy-badge {
+        font-size: 0.55rem !important;
+        /* Tiny font */
+        padding: 1px 4px !important;
+        line-height: 1.2;
+        border-radius: 3px;
+        margin-left: 0 !important;
+        /* Reset margins for flex gap */
+        border-width: 0.5px;
+        /* Thinner borders */
+        height: auto;
+    }
+
+    .mover-badge span {
+        display: none;
+        /* Hide icons/extra text if possible or keep concise */
+    }
+
+    /* Stack horse name and badges tightly */
+    .horse-name-cell {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 50px;
+    }
+
+    /* 6. Card Stacking: Vertical Layout */
+    .my-pick-card {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+        border-radius: 12px;
+    }
+
+    .pick-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+
+    .pick-header h3 {
+        font-size: 1.6rem;
+    }
+
+    .pick-label {
+        font-size: 0.7rem;
+    }
+
+    .pick-stats {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        /* 3 columns for stats */
+        gap: 8px;
+    }
+
+    .pick-stat {
+        padding: 8px 4px;
+        min-width: 0;
+        /* Prevent overflow */
+    }
+
+    .stat-label {
+        font-size: 0.65rem;
+    }
+
+    .stat-value {
+        font-size: 1.1rem;
+    }
+
+    /* 7. Each Way Section */
+    .ew-section {
+        border-left: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-left: 0;
+        padding-top: 20px;
+        margin-top: 10px;
+    }
+
+    .ew-title {
+        text-align: center;
+        font-size: 0.8rem;
+    }
+
+    .ew-card {
+        padding: 8px 12px;
+    }
+
+    .ew-name {
+        font-size: 0.85rem;
+    }
+
+    /* 8. Race Header Compactness */
+    .race-header-large h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    .last-updated {
+        margin-left: 0;
+        font-size: 0.7rem;
+        background: rgba(255, 255, 255, 0.08);
+        /* Slightly lighter bg */
+    }
+
+    .badges {
+        margin-top: 10px;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    .strategy-badge {
+        font-size: 0.6rem;
+        padding: 2px 6px;
+    }
+}

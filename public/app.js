@@ -110,7 +110,25 @@ document.addEventListener('DOMContentLoaded', () => {
         allRaceBtns.forEach(b => b.disabled = true); // Prevent multiple clicks
         loader.classList.remove('hidden');
         racesGrid.classList.add('hidden');
-        loaderText.textContent = `Analyzing ${raceName}... Fetching live data...`;
+        // Cinematic Loading Sequence
+        const loadingMessages = [
+            `📡 Connecting to Oddsmakers...`,
+            `🧠 Analyzing ${raceName} Market Structure...`,
+            `🤖 Running Outlier Hunter Algorithm...`,
+            `📊 Calculating Weighted Consensus...`,
+            `🐎 Evaluating Expert Form Data...`,
+            `⚡ Identifying Steamers & Drifters...`,
+            `✅ Finalizing Predictions...`
+        ];
+
+        let msgIndex = 0;
+        loaderText.textContent = loadingMessages[0];
+
+        // Cycle messages to show "hard work"
+        const intervalId = setInterval(() => {
+            msgIndex = (msgIndex + 1) % loadingMessages.length;
+            loaderText.textContent = loadingMessages[msgIndex];
+        }, 700);
 
         try {
             const startTime = Date.now();
@@ -124,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Artificial delay for "Cinematic Analysis" feel (requested by user)
             // Even if cached, we make it look like we're crunching numbers
             const elapsed = Date.now() - startTime;
-            const minDelay = 2500; // 2.5 seconds minimum wait
+            const minDelay = 3500; // Increased to 3.5s to let the user see the cool messages
             if (elapsed < minDelay) {
                 await new Promise(r => setTimeout(r, minDelay - elapsed));
             }
@@ -149,6 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                 `;
         } finally {
+            clearInterval(intervalId); // Stop the text cycling
             loader.classList.add('hidden');
             racesGrid.classList.remove('hidden');
             allRaceBtns.forEach(b => b.disabled = false);
@@ -424,15 +443,22 @@ document.addEventListener('DOMContentLoaded', () => {
                     <tr>
                         <td class="sticky-col horse-name-cell ${rankClass}">
                             <div class="horse-info">
-                                <span class="horse-name">${horse.name}</span>
-                                ${index === 0 ? '<span class="fav-badge">FAV</span>' : ''}
-                                ${horse.marketMove === 'steamer' ? `<span class="mover-badge steamer">🔥 STEAMER (-${horse.movePercent}%)</span>` : ''}
-                                ${horse.marketMove === 'drifter' ? `<span class="mover-badge drifter">❄️ DRIFTER (+${horse.movePercent}%)</span>` : ''}
+                    <tr>
+                        <td class="sticky-col">
+                            <div class="horse-name-cell ${rankClass}">
+                                <div class="horse-info">
+                                    <span class="horse-name">${horse.name}</span>
+                                </div>
+                                <div class="badges-row">
+                                    ${index === 0 ? '<span class="fav-badge">FAV</span>' : ''}
+                                    ${horse.marketMove === 'steamer' ? `<span class="mover-badge steamer">🔥 STEAMER (-${horse.movePercent}%)</span>` : ''}
+                                    ${horse.marketMove === 'drifter' ? `<span class="mover-badge drifter">❄️ DRIFTER (+${horse.movePercent}%)</span>` : ''}
+                                    ${horse.disagreement ? '<span class="disagreement-badge" title="High Bookmaker Disagreement: Possible Hidden Edge">⚠️ DISAGREEMENT</span>' : ''}
+                                    ${myPick && horse.name === myPick.name ? '<span class="pick-badge">🏆 TOP PICK</span>' : ''}
+                                    ${(!myPick || horse.name !== myPick.name) && horse.compositeScore > 80 ? '<span class="pick-badge" style="background: linear-gradient(135deg, #444, #666);">⭐ CONTENDER</span>' : ''}
+                                </div>
                                 ${horse.isHot ? '<span class="strategy-badge" style="background:rgba(255,69,0,0.2); color:#ff4500; border:1px solid #ff4500;">🔥 HOT FORM</span>' : ''}
                                 ${horse.isCold ? '<span class="strategy-badge" style="background:rgba(0,191,255,0.2); color:#00bfff; border:1px solid #00bfff;">❄️ COLD</span>' : ''}
-                                ${horse.disagreement ? '<span class="disagreement-badge" title="High Bookmaker Disagreement: Possible Hidden Edge">⚠️ DISAGREEMENT</span>' : ''}
-                                ${myPick && horse.name === myPick.name ? '<span class="pick-badge">🏆 TOP PICK</span>' : ''}
-                                ${(!myPick || horse.name !== myPick.name) && horse.compositeScore > 80 ? '<span class="pick-badge" style="background: linear-gradient(135deg, #444, #666);">⭐ CONTENDER</span>' : ''}
                             </div>
                             <div class="consensus-bar-container" title="Implied Probability: ${horse.impliedProb.toFixed(1)}% | SD: ${horse.stdDev.toFixed(2)}%">
                                 <div class="consensus-bar" style="width: ${horse.impliedProb}%"></div>
