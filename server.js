@@ -47,15 +47,15 @@ const RACES = {
         rp: 'https://www.racingpost.com/cheltenham-festival/gallagher-novices-hurdle/'
     },
     'brown': {
-        oc: 'https://www.oddschecker.com/cheltenham-festival/brown-advisory-novices-chase/winner',
+        oc: 'https://www.oddschecker.com/cheltenham-festival/brown-advisory-novice-chase/winner',
         rp: 'https://www.racingpost.com/cheltenham-festival/brown-advisory-novices-chase/'
     },
     'coral': {
-        oc: 'https://www.oddschecker.com/cheltenham-festival/coral-cup/winner',
+        oc: 'https://www.oddschecker.com/cheltenham-festival/coral-cup-handicap-hurdle/winner',
         rp: 'https://www.racingpost.com/cheltenham-festival/coral-cup/'
     },
     'championchase': {
-        oc: 'https://www.oddschecker.com/cheltenham-festival/queen-mother-champion-chase/winner',
+        oc: 'https://www.oddschecker.com/cheltenham-festival/champion-chase/winner',
         rp: 'https://www.racingpost.com/cheltenham-festival/queen-mother-champion-chase/'
     },
     'cross': {
