@@ -334,9 +334,10 @@ app.get('/api/scrape', async (req, res) => {
         // Only scrape live if we have NEVER scraped this race before (Cold Start)
         console.log(`Starting Cold Start Scrape for ${raceId} (No history found)...`);
 
-        // Timeout Promise to enforce 10s max wait
+        // Timeout Promise to enforce 45s max wait (Increased for Anti-Bot Delays)
+        const timeoutMs = 45000;
         const timeout = new Promise((_, reject) =>
-            setTimeout(() => reject(new Error("Scrape timeout exceeded 10s")), 10000)
+            setTimeout(() => reject(new Error(`Scrape timeout exceeded ${timeoutMs}ms`)), timeoutMs)
         );
 
         try {
