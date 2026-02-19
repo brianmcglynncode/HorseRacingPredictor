@@ -47,7 +47,7 @@
         "Ambiente Friendly": 980,
         "Makinbecon": 980
       },
-      "lastUpdated": "2026-02-19T19:21:49.960Z",
+      "lastUpdated": "2026-02-19T22:53:42.019Z",
       "latestData": [
         {
           "name": "Supreme Novices Hurdle Betting Odds- Winner",
@@ -181,7 +181,7 @@
                 },
                 "Betfair": {
                   "fraction": "12/5",
-                  "decimal": 3.4
+                  "decimal": 3.45
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -190,12 +190,13 @@
               },
               "form": "23-111",
               "trainer": "Nicky Henderson",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "159",
               "age": "6",
               "weight": "11-7",
               "officialRating": "151",
-              "marketMove": "steamer",
-              "movePercent": 1,
+              "marketMove": "stable",
               "openingOdds": 3.45
             },
             {
@@ -298,8 +299,8 @@
                   "decimal": 5
                 },
                 "Betfair": {
-                  "fraction": "627/100",
-                  "decimal": 7.27
+                  "fraction": "333/50",
+                  "decimal": 7.66
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -308,11 +309,14 @@
               },
               "form": "2-11F1",
               "trainer": "Joseph Patrick O'Brien",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "154",
               "age": "5",
               "weight": "11-7",
               "officialRating": "-",
-              "marketMove": "stable",
+              "marketMove": "drifter",
+              "movePercent": 5,
               "openingOdds": 7.27
             },
             {
@@ -415,8 +419,8 @@
                   "decimal": 6.5
                 },
                 "Betfair": {
-                  "fraction": "186/25",
-                  "decimal": 8.45
+                  "fraction": "191/25",
+                  "decimal": 8.64
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -425,11 +429,14 @@
               },
               "form": "15-2F1",
               "trainer": "Gordon Elliott",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "138",
               "age": "6",
               "weight": "11-7",
               "officialRating": "-",
-              "marketMove": "stable",
+              "marketMove": "drifter",
+              "movePercent": 2,
               "openingOdds": 8.45
             },
             {
@@ -532,8 +539,8 @@
                   "decimal": 11
                 },
                 "Betfair": {
-                  "fraction": "59/5",
-                  "decimal": 12.8
+                  "fraction": "66/5",
+                  "decimal": 14.2
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -542,11 +549,14 @@
               },
               "form": "1",
               "trainer": "W P Mullins",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "155",
               "age": "5",
               "weight": "11-7",
               "officialRating": "-",
-              "marketMove": "stable",
+              "marketMove": "drifter",
+              "movePercent": 11,
               "openingOdds": 12.8
             },
             {
@@ -649,8 +659,8 @@
                   "decimal": 11
                 },
                 "Betfair": {
-                  "fraction": "147/10",
-                  "decimal": 15.7
+                  "fraction": "71/5",
+                  "decimal": 15.2
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -659,11 +669,14 @@
               },
               "form": "1-112",
               "trainer": "Dan Skelton",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "147",
               "age": "5",
               "weight": "11-7",
               "officialRating": "138",
-              "marketMove": "stable",
+              "marketMove": "steamer",
+              "movePercent": 3,
               "openingOdds": 15.7
             },
             {
@@ -776,6 +789,8 @@
               },
               "form": "1-1411",
               "trainer": "Philip Hobbs & Johnson White",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "155",
               "age": "6",
               "weight": "11-7",
@@ -883,8 +898,8 @@
                   "decimal": 13
                 },
                 "Betfair": {
-                  "fraction": "171/10",
-                  "decimal": 18.1
+                  "fraction": "167/10",
+                  "decimal": 17.7
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -893,11 +908,14 @@
               },
               "form": "16-111",
               "trainer": "Harry Fry",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "150",
               "age": "6",
               "weight": "11-7",
               "officialRating": "141",
-              "marketMove": "stable",
+              "marketMove": "steamer",
+              "movePercent": 2,
               "openingOdds": 18.1
             },
             {
@@ -912,8 +930,8 @@
                   "decimal": 15
                 },
                 "Unibet": {
-                  "fraction": "14",
-                  "decimal": 15
+                  "fraction": "12",
+                  "decimal": 13
                 },
                 "Betfred": {
                   "fraction": "12",
@@ -1010,6 +1028,8 @@
               },
               "form": "-11121",
               "trainer": "W P Mullins",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "139",
               "age": "5",
               "weight": "11-7",
@@ -1127,6 +1147,8 @@
               },
               "form": "4-213",
               "trainer": "W P Mullins",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "150",
               "age": "6",
               "weight": "11-7",
@@ -1244,6 +1266,8 @@
               },
               "form": "11",
               "trainer": "W P Mullins",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "148",
               "age": "7",
               "weight": "11-7",
@@ -1361,6 +1385,8 @@
               },
               "form": "1U",
               "trainer": "W P Mullins",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "141",
               "age": "5",
               "weight": "11-7",
@@ -1478,6 +1504,8 @@
               },
               "form": "1112",
               "trainer": "Gordon Elliott",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "151",
               "age": "5",
               "weight": "11-7",
@@ -1595,6 +1623,8 @@
               },
               "form": "11",
               "trainer": "W P Mullins",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "144",
               "age": "4",
               "weight": "10-11",
@@ -1712,6 +1742,8 @@
               },
               "form": "3-1211",
               "trainer": "Alan King",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "132",
               "age": "6",
               "weight": "11-7",
@@ -1829,6 +1861,8 @@
               },
               "form": "2-21",
               "trainer": "W P Mullins",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "132",
               "age": "5",
               "weight": "11-7",
@@ -1936,8 +1970,8 @@
                   "decimal": 34
                 },
                 "Betfair": {
-                  "fraction": "46",
-                  "decimal": 47
+                  "fraction": "48",
+                  "decimal": 49
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -1946,130 +1980,15 @@
               },
               "form": "4-211",
               "trainer": "Gordon Elliott",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "153",
               "age": "6",
               "weight": "11-7",
               "officialRating": "-",
               "marketMove": "drifter",
-              "movePercent": 9,
+              "movePercent": 14,
               "openingOdds": 43
-            },
-            {
-              "name": "Sortudo",
-              "odds": {
-                "bet365": {
-                  "fraction": "33",
-                  "decimal": 34
-                },
-                "William Hill": {
-                  "fraction": "25",
-                  "decimal": 26
-                },
-                "Unibet": {
-                  "fraction": "50",
-                  "decimal": 51
-                },
-                "Betfred": {
-                  "fraction": "33",
-                  "decimal": 34
-                },
-                "888sport": {
-                  "fraction": "25",
-                  "decimal": 26
-                },
-                "Spreadex": {
-                  "fraction": "33",
-                  "decimal": 34
-                },
-                "Ladbrokes": {
-                  "fraction": "25",
-                  "decimal": 26
-                },
-                "BetVictor": {
-                  "fraction": "33",
-                  "decimal": 34
-                },
-                "BetMGM UK": {
-                  "fraction": "33",
-                  "decimal": 34
-                },
-                "BOYLE Sports": {
-                  "fraction": "33",
-                  "decimal": 34
-                },
-                "10bet": {
-                  "fraction": "",
-                  "decimal": 0
-                },
-                "Star Sports": {
-                  "fraction": "50",
-                  "decimal": 51
-                },
-                "PricedUp": {
-                  "fraction": "50",
-                  "decimal": 51
-                },
-                "Sporting Index": {
-                  "fraction": "33",
-                  "decimal": 34
-                },
-                "Virgin Bet": {
-                  "fraction": "33",
-                  "decimal": 34
-                },
-                "QuinnBet": {
-                  "fraction": "33",
-                  "decimal": 34
-                },
-                "Betway": {
-                  "fraction": "33",
-                  "decimal": 34
-                },
-                "Coral": {
-                  "fraction": "25",
-                  "decimal": 26
-                },
-                "BetGoodwin": {
-                  "fraction": "40",
-                  "decimal": 41
-                },
-                "BetTom": {
-                  "fraction": "40",
-                  "decimal": 41
-                },
-                "BresBet": {
-                  "fraction": "50",
-                  "decimal": 51
-                },
-                "Skybet": {
-                  "fraction": "33",
-                  "decimal": 34
-                },
-                "Paddy Power": {
-                  "fraction": "33",
-                  "decimal": 34
-                },
-                "AK Bets": {
-                  "fraction": "50",
-                  "decimal": 51
-                },
-                "Betfair": {
-                  "fraction": "146",
-                  "decimal": 147
-                },
-                "Matchbook": {
-                  "fraction": "",
-                  "decimal": 0
-                }
-              },
-              "form": "271-12",
-              "trainer": "W P Mullins",
-              "rpr": "146",
-              "age": "6",
-              "weight": "11-7",
-              "officialRating": "-",
-              "marketMove": "stable",
-              "openingOdds": 147
             },
             {
               "name": "Heads Up",
@@ -2171,8 +2090,8 @@
                   "decimal": 34
                 },
                 "Betfair": {
-                  "fraction": "126",
-                  "decimal": 127
+                  "fraction": "117",
+                  "decimal": 118
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -2181,11 +2100,14 @@
               },
               "form": "2-1251",
               "trainer": "John C McConnell",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "143",
               "age": "6",
               "weight": "11-7",
               "officialRating": "-",
-              "marketMove": "stable",
+              "marketMove": "steamer",
+              "movePercent": 7,
               "openingOdds": 127
             },
             {
@@ -2298,12 +2220,133 @@
               },
               "form": "22-151",
               "trainer": "Barry Connell",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "145",
               "age": "7",
               "weight": "11-7",
               "officialRating": "-",
               "marketMove": "stable",
               "openingOdds": 69
+            },
+            {
+              "name": "Sortudo",
+              "odds": {
+                "bet365": {
+                  "fraction": "33",
+                  "decimal": 34
+                },
+                "William Hill": {
+                  "fraction": "25",
+                  "decimal": 26
+                },
+                "Unibet": {
+                  "fraction": "66",
+                  "decimal": 67
+                },
+                "Betfred": {
+                  "fraction": "33",
+                  "decimal": 34
+                },
+                "888sport": {
+                  "fraction": "25",
+                  "decimal": 26
+                },
+                "Spreadex": {
+                  "fraction": "33",
+                  "decimal": 34
+                },
+                "Ladbrokes": {
+                  "fraction": "25",
+                  "decimal": 26
+                },
+                "BetVictor": {
+                  "fraction": "33",
+                  "decimal": 34
+                },
+                "BetMGM UK": {
+                  "fraction": "33",
+                  "decimal": 34
+                },
+                "BOYLE Sports": {
+                  "fraction": "33",
+                  "decimal": 34
+                },
+                "10bet": {
+                  "fraction": "",
+                  "decimal": 0
+                },
+                "Star Sports": {
+                  "fraction": "50",
+                  "decimal": 51
+                },
+                "PricedUp": {
+                  "fraction": "50",
+                  "decimal": 51
+                },
+                "Sporting Index": {
+                  "fraction": "33",
+                  "decimal": 34
+                },
+                "Virgin Bet": {
+                  "fraction": "33",
+                  "decimal": 34
+                },
+                "QuinnBet": {
+                  "fraction": "33",
+                  "decimal": 34
+                },
+                "Betway": {
+                  "fraction": "33",
+                  "decimal": 34
+                },
+                "Coral": {
+                  "fraction": "25",
+                  "decimal": 26
+                },
+                "BetGoodwin": {
+                  "fraction": "40",
+                  "decimal": 41
+                },
+                "BetTom": {
+                  "fraction": "40",
+                  "decimal": 41
+                },
+                "BresBet": {
+                  "fraction": "50",
+                  "decimal": 51
+                },
+                "Skybet": {
+                  "fraction": "33",
+                  "decimal": 34
+                },
+                "Paddy Power": {
+                  "fraction": "33",
+                  "decimal": 34
+                },
+                "AK Bets": {
+                  "fraction": "50",
+                  "decimal": 51
+                },
+                "Betfair": {
+                  "fraction": "146",
+                  "decimal": 147
+                },
+                "Matchbook": {
+                  "fraction": "",
+                  "decimal": 0
+                }
+              },
+              "form": "271-12",
+              "trainer": "W P Mullins",
+              "jockey": null,
+              "courseDistanceWin": null,
+              "rpr": "146",
+              "age": "6",
+              "weight": "11-7",
+              "officialRating": "-",
+              "marketMove": "stable",
+              "openingOdds": 147
             },
             {
               "name": "Too Bossy For Us",
@@ -2415,129 +2458,14 @@
               },
               "form": "7-51",
               "trainer": "W P Mullins",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "135",
               "age": "5",
               "weight": "11-7",
               "officialRating": "-",
               "marketMove": "stable",
               "openingOdds": 176
-            },
-            {
-              "name": "Windbeneathmywings",
-              "odds": {
-                "bet365": {
-                  "fraction": "25",
-                  "decimal": 26
-                },
-                "William Hill": {
-                  "fraction": "25",
-                  "decimal": 26
-                },
-                "Unibet": {
-                  "fraction": "66",
-                  "decimal": 67
-                },
-                "Betfred": {
-                  "fraction": "40",
-                  "decimal": 41
-                },
-                "888sport": {
-                  "fraction": "25",
-                  "decimal": 26
-                },
-                "Spreadex": {
-                  "fraction": "25",
-                  "decimal": 26
-                },
-                "Ladbrokes": {
-                  "fraction": "25",
-                  "decimal": 26
-                },
-                "BetVictor": {
-                  "fraction": "25",
-                  "decimal": 26
-                },
-                "BetMGM UK": {
-                  "fraction": "25",
-                  "decimal": 26
-                },
-                "BOYLE Sports": {
-                  "fraction": "40",
-                  "decimal": 41
-                },
-                "10bet": {
-                  "fraction": "",
-                  "decimal": 0
-                },
-                "Star Sports": {
-                  "fraction": "40",
-                  "decimal": 41
-                },
-                "PricedUp": {
-                  "fraction": "40",
-                  "decimal": 41
-                },
-                "Sporting Index": {
-                  "fraction": "25",
-                  "decimal": 26
-                },
-                "Virgin Bet": {
-                  "fraction": "25",
-                  "decimal": 26
-                },
-                "QuinnBet": {
-                  "fraction": "33",
-                  "decimal": 34
-                },
-                "Betway": {
-                  "fraction": "40",
-                  "decimal": 41
-                },
-                "Coral": {
-                  "fraction": "25",
-                  "decimal": 26
-                },
-                "BetGoodwin": {
-                  "fraction": "50",
-                  "decimal": 51
-                },
-                "BetTom": {
-                  "fraction": "50",
-                  "decimal": 51
-                },
-                "BresBet": {
-                  "fraction": "40",
-                  "decimal": 41
-                },
-                "Skybet": {
-                  "fraction": "40",
-                  "decimal": 41
-                },
-                "Paddy Power": {
-                  "fraction": "40",
-                  "decimal": 41
-                },
-                "AK Bets": {
-                  "fraction": "40",
-                  "decimal": 41
-                },
-                "Betfair": {
-                  "fraction": "215",
-                  "decimal": 216
-                },
-                "Matchbook": {
-                  "fraction": "",
-                  "decimal": 0
-                }
-              },
-              "form": "1211-",
-              "trainer": "David Pipe",
-              "rpr": "",
-              "age": "6",
-              "weight": "11-7",
-              "officialRating": "-",
-              "marketMove": "stable",
-              "openingOdds": 216
             },
             {
               "name": "Mossy Fen Road",
@@ -2639,8 +2567,8 @@
                   "decimal": 51
                 },
                 "Betfair": {
-                  "fraction": "87",
-                  "decimal": 88
+                  "fraction": "77",
+                  "decimal": 78
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -2649,11 +2577,14 @@
               },
               "form": "19-112",
               "trainer": "Harry Derham",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "145",
               "age": "6",
               "weight": "11-7",
               "officialRating": "137",
-              "marketMove": "stable",
+              "marketMove": "steamer",
+              "movePercent": 11,
               "openingOdds": 88
             },
             {
@@ -2766,6 +2697,8 @@
               },
               "form": "3-16",
               "trainer": "W P Mullins",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "130",
               "age": "5",
               "weight": "11-7",
@@ -2883,6 +2816,8 @@
               },
               "form": "44-146",
               "trainer": "W P Mullins",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "142",
               "age": "5",
               "weight": "11-7",
@@ -2891,121 +2826,124 @@
               "openingOdds": 108
             },
             {
-              "name": "Hamlets Night",
+              "name": "Windbeneathmywings",
               "odds": {
                 "bet365": {
-                  "fraction": "50",
-                  "decimal": 51
+                  "fraction": "25",
+                  "decimal": 26
                 },
                 "William Hill": {
-                  "fraction": "50",
-                  "decimal": 51
+                  "fraction": "25",
+                  "decimal": 26
                 },
                 "Unibet": {
                   "fraction": "80",
                   "decimal": 81
                 },
                 "Betfred": {
-                  "fraction": "50",
-                  "decimal": 51
+                  "fraction": "40",
+                  "decimal": 41
                 },
                 "888sport": {
-                  "fraction": "50",
-                  "decimal": 51
+                  "fraction": "25",
+                  "decimal": 26
                 },
                 "Spreadex": {
-                  "fraction": "66",
-                  "decimal": 67
+                  "fraction": "25",
+                  "decimal": 26
                 },
                 "Ladbrokes": {
-                  "fraction": "66",
-                  "decimal": 67
+                  "fraction": "25",
+                  "decimal": 26
                 },
                 "BetVictor": {
-                  "fraction": "50",
-                  "decimal": 51
+                  "fraction": "25",
+                  "decimal": 26
                 },
                 "BetMGM UK": {
-                  "fraction": "50",
-                  "decimal": 51
+                  "fraction": "25",
+                  "decimal": 26
                 },
                 "BOYLE Sports": {
-                  "fraction": "66",
-                  "decimal": 67
+                  "fraction": "40",
+                  "decimal": 41
                 },
                 "10bet": {
                   "fraction": "",
                   "decimal": 0
                 },
                 "Star Sports": {
-                  "fraction": "66",
-                  "decimal": 67
+                  "fraction": "40",
+                  "decimal": 41
                 },
                 "PricedUp": {
-                  "fraction": "66",
-                  "decimal": 67
+                  "fraction": "40",
+                  "decimal": 41
                 },
                 "Sporting Index": {
-                  "fraction": "66",
-                  "decimal": 67
+                  "fraction": "25",
+                  "decimal": 26
                 },
                 "Virgin Bet": {
-                  "fraction": "50",
-                  "decimal": 51
+                  "fraction": "25",
+                  "decimal": 26
                 },
                 "QuinnBet": {
+                  "fraction": "33",
+                  "decimal": 34
+                },
+                "Betway": {
+                  "fraction": "40",
+                  "decimal": 41
+                },
+                "Coral": {
+                  "fraction": "25",
+                  "decimal": 26
+                },
+                "BetGoodwin": {
                   "fraction": "50",
                   "decimal": 51
                 },
-                "Betway": {
-                  "fraction": "66",
-                  "decimal": 67
-                },
-                "Coral": {
-                  "fraction": "66",
-                  "decimal": 67
-                },
-                "BetGoodwin": {
-                  "fraction": "66",
-                  "decimal": 67
-                },
                 "BetTom": {
-                  "fraction": "66",
-                  "decimal": 67
+                  "fraction": "50",
+                  "decimal": 51
                 },
                 "BresBet": {
-                  "fraction": "66",
-                  "decimal": 67
+                  "fraction": "40",
+                  "decimal": 41
                 },
                 "Skybet": {
-                  "fraction": "66",
-                  "decimal": 67
+                  "fraction": "40",
+                  "decimal": 41
                 },
                 "Paddy Power": {
-                  "fraction": "66",
-                  "decimal": 67
+                  "fraction": "40",
+                  "decimal": 41
                 },
                 "AK Bets": {
-                  "fraction": "66",
-                  "decimal": 67
+                  "fraction": "40",
+                  "decimal": 41
                 },
                 "Betfair": {
-                  "fraction": "450",
-                  "decimal": 451
+                  "fraction": "342",
+                  "decimal": 343
                 },
                 "Matchbook": {
                   "fraction": "",
                   "decimal": 0
                 }
               },
-              "form": "21122",
-              "trainer": "James Owen",
-              "rpr": "136",
-              "age": "5",
+              "form": "1211-",
+              "trainer": "David Pipe",
+              "jockey": null,
+              "courseDistanceWin": null,
+              "rpr": "",
+              "age": "6",
               "weight": "11-7",
-              "officialRating": "134",
-              "marketMove": "stable",
-              "openingOdds": 451
+              "officialRating": "-",
+              "marketMove": "drifter",
+              "movePercent": 59,
+              "openingOdds": 216
             },
             {
               "name": "Hes On Fire",
@@ -3117,6 +3055,8 @@
               },
               "form": "4621",
               "trainer": "W P Mullins",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "132",
               "age": "5",
               "weight": "11-7",
@@ -3234,6 +3174,8 @@
               },
               "form": "5-3162",
               "trainer": "Neil King",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "136",
               "age": "6",
               "weight": "11-7",
@@ -3351,6 +3293,8 @@
               },
               "form": "2-125",
               "trainer": "Noel Meade",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "151",
               "age": "5",
               "weight": "11-7",
@@ -3468,6 +3412,8 @@
               },
               "form": "23211",
               "trainer": "Joseph Patrick O'Brien",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "145",
               "age": "5",
               "weight": "11-7",
@@ -3585,6 +3531,8 @@
               },
               "form": "2-211",
               "trainer": "Dan Skelton",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "140",
               "age": "5",
               "weight": "11-7",
@@ -3702,6 +3650,8 @@
               },
               "form": "12",
               "trainer": "W P Mullins",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "139",
               "age": "4",
               "weight": "10-11",
@@ -3819,6 +3769,8 @@
               },
               "form": "44-651",
               "trainer": "Robert Stephens",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "110",
               "age": "5",
               "weight": "11-7",
@@ -3936,6 +3888,8 @@
               },
               "form": "2-13",
               "trainer": "W P Mullins",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "136",
               "age": "5",
               "weight": "11-7",
@@ -4053,6 +4007,8 @@
               },
               "form": "3123",
               "trainer": "Dan Skelton",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "140",
               "age": "5",
               "weight": "11-7",
@@ -4170,6 +4126,8 @@
               },
               "form": "35-161",
               "trainer": "Henry De Bromhead",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "137",
               "age": "6",
               "weight": "11-7",
@@ -4287,6 +4245,8 @@
               },
               "form": "1-241",
               "trainer": "Dan Skelton",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "129",
               "age": "5",
               "weight": "11-7",
@@ -4404,6 +4364,8 @@
               },
               "form": "1-1252",
               "trainer": "Andrew J Martin",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "139",
               "age": "6",
               "weight": "11-7",
@@ -4521,12 +4483,133 @@
               },
               "form": "-51174",
               "trainer": "Gordon Elliott",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "151",
               "age": "6",
               "weight": "11-7",
               "officialRating": "-",
               "marketMove": "stable",
               "openingOdds": 637
+            },
+            {
+              "name": "Hamlets Night",
+              "odds": {
+                "bet365": {
+                  "fraction": "50",
+                  "decimal": 51
+                },
+                "William Hill": {
+                  "fraction": "50",
+                  "decimal": 51
+                },
+                "Unibet": {
+                  "fraction": "100",
+                  "decimal": 101
+                },
+                "Betfred": {
+                  "fraction": "50",
+                  "decimal": 51
+                },
+                "888sport": {
+                  "fraction": "50",
+                  "decimal": 51
+                },
+                "Spreadex": {
+                  "fraction": "66",
+                  "decimal": 67
+                },
+                "Ladbrokes": {
+                  "fraction": "66",
+                  "decimal": 67
+                },
+                "BetVictor": {
+                  "fraction": "50",
+                  "decimal": 51
+                },
+                "BetMGM UK": {
+                  "fraction": "50",
+                  "decimal": 51
+                },
+                "BOYLE Sports": {
+                  "fraction": "66",
+                  "decimal": 67
+                },
+                "10bet": {
+                  "fraction": "",
+                  "decimal": 0
+                },
+                "Star Sports": {
+                  "fraction": "66",
+                  "decimal": 67
+                },
+                "PricedUp": {
+                  "fraction": "66",
+                  "decimal": 67
+                },
+                "Sporting Index": {
+                  "fraction": "66",
+                  "decimal": 67
+                },
+                "Virgin Bet": {
+                  "fraction": "50",
+                  "decimal": 51
+                },
+                "QuinnBet": {
+                  "fraction": "50",
+                  "decimal": 51
+                },
+                "Betway": {
+                  "fraction": "66",
+                  "decimal": 67
+                },
+                "Coral": {
+                  "fraction": "66",
+                  "decimal": 67
+                },
+                "BetGoodwin": {
+                  "fraction": "66",
+                  "decimal": 67
+                },
+                "BetTom": {
+                  "fraction": "66",
+                  "decimal": 67
+                },
+                "BresBet": {
+                  "fraction": "66",
+                  "decimal": 67
+                },
+                "Skybet": {
+                  "fraction": "66",
+                  "decimal": 67
+                },
+                "Paddy Power": {
+                  "fraction": "66",
+                  "decimal": 67
+                },
+                "AK Bets": {
+                  "fraction": "66",
+                  "decimal": 67
+                },
+                "Betfair": {
+                  "fraction": "450",
+                  "decimal": 451
+                },
+                "Matchbook": {
+                  "fraction": "",
+                  "decimal": 0
+                }
+              },
+              "form": "21122",
+              "trainer": "James Owen",
+              "jockey": null,
+              "courseDistanceWin": null,
+              "rpr": "136",
+              "age": "5",
+              "weight": "11-7",
+              "officialRating": "134",
+              "marketMove": "stable",
+              "openingOdds": 451
             },
             {
               "name": "Klub De Reve",
@@ -4638,6 +4721,8 @@
               },
               "form": "73-421",
               "trainer": "Harry Derham",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "135",
               "age": "6",
               "weight": "11-7",
@@ -4755,6 +4840,8 @@
               },
               "form": "17",
               "trainer": "Paul Nolan",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "127",
               "age": "5",
               "weight": "11-7",
@@ -4872,6 +4959,8 @@
               },
               "form": "40",
               "trainer": "Denis Gerard Hogan",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "120",
               "age": "9",
               "weight": "11-7",
@@ -4989,6 +5078,8 @@
               },
               "form": "204-3",
               "trainer": "Alan King",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "127",
               "age": "6",
               "weight": "11-7",
@@ -5106,6 +5197,8 @@
               },
               "form": "4164",
               "trainer": "James Owen",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "121",
               "age": "5",
               "weight": "11-7",
@@ -5223,6 +5316,8 @@
               },
               "form": "0",
               "trainer": "John & Rhys Flint",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "",
               "age": "6",
               "weight": "11-7",
@@ -5256,7 +5351,7 @@
         "Break My Soul": 196,
         "Downmexicoway": 382
       },
-      "lastUpdated": "2026-02-19T20:23:23.919Z",
+      "lastUpdated": "2026-02-19T22:55:11.661Z",
       "latestData": [
         {
           "name": "Arkle Chase Betting Odds- Winner",
@@ -5399,6 +5494,8 @@
               },
               "form": "2-1111",
               "trainer": "Nicky Henderson",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "174",
               "age": "5",
               "weight": "11-7",
@@ -5516,6 +5613,8 @@
               },
               "form": "111-41",
               "trainer": "W P Mullins",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "163",
               "age": "6",
               "weight": "11-7",
@@ -5633,6 +5732,8 @@
               },
               "form": "1-3212",
               "trainer": "W P Mullins",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "164",
               "age": "6",
               "weight": "11-0",
@@ -5716,12 +5817,12 @@
                   "decimal": 5.5
                 },
                 "BetGoodwin": {
-                  "fraction": "9/2",
-                  "decimal": 5.5
+                  "fraction": "7",
+                  "decimal": 8
                 },
                 "BetTom": {
-                  "fraction": "9/2",
-                  "decimal": 5.5
+                  "fraction": "7",
+                  "decimal": 8
                 },
                 "BresBet": {
                   "fraction": "7",
@@ -5740,8 +5841,8 @@
                   "decimal": 8
                 },
                 "Betfair": {
-                  "fraction": "137/10",
-                  "decimal": 14.7
+                  "fraction": "49/5",
+                  "decimal": 10.8
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -5750,11 +5851,14 @@
               },
               "form": "2-1111",
               "trainer": "Gordon Elliott",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "168",
               "age": "7",
               "weight": "11-7",
               "officialRating": "-",
-              "marketMove": "stable",
+              "marketMove": "steamer",
+              "movePercent": 27,
               "openingOdds": 14.7
             },
             {
@@ -5867,6 +5971,8 @@
               },
               "form": "169-11",
               "trainer": "W P Mullins",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "158",
               "age": "6",
               "weight": "11-7",
@@ -5984,6 +6090,8 @@
               },
               "form": "0-3112",
               "trainer": "Eddie & Patrick Harty",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "164",
               "age": "9",
               "weight": "11-7",
@@ -6101,6 +6209,8 @@
               },
               "form": "2P-111",
               "trainer": "Sam Thomas",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "165",
               "age": "8",
               "weight": "11-7",
@@ -6184,12 +6294,12 @@
                   "decimal": 17
                 },
                 "BetGoodwin": {
-                  "fraction": "16",
-                  "decimal": 17
+                  "fraction": "20",
+                  "decimal": 21
                 },
                 "BetTom": {
-                  "fraction": "16",
-                  "decimal": 17
+                  "fraction": "20",
+                  "decimal": 21
                 },
                 "BresBet": {
                   "fraction": "25",
@@ -6218,6 +6328,8 @@
               },
               "form": "1-2261",
               "trainer": "W P Mullins",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "158",
               "age": "6",
               "weight": "11-7",
@@ -6335,6 +6447,8 @@
               },
               "form": "5-5113",
               "trainer": "Henry De Bromhead",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "160",
               "age": "7",
               "weight": "11-0",
@@ -6418,12 +6532,12 @@
                   "decimal": 34
                 },
                 "BetGoodwin": {
-                  "fraction": "25",
-                  "decimal": 26
+                  "fraction": "28",
+                  "decimal": 29
                 },
                 "BetTom": {
-                  "fraction": "25",
-                  "decimal": 26
+                  "fraction": "28",
+                  "decimal": 29
                 },
                 "BresBet": {
                   "fraction": "25",
@@ -6452,6 +6566,8 @@
               },
               "form": "19-111",
               "trainer": "Fergal O'Brien",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "162",
               "age": "7",
               "weight": "11-7",
@@ -6535,12 +6651,12 @@
                   "decimal": 41
                 },
                 "BetGoodwin": {
-                  "fraction": "40",
-                  "decimal": 41
+                  "fraction": "50",
+                  "decimal": 51
                 },
                 "BetTom": {
-                  "fraction": "40",
-                  "decimal": 41
+                  "fraction": "50",
+                  "decimal": 51
                 },
                 "BresBet": {
                   "fraction": "50",
@@ -6569,6 +6685,8 @@
               },
               "form": "7-1113",
               "trainer": "Ben Pauling",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "156",
               "age": "5",
               "weight": "11-7",
@@ -6652,12 +6770,12 @@
                   "decimal": 41
                 },
                 "BetGoodwin": {
-                  "fraction": "33",
-                  "decimal": 34
+                  "fraction": "40",
+                  "decimal": 41
                 },
                 "BetTom": {
-                  "fraction": "33",
-                  "decimal": 34
+                  "fraction": "40",
+                  "decimal": 41
                 },
                 "BresBet": {
                   "fraction": "33",
@@ -6686,6 +6804,8 @@
               },
               "form": "0-1231",
               "trainer": "Ben Pauling",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "158",
               "age": "8",
               "weight": "11-7",
@@ -6793,8 +6913,8 @@
                   "decimal": 67
                 },
                 "Betfair": {
-                  "fraction": "77",
-                  "decimal": 78
+                  "fraction": "97",
+                  "decimal": 98
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -6803,11 +6923,14 @@
               },
               "form": "8-1222",
               "trainer": "Dan Skelton",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "159",
               "age": "7",
               "weight": "11-7",
               "officialRating": "147",
-              "marketMove": "stable",
+              "marketMove": "drifter",
+              "movePercent": 26,
               "openingOdds": 78
             },
             {
@@ -6920,6 +7043,8 @@
               },
               "form": "1-2141",
               "trainer": "Lucy Wadham",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "156",
               "age": "7",
               "weight": "11-7",
@@ -7037,6 +7162,8 @@
               },
               "form": "310-71",
               "trainer": "W P Mullins",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "145",
               "age": "7",
               "weight": "11-7",
@@ -7154,6 +7281,8 @@
               },
               "form": "-813U2",
               "trainer": "Dan Skelton",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "153",
               "age": "7",
               "weight": "11-7",
@@ -7261,8 +7390,8 @@
                   "decimal": 67
                 },
                 "Betfair": {
-                  "fraction": "411",
-                  "decimal": 412
+                  "fraction": "420",
+                  "decimal": 421
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -7271,12 +7400,13 @@
               },
               "form": "97-412",
               "trainer": "Gary & Josh Moore",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "152",
               "age": "8",
               "weight": "11-7",
               "officialRating": "137",
-              "marketMove": "steamer",
-              "movePercent": 2,
+              "marketMove": "stable",
               "openingOdds": 421
             },
             {
@@ -7355,12 +7485,12 @@
                   "decimal": 67
                 },
                 "BetGoodwin": {
-                  "fraction": "66",
-                  "decimal": 67
+                  "fraction": "80",
+                  "decimal": 81
                 },
                 "BetTom": {
-                  "fraction": "66",
-                  "decimal": 67
+                  "fraction": "80",
+                  "decimal": 81
                 },
                 "BresBet": {
                   "fraction": "66",
@@ -7389,6 +7519,8 @@
               },
               "form": "-41472",
               "trainer": "Ian Patrick Donoghue",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "147",
               "age": "7",
               "weight": "11-0",
@@ -7472,12 +7604,12 @@
                   "decimal": 151
                 },
                 "BetGoodwin": {
-                  "fraction": "100",
-                  "decimal": 101
+                  "fraction": "150",
+                  "decimal": 151
                 },
                 "BetTom": {
-                  "fraction": "100",
-                  "decimal": 101
+                  "fraction": "150",
+                  "decimal": 151
                 },
                 "BresBet": {
                   "fraction": "100",
@@ -7506,6 +7638,8 @@
               },
               "form": "P01213",
               "trainer": "Henry De Bromhead",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "154",
               "age": "7",
               "weight": "11-7",
@@ -7583,7 +7717,7 @@
         "Rivers Corner": 101,
         "Stolen Silver": 101
       },
-      "lastUpdated": "2026-02-19T19:24:17.332Z",
+      "lastUpdated": "2026-02-19T22:56:31.285Z",
       "latestData": [
         {
           "name": "Ultima Handicap Chase Betting Odds- Winner",
@@ -7726,6 +7860,8 @@
               },
               "form": "311-32",
               "trainer": "Oliver Greenall & Josh Guerriero",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "160",
               "age": "7",
               "weight": "0-0",
@@ -7801,8 +7937,8 @@
                   "decimal": 0
                 },
                 "Betway": {
-                  "fraction": "11",
-                  "decimal": 12
+                  "fraction": "10",
+                  "decimal": 11
                 },
                 "Coral": {
                   "fraction": "10",
@@ -7833,8 +7969,8 @@
                   "decimal": 11
                 },
                 "Betfair": {
-                  "fraction": "49/5",
-                  "decimal": 10.8
+                  "fraction": "103/10",
+                  "decimal": 11.3
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -7843,11 +7979,14 @@
               },
               "form": "11-F4P",
               "trainer": "Lucinda Russell & Michael Scudamore",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "152",
               "age": "9",
               "weight": "0-0",
               "officialRating": "142",
-              "marketMove": "stable",
+              "marketMove": "steamer",
+              "movePercent": 6,
               "openingOdds": 12
             },
             {
@@ -7950,8 +8089,8 @@
                   "decimal": 13
                 },
                 "Betfair": {
-                  "fraction": "81/5",
-                  "decimal": 17.2
+                  "fraction": "157/10",
+                  "decimal": 16.7
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -7960,11 +8099,14 @@
               },
               "form": "2-5141",
               "trainer": "Lucinda Russell & Michael Scudamore",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "143",
               "age": "7",
               "weight": "0-0",
               "officialRating": "140",
-              "marketMove": "stable",
+              "marketMove": "steamer",
+              "movePercent": 3,
               "openingOdds": 17.2
             },
             {
@@ -8067,8 +8209,8 @@
                   "decimal": 15
                 },
                 "Betfair": {
-                  "fraction": "22",
-                  "decimal": 23
+                  "fraction": "23",
+                  "decimal": 24
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -8077,11 +8219,14 @@
               },
               "form": "-78201",
               "trainer": "Emmet Mullins",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "132",
               "age": "7",
               "weight": "0-0",
               "officialRating": "-",
-              "marketMove": "stable",
+              "marketMove": "drifter",
+              "movePercent": 4,
               "openingOdds": 23
             },
             {
@@ -8184,8 +8329,8 @@
                   "decimal": 13
                 },
                 "Betfair": {
-                  "fraction": "137/10",
-                  "decimal": 14.7
+                  "fraction": "71/5",
+                  "decimal": 15.2
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -8194,11 +8339,14 @@
               },
               "form": "25-535",
               "trainer": "Jonjo & A J O'Neill",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "152",
               "age": "9",
               "weight": "0-0",
               "officialRating": "146",
-              "marketMove": "stable",
+              "marketMove": "drifter",
+              "movePercent": 1,
               "openingOdds": 15
             },
             {
@@ -8301,8 +8449,8 @@
                   "decimal": 15
                 },
                 "Betfair": {
-                  "fraction": "123/10",
-                  "decimal": 13.3
+                  "fraction": "59/5",
+                  "decimal": 12.8
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -8311,6 +8459,8 @@
               },
               "form": "1-2422",
               "trainer": "Paul Nicholls",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "142",
               "age": "7",
               "weight": "0-0",
@@ -8428,6 +8578,8 @@
               },
               "form": "5-2131",
               "trainer": "Jamie Snowden",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "154",
               "age": "7",
               "weight": "0-0",
@@ -8535,8 +8687,8 @@
                   "decimal": 13
                 },
                 "Betfair": {
-                  "fraction": "93/5",
-                  "decimal": 19.6
+                  "fraction": "20",
+                  "decimal": 21
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -8545,11 +8697,14 @@
               },
               "form": "424-21",
               "trainer": "Oliver Greenall & Josh Guerriero",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "161",
               "age": "8",
               "weight": "0-0",
               "officialRating": "157",
-              "marketMove": "stable",
+              "marketMove": "drifter",
+              "movePercent": 7,
               "openingOdds": 19.6
             },
             {
@@ -8662,12 +8817,134 @@
               },
               "form": "1P-243",
               "trainer": "Ben Pauling",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "161",
               "age": "7",
               "weight": "0-0",
               "officialRating": "155",
               "marketMove": "stable",
               "openingOdds": 22
+            },
+            {
+              "name": "Konfusion",
+              "odds": {
+                "bet365": {
+                  "fraction": "16",
+                  "decimal": 17
+                },
+                "William Hill": {
+                  "fraction": "16",
+                  "decimal": 17
+                },
+                "Unibet": {
+                  "fraction": "16",
+                  "decimal": 17
+                },
+                "Betfred": {
+                  "fraction": "16",
+                  "decimal": 17
+                },
+                "888sport": {
+                  "fraction": "16",
+                  "decimal": 17
+                },
+                "Spreadex": {
+                  "fraction": "16",
+                  "decimal": 17
+                },
+                "Ladbrokes": {
+                  "fraction": "16",
+                  "decimal": 17
+                },
+                "BetVictor": {
+                  "fraction": "16",
+                  "decimal": 17
+                },
+                "BetMGM UK": {
+                  "fraction": "16",
+                  "decimal": 17
+                },
+                "BOYLE Sports": {
+                  "fraction": "16",
+                  "decimal": 17
+                },
+                "10bet": {
+                  "fraction": "",
+                  "decimal": 0
+                },
+                "Star Sports": {
+                  "fraction": "16",
+                  "decimal": 17
+                },
+                "PricedUp": {
+                  "fraction": "16",
+                  "decimal": 17
+                },
+                "Sporting Index": {
+                  "fraction": "16",
+                  "decimal": 17
+                },
+                "Virgin Bet": {
+                  "fraction": "16",
+                  "decimal": 17
+                },
+                "QuinnBet": {
+                  "fraction": "",
+                  "decimal": 0
+                },
+                "Betway": {
+                  "fraction": "16",
+                  "decimal": 17
+                },
+                "Coral": {
+                  "fraction": "16",
+                  "decimal": 17
+                },
+                "BetGoodwin": {
+                  "fraction": "",
+                  "decimal": 0
+                },
+                "BetTom": {
+                  "fraction": "",
+                  "decimal": 0
+                },
+                "BresBet": {
+                  "fraction": "16",
+                  "decimal": 17
+                },
+                "Skybet": {
+                  "fraction": "16",
+                  "decimal": 17
+                },
+                "Paddy Power": {
+                  "fraction": "16",
+                  "decimal": 17
+                },
+                "AK Bets": {
+                  "fraction": "16",
+                  "decimal": 17
+                },
+                "Betfair": {
+                  "fraction": "93/5",
+                  "decimal": 19.6
+                },
+                "Matchbook": {
+                  "fraction": "",
+                  "decimal": 0
+                }
+              },
+              "form": "-1U113",
+              "trainer": "Joel Parkinson & Sue Smith",
+              "jockey": null,
+              "courseDistanceWin": null,
+              "rpr": "154",
+              "age": "8",
+              "weight": "0-0",
+              "officialRating": "145",
+              "marketMove": "steamer",
+              "movePercent": 15,
+              "openingOdds": 23
             },
             {
               "name": "Imperial Saint",
@@ -8769,8 +9046,8 @@
                   "decimal": 17
                 },
                 "Betfair": {
-                  "fraction": "23",
-                  "decimal": 24
+                  "fraction": "24",
+                  "decimal": 25
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -8779,11 +9056,14 @@
               },
               "form": "42-561",
               "trainer": "Philip Hobbs & Johnson White",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "151",
               "age": "8",
               "weight": "0-0",
               "officialRating": "144",
-              "marketMove": "stable",
+              "marketMove": "drifter",
+              "movePercent": 4,
               "openingOdds": 24
             },
             {
@@ -8896,6 +9176,8 @@
               },
               "form": "-11P21",
               "trainer": "Tom Lacey",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "142",
               "age": "7",
               "weight": "0-0",
@@ -8904,79 +9186,79 @@
               "openingOdds": 24
             },
             {
-              "name": "Konfusion",
+              "name": "Leave Of Absence",
               "odds": {
                 "bet365": {
-                  "fraction": "16",
-                  "decimal": 17
+                  "fraction": "20",
+                  "decimal": 21
                 },
                 "William Hill": {
-                  "fraction": "16",
-                  "decimal": 17
+                  "fraction": "20",
+                  "decimal": 21
                 },
                 "Unibet": {
                   "fraction": "20",
                   "decimal": 21
                 },
                 "Betfred": {
-                  "fraction": "16",
-                  "decimal": 17
+                  "fraction": "20",
+                  "decimal": 21
                 },
                 "888sport": {
-                  "fraction": "16",
-                  "decimal": 17
+                  "fraction": "20",
+                  "decimal": 21
                 },
                 "Spreadex": {
-                  "fraction": "16",
-                  "decimal": 17
+                  "fraction": "20",
+                  "decimal": 21
                 },
                 "Ladbrokes": {
-                  "fraction": "16",
-                  "decimal": 17
+                  "fraction": "20",
+                  "decimal": 21
                 },
                 "BetVictor": {
-                  "fraction": "16",
-                  "decimal": 17
+                  "fraction": "20",
+                  "decimal": 21
                 },
                 "BetMGM UK": {
-                  "fraction": "16",
-                  "decimal": 17
+                  "fraction": "20",
+                  "decimal": 21
                 },
                 "BOYLE Sports": {
-                  "fraction": "16",
-                  "decimal": 17
+                  "fraction": "20",
+                  "decimal": 21
                 },
                 "10bet": {
                   "fraction": "",
                   "decimal": 0
                 },
                 "Star Sports": {
-                  "fraction": "16",
-                  "decimal": 17
+                  "fraction": "20",
+                  "decimal": 21
                 },
                 "PricedUp": {
-                  "fraction": "16",
-                  "decimal": 17
+                  "fraction": "20",
+                  "decimal": 21
                 },
                 "Sporting Index": {
-                  "fraction": "16",
-                  "decimal": 17
+                  "fraction": "20",
+                  "decimal": 21
                 },
                 "Virgin Bet": {
-                  "fraction": "16",
-                  "decimal": 17
+                  "fraction": "20",
+                  "decimal": 21
                 },
                 "QuinnBet": {
                   "fraction": "",
                   "decimal": 0
                 },
                 "Betway": {
-                  "fraction": "16",
-                  "decimal": 17
+                  "fraction": "20",
+                  "decimal": 21
                 },
                 "Coral": {
-                  "fraction": "16",
-                  "decimal": 17
+                  "fraction": "20",
+                  "decimal": 21
                 },
                 "BetGoodwin": {
                   "fraction": "",
@@ -8987,38 +9269,40 @@
                   "decimal": 0
                 },
                 "BresBet": {
-                  "fraction": "16",
-                  "decimal": 17
+                  "fraction": "20",
+                  "decimal": 21
                 },
                 "Skybet": {
-                  "fraction": "16",
-                  "decimal": 17
+                  "fraction": "20",
+                  "decimal": 21
                 },
                 "Paddy Power": {
-                  "fraction": "16",
-                  "decimal": 17
+                  "fraction": "20",
+                  "decimal": 21
                 },
                 "AK Bets": {
-                  "fraction": "16",
-                  "decimal": 17
+                  "fraction": "20",
+                  "decimal": 21
                 },
                 "Betfair": {
-                  "fraction": "22",
-                  "decimal": 23
+                  "fraction": "25",
+                  "decimal": 26
                 },
                 "Matchbook": {
                   "fraction": "",
                   "decimal": 0
                 }
               },
-              "form": "-1U113",
-              "trainer": "Joel Parkinson & Sue Smith",
-              "rpr": "154",
-              "age": "8",
+              "form": "1-1P23",
+              "trainer": "Anthony Honeyball",
+              "jockey": null,
+              "courseDistanceWin": null,
+              "rpr": "151",
+              "age": "9",
               "weight": "0-0",
-              "officialRating": "145",
+              "officialRating": "146",
               "marketMove": "stable",
-              "openingOdds": 23
+              "openingOdds": 26
             },
             {
               "name": "Pic Roc",
@@ -9130,6 +9414,8 @@
               },
               "form": "-U1591",
               "trainer": "Ben Pauling",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "148",
               "age": "8",
               "weight": "0-0",
@@ -9247,6 +9533,8 @@
               },
               "form": "7-5241",
               "trainer": "Warren Greatrex",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "142",
               "age": "9",
               "weight": "0-0",
@@ -9354,8 +9642,8 @@
                   "decimal": 21
                 },
                 "Betfair": {
-                  "fraction": "27",
-                  "decimal": 28
+                  "fraction": "28",
+                  "decimal": 29
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -9364,11 +9652,14 @@
               },
               "form": "1P-335",
               "trainer": "Dan Skelton",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "135",
               "age": "8",
               "weight": "0-0",
               "officialRating": "131",
-              "marketMove": "stable",
+              "marketMove": "drifter",
+              "movePercent": 4,
               "openingOdds": 28
             },
             {
@@ -9471,8 +9762,8 @@
                   "decimal": 21
                 },
                 "Betfair": {
-                  "fraction": "27",
-                  "decimal": 28
+                  "fraction": "28",
+                  "decimal": 29
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -9481,11 +9772,14 @@
               },
               "form": "562415",
               "trainer": "Ms Margaret Mullins",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "147",
               "age": "8",
               "weight": "0-0",
               "officialRating": "-",
-              "marketMove": "stable",
+              "marketMove": "drifter",
+              "movePercent": 4,
               "openingOdds": 28
             },
             {
@@ -9500,8 +9794,8 @@
                   "decimal": 15
                 },
                 "Unibet": {
-                  "fraction": "25",
-                  "decimal": 26
+                  "fraction": "20",
+                  "decimal": 21
                 },
                 "Betfred": {
                   "fraction": "16",
@@ -9588,8 +9882,8 @@
                   "decimal": 17
                 },
                 "Betfair": {
-                  "fraction": "21",
-                  "decimal": 22
+                  "fraction": "25",
+                  "decimal": 26
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -9598,6 +9892,8 @@
               },
               "form": "41-102",
               "trainer": "Olly Murphy",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "156",
               "age": "8",
               "weight": "0-0",
@@ -9705,8 +10001,8 @@
                   "decimal": 21
                 },
                 "Betfair": {
-                  "fraction": "157/10",
-                  "decimal": 16.7
+                  "fraction": "21",
+                  "decimal": 22
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -9715,6 +10011,8 @@
               },
               "form": "136-33",
               "trainer": "Fergal O'Brien",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "144",
               "age": "8",
               "weight": "0-0",
@@ -9822,8 +10120,8 @@
                   "decimal": 21
                 },
                 "Betfair": {
-                  "fraction": "30",
-                  "decimal": 31
+                  "fraction": "36",
+                  "decimal": 37
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -9832,11 +10130,14 @@
               },
               "form": "51-212",
               "trainer": "Gordon Elliott",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "137",
               "age": "5",
               "weight": "0-0",
               "officialRating": "-",
-              "marketMove": "stable",
+              "marketMove": "drifter",
+              "movePercent": 19,
               "openingOdds": 31
             },
             {
@@ -9949,6 +10250,8 @@
               },
               "form": "13-331",
               "trainer": "Neil King",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "145",
               "age": "9",
               "weight": "0-0",
@@ -10066,6 +10369,8 @@
               },
               "form": "5-3142",
               "trainer": "Joseph Patrick O'Brien",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "135",
               "age": "7",
               "weight": "0-0",
@@ -10183,129 +10488,14 @@
               },
               "form": "7-3330",
               "trainer": "Gordon Elliott",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "152",
               "age": "8",
               "weight": "0-0",
               "officialRating": "-",
               "marketMove": "stable",
               "openingOdds": 33
-            },
-            {
-              "name": "Leave Of Absence",
-              "odds": {
-                "bet365": {
-                  "fraction": "20",
-                  "decimal": 21
-                },
-                "William Hill": {
-                  "fraction": "20",
-                  "decimal": 21
-                },
-                "Unibet": {
-                  "fraction": "25",
-                  "decimal": 26
-                },
-                "Betfred": {
-                  "fraction": "20",
-                  "decimal": 21
-                },
-                "888sport": {
-                  "fraction": "20",
-                  "decimal": 21
-                },
-                "Spreadex": {
-                  "fraction": "20",
-                  "decimal": 21
-                },
-                "Ladbrokes": {
-                  "fraction": "20",
-                  "decimal": 21
-                },
-                "BetVictor": {
-                  "fraction": "20",
-                  "decimal": 21
-                },
-                "BetMGM UK": {
-                  "fraction": "20",
-                  "decimal": 21
-                },
-                "BOYLE Sports": {
-                  "fraction": "20",
-                  "decimal": 21
-                },
-                "10bet": {
-                  "fraction": "",
-                  "decimal": 0
-                },
-                "Star Sports": {
-                  "fraction": "20",
-                  "decimal": 21
-                },
-                "PricedUp": {
-                  "fraction": "20",
-                  "decimal": 21
-                },
-                "Sporting Index": {
-                  "fraction": "20",
-                  "decimal": 21
-                },
-                "Virgin Bet": {
-                  "fraction": "20",
-                  "decimal": 21
-                },
-                "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
-                },
-                "Betway": {
-                  "fraction": "20",
-                  "decimal": 21
-                },
-                "Coral": {
-                  "fraction": "20",
-                  "decimal": 21
-                },
-                "BetGoodwin": {
-                  "fraction": "",
-                  "decimal": 0
-                },
-                "BetTom": {
-                  "fraction": "",
-                  "decimal": 0
-                },
-                "BresBet": {
-                  "fraction": "20",
-                  "decimal": 21
-                },
-                "Skybet": {
-                  "fraction": "20",
-                  "decimal": 21
-                },
-                "Paddy Power": {
-                  "fraction": "20",
-                  "decimal": 21
-                },
-                "AK Bets": {
-                  "fraction": "20",
-                  "decimal": 21
-                },
-                "Betfair": {
-                  "fraction": "167/10",
-                  "decimal": 17.7
-                },
-                "Matchbook": {
-                  "fraction": "",
-                  "decimal": 0
-                }
-              },
-              "form": "1-1P23",
-              "trainer": "Anthony Honeyball",
-              "rpr": "151",
-              "age": "9",
-              "weight": "0-0",
-              "officialRating": "146",
-              "marketMove": "stable",
-              "openingOdds": 26
             },
             {
               "name": "The Short Go",
@@ -10407,8 +10597,8 @@
                   "decimal": 21
                 },
                 "Betfair": {
-                  "fraction": "20",
-                  "decimal": 21
+                  "fraction": "25",
+                  "decimal": 26
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -10417,6 +10607,8 @@
               },
               "form": "F5-P43",
               "trainer": "Henry De Bromhead",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "139",
               "age": "9",
               "weight": "0-0",
@@ -10534,6 +10726,8 @@
               },
               "form": "U42245",
               "trainer": "Joseph Patrick O'Brien",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "131",
               "age": "6",
               "weight": "0-0",
@@ -10651,6 +10845,8 @@
               },
               "form": "111224",
               "trainer": "W P Mullins",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "150",
               "age": "7",
               "weight": "0-0",
@@ -10768,6 +10964,8 @@
               },
               "form": "2P-974",
               "trainer": "Nicky Henderson",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "152",
               "age": "9",
               "weight": "0-0",
@@ -10885,6 +11083,8 @@
               },
               "form": "1-3221",
               "trainer": "Nigel Hawke",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "143",
               "age": "8",
               "weight": "0-0",
@@ -11002,6 +11202,8 @@
               },
               "form": "1-2142",
               "trainer": "Jane Williams",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "135",
               "age": "6",
               "weight": "0-0",
@@ -11109,8 +11311,8 @@
                   "decimal": 26
                 },
                 "Betfair": {
-                  "fraction": "40",
-                  "decimal": 41
+                  "fraction": "42",
+                  "decimal": 43
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -11119,11 +11321,14 @@
               },
               "form": "1-2P51",
               "trainer": "Alan King",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "143",
               "age": "9",
               "weight": "0-0",
               "officialRating": "139",
-              "marketMove": "stable",
+              "marketMove": "drifter",
+              "movePercent": 5,
               "openingOdds": 41
             },
             {
@@ -11138,8 +11343,8 @@
                   "decimal": 26
                 },
                 "Unibet": {
-                  "fraction": "25",
-                  "decimal": 26
+                  "fraction": "33",
+                  "decimal": 34
                 },
                 "Betfred": {
                   "fraction": "25",
@@ -11236,6 +11441,8 @@
               },
               "form": "61-115",
               "trainer": "Christian Williams",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "147",
               "age": "8",
               "weight": "0-0",
@@ -11343,8 +11550,8 @@
                   "decimal": 26
                 },
                 "Betfair": {
-                  "fraction": "32",
-                  "decimal": 33
+                  "fraction": "34",
+                  "decimal": 35
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -11353,11 +11560,14 @@
               },
               "form": "8-4112",
               "trainer": "Joe Tizzard",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "140",
               "age": "7",
               "weight": "0-0",
               "officialRating": "136",
-              "marketMove": "stable",
+              "marketMove": "drifter",
+              "movePercent": 3,
               "openingOdds": 34
             },
             {
@@ -11460,8 +11670,8 @@
                   "decimal": 26
                 },
                 "Betfair": {
-                  "fraction": "32",
-                  "decimal": 33
+                  "fraction": "34",
+                  "decimal": 35
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -11470,11 +11680,14 @@
               },
               "form": "55-373",
               "trainer": "Gary & Josh Moore",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "151",
               "age": "8",
               "weight": "0-0",
               "officialRating": "144",
-              "marketMove": "stable",
+              "marketMove": "drifter",
+              "movePercent": 3,
               "openingOdds": 34
             },
             {
@@ -11577,8 +11790,8 @@
                   "decimal": 26
                 },
                 "Betfair": {
-                  "fraction": "40",
-                  "decimal": 41
+                  "fraction": "42",
+                  "decimal": 43
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -11587,11 +11800,14 @@
               },
               "form": "6-3143",
               "trainer": "Gordon Elliott",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "148",
               "age": "7",
               "weight": "0-0",
               "officialRating": "-",
-              "marketMove": "stable",
+              "marketMove": "drifter",
+              "movePercent": 5,
               "openingOdds": 41
             },
             {
@@ -11704,6 +11920,8 @@
               },
               "form": "0-022P",
               "trainer": "Gordon Elliott",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "146",
               "age": "9",
               "weight": "0-0",
@@ -11811,8 +12029,8 @@
                   "decimal": 34
                 },
                 "Betfair": {
-                  "fraction": "48",
-                  "decimal": 49
+                  "fraction": "53",
+                  "decimal": 54
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -11821,11 +12039,14 @@
               },
               "form": "1-5232",
               "trainer": "Charlie Longsdon",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "131",
               "age": "8",
               "weight": "0-0",
               "officialRating": "125",
-              "marketMove": "stable",
+              "marketMove": "drifter",
+              "movePercent": 10,
               "openingOdds": 49
             },
             {
@@ -11938,6 +12159,8 @@
               },
               "form": "231-15",
               "trainer": "Olly Murphy",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "142",
               "age": "8",
               "weight": "0-0",
@@ -12055,6 +12278,8 @@
               },
               "form": "1-0396",
               "trainer": "Henry De Bromhead",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "136",
               "age": "8",
               "weight": "0-0",
@@ -12162,8 +12387,8 @@
                   "decimal": 41
                 },
                 "Betfair": {
-                  "fraction": "48",
-                  "decimal": 49
+                  "fraction": "53",
+                  "decimal": 54
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -12172,11 +12397,14 @@
               },
               "form": "188-38",
               "trainer": "Paul Nicholls",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "146",
               "age": "9",
               "weight": "0-0",
               "officialRating": "138",
-              "marketMove": "stable",
+              "marketMove": "drifter",
+              "movePercent": 10,
               "openingOdds": 49
             },
             {
@@ -12279,8 +12507,8 @@
                   "decimal": 26
                 },
                 "Betfair": {
-                  "fraction": "44",
-                  "decimal": 45
+                  "fraction": "48",
+                  "decimal": 49
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -12289,11 +12517,14 @@
               },
               "form": "88-186",
               "trainer": "Ben Pauling",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "150",
               "age": "9",
               "weight": "0-0",
               "officialRating": "145",
-              "marketMove": "stable",
+              "marketMove": "drifter",
+              "movePercent": 9,
               "openingOdds": 45
             },
             {
@@ -12406,6 +12637,8 @@
               },
               "form": "5-0182",
               "trainer": "Joe Tizzard",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "150",
               "age": "8",
               "weight": "0-0",
@@ -12513,8 +12746,8 @@
                   "decimal": 34
                 },
                 "Betfair": {
-                  "fraction": "48",
-                  "decimal": 49
+                  "fraction": "53",
+                  "decimal": 54
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -12523,11 +12756,14 @@
               },
               "form": "2P14F4",
               "trainer": "Gordon Elliott",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "137",
               "age": "7",
               "weight": "0-0",
               "officialRating": "-",
-              "marketMove": "stable",
+              "marketMove": "drifter",
+              "movePercent": 10,
               "openingOdds": 49
             },
             {
@@ -12542,8 +12778,8 @@
                   "decimal": 15
                 },
                 "Unibet": {
-                  "fraction": "33",
-                  "decimal": 34
+                  "fraction": "40",
+                  "decimal": 41
                 },
                 "Betfred": {
                   "fraction": "20",
@@ -12630,8 +12866,8 @@
                   "decimal": 21
                 },
                 "Betfair": {
-                  "fraction": "48",
-                  "decimal": 49
+                  "fraction": "53",
+                  "decimal": 54
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -12640,11 +12876,14 @@
               },
               "form": "06-232",
               "trainer": "Gordon Elliott",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "140",
               "age": "8",
               "weight": "0-0",
               "officialRating": "-",
-              "marketMove": "stable",
+              "marketMove": "drifter",
+              "movePercent": 10,
               "openingOdds": 49
             },
             {
@@ -12757,6 +12996,8 @@
               },
               "form": "-7020P",
               "trainer": "Gordon Elliott",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "138",
               "age": "9",
               "weight": "0-0",
@@ -12874,6 +13115,8 @@
               },
               "form": "349-73",
               "trainer": "Olly Murphy",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "146",
               "age": "9",
               "weight": "0-0",
@@ -12893,8 +13136,8 @@
                   "decimal": 26
                 },
                 "Unibet": {
-                  "fraction": "40",
-                  "decimal": 41
+                  "fraction": "50",
+                  "decimal": 51
                 },
                 "Betfred": {
                   "fraction": "33",
@@ -12981,8 +13224,8 @@
                   "decimal": 41
                 },
                 "Betfair": {
-                  "fraction": "58",
-                  "decimal": 59
+                  "fraction": "63",
+                  "decimal": 64
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -12991,11 +13234,14 @@
               },
               "form": "74F-21",
               "trainer": "Nigel & Willy Twiston-Davies",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "144",
               "age": "10",
               "weight": "0-0",
               "officialRating": "141",
-              "marketMove": "stable",
+              "marketMove": "drifter",
+              "movePercent": 8,
               "openingOdds": 59
             },
             {
@@ -13098,8 +13344,8 @@
                   "decimal": 51
                 },
                 "Betfair": {
-                  "fraction": "1/100",
-                  "decimal": 1.01
+                  "fraction": "14/5",
+                  "decimal": 3.94
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -13108,6 +13354,8 @@
               },
               "form": "11-246",
               "trainer": "Warren Greatrex",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "135",
               "age": "9",
               "weight": "0-0",
@@ -13225,6 +13473,8 @@
               },
               "form": "P6-P57",
               "trainer": "Jonjo & A J O'Neill",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "150",
               "age": "10",
               "weight": "0-0",
@@ -13342,6 +13592,8 @@
               },
               "form": "-32530",
               "trainer": "Gordon Elliott",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "137",
               "age": "7",
               "weight": "0-0",
@@ -13459,6 +13711,8 @@
               },
               "form": "511-15",
               "trainer": "Evan Williams",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "126",
               "age": "7",
               "weight": "0-0",
@@ -13576,6 +13830,8 @@
               },
               "form": "13-912",
               "trainer": "Venetia Williams",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "133",
               "age": "8",
               "weight": "0-0",
@@ -13595,8 +13851,8 @@
                   "decimal": 26
                 },
                 "Unibet": {
-                  "fraction": "50",
-                  "decimal": 51
+                  "fraction": "40",
+                  "decimal": 41
                 },
                 "Betfred": {
                   "fraction": "40",
@@ -13693,6 +13949,8 @@
               },
               "form": "133-",
               "trainer": "Jonjo & A J O'Neill",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "63",
               "age": "8",
               "weight": "0-0",
@@ -13810,6 +14068,8 @@
               },
               "form": "59-1F7",
               "trainer": "Nigel & Willy Twiston-Davies",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "144",
               "age": "9",
               "weight": "0-0",
@@ -13917,8 +14177,8 @@
                   "decimal": 51
                 },
                 "Betfair": {
-                  "fraction": "58",
-                  "decimal": 59
+                  "fraction": "63",
+                  "decimal": 64
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -13927,11 +14187,14 @@
               },
               "form": "32569F",
               "trainer": "Gordon Elliott",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "147",
               "age": "8",
               "weight": "0-0",
               "officialRating": "-",
-              "marketMove": "stable",
+              "marketMove": "drifter",
+              "movePercent": 8,
               "openingOdds": 59
             },
             {
@@ -14044,6 +14307,8 @@
               },
               "form": "1-20",
               "trainer": "S R B Crawford",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "130",
               "age": "10",
               "weight": "0-0",
@@ -14151,8 +14416,8 @@
                   "decimal": 41
                 },
                 "Betfair": {
-                  "fraction": "48",
-                  "decimal": 49
+                  "fraction": "14/5",
+                  "decimal": 3.94
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -14161,6 +14426,8 @@
               },
               "form": "1P-041",
               "trainer": "Emma Lavelle",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "143",
               "age": "9",
               "weight": "0-0",
@@ -14278,6 +14545,8 @@
               },
               "form": "24-275",
               "trainer": "Hughie Morrison",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "128",
               "age": "9",
               "weight": "0-0",
@@ -14395,6 +14664,8 @@
               },
               "form": "11-151",
               "trainer": "Hughie Morrison",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "136",
               "age": "10",
               "weight": "0-0",
@@ -14512,6 +14783,8 @@
               },
               "form": "2-0P0P",
               "trainer": "John C McConnell",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "139",
               "age": "9",
               "weight": "0-0",
@@ -14629,6 +14902,8 @@
               },
               "form": "28-P7P",
               "trainer": "John C McConnell",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "148",
               "age": "10",
               "weight": "0-0",
@@ -14746,6 +15021,8 @@
               },
               "form": "-3331P",
               "trainer": "Joe Tizzard",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "130",
               "age": "8",
               "weight": "0-0",
@@ -14863,6 +15140,8 @@
               },
               "form": "P64-0P",
               "trainer": "Georgina Nicholls",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "",
               "age": "11",
               "weight": "0-0",
@@ -14891,7 +15170,7 @@
         "Workahead": 176,
         "Lucky Place": 225
       },
-      "lastUpdated": "2026-02-19T20:26:26.374Z",
+      "lastUpdated": "2026-02-19T22:58:06.321Z",
       "latestData": [
         {
           "name": "Champion Hurdle Betting Odds- Winner",
@@ -15034,6 +15313,8 @@
               },
               "form": "111-F1",
               "trainer": "Dan Skelton",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "163",
               "age": "7",
               "weight": "11-10",
@@ -15141,8 +15422,8 @@
                   "decimal": 3.75
                 },
                 "Betfair": {
-                  "fraction": "401/100",
-                  "decimal": 5.02
+                  "fraction": "103/25",
+                  "decimal": 5.12
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -15151,11 +15432,14 @@
               },
               "form": "14-321",
               "trainer": "Gordon Elliott",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "173",
               "age": "7",
               "weight": "11-3",
               "officialRating": "-",
-              "marketMove": "stable",
+              "marketMove": "drifter",
+              "movePercent": 2,
               "openingOdds": 5.02
             },
             {
@@ -15258,8 +15542,8 @@
                   "decimal": 5.5
                 },
                 "Betfair": {
-                  "fraction": "529/100",
-                  "decimal": 6.29
+                  "fraction": "49/10",
+                  "decimal": 5.9
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -15268,11 +15552,13 @@
               },
               "form": "1FF-5F",
               "trainer": "Nicky Henderson",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "166",
               "age": "9",
               "weight": "11-10",
               "officialRating": "170",
-              "marketMove": "drifter",
+              "marketMove": "steamer",
               "movePercent": 3,
               "openingOdds": 6.1
             },
@@ -15386,6 +15672,8 @@
               },
               "form": "11-112",
               "trainer": "W P Mullins",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "171",
               "age": "7",
               "weight": "11-3",
@@ -15504,6 +15792,8 @@
               },
               "form": "1-2212",
               "trainer": "Jeremy Scott",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "165",
               "age": "8",
               "weight": "11-3",
@@ -15611,8 +15901,8 @@
                   "decimal": 17
                 },
                 "Betfair": {
-                  "fraction": "22",
-                  "decimal": 23
+                  "fraction": "21",
+                  "decimal": 22
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -15621,11 +15911,14 @@
               },
               "form": "1-23",
               "trainer": "W P Mullins",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "160",
               "age": "5",
               "weight": "11-10",
               "officialRating": "-",
-              "marketMove": "stable",
+              "marketMove": "steamer",
+              "movePercent": 4,
               "openingOdds": 23
             },
             {
@@ -15728,8 +16021,8 @@
                   "decimal": 21
                 },
                 "Betfair": {
-                  "fraction": "23",
-                  "decimal": 24
+                  "fraction": "24",
+                  "decimal": 25
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -15738,11 +16031,14 @@
               },
               "form": "-21131",
               "trainer": "Joe Tizzard",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "157",
               "age": "6",
               "weight": "11-10",
               "officialRating": "148",
-              "marketMove": "stable",
+              "marketMove": "drifter",
+              "movePercent": 4,
               "openingOdds": 24
             },
             {
@@ -15845,8 +16141,8 @@
                   "decimal": 19
                 },
                 "Betfair": {
-                  "fraction": "28",
-                  "decimal": 29
+                  "fraction": "25",
+                  "decimal": 26
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -15855,11 +16151,14 @@
               },
               "form": "11-244",
               "trainer": "W P Mullins",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "163",
               "age": "6",
               "weight": "11-10",
               "officialRating": "-",
-              "marketMove": "stable",
+              "marketMove": "steamer",
+              "movePercent": 10,
               "openingOdds": 29
             },
             {
@@ -15962,15 +16261,16 @@
                   "decimal": 26
                 },
                 "Betfair": {
-                  "fraction": "42",
-                  "decimal": 43
+                  "fraction": "38",
+                  "decimal": 39
                 },
                 "Matchbook": {
                   "fraction": "",
                   "decimal": 0
                 }
               },
-              "marketMove": "stable",
+              "marketMove": "steamer",
+              "movePercent": 9,
               "openingOdds": 43
             },
             {
@@ -16083,6 +16383,8 @@
               },
               "form": "15-223",
               "trainer": "W P Mullins",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "168",
               "age": "8",
               "weight": "11-10",
@@ -16200,6 +16502,8 @@
               },
               "form": "1311F3",
               "trainer": "Gordon Elliott",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "163",
               "age": "6",
               "weight": "11-10",
@@ -16318,6 +16622,8 @@
               },
               "form": "310-42",
               "trainer": "Henry De Bromhead",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "153",
               "age": "8",
               "weight": "11-10",
@@ -16435,6 +16741,8 @@
               },
               "form": "1-2312",
               "trainer": "Jonjo & A J O'Neill",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "150",
               "age": "7",
               "weight": "11-10",
@@ -16542,8 +16850,8 @@
                   "decimal": 81
                 },
                 "Betfair": {
-                  "fraction": "224",
-                  "decimal": 225
+                  "fraction": "195",
+                  "decimal": 196
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -16552,11 +16860,14 @@
               },
               "form": "74-323",
               "trainer": "Nicky Henderson",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "153",
               "age": "7",
               "weight": "11-10",
               "officialRating": "151",
-              "marketMove": "stable",
+              "marketMove": "steamer",
+              "movePercent": 13,
               "openingOdds": 225
             }
           ]
@@ -20046,7 +20357,7 @@
         "Thatll Do Moss": 101,
         "Sotchi": 251
       },
-      "lastUpdated": "2026-02-19T20:27:37.797Z",
+      "lastUpdated": "2026-02-19T22:59:32.537Z",
       "latestData": [
         {
           "name": "Mares Hurdle Betting Odds- Winner",
@@ -20180,7 +20491,7 @@
                 },
                 "Betfair": {
                   "fraction": "9/5",
-                  "decimal": 2.82
+                  "decimal": 2.84
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -20189,11 +20500,14 @@
               },
               "form": "11-112",
               "trainer": "W P Mullins",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "169",
               "age": "7",
               "weight": "11-5",
               "officialRating": "-",
-              "marketMove": "stable",
+              "marketMove": "drifter",
+              "movePercent": 1,
               "openingOdds": 2.82
             },
             {
@@ -20306,6 +20620,8 @@
               },
               "form": "112-11",
               "trainer": "Gordon Elliott",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "160",
               "age": "6",
               "weight": "11-5",
@@ -20423,6 +20739,8 @@
               },
               "form": "2-1321",
               "trainer": "W P Mullins",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "162",
               "age": "7",
               "weight": "11-5",
@@ -20540,6 +20858,8 @@
               },
               "form": "5-6233",
               "trainer": "Dan Skelton",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "153",
               "age": "8",
               "weight": "11-5",
@@ -20657,6 +20977,8 @@
               },
               "form": "14-321",
               "trainer": "Gordon Elliott",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "171",
               "age": "7",
               "weight": "11-5",
@@ -20774,6 +21096,8 @@
               },
               "form": "43-121",
               "trainer": "Paul Nolan",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "152",
               "age": "7",
               "weight": "11-5",
@@ -20891,6 +21215,8 @@
               },
               "form": "1-2212",
               "trainer": "Jeremy Scott",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "163",
               "age": "8",
               "weight": "11-5",
@@ -21008,6 +21334,8 @@
               },
               "form": "1-3212",
               "trainer": "W P Mullins",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "161",
               "age": "6",
               "weight": "11-5",
@@ -21125,6 +21453,8 @@
               },
               "form": "09-911",
               "trainer": "Dan Skelton",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "146",
               "age": "9",
               "weight": "11-5",
@@ -21242,6 +21572,8 @@
               },
               "form": "81-434",
               "trainer": "W P Mullins",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "148",
               "age": "5",
               "weight": "11-5",
@@ -21359,6 +21691,8 @@
               },
               "form": "P22132",
               "trainer": "Emmet Mullins",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "148",
               "age": "6",
               "weight": "11-5",
@@ -21476,6 +21810,8 @@
               },
               "form": "0-4317",
               "trainer": "Dan Skelton",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "137",
               "age": "7",
               "weight": "11-5",
@@ -21593,6 +21929,8 @@
               },
               "form": "21-325",
               "trainer": "Fergal O'Brien",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "135",
               "age": "7",
               "weight": "11-5",
@@ -21700,8 +22038,8 @@
                   "decimal": 41
                 },
                 "Betfair": {
-                  "fraction": "92",
-                  "decimal": 93
+                  "fraction": "68",
+                  "decimal": 69
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -21710,12 +22048,13 @@
               },
               "form": "-14389",
               "trainer": "Dan Skelton",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "154",
               "age": "9",
               "weight": "11-5",
               "officialRating": "145",
-              "marketMove": "drifter",
-              "movePercent": 35,
+              "marketMove": "stable",
               "openingOdds": 69
             },
             {
@@ -21828,6 +22167,8 @@
               },
               "form": "16-525",
               "trainer": "W P Mullins",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "127",
               "age": "7",
               "weight": "11-5",
@@ -21945,6 +22286,8 @@
               },
               "form": "-34143",
               "trainer": "Ruth Jefferson",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "143",
               "age": "7",
               "weight": "11-5",
@@ -22062,6 +22405,8 @@
               },
               "form": "3-3373",
               "trainer": "Mrs John Harrington",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "156",
               "age": "8",
               "weight": "11-5",
@@ -22179,6 +22524,8 @@
               },
               "form": "1222-3",
               "trainer": "Nicky Henderson",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "139",
               "age": "6",
               "weight": "11-5",
@@ -22296,6 +22643,8 @@
               },
               "form": "F-3143",
               "trainer": "Joe Tizzard",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "142",
               "age": "7",
               "weight": "11-5",
@@ -22413,6 +22762,8 @@
               },
               "form": "1217",
               "trainer": "Anthony Honeyball",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "130",
               "age": "6",
               "weight": "11-5",
@@ -22530,6 +22881,8 @@
               },
               "form": "22-437",
               "trainer": "Fergal O'Brien",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "143",
               "age": "7",
               "weight": "11-5",
@@ -22647,6 +23000,8 @@
               },
               "form": "5P",
               "trainer": "James Grassick",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "",
               "age": "8",
               "weight": "11-5",
@@ -42420,7 +42775,7 @@
         "Berto Ramirez": 98,
         "Wonderfulwonderful": 98
       },
-      "lastUpdated": "2026-02-19T20:28:49.857Z",
+      "lastUpdated": "2026-02-19T23:01:14.984Z",
       "latestData": [
         {
           "name": "Hallgarten and Novum Wines Juvenile Handicap Hurdle Betting Odds- Winner",
@@ -42563,6 +42918,8 @@
               },
               "form": "221",
               "trainer": "Faye Bramley",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "123",
               "age": "4",
               "weight": "0-0",
@@ -42680,6 +43037,8 @@
               },
               "form": "332",
               "trainer": "Padraig Roche",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "119",
               "age": "4",
               "weight": "0-0",
@@ -42797,6 +43156,8 @@
               },
               "form": "1-21",
               "trainer": "Nicky Henderson",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "122",
               "age": "4",
               "weight": "0-0",
@@ -42914,6 +43275,8 @@
               },
               "form": "2-512",
               "trainer": "W P Mullins",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "129",
               "age": "4",
               "weight": "0-0",
@@ -43031,6 +43394,8 @@
               },
               "form": "112",
               "trainer": "James Owen",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "120",
               "age": "4",
               "weight": "0-0",
@@ -43148,6 +43513,8 @@
               },
               "form": "353",
               "trainer": "C Byrnes",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "109",
               "age": "4",
               "weight": "0-0",
@@ -43265,6 +43632,8 @@
               },
               "form": "321",
               "trainer": "W P Mullins",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "125",
               "age": "4",
               "weight": "0-0",
@@ -43382,6 +43751,8 @@
               },
               "form": "11",
               "trainer": "Nicky Henderson",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "118",
               "age": "4",
               "weight": "0-0",
@@ -43499,6 +43870,8 @@
               },
               "form": "571",
               "trainer": "Joseph Patrick O'Brien",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "105",
               "age": "4",
               "weight": "0-0",
@@ -43616,6 +43989,8 @@
               },
               "form": "1113",
               "trainer": "Gordon Elliott",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "126",
               "age": "4",
               "weight": "0-0",
@@ -43733,6 +44108,8 @@
               },
               "form": "3322",
               "trainer": "C Byrnes",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "101",
               "age": "4",
               "weight": "0-0",
@@ -43850,6 +44227,8 @@
               },
               "form": "311",
               "trainer": "Dan Skelton",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "107",
               "age": "4",
               "weight": "0-0",
@@ -43967,6 +44346,8 @@
               },
               "form": "113",
               "trainer": "Paul Nicholls",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "115",
               "age": "4",
               "weight": "0-0",
@@ -44074,8 +44455,8 @@
                   "decimal": 15
                 },
                 "Betfair": {
-                  "fraction": "20",
-                  "decimal": 21
+                  "fraction": "24",
+                  "decimal": 25
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -44084,11 +44465,14 @@
               },
               "form": "111",
               "trainer": "Gordon Elliott",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "126",
               "age": "4",
               "weight": "0-0",
               "officialRating": "-",
-              "marketMove": "stable",
+              "marketMove": "drifter",
+              "movePercent": 19,
               "openingOdds": 21
             },
             {
@@ -44201,6 +44585,8 @@
               },
               "form": "593",
               "trainer": "Joseph Patrick O'Brien",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "114",
               "age": "4",
               "weight": "0-0",
@@ -44318,6 +44704,8 @@
               },
               "form": "221",
               "trainer": "Paul Nolan",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "120",
               "age": "4",
               "weight": "0-0",
@@ -44435,6 +44823,8 @@
               },
               "form": "32-1P",
               "trainer": "W P Mullins",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "118",
               "age": "4",
               "weight": "0-0",
@@ -44542,8 +44932,8 @@
                   "decimal": 15
                 },
                 "Betfair": {
-                  "fraction": "22",
-                  "decimal": 23
+                  "fraction": "81/5",
+                  "decimal": 17.2
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -44552,11 +44942,14 @@
               },
               "form": "1115",
               "trainer": "Joseph Patrick O'Brien",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "112",
               "age": "4",
               "weight": "0-0",
               "officialRating": "-",
-              "marketMove": "stable",
+              "marketMove": "steamer",
+              "movePercent": 9,
               "openingOdds": 23
             },
             {
@@ -44669,6 +45062,8 @@
               },
               "form": "1111",
               "trainer": "Max Comley",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "113",
               "age": "4",
               "weight": "0-0",
@@ -44776,8 +45171,8 @@
                   "decimal": 21
                 },
                 "Betfair": {
-                  "fraction": "25",
-                  "decimal": 26
+                  "fraction": "24",
+                  "decimal": 25
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -44786,6 +45181,8 @@
               },
               "form": "115",
               "trainer": "Jane Williams",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "107",
               "age": "4",
               "weight": "0-0",
@@ -44903,6 +45300,8 @@
               },
               "form": "4121",
               "trainer": "Richard J Bandey",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "121",
               "age": "4",
               "weight": "0-0",
@@ -45020,6 +45419,8 @@
               },
               "form": "3222",
               "trainer": "Gavin Cromwell",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "110",
               "age": "4",
               "weight": "0-0",
@@ -45137,6 +45538,8 @@
               },
               "form": "1322",
               "trainer": "Paul Nicholls",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "115",
               "age": "4",
               "weight": "0-0",
@@ -45254,6 +45657,8 @@
               },
               "form": "146",
               "trainer": "Gordon Elliott",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "124",
               "age": "4",
               "weight": "0-0",
@@ -45371,6 +45776,8 @@
               },
               "form": "825",
               "trainer": "Denis Gerard Hogan",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "109",
               "age": "4",
               "weight": "0-0",
@@ -45488,6 +45895,8 @@
               },
               "form": "24",
               "trainer": "Faye Bramley",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "115",
               "age": "4",
               "weight": "0-0",
@@ -45605,6 +46014,8 @@
               },
               "form": "144",
               "trainer": "Gavin Cromwell",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "114",
               "age": "4",
               "weight": "0-0",
@@ -45722,6 +46133,8 @@
               },
               "form": "22212",
               "trainer": "Paul Nicholls",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "121",
               "age": "4",
               "weight": "0-0",
@@ -45839,6 +46252,8 @@
               },
               "form": "U1452",
               "trainer": "W P Mullins",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "107",
               "age": "4",
               "weight": "0-0",
@@ -45956,6 +46371,8 @@
               },
               "form": "111",
               "trainer": "Adrian Paul Keatley",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "113",
               "age": "4",
               "weight": "0-0",
@@ -46073,6 +46490,8 @@
               },
               "form": "P417",
               "trainer": "Gordon Elliott",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "110",
               "age": "4",
               "weight": "0-0",
@@ -46190,6 +46609,8 @@
               },
               "form": "1-343",
               "trainer": "Gordon Elliott",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "107",
               "age": "4",
               "weight": "0-0",
@@ -46307,6 +46728,8 @@
               },
               "form": "324",
               "trainer": "Dan Skelton",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "109",
               "age": "4",
               "weight": "0-0",
@@ -46424,6 +46847,8 @@
               },
               "form": "111612",
               "trainer": "Donald McCain",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "117",
               "age": "4",
               "weight": "0-0",
@@ -46541,6 +46966,8 @@
               },
               "form": "4116",
               "trainer": "Chester Williams",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "115",
               "age": "4",
               "weight": "0-0",
@@ -46658,6 +47085,8 @@
               },
               "form": "1163",
               "trainer": "Mrs John Harrington",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "115",
               "age": "4",
               "weight": "0-0",
@@ -46775,6 +47204,8 @@
               },
               "form": "-32283",
               "trainer": "Dan Skelton",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "118",
               "age": "4",
               "weight": "0-0",
@@ -46892,6 +47323,8 @@
               },
               "form": "1-F02",
               "trainer": "Gordon Elliott",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "120",
               "age": "4",
               "weight": "0-0",
@@ -47009,6 +47442,8 @@
               },
               "form": "312",
               "trainer": "Gordon Elliott",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "116",
               "age": "4",
               "weight": "0-0",
@@ -47126,6 +47561,8 @@
               },
               "form": "B14",
               "trainer": "Donnacha Aidan O'Brien",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "124",
               "age": "4",
               "weight": "0-0",
@@ -47243,6 +47680,8 @@
               },
               "form": "31320",
               "trainer": "T M Walsh",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "110",
               "age": "4",
               "weight": "0-0",
@@ -47360,6 +47799,8 @@
               },
               "form": "141",
               "trainer": "Gary & Josh Moore",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "106",
               "age": "4",
               "weight": "0-0",
@@ -47477,6 +47918,8 @@
               },
               "form": "215",
               "trainer": "Noel Meade",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "114",
               "age": "4",
               "weight": "0-0",
@@ -47594,6 +48037,8 @@
               },
               "form": "515241",
               "trainer": "Dan Skelton",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "101",
               "age": "4",
               "weight": "0-0",
@@ -47711,6 +48156,8 @@
               },
               "form": "23334",
               "trainer": "Gordon Elliott",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "108",
               "age": "4",
               "weight": "0-0",
@@ -47828,6 +48275,8 @@
               },
               "form": "4326",
               "trainer": "Gordon Elliott",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "109",
               "age": "4",
               "weight": "0-0",
@@ -47945,6 +48394,8 @@
               },
               "form": "31423",
               "trainer": "Archie Watson",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "110",
               "age": "4",
               "weight": "0-0",
@@ -48062,6 +48513,8 @@
               },
               "form": "243526",
               "trainer": "Denis Gerard Hogan",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "105",
               "age": "4",
               "weight": "0-0",
@@ -48179,6 +48632,8 @@
               },
               "form": "125",
               "trainer": "William Durkan",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "111",
               "age": "4",
               "weight": "0-0",
@@ -48296,6 +48751,8 @@
               },
               "form": "321",
               "trainer": "Jamie Snowden",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "104",
               "age": "4",
               "weight": "0-0",
@@ -48413,6 +48870,8 @@
               },
               "form": "243",
               "trainer": "Samuel Drinkwater",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "109",
               "age": "4",
               "weight": "0-0",
@@ -48530,6 +48989,8 @@
               },
               "form": "1-777P",
               "trainer": "Ciaran Murphy",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "108",
               "age": "4",
               "weight": "0-0",
@@ -48647,6 +49108,8 @@
               },
               "form": "-152F3",
               "trainer": "David Pipe",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "107",
               "age": "4",
               "weight": "0-0",
@@ -48764,6 +49227,8 @@
               },
               "form": "16",
               "trainer": "Paul Nicholls",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "109",
               "age": "4",
               "weight": "0-0",
@@ -48881,6 +49346,8 @@
               },
               "form": "0",
               "trainer": "Ben Pauling",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "",
               "age": "4",
               "weight": "0-0",
@@ -48998,6 +49465,8 @@
               },
               "form": "1145",
               "trainer": "Gary & Josh Moore",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "117",
               "age": "4",
               "weight": "0-0",
@@ -49115,6 +49584,8 @@
               },
               "form": "43148",
               "trainer": "David Pipe",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "109",
               "age": "4",
               "weight": "0-0",
@@ -49232,6 +49703,8 @@
               },
               "form": "2117",
               "trainer": "Gary & Josh Moore",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "110",
               "age": "4",
               "weight": "0-0",
@@ -49349,6 +49822,8 @@
               },
               "form": "2114",
               "trainer": "Tim Vaughan",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "105",
               "age": "4",
               "weight": "0-0",
@@ -49466,6 +49941,8 @@
               },
               "form": "017515",
               "trainer": "Jack Jones",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "103",
               "age": "4",
               "weight": "0-0",
@@ -49583,6 +50060,8 @@
               },
               "form": "1PP",
               "trainer": "Martin Keighley",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "113",
               "age": "4",
               "weight": "0-0",
@@ -49700,6 +50179,8 @@
               },
               "form": "415817",
               "trainer": "Cian Collins",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "112",
               "age": "4",
               "weight": "0-0",
@@ -49817,6 +50298,8 @@
               },
               "form": "6",
               "trainer": "Georgina Nicholls",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "86",
               "age": "4",
               "weight": "0-0",
@@ -49934,6 +50417,8 @@
               },
               "form": "57",
               "trainer": "Andrew McNamara",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "96",
               "age": "4",
               "weight": "0-0",
@@ -50051,6 +50536,8 @@
               },
               "form": "145",
               "trainer": "John C McConnell",
+              "jockey": null,
+              "courseDistanceWin": null,
               "rpr": "105",
               "age": "4",
               "weight": "0-0",
