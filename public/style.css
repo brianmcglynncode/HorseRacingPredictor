@@ -1182,6 +1182,495 @@ h1.glow-text {
     }
 }
 
+/* ================================= */
+/* --- SUCCESS TIP SECTION ---       */
+/* ================================= */
+
+.success-tip-section {
+    margin-top: 60px;
+    margin-bottom: 40px;
+    padding: 0 10px;
+}
+
+.tip-card {
+    position: relative;
+    background: linear-gradient(145deg, rgba(255, 215, 0, 0.06), rgba(0, 0, 0, 0.4));
+    border: 1px solid rgba(255, 215, 0, 0.15);
+    border-radius: 20px;
+    padding: 50px 40px;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    overflow: hidden;
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.3),
+        0 0 40px rgba(255, 215, 0, 0.04),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.tip-glow {
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 200px;
+    background: radial-gradient(ellipse, rgba(255, 215, 0, 0.12), transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.tip-content {
+    position: relative;
+    z-index: 1;
+}
+
+.tip-icon-wrapper {
+    margin-bottom: 20px;
+}
+
+.tip-trophy {
+    font-size: 3.5rem;
+    display: inline-block;
+    animation: trophyFloat 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.4));
+}
+
+@keyframes trophyFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(-8px) rotate(-2deg);
+    }
+
+    75% {
+        transform: translateY(-4px) rotate(2deg);
+    }
+}
+
+.tip-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    background: linear-gradient(to right, #fff, var(--accent-gold), #fff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 15px;
+    letter-spacing: -0.5px;
+}
+
+.tip-description {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    max-width: 450px;
+    margin: 0 auto 25px;
+}
+
+.tip-description strong {
+    color: var(--accent-gold);
+    -webkit-text-fill-color: var(--accent-gold);
+}
+
+.tip-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, var(--accent-gold), #e6b800);
+    color: #000;
+    border: none;
+    border-radius: 14px;
+    padding: 14px 32px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    letter-spacing: 0.3px;
+    position: relative;
+    overflow: hidden;
+}
+
+.tip-cta-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.tip-cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(255, 215, 0, 0.35);
+}
+
+.tip-cta-btn:hover::before {
+    left: 100%;
+}
+
+.tip-cta-btn:active {
+    transform: translateY(-1px);
+}
+
+.revolut-icon {
+    width: 20px;
+    height: 20px;
+    stroke: #000;
+}
+
+/* Access Code Easter Egg */
+.tip-access-code {
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+    padding: 8px 16px;
+    background: rgba(255, 215, 0, 0.06);
+    border: 1px solid rgba(255, 215, 0, 0.12);
+    border-radius: 8px;
+    display: inline-block;
+    letter-spacing: 0.3px;
+}
+
+.tip-access-code strong {
+    color: var(--accent-gold);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.tip-disclaimer {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 0.78rem;
+    margin-top: 18px;
+    font-style: italic;
+    letter-spacing: 0.3px;
+}
+
+/* Tip Card X Close Button (Top-Right) */
+.tip-card-close-x {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.25);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.2s, transform 0.2s;
+    line-height: 1;
+    z-index: 2;
+}
+
+.tip-card-close-x:hover {
+    color: rgba(255, 255, 255, 0.7);
+    transform: scale(1.15);
+}
+
+/* Tip Card Close Button (Bottom) */
+.tip-card-close-bottom {
+    display: inline-block;
+    margin-top: 14px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 8px 32px;
+    color: rgba(255, 255, 255, 0.3);
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    letter-spacing: 0.5px;
+}
+
+.tip-card-close-bottom:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.6);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Fade out animation when dismissed */
+.success-tip-section.dismissed {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+    pointer-events: none;
+}
+
+/* ================================= */
+/* --- TIP QR CODE MODAL ---         */
+/* ================================= */
+
+.tip-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.tip-modal-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.tip-modal {
+    background: linear-gradient(145deg, rgba(30, 35, 45, 0.97), rgba(12, 15, 20, 0.99));
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    border-radius: 24px;
+    padding: 40px 35px;
+    max-width: 420px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.6),
+        0 0 50px rgba(255, 215, 0, 0.06),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    transform: translateY(25px) scale(0.95);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tip-modal-overlay.visible .tip-modal {
+    transform: translateY(0) scale(1);
+}
+
+.tip-modal-close-btn {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    background: none;
+    border: none;
+    color: var(--text-dim);
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: color 0.2s, transform 0.2s;
+    line-height: 1;
+    z-index: 2;
+}
+
+.tip-modal-close-btn:hover {
+    color: #fff;
+    transform: scale(1.15);
+}
+
+.tip-modal-header {
+    margin-bottom: 25px;
+}
+
+.tip-modal-trophy {
+    font-size: 3rem;
+    display: inline-block;
+    animation: trophyFloat 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.5));
+}
+
+.tip-modal-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.7rem;
+    font-weight: 700;
+    background: linear-gradient(to right, var(--accent-gold), #fff, var(--accent-gold));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 10px 0 8px;
+}
+
+.tip-modal-subtitle {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+/* QR Code Container */
+.tip-qr-container {
+    position: relative;
+    display: inline-block;
+    margin: 5px auto 20px;
+    padding: 16px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.tip-qr-image {
+    display: block;
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.tip-qr-shine {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 215, 0, 0.15),
+            transparent);
+    animation: qrShine 3s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes qrShine {
+    0% {
+        left: -100%;
+    }
+
+    50% {
+        left: 100%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+/* Suggested Amount */
+.tip-modal-amount {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 15px 0;
+    padding: 10px 20px;
+    background: rgba(255, 215, 0, 0.08);
+    border: 1px solid rgba(255, 215, 0, 0.15);
+    border-radius: 12px;
+    display: inline-flex;
+}
+
+.tip-amount-label {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Outfit', sans-serif;
+}
+
+.tip-amount-value {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--accent-gold);
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+.tip-modal-footer {
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    margin-top: 12px;
+    line-height: 1.5;
+}
+
+.tip-modal-free {
+    color: rgba(255, 255, 255, 0.25);
+    font-size: 0.72rem;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+.tip-modal-free strong {
+    color: rgba(255, 215, 0, 0.5);
+}
+
+/* Close Button (Bottom) */
+.tip-modal-close-bottom {
+    display: inline-block;
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    padding: 10px 36px;
+    color: var(--text-dim);
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    letter-spacing: 0.5px;
+}
+
+.tip-modal-close-bottom:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-1px);
+}
+
+/* Mobile Adjustments for Tip Section */
+@media (max-width: 768px) {
+    .success-tip-section {
+        margin-top: 40px;
+        margin-bottom: 30px;
+    }
+
+    .tip-card {
+        padding: 35px 20px;
+        border-radius: 16px;
+    }
+
+    .tip-trophy {
+        font-size: 2.8rem;
+    }
+
+    .tip-title {
+        font-size: 1.4rem;
+    }
+
+    .tip-description {
+        font-size: 0.85rem;
+    }
+
+    .tip-cta-btn {
+        padding: 12px 24px;
+        font-size: 0.95rem;
+    }
+
+    .tip-modal {
+        padding: 30px 20px;
+        max-width: 340px;
+    }
+
+    .tip-modal-title {
+        font-size: 1.3rem;
+    }
+
+    .tip-qr-image {
+        width: 160px;
+        height: 160px;
+    }
+
+    .tip-qr-container {
+        padding: 12px;
+    }
+}
+
 /* ============================= */
 /* --- PAYWALL / LOCK SYSTEM --- */
 /* ============================= */

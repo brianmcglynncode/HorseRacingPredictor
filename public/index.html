@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BrianAI Cheltenham 2026 - Cheltenham Festival</title>
-    <link rel="stylesheet" href="style.css?v=3">
+    <link rel="stylesheet" href="style.css?v=4">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@400;700&display=swap"
         rel="stylesheet">
 </head>
@@ -50,6 +50,62 @@
                 </div>
             </div>
         </main>
+
+        <!-- Success Tip Section -->
+        <section id="success-tip" class="success-tip-section">
+            <div class="tip-card">
+                <button id="tip-card-close-x" class="tip-card-close-x" aria-label="Close">&times;</button>
+                <div class="tip-glow"></div>
+                <div class="tip-content">
+                    <div class="tip-icon-wrapper">
+                        <span class="tip-trophy">🏆</span>
+                    </div>
+                    <h2 class="tip-title">Winner? Celebrate With a Tip!</h2>
+                    <p class="tip-description">
+                        This app is <strong>100% free</strong> and always will be.<br>
+                        If AI helped you pick a winner, you can optionally say thanks with a small tip via Revolut —
+                        completely your call! 🍀
+                    </p>
+                    <button id="open-tip-modal" class="tip-cta-btn">
+                        <svg class="revolut-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="5" width="20" height="14" rx="3" ry="3" />
+                            <path d="M2 10h20" />
+                        </svg>
+                        Send a Success Tip
+                    </button>
+                    <p class="tip-disclaimer">Suggested: €1 per winner · No pressure, ever ✌️</p>
+                    <button id="tip-card-close-btn" class="tip-card-close-bottom">Close</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tip QR Modal -->
+        <div id="tip-modal" class="tip-modal-overlay">
+            <div class="tip-modal">
+                <button id="tip-modal-close" class="tip-modal-close-btn" aria-label="Close">&times;</button>
+                <div class="tip-modal-header">
+                    <span class="tip-modal-trophy">🏆</span>
+                    <h2 class="tip-modal-title">Congratulations!</h2>
+                    <p class="tip-modal-subtitle">Your AI pick came through! Scan the QR below to send a tip via
+                        Revolut.</p>
+                </div>
+                <div class="tip-qr-container">
+                    <!-- Replace this src with your actual Revolut QR code image -->
+                    <img id="revolut-qr" class="tip-qr-image" src="revolut-qr.png" alt="Revolut QR Code for tips" />
+                    <div class="tip-qr-shine"></div>
+                </div>
+                <p class="tip-access-code">Premium Access Code = <strong>Optimus</strong> ;-)</p>
+                <div class="tip-modal-amount">
+                    <span class="tip-amount-label">Suggested Tip</span>
+                    <span class="tip-amount-value">€1</span>
+                </div>
+                <p class="tip-modal-footer">Or any amount you like — every cent is appreciated! 🙏</p>
+                <p class="tip-modal-free">This app will <strong>always</strong> remain free.</p>
+                <button id="tip-modal-close-btn" class="tip-modal-close-bottom">Close</button>
+            </div>
+        </div>
+
     </div>
 
     <!-- Paywall Modal -->
@@ -76,7 +132,7 @@
         </div>
     </div>
 
-    <script src="app.js?v=3"></script>
+    <script src="app.js?v=4"></script>
 </body>
 
 </html>

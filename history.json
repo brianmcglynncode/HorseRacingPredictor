@@ -47,7 +47,7 @@
         "Ambiente Friendly": 980,
         "Makinbecon": 980
       },
-      "lastUpdated": "2026-02-20T08:54:18.703Z",
+      "lastUpdated": "2026-02-20T18:12:07.275Z",
       "latestData": [
         {
           "name": "Supreme Novices Hurdle Betting Odds- Winner",
@@ -88,20 +88,20 @@
                   "decimal": 2.88
                 },
                 "William Hill": {
-                  "fraction": "15/8",
-                  "decimal": 2.88
+                  "fraction": "9/4",
+                  "decimal": 3.25
                 },
                 "Unibet": {
-                  "fraction": "15/8",
-                  "decimal": 2.88
+                  "fraction": "2",
+                  "decimal": 3
                 },
                 "Betfred": {
                   "fraction": "7/4",
                   "decimal": 2.75
                 },
                 "888sport": {
-                  "fraction": "15/8",
-                  "decimal": 2.88
+                  "fraction": "9/4",
+                  "decimal": 3.25
                 },
                 "Spreadex": {
                   "fraction": "15/8",
@@ -176,8 +176,8 @@
                   "decimal": 2.88
                 },
                 "AK Bets": {
-                  "fraction": "2",
-                  "decimal": 3
+                  "fraction": "9/4",
+                  "decimal": 3.25
                 },
                 "Betfair": {
                   "fraction": "12/5",
@@ -300,8 +300,8 @@
                   "decimal": 5
                 },
                 "Betfair": {
-                  "fraction": "343/50",
-                  "decimal": 7.86
+                  "fraction": "333/50",
+                  "decimal": 7.66
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -317,7 +317,7 @@
               "weight": "11-7",
               "officialRating": "-",
               "marketMove": "drifter",
-              "movePercent": 8,
+              "movePercent": 5,
               "openingOdds": 7.27
             },
             {
@@ -488,12 +488,12 @@
                   "decimal": 0
                 },
                 "Star Sports": {
-                  "fraction": "10",
-                  "decimal": 11
+                  "fraction": "8",
+                  "decimal": 9
                 },
                 "PricedUp": {
-                  "fraction": "10",
-                  "decimal": 11
+                  "fraction": "8",
+                  "decimal": 9
                 },
                 "Sporting Index": {
                   "fraction": "6",
@@ -524,8 +524,8 @@
                   "decimal": 9.5
                 },
                 "BresBet": {
-                  "fraction": "10",
-                  "decimal": 11
+                  "fraction": "8",
+                  "decimal": 9
                 },
                 "Skybet": {
                   "fraction": "6",
@@ -536,12 +536,12 @@
                   "decimal": 7
                 },
                 "AK Bets": {
-                  "fraction": "10",
-                  "decimal": 11
+                  "fraction": "8",
+                  "decimal": 9
                 },
                 "Betfair": {
-                  "fraction": "66/5",
-                  "decimal": 14.2
+                  "fraction": "137/10",
+                  "decimal": 14.7
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -557,7 +557,7 @@
               "weight": "11-7",
               "officialRating": "-",
               "marketMove": "drifter",
-              "movePercent": 11,
+              "movePercent": 15,
               "openingOdds": 12.8
             },
             {
@@ -779,8 +779,8 @@
                   "decimal": 12
                 },
                 "Betfair": {
-                  "fraction": "71/5",
-                  "decimal": 15.2
+                  "fraction": "127/10",
+                  "decimal": 13.7
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -795,7 +795,8 @@
               "age": "6",
               "weight": "11-7",
               "officialRating": "139",
-              "marketMove": "stable",
+              "marketMove": "steamer",
+              "movePercent": 10,
               "openingOdds": 15.2
             },
             {
@@ -898,8 +899,8 @@
                   "decimal": 13
                 },
                 "Betfair": {
-                  "fraction": "167/10",
-                  "decimal": 17.7
+                  "fraction": "147/10",
+                  "decimal": 15.7
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -915,7 +916,7 @@
               "weight": "11-7",
               "officialRating": "141",
               "marketMove": "steamer",
-              "movePercent": 2,
+              "movePercent": 13,
               "openingOdds": 18.1
             },
             {
@@ -994,12 +995,12 @@
                   "decimal": 15
                 },
                 "BetGoodwin": {
-                  "fraction": "14",
-                  "decimal": 15
+                  "fraction": "12",
+                  "decimal": 13
                 },
                 "BetTom": {
-                  "fraction": "14",
-                  "decimal": 15
+                  "fraction": "12",
+                  "decimal": 13
                 },
                 "BresBet": {
                   "fraction": "12",
@@ -1137,8 +1138,8 @@
                   "decimal": 21
                 },
                 "Betfair": {
-                  "fraction": "36/1",
-                  "decimal": 37
+                  "fraction": "30",
+                  "decimal": 31
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -1153,8 +1154,7 @@
               "age": "6",
               "weight": "11-7",
               "officialRating": "-",
-              "marketMove": "drifter",
-              "movePercent": 19,
+              "marketMove": "stable",
               "openingOdds": 31
             },
             {
@@ -1376,8 +1376,8 @@
                   "decimal": 21
                 },
                 "Betfair": {
-                  "fraction": "44",
-                  "decimal": 45
+                  "fraction": "46",
+                  "decimal": 47
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -1392,7 +1392,8 @@
               "age": "5",
               "weight": "11-7",
               "officialRating": "-",
-              "marketMove": "stable",
+              "marketMove": "drifter",
+              "movePercent": 4,
               "openingOdds": 45
             },
             {
@@ -1495,8 +1496,8 @@
                   "decimal": 26
                 },
                 "Betfair": {
-                  "fraction": "58",
-                  "decimal": 59
+                  "fraction": "82",
+                  "decimal": 83
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -1511,7 +1512,8 @@
               "age": "5",
               "weight": "11-7",
               "officialRating": "-",
-              "marketMove": "stable",
+              "marketMove": "drifter",
+              "movePercent": 41,
               "openingOdds": 59
             },
             {
@@ -1614,8 +1616,8 @@
                   "decimal": 34
                 },
                 "Betfair": {
-                  "fraction": "92",
-                  "decimal": 93
+                  "fraction": "166",
+                  "decimal": 167
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -1631,7 +1633,7 @@
               "weight": "10-11",
               "officialRating": "-",
               "marketMove": "drifter",
-              "movePercent": 12,
+              "movePercent": 101,
               "openingOdds": 83
             },
             {
@@ -1972,8 +1974,8 @@
                   "decimal": 34
                 },
                 "Betfair": {
-                  "fraction": "58",
-                  "decimal": 59
+                  "fraction": "82",
+                  "decimal": 83
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -1989,7 +1991,7 @@
               "weight": "11-7",
               "officialRating": "-",
               "marketMove": "drifter",
-              "movePercent": 37,
+              "movePercent": 93,
               "openingOdds": 43
             },
             {
@@ -2092,8 +2094,8 @@
                   "decimal": 34
                 },
                 "Betfair": {
-                  "fraction": "97",
-                  "decimal": 98
+                  "fraction": "126",
+                  "decimal": 127
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -2108,8 +2110,7 @@
               "age": "6",
               "weight": "11-7",
               "officialRating": "-",
-              "marketMove": "steamer",
-              "movePercent": 23,
+              "marketMove": "stable",
               "openingOdds": 127
             },
             {
@@ -2212,7 +2213,7 @@
                   "decimal": 34
                 },
                 "Betfair": {
-                  "fraction": "68/1",
+                  "fraction": "68",
                   "decimal": 69
                 },
                 "Matchbook": {
@@ -2450,8 +2451,8 @@
                   "decimal": 41
                 },
                 "Betfair": {
-                  "fraction": "205",
-                  "decimal": 206
+                  "fraction": "175",
+                  "decimal": 176
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -2466,8 +2467,7 @@
               "age": "5",
               "weight": "11-7",
               "officialRating": "-",
-              "marketMove": "drifter",
-              "movePercent": 17,
+              "marketMove": "stable",
               "openingOdds": 176
             },
             {
@@ -2570,8 +2570,8 @@
                   "decimal": 51
                 },
                 "Betfair": {
-                  "fraction": "77",
-                  "decimal": 78
+                  "fraction": "68",
+                  "decimal": 69
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -2587,7 +2587,7 @@
               "weight": "11-7",
               "officialRating": "137",
               "marketMove": "steamer",
-              "movePercent": 11,
+              "movePercent": 22,
               "openingOdds": 88
             },
             {
@@ -2809,8 +2809,8 @@
                   "decimal": 41
                 },
                 "Betfair": {
-                  "fraction": "107",
-                  "decimal": 108
+                  "fraction": "146",
+                  "decimal": 147
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -2825,7 +2825,8 @@
               "age": "5",
               "weight": "11-7",
               "officialRating": "-",
-              "marketMove": "stable",
+              "marketMove": "drifter",
+              "movePercent": 36,
               "openingOdds": 108
             },
             {
@@ -3286,8 +3287,8 @@
                   "decimal": 51
                 },
                 "Betfair": {
-                  "fraction": "136",
-                  "decimal": 137
+                  "fraction": "166",
+                  "decimal": 167
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -3302,7 +3303,8 @@
               "age": "5",
               "weight": "11-7",
               "officialRating": "-",
-              "marketMove": "stable",
+              "marketMove": "drifter",
+              "movePercent": 22,
               "openingOdds": 137
             },
             {
@@ -3762,8 +3764,8 @@
                   "decimal": 67
                 },
                 "Betfair": {
-                  "fraction": "185",
-                  "decimal": 186
+                  "fraction": "205",
+                  "decimal": 206
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -3778,7 +3780,8 @@
               "age": "5",
               "weight": "11-7",
               "officialRating": "-",
-              "marketMove": "stable",
+              "marketMove": "drifter",
+              "movePercent": 11,
               "openingOdds": 186
             },
             {
@@ -4476,8 +4479,8 @@
                   "decimal": 67
                 },
                 "Betfair": {
-                  "fraction": "636",
-                  "decimal": 637
+                  "fraction": "469",
+                  "decimal": 470
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -4492,7 +4495,8 @@
               "age": "6",
               "weight": "11-7",
               "officialRating": "-",
-              "marketMove": "stable",
+              "marketMove": "steamer",
+              "movePercent": 26,
               "openingOdds": 637
             },
             {
@@ -5233,8 +5237,8 @@
                   "decimal": 151
                 },
                 "Spreadex": {
-                  "fraction": "200",
-                  "decimal": 201
+                  "fraction": "175",
+                  "decimal": 176
                 },
                 "Ladbrokes": {
                   "fraction": "150",
@@ -5265,8 +5269,8 @@
                   "decimal": 201
                 },
                 "Sporting Index": {
-                  "fraction": "200",
-                  "decimal": 201
+                  "fraction": "175",
+                  "decimal": 176
                 },
                 "Virgin Bet": {
                   "fraction": "150",
@@ -20437,7 +20441,7 @@
         "Thatll Do Moss": 101,
         "Sotchi": 251
       },
-      "lastUpdated": "2026-02-20T08:59:02.373Z",
+      "lastUpdated": "2026-02-20T18:02:45.483Z",
       "latestData": [
         {
           "name": "Mares Hurdle Betting Odds- Winner",
@@ -20570,8 +20574,8 @@
                   "decimal": 2.25
                 },
                 "Betfair": {
-                  "fraction": "19/10",
-                  "decimal": 2.92
+                  "fraction": "17/10",
+                  "decimal": 2.72
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -20586,7 +20590,7 @@
               "age": "7",
               "weight": "11-5",
               "officialRating": "-",
-              "marketMove": "drifter",
+              "marketMove": "steamer",
               "movePercent": 4,
               "openingOdds": 2.82
             },
@@ -20606,16 +20610,16 @@
                   "decimal": 2.63
                 },
                 "Betfred": {
-                  "fraction": "7/4",
-                  "decimal": 2.75
+                  "fraction": "13/8",
+                  "decimal": 2.63
                 },
                 "888sport": {
                   "fraction": "13/8",
                   "decimal": 2.63
                 },
                 "Spreadex": {
-                  "fraction": "13/8",
-                  "decimal": 2.63
+                  "fraction": "6/4",
+                  "decimal": 2.5
                 },
                 "Ladbrokes": {
                   "fraction": "6/4",
@@ -20630,32 +20634,32 @@
                   "decimal": 2.75
                 },
                 "BOYLE Sports": {
-                  "fraction": "7/4",
-                  "decimal": 2.75
+                  "fraction": "13/8",
+                  "decimal": 2.63
                 },
                 "10bet": {
                   "fraction": "",
                   "decimal": 0
                 },
                 "Star Sports": {
-                  "fraction": "7/4",
-                  "decimal": 2.75
+                  "fraction": "13/8",
+                  "decimal": 2.62
                 },
                 "PricedUp": {
-                  "fraction": "7/4",
-                  "decimal": 2.75
+                  "fraction": "13/8",
+                  "decimal": 2.62
                 },
                 "Sporting Index": {
-                  "fraction": "13/8",
-                  "decimal": 2.63
+                  "fraction": "6/4",
+                  "decimal": 2.5
                 },
                 "Virgin Bet": {
                   "fraction": "7/4",
                   "decimal": 2.75
                 },
                 "QuinnBet": {
-                  "fraction": "7/4",
-                  "decimal": 2.75
+                  "fraction": "13/8",
+                  "decimal": 2.63
                 },
                 "Betway": {
                   "fraction": "7/4",
@@ -20674,24 +20678,24 @@
                   "decimal": 0
                 },
                 "BresBet": {
-                  "fraction": "7/4",
-                  "decimal": 2.75
+                  "fraction": "13/8",
+                  "decimal": 2.62
                 },
                 "Skybet": {
-                  "fraction": "7/4",
-                  "decimal": 2.75
+                  "fraction": "13/8",
+                  "decimal": 2.63
                 },
                 "Paddy Power": {
-                  "fraction": "7/4",
-                  "decimal": 2.75
+                  "fraction": "13/8",
+                  "decimal": 2.63
                 },
                 "AK Bets": {
-                  "fraction": "7/4",
-                  "decimal": 2.75
+                  "fraction": "13/8",
+                  "decimal": 2.62
                 },
                 "Betfair": {
-                  "fraction": "6/4",
-                  "decimal": 2.55
+                  "fraction": "17/10",
+                  "decimal": 2.71
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -20773,8 +20777,8 @@
                   "decimal": 9
                 },
                 "QuinnBet": {
-                  "fraction": "8",
-                  "decimal": 9
+                  "fraction": "7",
+                  "decimal": 8
                 },
                 "Betway": {
                   "fraction": "6",
@@ -20840,8 +20844,8 @@
                   "decimal": 15
                 },
                 "Unibet": {
-                  "fraction": "14",
-                  "decimal": 15
+                  "fraction": "12",
+                  "decimal": 13
                 },
                 "Betfred": {
                   "fraction": "12",
@@ -20864,8 +20868,8 @@
                   "decimal": 13
                 },
                 "BetMGM UK": {
-                  "fraction": "14",
-                  "decimal": 15
+                  "fraction": "12",
+                  "decimal": 13
                 },
                 "BOYLE Sports": {
                   "fraction": "12",
@@ -20888,8 +20892,8 @@
                   "decimal": 13
                 },
                 "Virgin Bet": {
-                  "fraction": "14",
-                  "decimal": 15
+                  "fraction": "12",
+                  "decimal": 13
                 },
                 "QuinnBet": {
                   "fraction": "14",
@@ -21048,8 +21052,8 @@
                   "decimal": 17
                 },
                 "Betfair": {
-                  "fraction": "30",
-                  "decimal": 31
+                  "fraction": "20",
+                  "decimal": 21
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -21064,8 +21068,7 @@
               "age": "7",
               "weight": "11-5",
               "officialRating": "-",
-              "marketMove": "drifter",
-              "movePercent": 48,
+              "marketMove": "stable",
               "openingOdds": 21
             },
             {
@@ -21168,8 +21171,8 @@
                   "decimal": 11
                 },
                 "Betfair": {
-                  "fraction": "22",
-                  "decimal": 23
+                  "fraction": "25",
+                  "decimal": 26
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -21184,7 +21187,8 @@
               "age": "7",
               "weight": "11-5",
               "officialRating": "-",
-              "marketMove": "stable",
+              "marketMove": "drifter",
+              "movePercent": 13,
               "openingOdds": 23
             },
             {
@@ -21199,8 +21203,8 @@
                   "decimal": 7
                 },
                 "Unibet": {
-                  "fraction": "25",
-                  "decimal": 26
+                  "fraction": "33",
+                  "decimal": 34
                 },
                 "Betfred": {
                   "fraction": "8",
@@ -21287,8 +21291,8 @@
                   "decimal": 34
                 },
                 "Betfair": {
-                  "fraction": "58",
-                  "decimal": 59
+                  "fraction": "63",
+                  "decimal": 64
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -21304,7 +21308,7 @@
               "weight": "11-5",
               "officialRating": "152",
               "marketMove": "drifter",
-              "movePercent": 26,
+              "movePercent": 36,
               "openingOdds": 47
             },
             {
@@ -21319,8 +21323,8 @@
                   "decimal": 11
                 },
                 "Unibet": {
-                  "fraction": "25",
-                  "decimal": 26
+                  "fraction": "33",
+                  "decimal": 34
                 },
                 "Betfred": {
                   "fraction": "12",
@@ -21765,8 +21769,8 @@
                   "decimal": 26
                 },
                 "Betfair": {
-                  "fraction": "73",
-                  "decimal": 74
+                  "fraction": "68",
+                  "decimal": 69
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -21781,8 +21785,7 @@
               "age": "6",
               "weight": "11-5",
               "officialRating": "-",
-              "marketMove": "drifter",
-              "movePercent": 7,
+              "marketMove": "stable",
               "openingOdds": 69
             },
             {
@@ -22123,8 +22126,8 @@
                   "decimal": 41
                 },
                 "Betfair": {
-                  "fraction": "68",
-                  "decimal": 69
+                  "fraction": "92",
+                  "decimal": 93
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -22139,7 +22142,8 @@
               "age": "9",
               "weight": "11-5",
               "officialRating": "145",
-              "marketMove": "stable",
+              "marketMove": "drifter",
+              "movePercent": 35,
               "openingOdds": 69
             },
             {
@@ -25953,7 +25957,7 @@
         "Dr T J Eckleburg": 81,
         "Embittered": 101
       },
-      "lastUpdated": "2026-02-20T08:51:52.384Z",
+      "lastUpdated": "2026-02-20T18:07:11.919Z",
       "latestData": [
         {
           "name": "Grand Annual Chase Betting Odds- Winner",
@@ -26050,8 +26054,8 @@
                   "decimal": 11
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "10",
+                  "decimal": 11
                 },
                 "Betway": {
                   "fraction": "9",
@@ -26169,8 +26173,8 @@
                   "decimal": 11
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "10",
+                  "decimal": 11
                 },
                 "Betway": {
                   "fraction": "10",
@@ -26205,8 +26209,8 @@
                   "decimal": 11
                 },
                 "Betfair": {
-                  "fraction": "54/5",
-                  "decimal": 11.8
+                  "fraction": "113/10",
+                  "decimal": 12.3
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -26221,7 +26225,8 @@
               "age": "7",
               "weight": "0-0",
               "officialRating": "141",
-              "marketMove": "stable",
+              "marketMove": "drifter",
+              "movePercent": 4,
               "openingOdds": 11.8
             },
             {
@@ -26288,8 +26293,8 @@
                   "decimal": 11
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "8",
+                  "decimal": 9
                 },
                 "Betway": {
                   "fraction": "9",
@@ -26324,8 +26329,8 @@
                   "decimal": 10
                 },
                 "Betfair": {
-                  "fraction": "441/50",
-                  "decimal": 9.82
+                  "fraction": "93/10",
+                  "decimal": 10.3
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -26351,8 +26356,8 @@
                   "decimal": 13
                 },
                 "William Hill": {
-                  "fraction": "10",
-                  "decimal": 11
+                  "fraction": "8",
+                  "decimal": 9
                 },
                 "Unibet": {
                   "fraction": "12",
@@ -26363,8 +26368,8 @@
                   "decimal": 11
                 },
                 "888sport": {
-                  "fraction": "10",
-                  "decimal": 11
+                  "fraction": "8",
+                  "decimal": 9
                 },
                 "Spreadex": {
                   "fraction": "10",
@@ -26407,8 +26412,8 @@
                   "decimal": 11
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "10",
+                  "decimal": 11
                 },
                 "Betway": {
                   "fraction": "11",
@@ -26470,8 +26475,8 @@
                   "decimal": 13
                 },
                 "William Hill": {
-                  "fraction": "12",
-                  "decimal": 13
+                  "fraction": "10",
+                  "decimal": 11
                 },
                 "Unibet": {
                   "fraction": "12",
@@ -26482,24 +26487,24 @@
                   "decimal": 15
                 },
                 "888sport": {
+                  "fraction": "10",
+                  "decimal": 11
+                },
+                "Spreadex": {
                   "fraction": "12",
                   "decimal": 13
                 },
-                "Spreadex": {
-                  "fraction": "14",
-                  "decimal": 15
-                },
                 "Ladbrokes": {
-                  "fraction": "14",
-                  "decimal": 15
+                  "fraction": "12",
+                  "decimal": 13
                 },
                 "BetVictor": {
                   "fraction": "12",
                   "decimal": 13
                 },
                 "BetMGM UK": {
-                  "fraction": "14",
-                  "decimal": 15
+                  "fraction": "12",
+                  "decimal": 13
                 },
                 "BOYLE Sports": {
                   "fraction": "14",
@@ -26518,24 +26523,24 @@
                   "decimal": 15
                 },
                 "Sporting Index": {
-                  "fraction": "14",
-                  "decimal": 15
+                  "fraction": "12",
+                  "decimal": 13
                 },
                 "Virgin Bet": {
-                  "fraction": "14",
-                  "decimal": 15
+                  "fraction": "12",
+                  "decimal": 13
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "12",
+                  "decimal": 13
                 },
                 "Betway": {
                   "fraction": "14",
                   "decimal": 15
                 },
                 "Coral": {
-                  "fraction": "14",
-                  "decimal": 15
+                  "fraction": "12",
+                  "decimal": 13
                 },
                 "BetGoodwin": {
                   "fraction": "",
@@ -26562,8 +26567,8 @@
                   "decimal": 15
                 },
                 "Betfair": {
-                  "fraction": "157/10",
-                  "decimal": 16.7
+                  "fraction": "59/5",
+                  "decimal": 12.8
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -26578,7 +26583,8 @@
               "age": "8",
               "weight": "0-0",
               "officialRating": "135",
-              "marketMove": "stable",
+              "marketMove": "steamer",
+              "movePercent": 10,
               "openingOdds": 16.7
             },
             {
@@ -26589,24 +26595,24 @@
                   "decimal": 15
                 },
                 "William Hill": {
-                  "fraction": "12",
-                  "decimal": 13
+                  "fraction": "14",
+                  "decimal": 15
                 },
                 "Unibet": {
                   "fraction": "14",
                   "decimal": 15
                 },
                 "Betfred": {
-                  "fraction": "12",
-                  "decimal": 13
+                  "fraction": "14",
+                  "decimal": 15
                 },
                 "888sport": {
-                  "fraction": "12",
-                  "decimal": 13
+                  "fraction": "14",
+                  "decimal": 15
                 },
                 "Spreadex": {
-                  "fraction": "12",
-                  "decimal": 13
+                  "fraction": "14",
+                  "decimal": 15
                 },
                 "Ladbrokes": {
                   "fraction": "12",
@@ -26617,36 +26623,36 @@
                   "decimal": 13
                 },
                 "BetMGM UK": {
-                  "fraction": "12",
-                  "decimal": 13
+                  "fraction": "14",
+                  "decimal": 15
                 },
                 "BOYLE Sports": {
-                  "fraction": "12",
-                  "decimal": 13
+                  "fraction": "14",
+                  "decimal": 15
                 },
                 "10bet": {
                   "fraction": "",
                   "decimal": 0
                 },
                 "Star Sports": {
-                  "fraction": "12",
-                  "decimal": 13
+                  "fraction": "14",
+                  "decimal": 15
                 },
                 "PricedUp": {
-                  "fraction": "12",
-                  "decimal": 13
+                  "fraction": "14",
+                  "decimal": 15
                 },
                 "Sporting Index": {
-                  "fraction": "12",
-                  "decimal": 13
+                  "fraction": "14",
+                  "decimal": 15
                 },
                 "Virgin Bet": {
-                  "fraction": "12",
-                  "decimal": 13
+                  "fraction": "14",
+                  "decimal": 15
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "14",
+                  "decimal": 15
                 },
                 "Betway": {
                   "fraction": "12",
@@ -26665,8 +26671,8 @@
                   "decimal": 0
                 },
                 "BresBet": {
-                  "fraction": "12",
-                  "decimal": 13
+                  "fraction": "14",
+                  "decimal": 15
                 },
                 "Skybet": {
                   "fraction": "14",
@@ -26677,12 +26683,12 @@
                   "decimal": 15
                 },
                 "AK Bets": {
-                  "fraction": "12",
-                  "decimal": 13
+                  "fraction": "14",
+                  "decimal": 15
                 },
                 "Betfair": {
-                  "fraction": "81/5",
-                  "decimal": 17.2
+                  "fraction": "171/10",
+                  "decimal": 18.1
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -26697,7 +26703,8 @@
               "age": "5",
               "weight": "0-0",
               "officialRating": "146",
-              "marketMove": "stable",
+              "marketMove": "drifter",
+              "movePercent": 5,
               "openingOdds": 17.2
             },
             {
@@ -26708,8 +26715,8 @@
                   "decimal": 13
                 },
                 "William Hill": {
-                  "fraction": "14",
-                  "decimal": 15
+                  "fraction": "12",
+                  "decimal": 13
                 },
                 "Unibet": {
                   "fraction": "14",
@@ -26720,8 +26727,8 @@
                   "decimal": 11
                 },
                 "888sport": {
-                  "fraction": "14",
-                  "decimal": 15
+                  "fraction": "12",
+                  "decimal": 13
                 },
                 "Spreadex": {
                   "fraction": "9",
@@ -26764,8 +26771,8 @@
                   "decimal": 11
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "10",
+                  "decimal": 11
                 },
                 "Betway": {
                   "fraction": "11",
@@ -26883,8 +26890,8 @@
                   "decimal": 17
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "16",
+                  "decimal": 17
                 },
                 "Betway": {
                   "fraction": "16",
@@ -27002,8 +27009,8 @@
                   "decimal": 17
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "16",
+                  "decimal": 17
                 },
                 "Betway": {
                   "fraction": "16",
@@ -27038,8 +27045,8 @@
                   "decimal": 17
                 },
                 "Betfair": {
-                  "fraction": "93/5",
-                  "decimal": 19.6
+                  "fraction": "20",
+                  "decimal": 21
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -27054,7 +27061,8 @@
               "age": "7",
               "weight": "0-0",
               "officialRating": "-",
-              "marketMove": "stable",
+              "marketMove": "drifter",
+              "movePercent": 7,
               "openingOdds": 19.6
             },
             {
@@ -27065,8 +27073,8 @@
                   "decimal": 17
                 },
                 "William Hill": {
-                  "fraction": "14",
-                  "decimal": 15
+                  "fraction": "16",
+                  "decimal": 17
                 },
                 "Unibet": {
                   "fraction": "14",
@@ -27077,8 +27085,8 @@
                   "decimal": 15
                 },
                 "888sport": {
-                  "fraction": "14",
-                  "decimal": 15
+                  "fraction": "16",
+                  "decimal": 17
                 },
                 "Spreadex": {
                   "fraction": "14",
@@ -27121,8 +27129,8 @@
                   "decimal": 15
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "16",
+                  "decimal": 17
                 },
                 "Betway": {
                   "fraction": "14",
@@ -27240,8 +27248,8 @@
                   "decimal": 17
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "16",
+                  "decimal": 17
                 },
                 "Betway": {
                   "fraction": "16",
@@ -27359,8 +27367,8 @@
                   "decimal": 17
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "16",
+                  "decimal": 17
                 },
                 "Betway": {
                   "fraction": "16",
@@ -27478,8 +27486,8 @@
                   "decimal": 15
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "16",
+                  "decimal": 17
                 },
                 "Betway": {
                   "fraction": "14",
@@ -27532,125 +27540,6 @@
               "officialRating": "151",
               "marketMove": "stable",
               "openingOdds": 19.1
-            },
-            {
-              "name": "Downmexicoway",
-              "odds": {
-                "bet365": {
-                  "fraction": "16",
-                  "decimal": 17
-                },
-                "William Hill": {
-                  "fraction": "16",
-                  "decimal": 17
-                },
-                "Unibet": {
-                  "fraction": "16",
-                  "decimal": 17
-                },
-                "Betfred": {
-                  "fraction": "16",
-                  "decimal": 17
-                },
-                "888sport": {
-                  "fraction": "16",
-                  "decimal": 17
-                },
-                "Spreadex": {
-                  "fraction": "16",
-                  "decimal": 17
-                },
-                "Ladbrokes": {
-                  "fraction": "16",
-                  "decimal": 17
-                },
-                "BetVictor": {
-                  "fraction": "14",
-                  "decimal": 15
-                },
-                "BetMGM UK": {
-                  "fraction": "16",
-                  "decimal": 17
-                },
-                "BOYLE Sports": {
-                  "fraction": "16",
-                  "decimal": 17
-                },
-                "10bet": {
-                  "fraction": "",
-                  "decimal": 0
-                },
-                "Star Sports": {
-                  "fraction": "16",
-                  "decimal": 17
-                },
-                "PricedUp": {
-                  "fraction": "16",
-                  "decimal": 17
-                },
-                "Sporting Index": {
-                  "fraction": "16",
-                  "decimal": 17
-                },
-                "Virgin Bet": {
-                  "fraction": "16",
-                  "decimal": 17
-                },
-                "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
-                },
-                "Betway": {
-                  "fraction": "16",
-                  "decimal": 17
-                },
-                "Coral": {
-                  "fraction": "14",
-                  "decimal": 15
-                },
-                "BetGoodwin": {
-                  "fraction": "",
-                  "decimal": 0
-                },
-                "BetTom": {
-                  "fraction": "",
-                  "decimal": 0
-                },
-                "BresBet": {
-                  "fraction": "16",
-                  "decimal": 17
-                },
-                "Skybet": {
-                  "fraction": "16",
-                  "decimal": 17
-                },
-                "Paddy Power": {
-                  "fraction": "16",
-                  "decimal": 17
-                },
-                "AK Bets": {
-                  "fraction": "16",
-                  "decimal": 17
-                },
-                "Betfair": {
-                  "fraction": "20",
-                  "decimal": 21
-                },
-                "Matchbook": {
-                  "fraction": "",
-                  "decimal": 0
-                }
-              },
-              "form": "P01213",
-              "trainer": "Henry De Bromhead",
-              "jockey": null,
-              "courseDistanceWin": null,
-              "rpr": "147",
-              "age": "7",
-              "weight": "0-0",
-              "officialRating": "-",
-              "marketMove": "stable",
-              "openingOdds": 21
             },
             {
               "name": "Personal Ambition",
@@ -27716,8 +27605,8 @@
                   "decimal": 17
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "20",
+                  "decimal": 21
                 },
                 "Betway": {
                   "fraction": "20",
@@ -27835,8 +27724,8 @@
                   "decimal": 17
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "20",
+                  "decimal": 21
                 },
                 "Betway": {
                   "fraction": "18",
@@ -27954,8 +27843,8 @@
                   "decimal": 17
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "16",
+                  "decimal": 17
                 },
                 "Betway": {
                   "fraction": "18",
@@ -28008,6 +27897,126 @@
               "officialRating": "-",
               "marketMove": "stable",
               "openingOdds": 23
+            },
+            {
+              "name": "Downmexicoway",
+              "odds": {
+                "bet365": {
+                  "fraction": "16",
+                  "decimal": 17
+                },
+                "William Hill": {
+                  "fraction": "20",
+                  "decimal": 21
+                },
+                "Unibet": {
+                  "fraction": "16",
+                  "decimal": 17
+                },
+                "Betfred": {
+                  "fraction": "16",
+                  "decimal": 17
+                },
+                "888sport": {
+                  "fraction": "20",
+                  "decimal": 21
+                },
+                "Spreadex": {
+                  "fraction": "16",
+                  "decimal": 17
+                },
+                "Ladbrokes": {
+                  "fraction": "16",
+                  "decimal": 17
+                },
+                "BetVictor": {
+                  "fraction": "14",
+                  "decimal": 15
+                },
+                "BetMGM UK": {
+                  "fraction": "16",
+                  "decimal": 17
+                },
+                "BOYLE Sports": {
+                  "fraction": "16",
+                  "decimal": 17
+                },
+                "10bet": {
+                  "fraction": "",
+                  "decimal": 0
+                },
+                "Star Sports": {
+                  "fraction": "16",
+                  "decimal": 17
+                },
+                "PricedUp": {
+                  "fraction": "16",
+                  "decimal": 17
+                },
+                "Sporting Index": {
+                  "fraction": "16",
+                  "decimal": 17
+                },
+                "Virgin Bet": {
+                  "fraction": "16",
+                  "decimal": 17
+                },
+                "QuinnBet": {
+                  "fraction": "16",
+                  "decimal": 17
+                },
+                "Betway": {
+                  "fraction": "16",
+                  "decimal": 17
+                },
+                "Coral": {
+                  "fraction": "14",
+                  "decimal": 15
+                },
+                "BetGoodwin": {
+                  "fraction": "",
+                  "decimal": 0
+                },
+                "BetTom": {
+                  "fraction": "",
+                  "decimal": 0
+                },
+                "BresBet": {
+                  "fraction": "16",
+                  "decimal": 17
+                },
+                "Skybet": {
+                  "fraction": "16",
+                  "decimal": 17
+                },
+                "Paddy Power": {
+                  "fraction": "16",
+                  "decimal": 17
+                },
+                "AK Bets": {
+                  "fraction": "16",
+                  "decimal": 17
+                },
+                "Betfair": {
+                  "fraction": "21",
+                  "decimal": 22
+                },
+                "Matchbook": {
+                  "fraction": "",
+                  "decimal": 0
+                }
+              },
+              "form": "P01213",
+              "trainer": "Henry De Bromhead",
+              "jockey": null,
+              "courseDistanceWin": null,
+              "rpr": "147",
+              "age": "7",
+              "weight": "0-0",
+              "officialRating": "-",
+              "marketMove": "drifter",
+              "movePercent": 5,
+              "openingOdds": 21
             },
             {
               "name": "Inthepocket",
@@ -28073,8 +28082,8 @@
                   "decimal": 17
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "16",
+                  "decimal": 17
                 },
                 "Betway": {
                   "fraction": "18",
@@ -28109,8 +28118,8 @@
                   "decimal": 17
                 },
                 "Betfair": {
-                  "fraction": "196/25",
-                  "decimal": 8.84
+                  "fraction": "147/10",
+                  "decimal": 15.7
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -28136,8 +28145,8 @@
                   "decimal": 26
                 },
                 "William Hill": {
-                  "fraction": "14",
-                  "decimal": 15
+                  "fraction": "16",
+                  "decimal": 17
                 },
                 "Unibet": {
                   "fraction": "25",
@@ -28148,8 +28157,8 @@
                   "decimal": 21
                 },
                 "888sport": {
-                  "fraction": "14",
-                  "decimal": 15
+                  "fraction": "16",
+                  "decimal": 17
                 },
                 "Spreadex": {
                   "fraction": "20",
@@ -28192,8 +28201,8 @@
                   "decimal": 21
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "20",
+                  "decimal": 21
                 },
                 "Betway": {
                   "fraction": "20",
@@ -28311,8 +28320,8 @@
                   "decimal": 26
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "25",
+                  "decimal": 26
                 },
                 "Betway": {
                   "fraction": "22",
@@ -28430,8 +28439,8 @@
                   "decimal": 26
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "25",
+                  "decimal": 26
                 },
                 "Betway": {
                   "fraction": "25",
@@ -28549,8 +28558,8 @@
                   "decimal": 26
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "25",
+                  "decimal": 26
                 },
                 "Betway": {
                   "fraction": "25",
@@ -28668,8 +28677,8 @@
                   "decimal": 26
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "25",
+                  "decimal": 26
                 },
                 "Betway": {
                   "fraction": "25",
@@ -28787,8 +28796,8 @@
                   "decimal": 21
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "20",
+                  "decimal": 21
                 },
                 "Betway": {
                   "fraction": "18",
@@ -28906,8 +28915,8 @@
                   "decimal": 21
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "20",
+                  "decimal": 21
                 },
                 "Betway": {
                   "fraction": "20",
@@ -29025,8 +29034,8 @@
                   "decimal": 21
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "20",
+                  "decimal": 21
                 },
                 "Betway": {
                   "fraction": "20",
@@ -29144,8 +29153,8 @@
                   "decimal": 34
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "33",
+                  "decimal": 34
                 },
                 "Betway": {
                   "fraction": "33",
@@ -29263,8 +29272,8 @@
                   "decimal": 34
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "33",
+                  "decimal": 34
                 },
                 "Betway": {
                   "fraction": "33",
@@ -29382,8 +29391,8 @@
                   "decimal": 26
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "25",
+                  "decimal": 26
                 },
                 "Betway": {
                   "fraction": "28",
@@ -29501,8 +29510,8 @@
                   "decimal": 34
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "25",
+                  "decimal": 26
                 },
                 "Betway": {
                   "fraction": "28",
@@ -29537,8 +29546,8 @@
                   "decimal": 26
                 },
                 "Betfair": {
-                  "fraction": "1/100",
-                  "decimal": 1.01
+                  "fraction": "49/10",
+                  "decimal": 5.9
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -29620,8 +29629,8 @@
                   "decimal": 26
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "25",
+                  "decimal": 26
                 },
                 "Betway": {
                   "fraction": "28",
@@ -29739,8 +29748,8 @@
                   "decimal": 26
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "25",
+                  "decimal": 26
                 },
                 "Betway": {
                   "fraction": "28",
@@ -29858,8 +29867,8 @@
                   "decimal": 26
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "25",
+                  "decimal": 26
                 },
                 "Betway": {
                   "fraction": "28",
@@ -29977,8 +29986,8 @@
                   "decimal": 26
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "25",
+                  "decimal": 26
                 },
                 "Betway": {
                   "fraction": "25",
@@ -30096,8 +30105,8 @@
                   "decimal": 26
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "25",
+                  "decimal": 26
                 },
                 "Betway": {
                   "fraction": "25",
@@ -30215,8 +30224,8 @@
                   "decimal": 41
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "33",
+                  "decimal": 34
                 },
                 "Betway": {
                   "fraction": "33",
@@ -30334,8 +30343,8 @@
                   "decimal": 34
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "40",
+                  "decimal": 41
                 },
                 "Betway": {
                   "fraction": "33",
@@ -30453,8 +30462,8 @@
                   "decimal": 34
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "40",
+                  "decimal": 41
                 },
                 "Betway": {
                   "fraction": "33",
@@ -30572,8 +30581,8 @@
                   "decimal": 34
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "33",
+                  "decimal": 34
                 },
                 "Betway": {
                   "fraction": "33",
@@ -30608,8 +30617,8 @@
                   "decimal": 34
                 },
                 "Betfair": {
-                  "fraction": "1/100",
-                  "decimal": 1.01
+                  "fraction": "49/10",
+                  "decimal": 5.9
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -30691,8 +30700,8 @@
                   "decimal": 34
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "33",
+                  "decimal": 34
                 },
                 "Betway": {
                   "fraction": "33",
@@ -30810,8 +30819,8 @@
                   "decimal": 41
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "40",
+                  "decimal": 41
                 },
                 "Betway": {
                   "fraction": "40",
@@ -30846,8 +30855,8 @@
                   "decimal": 41
                 },
                 "Betfair": {
-                  "fraction": "1/100",
-                  "decimal": 1.01
+                  "fraction": "7/2",
+                  "decimal": 4.92
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -30929,8 +30938,8 @@
                   "decimal": 67
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "66",
+                  "decimal": 67
                 },
                 "Betway": {
                   "fraction": "66",
@@ -31048,8 +31057,8 @@
                   "decimal": 51
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "66",
+                  "decimal": 67
                 },
                 "Betway": {
                   "fraction": "50",
@@ -31167,8 +31176,8 @@
                   "decimal": 67
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "66",
+                  "decimal": 67
                 },
                 "Betway": {
                   "fraction": "66",
@@ -31286,8 +31295,8 @@
                   "decimal": 67
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "66",
+                  "decimal": 67
                 },
                 "Betway": {
                   "fraction": "66",
@@ -31405,8 +31414,8 @@
                   "decimal": 67
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "66",
+                  "decimal": 67
                 },
                 "Betway": {
                   "fraction": "66",
@@ -31524,8 +31533,8 @@
                   "decimal": 101
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "100",
+                  "decimal": 101
                 },
                 "Betway": {
                   "fraction": "80",
@@ -31612,7 +31621,7 @@
         "Edwardstone": 392,
         "Master Chewy": 118
       },
-      "lastUpdated": "2026-02-20T09:05:56.803Z",
+      "lastUpdated": "2026-02-20T18:05:32.808Z",
       "latestData": [
         {
           "name": "Ryanair Chase Betting Odds- Winner",
@@ -31649,8 +31658,8 @@
               "name": "Gaelic Warrior",
               "odds": {
                 "bet365": {
-                  "fraction": "1",
-                  "decimal": 2
+                  "fraction": "4/5",
+                  "decimal": 1.8
                 },
                 "William Hill": {
                   "fraction": "1",
@@ -31769,8 +31778,8 @@
               "name": "Fact To File",
               "odds": {
                 "bet365": {
-                  "fraction": "1",
-                  "decimal": 2
+                  "fraction": "4/5",
+                  "decimal": 1.8
                 },
                 "William Hill": {
                   "fraction": "4/5",
@@ -31865,8 +31874,8 @@
                   "decimal": 2.5
                 },
                 "Betfair": {
-                  "fraction": "3",
-                  "decimal": 4.04
+                  "fraction": "14/5",
+                  "decimal": 3.94
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -31882,7 +31891,7 @@
               "weight": "11-10",
               "officialRating": "-",
               "marketMove": "drifter",
-              "movePercent": 4,
+              "movePercent": 1,
               "openingOdds": 3.89
             },
             {
@@ -32041,8 +32050,8 @@
                   "decimal": 8
                 },
                 "BetMGM UK": {
-                  "fraction": "8",
-                  "decimal": 9
+                  "fraction": "7",
+                  "decimal": 8
                 },
                 "BOYLE Sports": {
                   "fraction": "15/2",
@@ -32065,8 +32074,8 @@
                   "decimal": 7.5
                 },
                 "Virgin Bet": {
-                  "fraction": "8",
-                  "decimal": 9
+                  "fraction": "7",
+                  "decimal": 8
                 },
                 "QuinnBet": {
                   "fraction": "7",
@@ -32105,8 +32114,8 @@
                   "decimal": 8.5
                 },
                 "Betfair": {
-                  "fraction": "49/5",
-                  "decimal": 10.8
+                  "fraction": "196/25",
+                  "decimal": 8.84
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -32121,7 +32130,8 @@
               "age": "8",
               "weight": "11-10",
               "officialRating": "-",
-              "marketMove": "stable",
+              "marketMove": "steamer",
+              "movePercent": 17,
               "openingOdds": 10.8
             },
             {
@@ -32224,8 +32234,8 @@
                   "decimal": 7
                 },
                 "Betfair": {
-                  "fraction": "147/10",
-                  "decimal": 15.7
+                  "fraction": "137/10",
+                  "decimal": 14.7
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -32241,7 +32251,7 @@
               "weight": "11-10",
               "officialRating": "-",
               "marketMove": "steamer",
-              "movePercent": 6,
+              "movePercent": 12,
               "openingOdds": 16.7
             },
             {
@@ -32344,8 +32354,8 @@
                   "decimal": 13
                 },
                 "Betfair": {
-                  "fraction": "137/10",
-                  "decimal": 14.7
+                  "fraction": "71/5",
+                  "decimal": 15.2
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -32361,7 +32371,7 @@
               "weight": "11-10",
               "officialRating": "-",
               "marketMove": "drifter",
-              "movePercent": 4,
+              "movePercent": 7,
               "openingOdds": 14.2
             },
             {
@@ -32703,8 +32713,8 @@
                   "decimal": 26
                 },
                 "Betfair": {
-                  "fraction": "44",
-                  "decimal": 45
+                  "fraction": "46",
+                  "decimal": 47
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -32720,7 +32730,7 @@
               "weight": "11-10",
               "officialRating": "-",
               "marketMove": "drifter",
-              "movePercent": 10,
+              "movePercent": 15,
               "openingOdds": 41
             },
             {
@@ -32823,8 +32833,8 @@
                   "decimal": 21
                 },
                 "Betfair": {
-                  "fraction": "40",
-                  "decimal": 41
+                  "fraction": "68",
+                  "decimal": 69
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -32839,8 +32849,8 @@
               "age": "11",
               "weight": "11-10",
               "officialRating": "165",
-              "marketMove": "steamer",
-              "movePercent": 36,
+              "marketMove": "drifter",
+              "movePercent": 8,
               "openingOdds": 64
             },
             {
@@ -32943,8 +32953,8 @@
                   "decimal": 26
                 },
                 "Betfair": {
-                  "fraction": "77",
-                  "decimal": 78
+                  "fraction": "82",
+                  "decimal": 83
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -32960,7 +32970,7 @@
               "weight": "11-10",
               "officialRating": "167",
               "marketMove": "drifter",
-              "movePercent": 22,
+              "movePercent": 30,
               "openingOdds": 64
             },
             {
@@ -33063,8 +33073,8 @@
                   "decimal": 26
                 },
                 "Betfair": {
-                  "fraction": "63",
-                  "decimal": 64
+                  "fraction": "68",
+                  "decimal": 69
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -33080,7 +33090,7 @@
               "weight": "11-10",
               "officialRating": "-",
               "marketMove": "drifter",
-              "movePercent": 8,
+              "movePercent": 17,
               "openingOdds": 59
             },
             {
@@ -33303,8 +33313,8 @@
                   "decimal": 15
                 },
                 "Betfair": {
-                  "fraction": "63",
-                  "decimal": 64
+                  "fraction": "58",
+                  "decimal": 59
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -33319,7 +33329,8 @@
               "age": "9",
               "weight": "11-10",
               "officialRating": "-",
-              "marketMove": "stable",
+              "marketMove": "steamer",
+              "movePercent": 8,
               "openingOdds": 64
             },
             {
@@ -33422,8 +33433,8 @@
                   "decimal": 21
                 },
                 "Betfair": {
-                  "fraction": "136",
-                  "decimal": 137
+                  "fraction": "146",
+                  "decimal": 147
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -33439,7 +33450,7 @@
               "weight": "11-10",
               "officialRating": "-",
               "marketMove": "drifter",
-              "movePercent": 56,
+              "movePercent": 67,
               "openingOdds": 88
             },
             {
@@ -34522,8 +34533,8 @@
               "name": "Edwardstone",
               "odds": {
                 "bet365": {
-                  "fraction": "66",
-                  "decimal": 67
+                  "fraction": "100",
+                  "decimal": 101
                 },
                 "William Hill": {
                   "fraction": "50",
@@ -34618,8 +34629,8 @@
                   "decimal": 67
                 },
                 "Betfair": {
-                  "fraction": "293",
-                  "decimal": 294
+                  "fraction": "391",
+                  "decimal": 392
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -34634,16 +34645,15 @@
               "age": "12",
               "weight": "11-10",
               "officialRating": "152",
-              "marketMove": "steamer",
-              "movePercent": 25,
+              "marketMove": "stable",
               "openingOdds": 392
             },
             {
               "name": "Master Chewy",
               "odds": {
                 "bet365": {
-                  "fraction": "66",
-                  "decimal": 67
+                  "fraction": "100",
+                  "decimal": 101
                 },
                 "William Hill": {
                   "fraction": "66",
@@ -64868,7 +64878,7 @@
         "El Capitaine": 235,
         "Pottersville": 647
       },
-      "lastUpdated": "2026-02-20T09:16:28.282Z",
+      "lastUpdated": "2026-02-20T18:04:18.269Z",
       "latestData": [
         {
           "name": "Albert Bartlett Novices Hurdle Betting Odds- Winner",
@@ -65001,16 +65011,16 @@
                   "decimal": 3.75
                 },
                 "Betfair": {
-                  "fraction": "7/2",
-                  "decimal": 4.72
+                  "fraction": "421/100",
+                  "decimal": 5.21
                 },
                 "Matchbook": {
                   "fraction": "",
                   "decimal": 0
                 }
               },
-              "marketMove": "steamer",
-              "movePercent": 4,
+              "marketMove": "drifter",
+              "movePercent": 6,
               "openingOdds": 4.92
             },
             {
@@ -65113,8 +65123,8 @@
                   "decimal": 7
                 },
                 "Betfair": {
-                  "fraction": "152/25",
-                  "decimal": 7.08
+                  "fraction": "627/100",
+                  "decimal": 7.27
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -65188,8 +65198,8 @@
                   "decimal": 13
                 },
                 "QuinnBet": {
-                  "fraction": "12",
-                  "decimal": 13
+                  "fraction": "10",
+                  "decimal": 11
                 },
                 "Betway": {
                   "fraction": "10",
@@ -65224,15 +65234,16 @@
                   "decimal": 13
                 },
                 "Betfair": {
-                  "fraction": "171/10",
-                  "decimal": 18.1
+                  "fraction": "21",
+                  "decimal": 22
                 },
                 "Matchbook": {
                   "fraction": "",
                   "decimal": 0
                 }
               },
-              "marketMove": "stable",
+              "marketMove": "drifter",
+              "movePercent": 22,
               "openingOdds": 18.1
             },
             {
@@ -65335,8 +65346,8 @@
                   "decimal": 13
                 },
                 "Betfair": {
-                  "fraction": "22",
-                  "decimal": 23
+                  "fraction": "23",
+                  "decimal": 24
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -65344,7 +65355,7 @@
                 }
               },
               "marketMove": "drifter",
-              "movePercent": 27,
+              "movePercent": 33,
               "openingOdds": 18.1
             },
             {
@@ -65447,8 +65458,8 @@
                   "decimal": 13
                 },
                 "Betfair": {
-                  "fraction": "20",
-                  "decimal": 21
+                  "fraction": "21",
+                  "decimal": 22
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -65456,7 +65467,7 @@
                 }
               },
               "marketMove": "drifter",
-              "movePercent": 26,
+              "movePercent": 32,
               "openingOdds": 16.7
             },
             {
@@ -65670,8 +65681,8 @@
                   "decimal": 17
                 },
                 "Betfair": {
-                  "fraction": "71/5",
-                  "decimal": 15.2
+                  "fraction": "76/5",
+                  "decimal": 16.2
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -65745,8 +65756,8 @@
                   "decimal": 6
                 },
                 "QuinnBet": {
-                  "fraction": "7",
-                  "decimal": 8
+                  "fraction": "6",
+                  "decimal": 7
                 },
                 "Betway": {
                   "fraction": "5",
@@ -65781,15 +65792,16 @@
                   "decimal": 21
                 },
                 "Betfair": {
-                  "fraction": "73",
-                  "decimal": 74
+                  "fraction": "40",
+                  "decimal": 41
                 },
                 "Matchbook": {
                   "fraction": "",
                   "decimal": 0
                 }
               },
-              "marketMove": "stable",
+              "marketMove": "steamer",
+              "movePercent": 45,
               "openingOdds": 74
             },
             {
@@ -65892,8 +65904,8 @@
                   "decimal": 15
                 },
                 "Betfair": {
-                  "fraction": "20",
-                  "decimal": 21
+                  "fraction": "21",
+                  "decimal": 22
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -65901,7 +65913,7 @@
                 }
               },
               "marketMove": "steamer",
-              "movePercent": 9,
+              "movePercent": 4,
               "openingOdds": 23
             },
             {
@@ -66004,15 +66016,16 @@
                   "decimal": 21
                 },
                 "Betfair": {
-                  "fraction": "34",
-                  "decimal": 35
+                  "fraction": "36",
+                  "decimal": 37
                 },
                 "Matchbook": {
                   "fraction": "",
                   "decimal": 0
                 }
               },
-              "marketMove": "stable",
+              "marketMove": "drifter",
+              "movePercent": 6,
               "openingOdds": 35
             },
             {
@@ -66115,15 +66128,16 @@
                   "decimal": 26
                 },
                 "Betfair": {
-                  "fraction": "28",
-                  "decimal": 29
+                  "fraction": "30",
+                  "decimal": 31
                 },
                 "Matchbook": {
                   "fraction": "",
                   "decimal": 0
                 }
               },
-              "marketMove": "stable",
+              "marketMove": "drifter",
+              "movePercent": 7,
               "openingOdds": 29
             },
             {
@@ -66337,8 +66351,8 @@
                   "decimal": 26
                 },
                 "Betfair": {
-                  "fraction": "23",
-                  "decimal": 24
+                  "fraction": "24",
+                  "decimal": 25
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -66781,15 +66795,16 @@
                   "decimal": 26
                 },
                 "Betfair": {
-                  "fraction": "26",
-                  "decimal": 27
+                  "fraction": "34",
+                  "decimal": 35
                 },
                 "Matchbook": {
                   "fraction": "",
                   "decimal": 0
                 }
               },
-              "marketMove": "stable",
+              "marketMove": "drifter",
+              "movePercent": 3,
               "openingOdds": 34
             },
             {
@@ -67078,8 +67093,8 @@
                   "decimal": 26
                 },
                 "QuinnBet": {
-                  "fraction": "33",
-                  "decimal": 34
+                  "fraction": "25",
+                  "decimal": 26
                 },
                 "Betway": {
                   "fraction": "28",
@@ -67523,8 +67538,8 @@
                   "decimal": 41
                 },
                 "QuinnBet": {
-                  "fraction": "50",
-                  "decimal": 51
+                  "fraction": "40",
+                  "decimal": 41
                 },
                 "Betway": {
                   "fraction": "40",
@@ -67671,16 +67686,16 @@
                   "decimal": 41
                 },
                 "Betfair": {
-                  "fraction": "126",
-                  "decimal": 127
+                  "fraction": "97",
+                  "decimal": 98
                 },
                 "Matchbook": {
                   "fraction": "",
                   "decimal": 0
                 }
               },
-              "marketMove": "drifter",
-              "movePercent": 18,
+              "marketMove": "steamer",
+              "movePercent": 9,
               "openingOdds": 108
             },
             {
@@ -68449,16 +68464,16 @@
                   "decimal": 51
                 },
                 "Betfair": {
-                  "fraction": "548",
-                  "decimal": 549
+                  "fraction": "77",
+                  "decimal": 78
                 },
                 "Matchbook": {
                   "fraction": "",
                   "decimal": 0
                 }
               },
-              "marketMove": "drifter",
-              "movePercent": 444,
+              "marketMove": "steamer",
+              "movePercent": 23,
               "openingOdds": 101
             },
             {
@@ -68783,8 +68798,8 @@
                   "decimal": 51
                 },
                 "Betfair": {
-                  "fraction": "205",
-                  "decimal": 206
+                  "fraction": "215",
+                  "decimal": 216
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -68792,7 +68807,7 @@
                 }
               },
               "marketMove": "drifter",
-              "movePercent": 11,
+              "movePercent": 16,
               "openingOdds": 186
             },
             {
@@ -69452,15 +69467,16 @@
                   "decimal": 41
                 },
                 "Betfair": {
-                  "fraction": "68",
-                  "decimal": 69
+                  "fraction": "352",
+                  "decimal": 353
                 },
                 "Matchbook": {
                   "fraction": "",
                   "decimal": 0
                 }
               },
-              "marketMove": "stable",
+              "marketMove": "drifter",
+              "movePercent": 250,
               "openingOdds": 101
             },
             {
@@ -91487,7 +91503,7 @@
         "El Capitaine": 67,
         "Hartur dArc": 67
       },
-      "lastUpdated": "2026-02-20T09:05:09.926Z",
+      "lastUpdated": "2026-02-20T18:00:42.062Z",
       "latestData": [
         {
           "name": "Pertemps Network Final Betting Odds- Winner",
@@ -91620,8 +91636,8 @@
                   "decimal": 9
                 },
                 "Betfair": {
-                  "fraction": "54/5",
-                  "decimal": 11.8
+                  "fraction": "113/10",
+                  "decimal": 12.3
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -91629,9 +91645,9 @@
                 }
               },
               "marketMove": "drifter",
-              "movePercent": 4,
+              "movePercent": 9,
               "openingOdds": 11.3,
-              "velocity": 0.0008517340055142395
+              "velocity": 0.0009336447474266882
             },
             {
               "name": "Supremely West",
@@ -91733,8 +91749,8 @@
                   "decimal": 8
                 },
                 "Betfair": {
-                  "fraction": "343/50",
-                  "decimal": 7.86
+                  "fraction": "353/50",
+                  "decimal": 8.06
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -91845,8 +91861,8 @@
                   "decimal": 11
                 },
                 "Betfair": {
-                  "fraction": "1/100",
-                  "decimal": 1.01
+                  "fraction": "49/5",
+                  "decimal": 10.8
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -92069,8 +92085,8 @@
                   "decimal": 13
                 },
                 "Betfair": {
-                  "fraction": "147/10",
-                  "decimal": 15.7
+                  "fraction": "76/5",
+                  "decimal": 16.2
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -92078,9 +92094,9 @@
                 }
               },
               "marketMove": "drifter",
-              "movePercent": 3,
+              "movePercent": 7,
               "openingOdds": 15.2,
-              "velocity": 0.0008517340055142395
+              "velocity": 0.0009336447183702721
             },
             {
               "name": "Absolutely Doyen",
@@ -92641,7 +92657,7 @@
               "marketMove": "drifter",
               "movePercent": 3,
               "openingOdds": 19.1,
-              "velocity": 0.0008517340055142395
+              "velocity": 0
             },
             {
               "name": "Letos",
@@ -92731,29 +92747,30 @@
                   "decimal": 21
                 },
                 "Skybet": {
-                  "fraction": "20",
-                  "decimal": 21
+                  "fraction": "16",
+                  "decimal": 17
                 },
                 "Paddy Power": {
-                  "fraction": "20",
-                  "decimal": 21
+                  "fraction": "16",
+                  "decimal": 17
                 },
                 "AK Bets": {
                   "fraction": "20",
                   "decimal": 21
                 },
                 "Betfair": {
-                  "fraction": "93/5",
-                  "decimal": 19.6
+                  "fraction": "21",
+                  "decimal": 22
                 },
                 "Matchbook": {
                   "fraction": "",
                   "decimal": 0
                 }
               },
-              "marketMove": "stable",
+              "marketMove": "drifter",
+              "movePercent": 5,
               "openingOdds": 21,
-              "velocity": 0
+              "velocity": 0.0018672894367405442
             },
             {
               "name": "Staffordshire Knot",
@@ -92855,17 +92872,18 @@
                   "decimal": 17
                 },
                 "Betfair": {
-                  "fraction": "21",
-                  "decimal": 22
+                  "fraction": "20",
+                  "decimal": 21
                 },
                 "Matchbook": {
                   "fraction": "",
                   "decimal": 0
                 }
               },
-              "marketMove": "stable",
+              "marketMove": "steamer",
+              "movePercent": 5,
               "openingOdds": 22,
-              "velocity": 0
+              "velocity": -0.0018672894367405442
             },
             {
               "name": "Monmiral",
@@ -93204,118 +93222,6 @@
               "velocity": 0
             },
             {
-              "name": "Gold In The Rivers",
-              "odds": {
-                "bet365": {
-                  "fraction": "25",
-                  "decimal": 26
-                },
-                "William Hill": {
-                  "fraction": "25",
-                  "decimal": 26
-                },
-                "Unibet": {
-                  "fraction": "25",
-                  "decimal": 26
-                },
-                "Betfred": {
-                  "fraction": "25",
-                  "decimal": 26
-                },
-                "888sport": {
-                  "fraction": "25",
-                  "decimal": 26
-                },
-                "Spreadex": {
-                  "fraction": "25",
-                  "decimal": 26
-                },
-                "Ladbrokes": {
-                  "fraction": "25",
-                  "decimal": 26
-                },
-                "BetVictor": {
-                  "fraction": "25",
-                  "decimal": 26
-                },
-                "BetMGM UK": {
-                  "fraction": "25",
-                  "decimal": 26
-                },
-                "BOYLE Sports": {
-                  "fraction": "25",
-                  "decimal": 26
-                },
-                "10bet": {
-                  "fraction": "",
-                  "decimal": 0
-                },
-                "Star Sports": {
-                  "fraction": "25",
-                  "decimal": 26
-                },
-                "PricedUp": {
-                  "fraction": "25",
-                  "decimal": 26
-                },
-                "Sporting Index": {
-                  "fraction": "25",
-                  "decimal": 26
-                },
-                "Virgin Bet": {
-                  "fraction": "25",
-                  "decimal": 26
-                },
-                "QuinnBet": {
-                  "fraction": "25",
-                  "decimal": 26
-                },
-                "Betway": {
-                  "fraction": "20",
-                  "decimal": 21
-                },
-                "Coral": {
-                  "fraction": "20",
-                  "decimal": 21
-                },
-                "BetGoodwin": {
-                  "fraction": "",
-                  "decimal": 0
-                },
-                "BetTom": {
-                  "fraction": "",
-                  "decimal": 0
-                },
-                "BresBet": {
-                  "fraction": "25",
-                  "decimal": 26
-                },
-                "Skybet": {
-                  "fraction": "20",
-                  "decimal": 21
-                },
-                "Paddy Power": {
-                  "fraction": "20",
-                  "decimal": 21
-                },
-                "AK Bets": {
-                  "fraction": "25",
-                  "decimal": 26
-                },
-                "Betfair": {
-                  "fraction": "28",
-                  "decimal": 29
-                },
-                "Matchbook": {
-                  "fraction": "",
-                  "decimal": 0
-                }
-              },
-              "marketMove": "stable",
-              "openingOdds": 29,
-              "velocity": 0
-            },
-            {
               "name": "Firestream",
               "odds": {
                 "bet365": {
@@ -93443,16 +93349,16 @@
                   "decimal": 21
                 },
                 "Betfred": {
-                  "fraction": "25",
-                  "decimal": 26
+                  "fraction": "16",
+                  "decimal": 17
                 },
                 "888sport": {
                   "fraction": "14",
                   "decimal": 15
                 },
                 "Spreadex": {
-                  "fraction": "16",
-                  "decimal": 17
+                  "fraction": "10",
+                  "decimal": 11
                 },
                 "Ladbrokes": {
                   "fraction": "16",
@@ -93463,32 +93369,32 @@
                   "decimal": 26
                 },
                 "BetMGM UK": {
-                  "fraction": "20",
-                  "decimal": 21
+                  "fraction": "16",
+                  "decimal": 17
                 },
                 "BOYLE Sports": {
-                  "fraction": "20",
-                  "decimal": 21
+                  "fraction": "16",
+                  "decimal": 17
                 },
                 "10bet": {
                   "fraction": "",
                   "decimal": 0
                 },
                 "Star Sports": {
-                  "fraction": "25",
-                  "decimal": 26
-                },
-                "PricedUp": {
-                  "fraction": "25",
-                  "decimal": 26
-                },
-                "Sporting Index": {
                   "fraction": "16",
                   "decimal": 17
                 },
+                "PricedUp": {
+                  "fraction": "16",
+                  "decimal": 17
+                },
+                "Sporting Index": {
+                  "fraction": "10",
+                  "decimal": 11
+                },
                 "Virgin Bet": {
-                  "fraction": "20",
-                  "decimal": 21
+                  "fraction": "16",
+                  "decimal": 17
                 },
                 "QuinnBet": {
                   "fraction": "25",
@@ -93511,20 +93417,20 @@
                   "decimal": 0
                 },
                 "BresBet": {
-                  "fraction": "25",
-                  "decimal": 26
+                  "fraction": "16",
+                  "decimal": 17
                 },
                 "Skybet": {
-                  "fraction": "25",
-                  "decimal": 26
+                  "fraction": "16",
+                  "decimal": 17
                 },
                 "Paddy Power": {
-                  "fraction": "25",
-                  "decimal": 26
+                  "fraction": "16",
+                  "decimal": 17
                 },
                 "AK Bets": {
-                  "fraction": "25",
-                  "decimal": 26
+                  "fraction": "16",
+                  "decimal": 17
                 },
                 "Betfair": {
                   "fraction": "20",
@@ -93650,7 +93556,7 @@
               "marketMove": "drifter",
               "movePercent": 7,
               "openingOdds": 29,
-              "velocity": 0.003406936022056958
+              "velocity": 0
             },
             {
               "name": "Bold Endeavour",
@@ -95445,6 +95351,119 @@
               "velocity": 0
             },
             {
+              "name": "Gold In The Rivers",
+              "odds": {
+                "bet365": {
+                  "fraction": "25",
+                  "decimal": 26
+                },
+                "William Hill": {
+                  "fraction": "50",
+                  "decimal": 51
+                },
+                "Unibet": {
+                  "fraction": "25",
+                  "decimal": 26
+                },
+                "Betfred": {
+                  "fraction": "20",
+                  "decimal": 21
+                },
+                "888sport": {
+                  "fraction": "50",
+                  "decimal": 51
+                },
+                "Spreadex": {
+                  "fraction": "25",
+                  "decimal": 26
+                },
+                "Ladbrokes": {
+                  "fraction": "25",
+                  "decimal": 26
+                },
+                "BetVictor": {
+                  "fraction": "25",
+                  "decimal": 26
+                },
+                "BetMGM UK": {
+                  "fraction": "25",
+                  "decimal": 26
+                },
+                "BOYLE Sports": {
+                  "fraction": "25",
+                  "decimal": 26
+                },
+                "10bet": {
+                  "fraction": "",
+                  "decimal": 0
+                },
+                "Star Sports": {
+                  "fraction": "20",
+                  "decimal": 21
+                },
+                "PricedUp": {
+                  "fraction": "20",
+                  "decimal": 21
+                },
+                "Sporting Index": {
+                  "fraction": "25",
+                  "decimal": 26
+                },
+                "Virgin Bet": {
+                  "fraction": "25",
+                  "decimal": 26
+                },
+                "QuinnBet": {
+                  "fraction": "25",
+                  "decimal": 26
+                },
+                "Betway": {
+                  "fraction": "20",
+                  "decimal": 21
+                },
+                "Coral": {
+                  "fraction": "20",
+                  "decimal": 21
+                },
+                "BetGoodwin": {
+                  "fraction": "",
+                  "decimal": 0
+                },
+                "BetTom": {
+                  "fraction": "",
+                  "decimal": 0
+                },
+                "BresBet": {
+                  "fraction": "20",
+                  "decimal": 21
+                },
+                "Skybet": {
+                  "fraction": "20",
+                  "decimal": 21
+                },
+                "Paddy Power": {
+                  "fraction": "20",
+                  "decimal": 21
+                },
+                "AK Bets": {
+                  "fraction": "20",
+                  "decimal": 21
+                },
+                "Betfair": {
+                  "fraction": "28",
+                  "decimal": 29
+                },
+                "Matchbook": {
+                  "fraction": "",
+                  "decimal": 0
+                }
+              },
+              "marketMove": "drifter",
+              "movePercent": 76,
+              "openingOdds": 29,
+              "velocity": 0.04108036760829197
+            },
+            {
               "name": "Ontheropes",
               "odds": {
                 "bet365": {
@@ -96888,8 +96907,8 @@
                   "decimal": 51
                 },
                 "Betfair": {
-                  "fraction": "1/100",
-                  "decimal": 1.01
+                  "fraction": "441/50",
+                  "decimal": 9.82
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -97017,32 +97036,32 @@
       ],
       "velocityTracking": {
         "CEst Different": {
-          "lastOdds": 11.8,
-          "lastTime": 1771578309926
+          "lastOdds": 12.3,
+          "lastTime": 1771610442062
         },
         "Supremely West": {
           "lastOdds": 9,
-          "lastTime": 1771578309926
+          "lastTime": 1771610442063
         },
         "Minella Emperor": {
           "lastOdds": 13,
-          "lastTime": 1771578309926
+          "lastTime": 1771610442063
         },
         "Electric Mason": {
           "lastOdds": 13.3,
-          "lastTime": 1771578309926
+          "lastTime": 1771610442063
         },
         "Ace Of Spades": {
-          "lastOdds": 15.7,
-          "lastTime": 1771578309926
+          "lastOdds": 16.2,
+          "lastTime": 1771610442063
         },
         "Absolutely Doyen": {
           "lastOdds": 15.2,
-          "lastTime": 1771578309926
+          "lastTime": 1771610442063
         },
         "Impose Toi": {
           "lastOdds": 15.7,
-          "lastTime": 1771578309926
+          "lastTime": 1771610442063
         },
         "Absolutely Dylan": {
           "lastOdds": 15,
@@ -97050,171 +97069,171 @@
         },
         "Yeah Man": {
           "lastOdds": 18.6,
-          "lastTime": 1771578309926
+          "lastTime": 1771610442063
         },
         "Champagne Chic": {
           "lastOdds": 19.1,
-          "lastTime": 1771578309926
+          "lastTime": 1771610442063
         },
         "Kikijo": {
           "lastOdds": 19.6,
-          "lastTime": 1771578309926
+          "lastTime": 1771610442063
         },
         "Letos": {
-          "lastOdds": 21,
-          "lastTime": 1771578309926
+          "lastOdds": 22,
+          "lastTime": 1771610442063
         },
         "Staffordshire Knot": {
-          "lastOdds": 22,
-          "lastTime": 1771578309926
+          "lastOdds": 21,
+          "lastTime": 1771610442063
         },
         "Monmiral": {
           "lastOdds": 26,
-          "lastTime": 1771578309926
+          "lastTime": 1771610442063
         },
         "Gowel Road": {
           "lastOdds": 26,
-          "lastTime": 1771578309926
+          "lastTime": 1771610442063
         },
         "Duke Silver": {
           "lastOdds": 29,
-          "lastTime": 1771578309926
+          "lastTime": 1771610442063
         },
         "Gold In The Rivers": {
-          "lastOdds": 29,
-          "lastTime": 1771578309926
+          "lastOdds": 51,
+          "lastTime": 1771610442063
         },
         "Firestream": {
           "lastOdds": 26,
-          "lastTime": 1771578309926
+          "lastTime": 1771610442063
         },
         "Melbourne Shamrock": {
           "lastOdds": 26,
-          "lastTime": 1771578309926
+          "lastTime": 1771610442063
         },
         "Wendrock": {
           "lastOdds": 31,
-          "lastTime": 1771578309926
+          "lastTime": 1771610442063
         },
         "Bold Endeavour": {
           "lastOdds": 26,
-          "lastTime": 1771578309926
+          "lastTime": 1771610442063
         },
         "American Mike": {
           "lastOdds": 35,
-          "lastTime": 1771578309926
+          "lastTime": 1771610442063
         },
         "Ambion View": {
           "lastOdds": 35,
-          "lastTime": 1771578309926
+          "lastTime": 1771610442063
         },
         "Harry des Ongrais": {
           "lastOdds": 41,
-          "lastTime": 1771578309926
+          "lastTime": 1771610442063
         },
         "Ikarak": {
           "lastOdds": 39,
-          "lastTime": 1771578309926
+          "lastTime": 1771610442063
         },
         "A Perfect Day": {
           "lastOdds": 41,
-          "lastTime": 1771578309926
+          "lastTime": 1771610442063
         },
         "Red Dirt Road": {
           "lastOdds": 41,
-          "lastTime": 1771578309926
+          "lastTime": 1771610442063
         },
         "Stones Throw": {
           "lastOdds": 41,
-          "lastTime": 1771578309926
+          "lastTime": 1771610442063
         },
         "Onewaywest": {
           "lastOdds": 37,
-          "lastTime": 1771578309926
+          "lastTime": 1771610442063
         },
         "Keable": {
           "lastOdds": 35,
-          "lastTime": 1771578309926
+          "lastTime": 1771610442063
         },
         "Small Town Hero": {
           "lastOdds": 49,
-          "lastTime": 1771578309926
+          "lastTime": 1771610442063
         },
         "Minella Sixo": {
           "lastOdds": 41,
-          "lastTime": 1771578309926
+          "lastTime": 1771610442063
         },
         "Tranquil Sea": {
           "lastOdds": 59,
-          "lastTime": 1771578309926
+          "lastTime": 1771610442063
         },
         "Ike Sport": {
           "lastOdds": 59,
-          "lastTime": 1771578309926
+          "lastTime": 1771610442063
         },
         "Idy Wood": {
           "lastOdds": 54,
-          "lastTime": 1771578309926
+          "lastTime": 1771610442063
         },
         "Green Book": {
           "lastOdds": 51,
-          "lastTime": 1771578309926
+          "lastTime": 1771610442063
         },
         "Ontheropes": {
           "lastOdds": 59,
-          "lastTime": 1771578309926
+          "lastTime": 1771610442063
         },
         "Millstream Lady": {
           "lastOdds": 51,
-          "lastTime": 1771578309926
+          "lastTime": 1771610442063
         },
         "Turndlightsdownlow": {
           "lastOdds": 54,
-          "lastTime": 1771578309926
+          "lastTime": 1771610442063
         },
         "Lihyan": {
           "lastOdds": 59,
-          "lastTime": 1771578309926
+          "lastTime": 1771610442063
         },
         "Beachcomber": {
           "lastOdds": 54,
-          "lastTime": 1771578309926
+          "lastTime": 1771610442063
         },
         "Idem": {
           "lastOdds": 59,
-          "lastTime": 1771578309926
+          "lastTime": 1771610442063
         },
         "Eyed": {
           "lastOdds": 51,
-          "lastTime": 1771578309926
+          "lastTime": 1771610442063
         },
         "Lavida Adiva": {
           "lastOdds": 54,
-          "lastTime": 1771578309926
+          "lastTime": 1771610442063
         },
         "Found A Diamond": {
           "lastOdds": 51,
-          "lastTime": 1771578309926
+          "lastTime": 1771610442063
         },
         "Minella Missile": {
           "lastOdds": 54,
-          "lastTime": 1771578309926
+          "lastTime": 1771610442063
         },
         "Block Rockin Beats": {
           "lastOdds": 51,
-          "lastTime": 1771578309926
+          "lastTime": 1771610442063
         },
         "Classic King": {
           "lastOdds": 67,
-          "lastTime": 1771578309926
+          "lastTime": 1771610442063
         },
         "El Capitaine": {
           "lastOdds": 67,
-          "lastTime": 1771578309926
+          "lastTime": 1771610442063
         },
         "Hartur dArc": {
           "lastOdds": 67,
-          "lastTime": 1771578309926
+          "lastTime": 1771610442063
         }
       }
     },
@@ -109099,7 +109118,7 @@
         "Brookie": 627,
         "Senecia": 490
       },
-      "lastUpdated": "2026-02-20T15:22:24.234Z",
+      "lastUpdated": "2026-02-20T18:14:32.397Z",
       "latestData": [
         {
           "name": "Champion Chase Betting Odds- Winner",
@@ -109579,7 +109598,7 @@
               "marketMove": "steamer",
               "movePercent": 6,
               "openingOdds": 9.43,
-              "velocity": -0.0015040423048861998
+              "velocity": 0
             },
             {
               "name": "Thistle Ask",
@@ -109793,8 +109812,8 @@
                   "decimal": 19
                 },
                 "Betfair": {
-                  "fraction": "181/10",
-                  "decimal": 19.1
+                  "fraction": "93/5",
+                  "decimal": 19.6
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -109905,17 +109924,18 @@
                   "decimal": 21
                 },
                 "Betfair": {
-                  "fraction": "44",
-                  "decimal": 45
+                  "fraction": "42",
+                  "decimal": 43
                 },
                 "Matchbook": {
                   "fraction": "",
                   "decimal": 0
                 }
               },
-              "marketMove": "stable",
+              "marketMove": "steamer",
+              "movePercent": 4,
               "openingOdds": 45,
-              "velocity": 0
+              "velocity": -0.011618716706930361
             },
             {
               "name": "Jonbon",
@@ -110689,8 +110709,8 @@
                   "decimal": 67
                 },
                 "Betfair": {
-                  "fraction": "254",
-                  "decimal": 255
+                  "fraction": "234",
+                  "decimal": 235
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -110698,9 +110718,9 @@
                 }
               },
               "marketMove": "drifter",
-              "movePercent": 116,
+              "movePercent": 99,
               "openingOdds": 118,
-              "velocity": 0.3492437216430668
+              "velocity": -0.1161871670693036
             },
             {
               "name": "Captain Guinness",
@@ -110925,7 +110945,7 @@
               "marketMove": "steamer",
               "movePercent": 8,
               "openingOdds": 118,
-              "velocity": -0.025492242455698304
+              "velocity": 0
             },
             {
               "name": "Brookie",
@@ -111157,75 +111177,75 @@
       "velocityTracking": {
         "Majborough": {
           "lastOdds": 2.82,
-          "lastTime": 1771600944234
+          "lastTime": 1771611272397
         },
         "Marine Nationale": {
           "lastOdds": 3.6,
-          "lastTime": 1771600944234
+          "lastTime": 1771611272397
         },
         "Il Etait Temps": {
           "lastOdds": 9.43,
-          "lastTime": 1771600944234
+          "lastTime": 1771611272397
         },
         "LEau du Sud": {
           "lastOdds": 8.84,
-          "lastTime": 1771600944234
+          "lastTime": 1771611272397
         },
         "Thistle Ask": {
           "lastOdds": 37,
-          "lastTime": 1771600944234
+          "lastTime": 1771611272397
         },
         "Quilixios": {
           "lastOdds": 21,
-          "lastTime": 1771600944234
+          "lastTime": 1771611272397
         },
         "Found A Fifty": {
-          "lastOdds": 45,
-          "lastTime": 1771600944234
+          "lastOdds": 43,
+          "lastTime": 1771611272397
         },
         "Jonbon": {
           "lastOdds": 74,
-          "lastTime": 1771600944234
+          "lastTime": 1771611272397
         },
         "Solness": {
           "lastOdds": 49,
-          "lastTime": 1771600944234
+          "lastTime": 1771611272397
         },
         "Irish Panther": {
           "lastOdds": 93,
-          "lastTime": 1771600944234
+          "lastTime": 1771611272397
         },
         "Only By Night": {
           "lastOdds": 78,
-          "lastTime": 1771600944234
+          "lastTime": 1771611272397
         },
         "Saint Segal": {
           "lastOdds": 118,
-          "lastTime": 1771600944234
+          "lastTime": 1771611272397
         },
         "Calico": {
           "lastOdds": 98,
-          "lastTime": 1771600944234
+          "lastTime": 1771611272397
         },
         "JPR One": {
-          "lastOdds": 255,
-          "lastTime": 1771600944234
+          "lastOdds": 235,
+          "lastTime": 1771611272397
         },
         "Captain Guinness": {
           "lastOdds": 81,
-          "lastTime": 1771600944234
+          "lastTime": 1771611272397
         },
         "Libberty Hunter": {
           "lastOdds": 108,
-          "lastTime": 1771600944234
+          "lastTime": 1771611272397
         },
         "Brookie": {
           "lastOdds": 627,
-          "lastTime": 1771600944234
+          "lastTime": 1771611272397
         },
         "Senecia": {
           "lastOdds": 490,
-          "lastTime": 1771600944234
+          "lastTime": 1771611272397
         }
       }
     },

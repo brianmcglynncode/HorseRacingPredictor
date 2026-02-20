@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function handlePaywallSubmit() {
         const input = document.querySelector('.paywall-code-input');
         const errorEl = document.querySelector('.paywall-error');
-        if (input && input.value.trim() === 'Abbeyvale24') {
+        if (input && input.value.trim() === 'Optimus') {
             unlockAllRaces();
         } else {
             if (errorEl) {
@@ -77,6 +77,57 @@ document.addEventListener('DOMContentLoaded', () => {
         if (overlay) {
             overlay.addEventListener('click', (e) => {
                 if (e.target === overlay) closePaywallModal();
+            });
+        }
+    }, 0);
+
+    // --- SUCCESS TIP CARD DISMISS ---
+    setTimeout(() => {
+        const tipSection = document.getElementById('success-tip');
+        const tipCardCloseX = document.getElementById('tip-card-close-x');
+        const tipCardCloseBtn = document.getElementById('tip-card-close-btn');
+
+        function dismissTipCard() {
+            if (tipSection) {
+                tipSection.classList.add('dismissed');
+                setTimeout(() => { tipSection.style.display = 'none'; }, 400);
+            }
+        }
+
+        if (tipCardCloseX) tipCardCloseX.addEventListener('click', dismissTipCard);
+        if (tipCardCloseBtn) tipCardCloseBtn.addEventListener('click', dismissTipCard);
+    }, 0);
+
+    // --- SUCCESS TIP MODAL ---
+    setTimeout(() => {
+        const tipBtn = document.getElementById('open-tip-modal');
+        const tipOverlay = document.getElementById('tip-modal');
+        const tipCloseBtn = document.getElementById('tip-modal-close');
+
+        if (tipBtn && tipOverlay) {
+            tipBtn.addEventListener('click', () => {
+                tipOverlay.classList.add('visible');
+            });
+        }
+
+        if (tipCloseBtn && tipOverlay) {
+            tipCloseBtn.addEventListener('click', () => {
+                tipOverlay.classList.remove('visible');
+            });
+        }
+
+        const tipCloseBtnBottom = document.getElementById('tip-modal-close-btn');
+        if (tipCloseBtnBottom && tipOverlay) {
+            tipCloseBtnBottom.addEventListener('click', () => {
+                tipOverlay.classList.remove('visible');
+            });
+        }
+
+        if (tipOverlay) {
+            tipOverlay.addEventListener('click', (e) => {
+                if (e.target === tipOverlay) {
+                    tipOverlay.classList.remove('visible');
+                }
             });
         }
     }, 0);
