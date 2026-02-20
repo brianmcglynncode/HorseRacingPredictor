@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Cinematic Loading Sequence with LLM Branding
         const loadingMessages = [
             `<span><img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg" style="height:16px; vertical-align:middle; margin-right:8px; filter: invert(1);"> o3 (High-Reasoning) analyzing betting patterns...</span>`,
-            `<span><img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Anthropic_logo.svg" style="height:16px; vertical-align:middle; margin-right:8px; filter: invert(1);"> Claude 3.7 Opus checking expert form...</span>`,
+            `<span><img src="claude-logo.svg" style="height:24px; vertical-align:middle; margin-right:8px;"> Claude 3.7 Opus checking expert form...</span>`,
             `<span><img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Google_Gemini_logo.svg" style="height:16px; vertical-align:middle; margin-right:8px;"> 2.0 Pro cross-referencing market moves...</span>`,
             `<span><img src="https://upload.wikimedia.org/wikipedia/commons/5/57/X_logo_2023_%28white%29.png" style="height:16px; vertical-align:middle; margin-right:8px;"> Grok 3 calculating velocity metrics...</span>`
         ];
@@ -149,12 +149,12 @@ document.addEventListener('DOMContentLoaded', () => {
             // Show final success message briefly
             const finalIcons = [
                 'https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg',
-                'https://upload.wikimedia.org/wikipedia/commons/7/7a/Anthropic_logo.svg',
+                'claude-logo.svg',
                 'https://upload.wikimedia.org/wikipedia/commons/8/8a/Google_Gemini_logo.svg',
                 'https://upload.wikimedia.org/wikipedia/commons/5/57/X_logo_2023_%28white%29.png'
             ];
             const randomIcon = finalIcons[Math.floor(Math.random() * finalIcons.length)];
-            const iconStyle = randomIcon.includes('Gemini') ? '' : 'filter: invert(1);'; // Invert for white logos except Gemini
+            const iconStyle = (randomIcon.includes('Gemini') || randomIcon.includes('claude')) ? '' : 'filter: invert(1);'; // Don't invert colored logos
 
             loaderText.innerHTML = `<span><img src="${randomIcon}" style="height:18px; vertical-align:middle; margin-right:8px; ${iconStyle}"> Finalizing Ensemble Predictions...</span>`;
             await new Promise(r => setTimeout(r, 800)); // Slightly longer pause to see the final logo

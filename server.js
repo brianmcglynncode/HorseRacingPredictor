@@ -425,37 +425,17 @@ app.get('/api/scrape', async (req, res) => {
             return res.json({ success: true, data: history.latestData, lastUpdated: history.lastUpdated, cached: true });
         }
 
-        // Only scrape live if we have NEVER scraped this race before (Cold Start)
-        console.log(`Starting Cold Start Scrape for ${raceId} (No history found)...`);
-
-        // Timeout Promise to enforce 45s max wait (Increased for Anti-Bot Delays)
-        const timeoutMs = 45000;
-        const timeout = new Promise((_, reject) =>
-            setTimeout(() => reject(new Error(`Scrape timeout exceeded ${timeoutMs}ms`)), timeoutMs)
-        );
-
-        try {
-            // Race the scrape against the timeout
-            const data = await Promise.race([
-                scrapeCheltenhamFestival(raceConfig.oc, raceConfig.rp),
-                timeout
-            ]);
-
-            // Process and save
-            const processedData = processRaceData(raceId, data);
-            res.json({ success: true, data: processedData, lastUpdated: new Date().toISOString(), cached: false });
-
-        } catch (error) {
-            console.error(`Scrape failed or timed out for ${raceId}:`, error);
-
-            // If it timed out but we have ANY old data (edge case), return that? 
-            // Currently we already returned above if history existed.
-            // So this is a true failure on a fresh race.
-            res.status(500).json({
-                success: false,
-                error: "Data retrieval timed out. Please try again in a moment as background scraping continues."
-            });
-        }
+        // No cached data available — DON'T try to scrape live.
+        // The background scraper loop will populate this race within the hour.
+        // Trying to scrape live from the API causes 500s on Railway (Puppeteer can't launch reliably).
+        console.log(`⏳ No data yet for ${raceId}. Background scraper will populate it.`);
+        return res.json({
+            success: true,
+            data: [],
+            lastUpdated: null,
+            cached: false,
+            message: `Data for this race is being collected. The background scraper will have it ready shortly.`
+        });
 
     } catch (error) {
         console.error('Scrape failed:', error);
