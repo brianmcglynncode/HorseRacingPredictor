@@ -220,6 +220,10 @@ document.addEventListener('DOMContentLoaded', () => {
             dayButtons.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
 
+            // Deactivate special race button
+            const specBtn = document.getElementById('special-southwell');
+            if (specBtn) specBtn.classList.remove('active');
+
             // Render races for this day
             const selectedDay = btn.textContent.trim();
             renderRaceButtons(selectedDay);
@@ -228,6 +232,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize with Tuesday
     renderRaceButtons('Tuesday');
+
+    // --- SPECIAL RACE BUTTON ---
+    const specialBtn = document.getElementById('special-southwell');
+    if (specialBtn) {
+        specialBtn.addEventListener('click', () => {
+            // Deactivate all Cheltenham race buttons
+            document.querySelectorAll('.race-btn').forEach(b => b.classList.remove('active'));
+            // Activate the special button
+            specialBtn.classList.add('active');
+            // Use the same handler
+            handleRaceClick(specialBtn);
+        });
+    }
 
 
     async function handleRaceClick(btn) {

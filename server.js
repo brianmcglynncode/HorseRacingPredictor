@@ -129,6 +129,12 @@ const RACES = {
     'martinpipe': {
         oc: 'https://www.oddschecker.com/cheltenham-festival/martin-pipe-handicap-hurdle/winner',
         rp: 'https://www.racingpost.com/cheltenham-festival/martin-pipe-conditional-jockeys-handicap-hurdle/'
+    },
+
+    // --- SPECIAL: TONIGHT'S RACE ---
+    'southwell730': {
+        oc: 'https://www.oddschecker.com/horse-racing/southwell/19:30/winner',
+        rp: 'https://www.racingpost.com/racecards/59/southwell-aw/2026-02-20/904206'
     }
 };
 

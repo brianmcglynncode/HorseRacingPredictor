@@ -132,6 +132,94 @@ h1.glow-text {
     margin-top: 30px;
 }
 
+/* Special Race Section */
+.special-race-section {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.special-race-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.divider-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0, 200, 255, 0.3), transparent);
+}
+
+.divider-label {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #00c8ff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.special-race-btn {
+    background: linear-gradient(135deg, rgba(0, 200, 255, 0.15), rgba(138, 43, 226, 0.15)) !important;
+    border: 1px solid rgba(0, 200, 255, 0.3) !important;
+    position: relative;
+    min-width: 140px;
+}
+
+.special-race-btn:hover {
+    background: linear-gradient(135deg, rgba(0, 200, 255, 0.25), rgba(138, 43, 226, 0.25)) !important;
+    border-color: rgba(0, 200, 255, 0.5) !important;
+    box-shadow: 0 0 25px rgba(0, 200, 255, 0.2), 0 10px 20px rgba(0, 0, 0, 0.2) !important;
+}
+
+.special-race-btn.active {
+    background: linear-gradient(135deg, #00c8ff, #8a2be2) !important;
+    border-color: #00c8ff !important;
+    box-shadow: 0 0 20px rgba(0, 200, 255, 0.4) !important;
+}
+
+.special-race-btn.active .race-time {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.special-race-btn.active .race-name {
+    color: #fff !important;
+}
+
+.special-race-btn .race-name {
+    color: #00c8ff !important;
+}
+
+.special-race-tag {
+    font-size: 0.55rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: #fff;
+    background: linear-gradient(135deg, #00c8ff, #8a2be2);
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-top: 4px;
+    animation: tagPulse 2s infinite ease-in-out;
+}
+
+@keyframes tagPulse {
+
+    0%,
+    100% {
+        opacity: 0.8;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
 .race-btn {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
