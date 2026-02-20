@@ -316,7 +316,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (result.success && result.data.length > 0) {
                 console.log("Received Data:", result.data);
-                renderRaces(result.data, result.lastUpdated);
+                renderRaces(result.data, result.lastUpdated, raceId);
             } else {
                 racesGrid.innerHTML = `
                         <div class="empty-state">
@@ -361,7 +361,10 @@ document.addEventListener('DOMContentLoaded', () => {
         return bookieWeights[name] || 1.0;
     }
 
-    function renderRaces(races, lastUpdated) {
+    function renderRaces(races, lastUpdated, raceId) {
+        // Detect if this is a non-Cheltenham (flat/AW) race
+        const cheltenhamRaces = ['supreme', 'arkle', 'ultima', 'champion', 'mares', 'boodles', 'national', 'ballymore', 'brown', 'coral', 'championchase', 'cross', 'grandannual', 'bumper', 'turners', 'pertemps', 'ryanair', 'stayers', 'plate', 'maresnovice', 'kimmuir', 'triumph', 'county', 'bartlett', 'goldcup', 'hunters', 'mareschase', 'martinpipe'];
+        const isNonCheltenham = !cheltenhamRaces.includes(raceId);
         racesGrid.innerHTML = '';
 
         // Format Last Updated
@@ -470,12 +473,18 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (cleanForm.includes('00')) formScore -= 10; // Poor form sequence
                 }
 
-                // 5. Age Trends (Supreme Novices favors 5-6yo)
+                // 5. Age Trends
                 let ageScore = 0;
                 if (horse.age) {
                     const ageVal = parseInt(horse.age);
-                    if (ageVal === 5 || ageVal === 6) ageScore = 10; // "Golden Age"
-                    else if (ageVal > 7) ageScore = -5; // Penalty for older horses in Novice hurdle
+                    if (isNonCheltenham) {
+                        // Flat/AW: No age penalty, slight bonus for prime age (4-6)
+                        if (ageVal >= 4 && ageVal <= 6) ageScore = 5;
+                    } else {
+                        // NH: Supreme Novices favors 5-6yo
+                        if (ageVal === 5 || ageVal === 6) ageScore = 10; // "Golden Age"
+                        else if (ageVal > 7) ageScore = -5; // Penalty for older horses in Novice hurdle
+                    }
                 }
 
                 // 6. Official Rating Bonus
@@ -486,19 +495,26 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 // 7. Weight Advantage
-                // Standard is 11-7. If less, it's an allowance (good).
                 let weightScore = 0;
                 if (horse.weight) {
                     const [st, lb] = horse.weight.split('-').map(Number);
-                    if (st < 11 || (st === 11 && lb < 7)) {
-                        weightScore = 15; // Significant weight advantage
+                    if (isNonCheltenham) {
+                        // Flat/AW: Standard is ~9-0. Lower = advantage
+                        const totalLb = (st * 14) + (lb || 0);
+                        if (totalLb < 126) weightScore = 10; // Under 9-0
+                    } else {
+                        // NH: Standard is 11-7. If less, it's an allowance (good).
+                        if (st < 11 || (st === 11 && lb < 7)) {
+                            weightScore = 15; // Significant weight advantage
+                        }
                     }
                 }
 
                 // 8. Elite Trainer Bonus
-                // Willie Mullins, Gordon Elliott, Nicky Henderson, Henry de Bromhead, Paul Nicholls
                 let trainerScore = 0;
-                const eliteTrainers = ['mullins', 'elliott', 'henderson', 'bromhead', 'nicholls', 'skelton'];
+                const nhEliteTrainers = ['mullins', 'elliott', 'henderson', 'bromhead', 'nicholls', 'skelton'];
+                const flatEliteTrainers = ['appleby', 'o\'brien', 'haggas', 'gosden', 'doyle', 'stoute', 'morrison', 'balding', 'de foy', 'skelton', 'henderson', 'mullins', 'nicholls'];
+                const eliteTrainers = isNonCheltenham ? flatEliteTrainers : nhEliteTrainers;
                 if (horse.trainer) {
                     const t = horse.trainer.toLowerCase();
                     if (eliteTrainers.some(et => t.includes(et))) {

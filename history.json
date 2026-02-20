@@ -97469,7 +97469,7 @@
         "Stolen Silver": 101,
         "No Time To Wait": 101
       },
-      "lastUpdated": "2026-02-20T09:11:21.536Z",
+      "lastUpdated": "2026-02-20T18:48:41.849Z",
       "latestData": [
         {
           "name": "Kim Muir Challenge Cup Betting Odds- Winner",
@@ -97566,8 +97566,8 @@
                   "decimal": 5
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "4",
+                  "decimal": 5
                 },
                 "Betway": {
                   "fraction": "4",
@@ -97602,8 +97602,8 @@
                   "decimal": 5
                 },
                 "Betfair": {
-                  "fraction": "461/100",
-                  "decimal": 5.61
+                  "fraction": "421/100",
+                  "decimal": 5.21
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -97646,12 +97646,12 @@
                   "decimal": 9
                 },
                 "BetVictor": {
-                  "fraction": "9",
-                  "decimal": 10
+                  "fraction": "8",
+                  "decimal": 9
                 },
                 "BetMGM UK": {
-                  "fraction": "9",
-                  "decimal": 10
+                  "fraction": "7",
+                  "decimal": 8
                 },
                 "BOYLE Sports": {
                   "fraction": "8",
@@ -97674,16 +97674,16 @@
                   "decimal": 9
                 },
                 "Virgin Bet": {
-                  "fraction": "9",
-                  "decimal": 10
+                  "fraction": "7",
+                  "decimal": 8
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "8",
+                  "decimal": 9
                 },
                 "Betway": {
-                  "fraction": "9",
-                  "decimal": 10
+                  "fraction": "7",
+                  "decimal": 8
                 },
                 "Coral": {
                   "fraction": "8",
@@ -97714,18 +97714,17 @@
                   "decimal": 9
                 },
                 "Betfair": {
-                  "fraction": "59/5",
-                  "decimal": 12.8
+                  "fraction": "843/100",
+                  "decimal": 9.43
                 },
                 "Matchbook": {
                   "fraction": "",
                   "decimal": 0
                 }
               },
-              "marketMove": "drifter",
-              "movePercent": 28,
+              "marketMove": "stable",
               "openingOdds": 10,
-              "velocity": 0.004774222743749223
+              "velocity": -0.004849840704383936
             },
             {
               "name": "Waterford Whispers",
@@ -97791,8 +97790,8 @@
                   "decimal": 13
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "12",
+                  "decimal": 13
                 },
                 "Betway": {
                   "fraction": "12",
@@ -97903,8 +97902,8 @@
                   "decimal": 15
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "14",
+                  "decimal": 15
                 },
                 "Betway": {
                   "fraction": "12",
@@ -97939,18 +97938,17 @@
                   "decimal": 15
                 },
                 "Betfair": {
-                  "fraction": "1/100",
-                  "decimal": 1.01
+                  "fraction": "157/10",
+                  "decimal": 16.7
                 },
                 "Matchbook": {
                   "fraction": "",
                   "decimal": 0
                 }
               },
-              "marketMove": "steamer",
-              "movePercent": 10,
+              "marketMove": "stable",
               "openingOdds": 16.7,
-              "velocity": -0.0028986352372763115
+              "velocity": 0.002944546141947388
             },
             {
               "name": "Montregard",
@@ -98016,8 +98014,8 @@
                   "decimal": 13
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "12",
+                  "decimal": 13
                 },
                 "Betway": {
                   "fraction": "9",
@@ -98052,18 +98050,17 @@
                   "decimal": 13
                 },
                 "Betfair": {
-                  "fraction": "81/5",
-                  "decimal": 17.2
+                  "fraction": "157/10",
+                  "decimal": 16.7
                 },
                 "Matchbook": {
                   "fraction": "",
                   "decimal": 0
                 }
               },
-              "marketMove": "drifter",
-              "movePercent": 3,
+              "marketMove": "stable",
               "openingOdds": 16.7,
-              "velocity": 0.0008525397756695038
+              "velocity": -0.0008660429829257027
             },
             {
               "name": "Kim Roque",
@@ -98129,8 +98126,8 @@
                   "decimal": 17
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "16",
+                  "decimal": 17
                 },
                 "Betway": {
                   "fraction": "16",
@@ -98241,8 +98238,8 @@
                   "decimal": 15
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "16",
+                  "decimal": 17
                 },
                 "Betway": {
                   "fraction": "12",
@@ -98353,8 +98350,8 @@
                   "decimal": 13
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "12",
+                  "decimal": 13
                 },
                 "Betway": {
                   "fraction": "12",
@@ -98389,8 +98386,8 @@
                   "decimal": 13
                 },
                 "Betfair": {
-                  "fraction": "59/5",
-                  "decimal": 12.8
+                  "fraction": "147/10",
+                  "decimal": 15.7
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -98465,8 +98462,8 @@
                   "decimal": 21
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "16",
+                  "decimal": 17
                 },
                 "Betway": {
                   "fraction": "20",
@@ -98517,8 +98514,8 @@
               "name": "Newton Tornado",
               "odds": {
                 "bet365": {
-                  "fraction": "20",
-                  "decimal": 21
+                  "fraction": "16",
+                  "decimal": 17
                 },
                 "William Hill": {
                   "fraction": "14",
@@ -98577,8 +98574,8 @@
                   "decimal": 17
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "16",
+                  "decimal": 17
                 },
                 "Betway": {
                   "fraction": "12",
@@ -98689,8 +98686,8 @@
                   "decimal": 17
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "16",
+                  "decimal": 17
                 },
                 "Betway": {
                   "fraction": "16",
@@ -98801,8 +98798,8 @@
                   "decimal": 17
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "16",
+                  "decimal": 17
                 },
                 "Betway": {
                   "fraction": "14",
@@ -98913,8 +98910,8 @@
                   "decimal": 17
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "16",
+                  "decimal": 17
                 },
                 "Betway": {
                   "fraction": "14",
@@ -99025,8 +99022,8 @@
                   "decimal": 21
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "20",
+                  "decimal": 21
                 },
                 "Betway": {
                   "fraction": "18",
@@ -99137,8 +99134,8 @@
                   "decimal": 21
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "16",
+                  "decimal": 17
                 },
                 "Betway": {
                   "fraction": "20",
@@ -99249,8 +99246,8 @@
                   "decimal": 21
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "20",
+                  "decimal": 21
                 },
                 "Betway": {
                   "fraction": "20",
@@ -99361,8 +99358,8 @@
                   "decimal": 21
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "20",
+                  "decimal": 21
                 },
                 "Betway": {
                   "fraction": "16",
@@ -99473,8 +99470,8 @@
                   "decimal": 26
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "25",
+                  "decimal": 26
                 },
                 "Betway": {
                   "fraction": "25",
@@ -99525,8 +99522,8 @@
               "name": "Git Maker",
               "odds": {
                 "bet365": {
-                  "fraction": "25",
-                  "decimal": 26
+                  "fraction": "20",
+                  "decimal": 21
                 },
                 "William Hill": {
                   "fraction": "20",
@@ -99585,8 +99582,8 @@
                   "decimal": 21
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "20",
+                  "decimal": 21
                 },
                 "Betway": {
                   "fraction": "18",
@@ -99697,8 +99694,8 @@
                   "decimal": 21
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "20",
+                  "decimal": 21
                 },
                 "Betway": {
                   "fraction": "20",
@@ -99809,8 +99806,8 @@
                   "decimal": 21
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "20",
+                  "decimal": 21
                 },
                 "Betway": {
                   "fraction": "25",
@@ -99921,8 +99918,8 @@
                   "decimal": 21
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "20",
+                  "decimal": 21
                 },
                 "Betway": {
                   "fraction": "14",
@@ -100033,8 +100030,8 @@
                   "decimal": 26
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "25",
+                  "decimal": 26
                 },
                 "Betway": {
                   "fraction": "16",
@@ -100145,8 +100142,8 @@
                   "decimal": 21
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "20",
+                  "decimal": 21
                 },
                 "Betway": {
                   "fraction": "18",
@@ -100257,8 +100254,8 @@
                   "decimal": 21
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "20",
+                  "decimal": 21
                 },
                 "Betway": {
                   "fraction": "20",
@@ -100309,8 +100306,8 @@
               "name": "Road To Home",
               "odds": {
                 "bet365": {
-                  "fraction": "20",
-                  "decimal": 21
+                  "fraction": "25",
+                  "decimal": 26
                 },
                 "William Hill": {
                   "fraction": "16",
@@ -100369,8 +100366,8 @@
                   "decimal": 21
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "20",
+                  "decimal": 21
                 },
                 "Betway": {
                   "fraction": "22",
@@ -100405,18 +100402,17 @@
                   "decimal": 21
                 },
                 "Betfair": {
-                  "fraction": "25",
-                  "decimal": 26
+                  "fraction": "38",
+                  "decimal": 39
                 },
                 "Matchbook": {
                   "fraction": "",
                   "decimal": 0
                 }
               },
-              "marketMove": "steamer",
-              "movePercent": 33,
+              "marketMove": "stable",
               "openingOdds": 39,
-              "velocity": -0.0221660341674071
+              "velocity": 0.02251711755606827
             },
             {
               "name": "Weveallbeencaught",
@@ -100482,8 +100478,8 @@
                   "decimal": 21
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "20",
+                  "decimal": 21
                 },
                 "Betway": {
                   "fraction": "16",
@@ -100594,8 +100590,8 @@
                   "decimal": 21
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "20",
+                  "decimal": 21
                 },
                 "Betway": {
                   "fraction": "22",
@@ -100706,8 +100702,8 @@
                   "decimal": 21
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "20",
+                  "decimal": 21
                 },
                 "Betway": {
                   "fraction": "16",
@@ -100818,8 +100814,8 @@
                   "decimal": 21
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "20",
+                  "decimal": 21
                 },
                 "Betway": {
                   "fraction": "22",
@@ -100930,8 +100926,8 @@
                   "decimal": 26
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "25",
+                  "decimal": 26
                 },
                 "Betway": {
                   "fraction": "22",
@@ -101042,8 +101038,8 @@
                   "decimal": 17
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "20",
+                  "decimal": 21
                 },
                 "Betway": {
                   "fraction": "16",
@@ -101154,8 +101150,8 @@
                   "decimal": 21
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "16",
+                  "decimal": 17
                 },
                 "Betway": {
                   "fraction": "16",
@@ -101266,8 +101262,8 @@
                   "decimal": 21
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "20",
+                  "decimal": 21
                 },
                 "Betway": {
                   "fraction": "18",
@@ -101318,8 +101314,8 @@
               "name": "Il Ridoto",
               "odds": {
                 "bet365": {
-                  "fraction": "25",
-                  "decimal": 26
+                  "fraction": "20",
+                  "decimal": 21
                 },
                 "William Hill": {
                   "fraction": "33",
@@ -101378,8 +101374,8 @@
                   "decimal": 26
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "25",
+                  "decimal": 26
                 },
                 "Betway": {
                   "fraction": "18",
@@ -101430,8 +101426,8 @@
               "name": "Peaky Boy",
               "odds": {
                 "bet365": {
-                  "fraction": "33",
-                  "decimal": 34
+                  "fraction": "25",
+                  "decimal": 26
                 },
                 "William Hill": {
                   "fraction": "20",
@@ -101490,8 +101486,8 @@
                   "decimal": 26
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "25",
+                  "decimal": 26
                 },
                 "Betway": {
                   "fraction": "25",
@@ -101542,8 +101538,8 @@
               "name": "Walking On Air",
               "odds": {
                 "bet365": {
-                  "fraction": "33",
-                  "decimal": 34
+                  "fraction": "25",
+                  "decimal": 26
                 },
                 "William Hill": {
                   "fraction": "20",
@@ -101602,8 +101598,8 @@
                   "decimal": 26
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "25",
+                  "decimal": 26
                 },
                 "Betway": {
                   "fraction": "25",
@@ -101714,8 +101710,8 @@
                   "decimal": 34
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "33",
+                  "decimal": 34
                 },
                 "Betway": {
                   "fraction": "33",
@@ -101826,8 +101822,8 @@
                   "decimal": 26
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "25",
+                  "decimal": 26
                 },
                 "Betway": {
                   "fraction": "25",
@@ -101878,8 +101874,8 @@
               "name": "Lookaway",
               "odds": {
                 "bet365": {
-                  "fraction": "33",
-                  "decimal": 34
+                  "fraction": "25",
+                  "decimal": 26
                 },
                 "William Hill": {
                   "fraction": "25",
@@ -101938,8 +101934,8 @@
                   "decimal": 26
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "25",
+                  "decimal": 26
                 },
                 "Betway": {
                   "fraction": "18",
@@ -102010,8 +102006,8 @@
                   "decimal": 26
                 },
                 "Spreadex": {
-                  "fraction": "25",
-                  "decimal": 26
+                  "fraction": "20",
+                  "decimal": 21
                 },
                 "Ladbrokes": {
                   "fraction": "25",
@@ -102042,16 +102038,16 @@
                   "decimal": 26
                 },
                 "Sporting Index": {
-                  "fraction": "25",
-                  "decimal": 26
+                  "fraction": "20",
+                  "decimal": 21
                 },
                 "Virgin Bet": {
                   "fraction": "20",
                   "decimal": 21
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "25",
+                  "decimal": 26
                 },
                 "Betway": {
                   "fraction": "20",
@@ -102102,8 +102098,8 @@
               "name": "Hunter Legend",
               "odds": {
                 "bet365": {
-                  "fraction": "25",
-                  "decimal": 26
+                  "fraction": "20",
+                  "decimal": 21
                 },
                 "William Hill": {
                   "fraction": "33",
@@ -102162,8 +102158,8 @@
                   "decimal": 26
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "25",
+                  "decimal": 26
                 },
                 "Betway": {
                   "fraction": "28",
@@ -102274,8 +102270,8 @@
                   "decimal": 26
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "25",
+                  "decimal": 26
                 },
                 "Betway": {
                   "fraction": "25",
@@ -102386,8 +102382,8 @@
                   "decimal": 26
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "25",
+                  "decimal": 26
                 },
                 "Betway": {
                   "fraction": "25",
@@ -102498,8 +102494,8 @@
                   "decimal": 26
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "25",
+                  "decimal": 26
                 },
                 "Betway": {
                   "fraction": "33",
@@ -102610,8 +102606,8 @@
                   "decimal": 26
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "25",
+                  "decimal": 26
                 },
                 "Betway": {
                   "fraction": "20",
@@ -102722,8 +102718,8 @@
                   "decimal": 34
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "33",
+                  "decimal": 34
                 },
                 "Betway": {
                   "fraction": "33",
@@ -102834,8 +102830,8 @@
                   "decimal": 34
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "33",
+                  "decimal": 34
                 },
                 "Betway": {
                   "fraction": "33",
@@ -102946,8 +102942,8 @@
                   "decimal": 34
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "25",
+                  "decimal": 26
                 },
                 "Betway": {
                   "fraction": "28",
@@ -102998,8 +102994,8 @@
               "name": "Grozni",
               "odds": {
                 "bet365": {
-                  "fraction": "40",
-                  "decimal": 41
+                  "fraction": "33",
+                  "decimal": 34
                 },
                 "William Hill": {
                   "fraction": "33",
@@ -103058,8 +103054,8 @@
                   "decimal": 34
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "33",
+                  "decimal": 34
                 },
                 "Betway": {
                   "fraction": "28",
@@ -103170,8 +103166,8 @@
                   "decimal": 34
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "33",
+                  "decimal": 34
                 },
                 "Betway": {
                   "fraction": "40",
@@ -103282,8 +103278,8 @@
                   "decimal": 34
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "33",
+                  "decimal": 34
                 },
                 "Betway": {
                   "fraction": "40",
@@ -103394,8 +103390,8 @@
                   "decimal": 26
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "33",
+                  "decimal": 34
                 },
                 "Betway": {
                   "fraction": "33",
@@ -103432,118 +103428,6 @@
                 "Betfair": {
                   "fraction": "40",
                   "decimal": 41
-                },
-                "Matchbook": {
-                  "fraction": "",
-                  "decimal": 0
-                }
-              },
-              "marketMove": "stable",
-              "openingOdds": 41,
-              "velocity": 0
-            },
-            {
-              "name": "Alcedo",
-              "odds": {
-                "bet365": {
-                  "fraction": "40",
-                  "decimal": 41
-                },
-                "William Hill": {
-                  "fraction": "33",
-                  "decimal": 34
-                },
-                "Unibet": {
-                  "fraction": "40",
-                  "decimal": 41
-                },
-                "Betfred": {
-                  "fraction": "33",
-                  "decimal": 34
-                },
-                "888sport": {
-                  "fraction": "33",
-                  "decimal": 34
-                },
-                "Spreadex": {
-                  "fraction": "33",
-                  "decimal": 34
-                },
-                "Ladbrokes": {
-                  "fraction": "33",
-                  "decimal": 34
-                },
-                "BetVictor": {
-                  "fraction": "33",
-                  "decimal": 34
-                },
-                "BetMGM UK": {
-                  "fraction": "33",
-                  "decimal": 34
-                },
-                "BOYLE Sports": {
-                  "fraction": "33",
-                  "decimal": 34
-                },
-                "10bet": {
-                  "fraction": "",
-                  "decimal": 0
-                },
-                "Star Sports": {
-                  "fraction": "33",
-                  "decimal": 34
-                },
-                "PricedUp": {
-                  "fraction": "33",
-                  "decimal": 34
-                },
-                "Sporting Index": {
-                  "fraction": "33",
-                  "decimal": 34
-                },
-                "Virgin Bet": {
-                  "fraction": "33",
-                  "decimal": 34
-                },
-                "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
-                },
-                "Betway": {
-                  "fraction": "20",
-                  "decimal": 21
-                },
-                "Coral": {
-                  "fraction": "33",
-                  "decimal": 34
-                },
-                "BetGoodwin": {
-                  "fraction": "",
-                  "decimal": 0
-                },
-                "BetTom": {
-                  "fraction": "",
-                  "decimal": 0
-                },
-                "BresBet": {
-                  "fraction": "33",
-                  "decimal": 34
-                },
-                "Skybet": {
-                  "fraction": "33",
-                  "decimal": 34
-                },
-                "Paddy Power": {
-                  "fraction": "33",
-                  "decimal": 34
-                },
-                "AK Bets": {
-                  "fraction": "33",
-                  "decimal": 34
-                },
-                "Betfair": {
-                  "fraction": "38",
-                  "decimal": 39
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -103618,8 +103502,8 @@
                   "decimal": 34
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "33",
+                  "decimal": 34
                 },
                 "Betway": {
                   "fraction": "33",
@@ -103670,8 +103554,8 @@
               "name": "OToole",
               "odds": {
                 "bet365": {
-                  "fraction": "40",
-                  "decimal": 41
+                  "fraction": "33",
+                  "decimal": 34
                 },
                 "William Hill": {
                   "fraction": "40",
@@ -103730,8 +103614,8 @@
                   "decimal": 34
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "33",
+                  "decimal": 34
                 },
                 "Betway": {
                   "fraction": "33",
@@ -103842,8 +103726,8 @@
                   "decimal": 34
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "33",
+                  "decimal": 34
                 },
                 "Betway": {
                   "fraction": "33",
@@ -103954,8 +103838,8 @@
                   "decimal": 41
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "40",
+                  "decimal": 41
                 },
                 "Betway": {
                   "fraction": "40",
@@ -104066,8 +103950,8 @@
                   "decimal": 41
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "50",
+                  "decimal": 51
                 },
                 "Betway": {
                   "fraction": "50",
@@ -104178,8 +104062,8 @@
                   "decimal": 41
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "40",
+                  "decimal": 41
                 },
                 "Betway": {
                   "fraction": "40",
@@ -104290,8 +104174,8 @@
                   "decimal": 34
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "40",
+                  "decimal": 41
                 },
                 "Betway": {
                   "fraction": "40",
@@ -104326,17 +104210,18 @@
                   "decimal": 41
                 },
                 "Betfair": {
-                  "fraction": "53",
-                  "decimal": 54
+                  "fraction": "38",
+                  "decimal": 39
                 },
                 "Matchbook": {
                   "fraction": "",
                   "decimal": 0
                 }
               },
-              "marketMove": "stable",
+              "marketMove": "steamer",
+              "movePercent": 6,
               "openingOdds": 54,
-              "velocity": 0
+              "velocity": -0.005196257897554216
             },
             {
               "name": "Torn And Frayed",
@@ -104402,8 +104287,8 @@
                   "decimal": 41
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "40",
+                  "decimal": 41
                 },
                 "Betway": {
                   "fraction": "25",
@@ -104454,8 +104339,8 @@
               "name": "Lord Accord",
               "odds": {
                 "bet365": {
-                  "fraction": "50",
-                  "decimal": 51
+                  "fraction": "40",
+                  "decimal": 41
                 },
                 "William Hill": {
                   "fraction": "50",
@@ -104514,8 +104399,8 @@
                   "decimal": 41
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "40",
+                  "decimal": 41
                 },
                 "Betway": {
                   "fraction": "25",
@@ -104626,8 +104511,8 @@
                   "decimal": 41
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "40",
+                  "decimal": 41
                 },
                 "Betway": {
                   "fraction": "50",
@@ -104675,11 +104560,124 @@
               "velocity": 0
             },
             {
-              "name": "Lucky Lyreen",
+              "name": "Alcedo",
               "odds": {
                 "bet365": {
                   "fraction": "50",
                   "decimal": 51
+                },
+                "William Hill": {
+                  "fraction": "33",
+                  "decimal": 34
+                },
+                "Unibet": {
+                  "fraction": "50",
+                  "decimal": 51
+                },
+                "Betfred": {
+                  "fraction": "33",
+                  "decimal": 34
+                },
+                "888sport": {
+                  "fraction": "33",
+                  "decimal": 34
+                },
+                "Spreadex": {
+                  "fraction": "33",
+                  "decimal": 34
+                },
+                "Ladbrokes": {
+                  "fraction": "33",
+                  "decimal": 34
+                },
+                "BetVictor": {
+                  "fraction": "33",
+                  "decimal": 34
+                },
+                "BetMGM UK": {
+                  "fraction": "33",
+                  "decimal": 34
+                },
+                "BOYLE Sports": {
+                  "fraction": "33",
+                  "decimal": 34
+                },
+                "10bet": {
+                  "fraction": "",
+                  "decimal": 0
+                },
+                "Star Sports": {
+                  "fraction": "33",
+                  "decimal": 34
+                },
+                "PricedUp": {
+                  "fraction": "33",
+                  "decimal": 34
+                },
+                "Sporting Index": {
+                  "fraction": "33",
+                  "decimal": 34
+                },
+                "Virgin Bet": {
+                  "fraction": "33",
+                  "decimal": 34
+                },
+                "QuinnBet": {
+                  "fraction": "33",
+                  "decimal": 34
+                },
+                "Betway": {
+                  "fraction": "20",
+                  "decimal": 21
+                },
+                "Coral": {
+                  "fraction": "33",
+                  "decimal": 34
+                },
+                "BetGoodwin": {
+                  "fraction": "",
+                  "decimal": 0
+                },
+                "BetTom": {
+                  "fraction": "",
+                  "decimal": 0
+                },
+                "BresBet": {
+                  "fraction": "33",
+                  "decimal": 34
+                },
+                "Skybet": {
+                  "fraction": "33",
+                  "decimal": 34
+                },
+                "Paddy Power": {
+                  "fraction": "33",
+                  "decimal": 34
+                },
+                "AK Bets": {
+                  "fraction": "33",
+                  "decimal": 34
+                },
+                "Betfair": {
+                  "fraction": "38",
+                  "decimal": 39
+                },
+                "Matchbook": {
+                  "fraction": "",
+                  "decimal": 0
+                }
+              },
+              "marketMove": "drifter",
+              "movePercent": 24,
+              "openingOdds": 41,
+              "velocity": 0.017320859658514053
+            },
+            {
+              "name": "Lucky Lyreen",
+              "odds": {
+                "bet365": {
+                  "fraction": "40",
+                  "decimal": 41
                 },
                 "William Hill": {
                   "fraction": "25",
@@ -104738,8 +104736,8 @@
                   "decimal": 41
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "40",
+                  "decimal": 41
                 },
                 "Betway": {
                   "fraction": "33",
@@ -104850,8 +104848,8 @@
                   "decimal": 51
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "50",
+                  "decimal": 51
                 },
                 "Betway": {
                   "fraction": "50",
@@ -104962,8 +104960,8 @@
                   "decimal": 34
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "25",
+                  "decimal": 26
                 },
                 "Betway": {
                   "fraction": "28",
@@ -105074,8 +105072,8 @@
                   "decimal": 34
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "33",
+                  "decimal": 34
                 },
                 "Betway": {
                   "fraction": "33",
@@ -105126,8 +105124,8 @@
               "name": "Chigorin",
               "odds": {
                 "bet365": {
-                  "fraction": "40",
-                  "decimal": 41
+                  "fraction": "50",
+                  "decimal": 51
                 },
                 "William Hill": {
                   "fraction": "25",
@@ -105186,8 +105184,8 @@
                   "decimal": 34
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "25",
+                  "decimal": 26
                 },
                 "Betway": {
                   "fraction": "40",
@@ -105298,8 +105296,8 @@
                   "decimal": 51
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "66",
+                  "decimal": 67
                 },
                 "Betway": {
                   "fraction": "50",
@@ -105410,8 +105408,8 @@
                   "decimal": 67
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "66",
+                  "decimal": 67
                 },
                 "Betway": {
                   "fraction": "66",
@@ -105522,8 +105520,8 @@
                   "decimal": 67
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "66",
+                  "decimal": 67
                 },
                 "Betway": {
                   "fraction": "66",
@@ -105586,8 +105584,8 @@
                   "decimal": 67
                 },
                 "Betfred": {
-                  "fraction": "66",
-                  "decimal": 67
+                  "fraction": "50",
+                  "decimal": 51
                 },
                 "888sport": {
                   "fraction": "66",
@@ -105610,20 +105608,20 @@
                   "decimal": 67
                 },
                 "BOYLE Sports": {
-                  "fraction": "66",
-                  "decimal": 67
+                  "fraction": "40",
+                  "decimal": 41
                 },
                 "10bet": {
                   "fraction": "",
                   "decimal": 0
                 },
                 "Star Sports": {
-                  "fraction": "66",
-                  "decimal": 67
+                  "fraction": "50",
+                  "decimal": 51
                 },
                 "PricedUp": {
-                  "fraction": "66",
-                  "decimal": 67
+                  "fraction": "50",
+                  "decimal": 51
                 },
                 "Sporting Index": {
                   "fraction": "66",
@@ -105634,8 +105632,8 @@
                   "decimal": 67
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "66",
+                  "decimal": 67
                 },
                 "Betway": {
                   "fraction": "50",
@@ -105654,8 +105652,8 @@
                   "decimal": 0
                 },
                 "BresBet": {
-                  "fraction": "66",
-                  "decimal": 67
+                  "fraction": "50",
+                  "decimal": 51
                 },
                 "Skybet": {
                   "fraction": "50",
@@ -105666,8 +105664,8 @@
                   "decimal": 51
                 },
                 "AK Bets": {
-                  "fraction": "66",
-                  "decimal": 67
+                  "fraction": "50",
+                  "decimal": 51
                 },
                 "Betfair": {
                   "fraction": "68",
@@ -105746,8 +105744,8 @@
                   "decimal": 51
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "50",
+                  "decimal": 51
                 },
                 "Betway": {
                   "fraction": "40",
@@ -105858,8 +105856,8 @@
                   "decimal": 67
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "66",
+                  "decimal": 67
                 },
                 "Betway": {
                   "fraction": "66",
@@ -105910,8 +105908,8 @@
               "name": "No Time To Wait",
               "odds": {
                 "bet365": {
-                  "fraction": "80",
-                  "decimal": 81
+                  "fraction": "66",
+                  "decimal": 67
                 },
                 "William Hill": {
                   "fraction": "50",
@@ -105970,8 +105968,8 @@
                   "decimal": 67
                 },
                 "QuinnBet": {
-                  "fraction": "",
-                  "decimal": 0
+                  "fraction": "66",
+                  "decimal": 67
                 },
                 "Betway": {
                   "fraction": "66",
@@ -106024,307 +106022,307 @@
       "velocityTracking": {
         "Jeriko Du Reponet": {
           "lastOdds": 6,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Uhavemeinstitches": {
-          "lastOdds": 12.8,
-          "lastTime": 1771578681536
+          "lastOdds": 10,
+          "lastTime": 1771613321849
         },
         "Waterford Whispers": {
           "lastOdds": 28,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "In dOr": {
-          "lastOdds": 15,
-          "lastTime": 1771578681536
+          "lastOdds": 16.7,
+          "lastTime": 1771613321849
         },
         "Montregard": {
-          "lastOdds": 17.2,
-          "lastTime": 1771578681536
+          "lastOdds": 16.7,
+          "lastTime": 1771613321849
         },
         "Kim Roque": {
           "lastOdds": 17,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Herakles Westwood": {
           "lastOdds": 18.6,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Jarrive De Lest": {
           "lastOdds": 17,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Kish Bank": {
           "lastOdds": 37,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Newton Tornado": {
           "lastOdds": 22,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Dartmoor Pirate": {
           "lastOdds": 28,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Daily Present": {
           "lastOdds": 22,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Aworkinprogress": {
           "lastOdds": 28,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Kings Threshold": {
           "lastOdds": 22,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Kurasso Blue": {
           "lastOdds": 37,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Ask Brewster": {
           "lastOdds": 37,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Excello": {
           "lastOdds": 37,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Theatre Native": {
           "lastOdds": 39,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Git Maker": {
           "lastOdds": 28,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "The Enabler": {
           "lastOdds": 37,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Will Do": {
           "lastOdds": 39,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Beckett Rock": {
           "lastOdds": 37,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Booster Bob": {
           "lastOdds": 37,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Hyland": {
           "lastOdds": 37,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "The Short Go": {
           "lastOdds": 39,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Road To Home": {
-          "lastOdds": 26,
-          "lastTime": 1771578681536
+          "lastOdds": 39,
+          "lastTime": 1771613321849
         },
         "Weveallbeencaught": {
           "lastOdds": 37,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "The Lovely Man": {
           "lastOdds": 39,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Prends Garde A Toi": {
           "lastOdds": 37,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Search For Glory": {
           "lastOdds": 39,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Henrys Friend": {
           "lastOdds": 26,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Patter Merchant": {
           "lastOdds": 37,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Brave Fortune": {
           "lastOdds": 39,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Bridies Beau": {
           "lastOdds": 26,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Il Ridoto": {
           "lastOdds": 35,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Peaky Boy": {
           "lastOdds": 39,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Walking On Air": {
           "lastOdds": 39,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Union Station": {
           "lastOdds": 39,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Glengouly": {
           "lastOdds": 39,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Lookaway": {
           "lastOdds": 34,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Gericault Roque": {
           "lastOdds": 37,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Hunter Legend": {
           "lastOdds": 39,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Monbeg Genius": {
           "lastOdds": 39,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Kelce": {
           "lastOdds": 39,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "American Mike": {
           "lastOdds": 39,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Deep Cave": {
           "lastOdds": 37,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Binge Worthy": {
           "lastOdds": 39,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Whistle Stop Tour": {
           "lastOdds": 41,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "New Order": {
           "lastOdds": 41,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Grozni": {
           "lastOdds": 41,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Uncle Bert": {
           "lastOdds": 41,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Sandor Clegane": {
           "lastOdds": 41,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Dom of Mary": {
           "lastOdds": 41,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Alcedo": {
-          "lastOdds": 41,
-          "lastTime": 1771578681536
+          "lastOdds": 51,
+          "lastTime": 1771613321849
         },
         "Olympic Man": {
           "lastOdds": 41,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "OToole": {
           "lastOdds": 41,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Mister Coffey": {
           "lastOdds": 41,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Grand Albert": {
           "lastOdds": 54,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Cave Court": {
           "lastOdds": 54,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Famous Bridge": {
           "lastOdds": 54,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "King Turgeon": {
-          "lastOdds": 54,
-          "lastTime": 1771578681536
+          "lastOdds": 51,
+          "lastTime": 1771613321849
         },
         "Torn And Frayed": {
           "lastOdds": 54,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Lord Accord": {
           "lastOdds": 54,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Hung Jury": {
           "lastOdds": 54,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Lucky Lyreen": {
           "lastOdds": 54,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Chemical Energy": {
           "lastOdds": 54,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Jacks Parrot": {
           "lastOdds": 51,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Insurrection": {
           "lastOdds": 54,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Chigorin": {
           "lastOdds": 54,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Horantzau dAiry": {
           "lastOdds": 69,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Hartur dArc": {
           "lastOdds": 69,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Stuzzikini": {
           "lastOdds": 69,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Chavez": {
           "lastOdds": 69,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Rexem": {
           "lastOdds": 69,
-          "lastTime": 1771578681536
+          "lastTime": 1771613321849
         },
         "Stolen Silver": {
           "lastOdds": 101,
-          "lastTime": 1771578681537
+          "lastTime": 1771613321849
         },
         "No Time To Wait": {
           "lastOdds": 101,
-          "lastTime": 1771578681537
+          "lastTime": 1771613321849
         }
       }
     },
@@ -139081,7 +139079,7 @@
     },
     "southwell730": {
       "openingLines": {},
-      "lastUpdated": "2026-02-20T18:42:36.976Z",
+      "lastUpdated": "2026-02-20T18:40:14.962Z",
       "latestData": [
         {
           "name": "Southwell 19:30 Betting Odds- Winner",
@@ -139221,12 +139219,7 @@
                   "fraction": "19/10",
                   "decimal": 2.9
                 }
-              },
-              "form": "1-11",
-              "trainer": "K P De Foy",
-              "jockey": "D Egan",
-              "age": "4",
-              "weight": "9-2"
+              }
             },
             {
               "name": "Constitution Hill (12)",
@@ -139335,12 +139328,7 @@
                   "fraction": "19/10",
                   "decimal": 2.96
                 }
-              },
-              "form": "1111-1",
-              "trainer": "N J Henderson",
-              "jockey": "Oisin Murphy",
-              "age": "9",
-              "weight": "9-7"
+              }
             },
             {
               "name": "Daddy Long Legs (1)",
@@ -139449,12 +139437,7 @@
                   "fraction": "142/25",
                   "decimal": 6.68
                 }
-              },
-              "form": "1-1112",
-              "trainer": "W P Mullins",
-              "jockey": "Ryan Moore",
-              "age": "7",
-              "weight": "9-2"
+              }
             },
             {
               "name": "Tripoli Flyer (14)",
@@ -139563,12 +139546,7 @@
                   "fraction": "196/25",
                   "decimal": 8.84
                 }
-              },
-              "form": "2-13",
-              "trainer": "G Elliott",
-              "jockey": "Seamie Heffernan",
-              "age": "6",
-              "weight": "9-2"
+              }
             },
             {
               "name": "Gambino (13)",
@@ -139677,12 +139655,7 @@
                   "fraction": "81/5",
                   "decimal": 17.2
                 }
-              },
-              "form": "21-1",
-              "trainer": "D Skelton",
-              "jockey": "Hollie Doyle",
-              "age": "5",
-              "weight": "9-2"
+              }
             },
             {
               "name": "Nardaran (10)",
@@ -139791,12 +139764,7 @@
                   "fraction": "73",
                   "decimal": 74
                 }
-              },
-              "form": "12-1",
-              "trainer": "Paul Nicholls",
-              "jockey": "Cieren Fallon",
-              "age": "5",
-              "weight": "9-2"
+              }
             },
             {
               "name": "Mr Mcloughlan (3)",
@@ -139905,12 +139873,7 @@
                   "fraction": "126",
                   "decimal": 127
                 }
-              },
-              "form": "1-1",
-              "trainer": "Jack Jones",
-              "jockey": "Hector Crouch",
-              "age": "5",
-              "weight": "9-2"
+              }
             },
             {
               "name": "Grazeon Sunshine (4)",
@@ -140019,12 +139982,7 @@
                   "fraction": "156",
                   "decimal": 157
                 }
-              },
-              "form": "21-14",
-              "trainer": "John & Sean Quinn",
-              "jockey": "Jason Hart",
-              "age": "5",
-              "weight": "9-2"
+              }
             },
             {
               "name": "Roadlesstravelled (6)",
@@ -140133,12 +140091,7 @@
                   "fraction": "146",
                   "decimal": 147
                 }
-              },
-              "form": "3-22",
-              "trainer": "Jonjo & A J ONeill",
-              "jockey": "P J McDonald",
-              "age": "6",
-              "weight": "9-2"
+              }
             },
             {
               "name": "Miracles Do Happen (2)",
@@ -140247,12 +140200,7 @@
                   "fraction": "450",
                   "decimal": 451
                 }
-              },
-              "form": "3-21",
-              "trainer": "Tom Lacey",
-              "jockey": "S Bowen",
-              "age": "6",
-              "weight": "9-2"
+              }
             },
             {
               "name": "Masked Mistress (9)",
@@ -140361,12 +140309,7 @@
                   "fraction": "616",
                   "decimal": 617
                 }
-              },
-              "form": "12-3",
-              "trainer": "A M Balding",
-              "jockey": "Finley Marsh",
-              "age": "5",
-              "weight": "8-11"
+              }
             },
             {
               "name": "Star Artist (8)",
@@ -140475,12 +140418,7 @@
                   "fraction": "401",
                   "decimal": 402
                 }
-              },
-              "form": "31-21",
-              "trainer": "Hughie Morrison",
-              "jockey": "Rob Hornby",
-              "age": "5",
-              "weight": "9-2"
+              }
             },
             {
               "name": "Tres Bien (11)",
@@ -140589,12 +140527,7 @@
                   "fraction": "979",
                   "decimal": 980
                 }
-              },
-              "form": "4-12",
-              "trainer": "C Appleby",
-              "jockey": "Darragh Keenan",
-              "age": "4",
-              "weight": "9-2"
+              }
             },
             {
               "name": "Noble Way (7)(N/R)",
