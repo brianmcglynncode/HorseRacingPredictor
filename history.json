@@ -106354,7 +106354,7 @@
         "Party Vibes": 101,
         "Piper Park": 101
       },
-      "lastUpdated": "2026-02-20T09:21:34.908Z",
+      "lastUpdated": "2026-02-20T18:41:59.014Z",
       "latestData": [
         {
           "name": "Mares Chase Betting Odds- Winner",
@@ -106483,8 +106483,8 @@
                   "decimal": 2.75
                 },
                 "AK Bets": {
-                  "fraction": "15/8",
-                  "decimal": 2.87
+                  "fraction": "2",
+                  "decimal": 3
                 },
                 "Betfair": {
                   "fraction": "2",
@@ -106667,8 +106667,8 @@
                   "decimal": 6
                 },
                 "BOYLE Sports": {
-                  "fraction": "11/2",
-                  "decimal": 6.5
+                  "fraction": "5",
+                  "decimal": 6
                 },
                 "10bet": {
                   "fraction": "",
@@ -106727,8 +106727,8 @@
                   "decimal": 6.5
                 },
                 "Betfair": {
-                  "fraction": "152/25",
-                  "decimal": 7.08
+                  "fraction": "147/25",
+                  "decimal": 6.88
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -106744,9 +106744,9 @@
               "weight": "11-2",
               "officialRating": "147",
               "marketMove": "steamer",
-              "movePercent": 12,
+              "movePercent": 13,
               "openingOdds": 8,
-              "velocity": -0.0015644331341723037
+              "velocity": -0.00014275472483937579
             },
             {
               "name": "Only By Night",
@@ -106848,8 +106848,8 @@
                   "decimal": 8
                 },
                 "Betfair": {
-                  "fraction": "196/25",
-                  "decimal": 8.84
+                  "fraction": "103/10",
+                  "decimal": 11.3
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -106864,10 +106864,10 @@
               "age": "8",
               "weight": "11-5",
               "officialRating": "-",
-              "marketMove": "steamer",
-              "movePercent": 17,
+              "marketMove": "drifter",
+              "movePercent": 5,
               "openingOdds": 10.8,
-              "velocity": -0.003060847436424074
+              "velocity": 0.004104198339132051
             },
             {
               "name": "Diva Luna",
@@ -106988,7 +106988,7 @@
               "marketMove": "drifter",
               "movePercent": 3,
               "openingOdds": 11,
-              "velocity": 0.0005101412394040134
+              "velocity": 0
             },
             {
               "name": "July Flower",
@@ -107090,8 +107090,8 @@
                   "decimal": 11
                 },
                 "Betfair": {
-                  "fraction": "147/10",
-                  "decimal": 15.7
+                  "fraction": "157/10",
+                  "decimal": 16.7
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -107107,9 +107107,9 @@
               "weight": "11-5",
               "officialRating": "-",
               "marketMove": "drifter",
-              "movePercent": 21,
+              "movePercent": 28,
               "openingOdds": 13,
-              "velocity": 0.004591271154636108
+              "velocity": 0.0017844340604921958
             },
             {
               "name": "Kala Conti",
@@ -107211,8 +107211,8 @@
                   "decimal": 11
                 },
                 "Betfair": {
-                  "fraction": "76/5",
-                  "decimal": 16.2
+                  "fraction": "157/10",
+                  "decimal": 16.7
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -107227,9 +107227,10 @@
               "age": "6",
               "weight": "11-5",
               "officialRating": "-",
-              "marketMove": "stable",
+              "marketMove": "drifter",
+              "movePercent": 3,
               "openingOdds": 16.2,
-              "velocity": 0
+              "velocity": 0.0008922170302460979
             },
             {
               "name": "Jade De Grugy",
@@ -107350,7 +107351,7 @@
               "marketMove": "steamer",
               "movePercent": 7,
               "openingOdds": 21,
-              "velocity": -0.002380659117218721
+              "velocity": 0
             },
             {
               "name": "The Big Westerner",
@@ -108073,126 +108074,6 @@
               "velocity": 0
             },
             {
-              "name": "Fun Fun Fun",
-              "odds": {
-                "bet365": {
-                  "fraction": "40",
-                  "decimal": 41
-                },
-                "William Hill": {
-                  "fraction": "33",
-                  "decimal": 34
-                },
-                "Unibet": {
-                  "fraction": "50",
-                  "decimal": 51
-                },
-                "Betfred": {
-                  "fraction": "40",
-                  "decimal": 41
-                },
-                "888sport": {
-                  "fraction": "33",
-                  "decimal": 34
-                },
-                "Spreadex": {
-                  "fraction": "40",
-                  "decimal": 41
-                },
-                "Ladbrokes": {
-                  "fraction": "33",
-                  "decimal": 34
-                },
-                "BetVictor": {
-                  "fraction": "40",
-                  "decimal": 41
-                },
-                "BetMGM UK": {
-                  "fraction": "40",
-                  "decimal": 41
-                },
-                "BOYLE Sports": {
-                  "fraction": "40",
-                  "decimal": 41
-                },
-                "10bet": {
-                  "fraction": "",
-                  "decimal": 0
-                },
-                "Star Sports": {
-                  "fraction": "40",
-                  "decimal": 41
-                },
-                "PricedUp": {
-                  "fraction": "40",
-                  "decimal": 41
-                },
-                "Sporting Index": {
-                  "fraction": "40",
-                  "decimal": 41
-                },
-                "Virgin Bet": {
-                  "fraction": "40",
-                  "decimal": 41
-                },
-                "QuinnBet": {
-                  "fraction": "40",
-                  "decimal": 41
-                },
-                "Betway": {
-                  "fraction": "40",
-                  "decimal": 41
-                },
-                "Coral": {
-                  "fraction": "33",
-                  "decimal": 34
-                },
-                "BetGoodwin": {
-                  "fraction": "50",
-                  "decimal": 51
-                },
-                "BetTom": {
-                  "fraction": "50",
-                  "decimal": 51
-                },
-                "BresBet": {
-                  "fraction": "40",
-                  "decimal": 41
-                },
-                "Skybet": {
-                  "fraction": "40",
-                  "decimal": 41
-                },
-                "Paddy Power": {
-                  "fraction": "40",
-                  "decimal": 41
-                },
-                "AK Bets": {
-                  "fraction": "40",
-                  "decimal": 41
-                },
-                "Betfair": {
-                  "fraction": "58",
-                  "decimal": 59
-                },
-                "Matchbook": {
-                  "fraction": "",
-                  "decimal": 0
-                }
-              },
-              "form": "411-44",
-              "trainer": "W P Mullins",
-              "jockey": null,
-              "courseDistanceWin": null,
-              "rpr": "162",
-              "age": "8",
-              "weight": "11-2",
-              "officialRating": "-",
-              "marketMove": "stable",
-              "openingOdds": 59,
-              "velocity": 0
-            },
-            {
               "name": "Shecouldbeanything",
               "odds": {
                 "bet365": {
@@ -108431,6 +108312,127 @@
               "marketMove": "stable",
               "openingOdds": 245,
               "velocity": 0
+            },
+            {
+              "name": "Fun Fun Fun",
+              "odds": {
+                "bet365": {
+                  "fraction": "66",
+                  "decimal": 67
+                },
+                "William Hill": {
+                  "fraction": "50",
+                  "decimal": 51
+                },
+                "Unibet": {
+                  "fraction": "50",
+                  "decimal": 51
+                },
+                "Betfred": {
+                  "fraction": "66",
+                  "decimal": 67
+                },
+                "888sport": {
+                  "fraction": "50",
+                  "decimal": 51
+                },
+                "Spreadex": {
+                  "fraction": "66",
+                  "decimal": 67
+                },
+                "Ladbrokes": {
+                  "fraction": "66",
+                  "decimal": 67
+                },
+                "BetVictor": {
+                  "fraction": "40",
+                  "decimal": 41
+                },
+                "BetMGM UK": {
+                  "fraction": "50",
+                  "decimal": 51
+                },
+                "BOYLE Sports": {
+                  "fraction": "66",
+                  "decimal": 67
+                },
+                "10bet": {
+                  "fraction": "",
+                  "decimal": 0
+                },
+                "Star Sports": {
+                  "fraction": "66",
+                  "decimal": 67
+                },
+                "PricedUp": {
+                  "fraction": "66",
+                  "decimal": 67
+                },
+                "Sporting Index": {
+                  "fraction": "66",
+                  "decimal": 67
+                },
+                "Virgin Bet": {
+                  "fraction": "50",
+                  "decimal": 51
+                },
+                "QuinnBet": {
+                  "fraction": "40",
+                  "decimal": 41
+                },
+                "Betway": {
+                  "fraction": "40",
+                  "decimal": 41
+                },
+                "Coral": {
+                  "fraction": "66",
+                  "decimal": 67
+                },
+                "BetGoodwin": {
+                  "fraction": "80",
+                  "decimal": 81
+                },
+                "BetTom": {
+                  "fraction": "80",
+                  "decimal": 81
+                },
+                "BresBet": {
+                  "fraction": "66",
+                  "decimal": 67
+                },
+                "Skybet": {
+                  "fraction": "66",
+                  "decimal": 67
+                },
+                "Paddy Power": {
+                  "fraction": "66",
+                  "decimal": 67
+                },
+                "AK Bets": {
+                  "fraction": "66",
+                  "decimal": 67
+                },
+                "Betfair": {
+                  "fraction": "195",
+                  "decimal": 196
+                },
+                "Matchbook": {
+                  "fraction": "",
+                  "decimal": 0
+                }
+              },
+              "form": "411-44",
+              "trainer": "W P Mullins",
+              "jockey": null,
+              "courseDistanceWin": null,
+              "rpr": "162",
+              "age": "8",
+              "weight": "11-2",
+              "officialRating": "-",
+              "marketMove": "drifter",
+              "movePercent": 232,
+              "openingOdds": 59,
+              "velocity": 0.24446746628743082
             },
             {
               "name": "Wyenot",
@@ -109158,95 +109160,95 @@
       "velocityTracking": {
         "Dinoblue": {
           "lastOdds": 3.06,
-          "lastTime": 1771579294908
+          "lastTime": 1771612919014
         },
         "Spindleberry": {
           "lastOdds": 5.51,
-          "lastTime": 1771579294908
+          "lastTime": 1771612919014
         },
         "Panic Attack": {
-          "lastOdds": 7.08,
-          "lastTime": 1771579294908
+          "lastOdds": 7,
+          "lastTime": 1771612919014
         },
         "Only By Night": {
-          "lastOdds": 9,
-          "lastTime": 1771579294908
+          "lastOdds": 11.3,
+          "lastTime": 1771612919014
         },
         "Diva Luna": {
           "lastOdds": 11.3,
-          "lastTime": 1771579294908
+          "lastTime": 1771612919014
         },
         "July Flower": {
-          "lastOdds": 15.7,
-          "lastTime": 1771579294908
+          "lastOdds": 16.7,
+          "lastTime": 1771612919014
         },
         "Kala Conti": {
-          "lastOdds": 16.2,
-          "lastTime": 1771579294908
+          "lastOdds": 16.7,
+          "lastTime": 1771612919014
         },
         "Jade De Grugy": {
           "lastOdds": 19.6,
-          "lastTime": 1771579294908
+          "lastTime": 1771612919014
         },
         "The Big Westerner": {
           "lastOdds": 33,
-          "lastTime": 1771579294908
+          "lastTime": 1771612919014
         },
         "Karre dAs": {
           "lastOdds": 34,
-          "lastTime": 1771579294908
+          "lastTime": 1771612919014
         },
         "Kargese": {
           "lastOdds": 39,
-          "lastTime": 1771579294908
+          "lastTime": 1771612919014
         },
         "Telepathique": {
           "lastOdds": 49,
-          "lastTime": 1771579294908
+          "lastTime": 1771612919014
         },
         "Bioluminescence": {
           "lastOdds": 54,
-          "lastTime": 1771579294908
+          "lastTime": 1771612919014
         },
         "Jasmine Bliss": {
           "lastOdds": 51,
-          "lastTime": 1771579294908
+          "lastTime": 1771612919014
         },
         "Fun Fun Fun": {
-          "lastOdds": 59,
-          "lastTime": 1771579294908
+          "lastOdds": 196,
+          "lastTime": 1771612919014
         },
         "Shecouldbeanything": {
           "lastOdds": 98,
-          "lastTime": 1771579294908
+          "lastTime": 1771612919014
         },
         "Hollygrove Cha Cha": {
           "lastOdds": 245,
-          "lastTime": 1771579294909
+          "lastTime": 1771612919014
         },
         "Wyenot": {
           "lastOdds": 101,
-          "lastTime": 1771579294909
+          "lastTime": 1771612919014
         },
         "Break My Soul": {
           "lastOdds": 101,
-          "lastTime": 1771579294909
+          "lastTime": 1771612919014
         },
         "All The Glory": {
           "lastOdds": 101,
-          "lastTime": 1771579294909
+          "lastTime": 1771612919014
         },
         "Shakeyatailfeather": {
           "lastOdds": 101,
-          "lastTime": 1771579294909
+          "lastTime": 1771612919014
         },
         "Party Vibes": {
           "lastOdds": 101,
-          "lastTime": 1771579294909
+          "lastTime": 1771612919014
         },
         "Piper Park": {
           "lastOdds": 101,
-          "lastTime": 1771579294909
+          "lastTime": 1771612919014
         }
       }
     },
@@ -139079,7 +139081,7 @@
     },
     "southwell730": {
       "openingLines": {},
-      "lastUpdated": "2026-02-20T18:40:14.962Z",
+      "lastUpdated": "2026-02-20T18:42:36.976Z",
       "latestData": [
         {
           "name": "Southwell 19:30 Betting Odds- Winner",
@@ -139219,7 +139221,12 @@
                   "fraction": "19/10",
                   "decimal": 2.9
                 }
-              }
+              },
+              "form": "1-11",
+              "trainer": "K P De Foy",
+              "jockey": "D Egan",
+              "age": "4",
+              "weight": "9-2"
             },
             {
               "name": "Constitution Hill (12)",
@@ -139328,7 +139335,12 @@
                   "fraction": "19/10",
                   "decimal": 2.96
                 }
-              }
+              },
+              "form": "1111-1",
+              "trainer": "N J Henderson",
+              "jockey": "Oisin Murphy",
+              "age": "9",
+              "weight": "9-7"
             },
             {
               "name": "Daddy Long Legs (1)",
@@ -139437,7 +139449,12 @@
                   "fraction": "142/25",
                   "decimal": 6.68
                 }
-              }
+              },
+              "form": "1-1112",
+              "trainer": "W P Mullins",
+              "jockey": "Ryan Moore",
+              "age": "7",
+              "weight": "9-2"
             },
             {
               "name": "Tripoli Flyer (14)",
@@ -139546,7 +139563,12 @@
                   "fraction": "196/25",
                   "decimal": 8.84
                 }
-              }
+              },
+              "form": "2-13",
+              "trainer": "G Elliott",
+              "jockey": "Seamie Heffernan",
+              "age": "6",
+              "weight": "9-2"
             },
             {
               "name": "Gambino (13)",
@@ -139655,7 +139677,12 @@
                   "fraction": "81/5",
                   "decimal": 17.2
                 }
-              }
+              },
+              "form": "21-1",
+              "trainer": "D Skelton",
+              "jockey": "Hollie Doyle",
+              "age": "5",
+              "weight": "9-2"
             },
             {
               "name": "Nardaran (10)",
@@ -139764,7 +139791,12 @@
                   "fraction": "73",
                   "decimal": 74
                 }
-              }
+              },
+              "form": "12-1",
+              "trainer": "Paul Nicholls",
+              "jockey": "Cieren Fallon",
+              "age": "5",
+              "weight": "9-2"
             },
             {
               "name": "Mr Mcloughlan (3)",
@@ -139873,7 +139905,12 @@
                   "fraction": "126",
                   "decimal": 127
                 }
-              }
+              },
+              "form": "1-1",
+              "trainer": "Jack Jones",
+              "jockey": "Hector Crouch",
+              "age": "5",
+              "weight": "9-2"
             },
             {
               "name": "Grazeon Sunshine (4)",
@@ -139982,7 +140019,12 @@
                   "fraction": "156",
                   "decimal": 157
                 }
-              }
+              },
+              "form": "21-14",
+              "trainer": "John & Sean Quinn",
+              "jockey": "Jason Hart",
+              "age": "5",
+              "weight": "9-2"
             },
             {
               "name": "Roadlesstravelled (6)",
@@ -140091,7 +140133,12 @@
                   "fraction": "146",
                   "decimal": 147
                 }
-              }
+              },
+              "form": "3-22",
+              "trainer": "Jonjo & A J ONeill",
+              "jockey": "P J McDonald",
+              "age": "6",
+              "weight": "9-2"
             },
             {
               "name": "Miracles Do Happen (2)",
@@ -140200,7 +140247,12 @@
                   "fraction": "450",
                   "decimal": 451
                 }
-              }
+              },
+              "form": "3-21",
+              "trainer": "Tom Lacey",
+              "jockey": "S Bowen",
+              "age": "6",
+              "weight": "9-2"
             },
             {
               "name": "Masked Mistress (9)",
@@ -140309,7 +140361,12 @@
                   "fraction": "616",
                   "decimal": 617
                 }
-              }
+              },
+              "form": "12-3",
+              "trainer": "A M Balding",
+              "jockey": "Finley Marsh",
+              "age": "5",
+              "weight": "8-11"
             },
             {
               "name": "Star Artist (8)",
@@ -140418,7 +140475,12 @@
                   "fraction": "401",
                   "decimal": 402
                 }
-              }
+              },
+              "form": "31-21",
+              "trainer": "Hughie Morrison",
+              "jockey": "Rob Hornby",
+              "age": "5",
+              "weight": "9-2"
             },
             {
               "name": "Tres Bien (11)",
@@ -140527,7 +140589,12 @@
                   "fraction": "979",
                   "decimal": 980
                 }
-              }
+              },
+              "form": "4-12",
+              "trainer": "C Appleby",
+              "jockey": "Darragh Keenan",
+              "age": "4",
+              "weight": "9-2"
             },
             {
               "name": "Noble Way (7)(N/R)",
