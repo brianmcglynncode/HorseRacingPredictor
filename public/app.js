@@ -444,7 +444,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (eachWayPicks.length > 0) {
                     eachWayHtml = `
                         <div class="ew-section">
-                            <h4 class="ew-title">🎯 Each Way Value Picks</h4>
+                            <h4 class="ew-title">🎯 Each Way Value AI Picks</h4>
                             <div class="ew-grid">
                                 ${eachWayPicks.map(ew => `
                                     <div class="ew-card">
@@ -466,7 +466,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="pick-header">
                             <span class="trophy-icon">🏆</span>
                             <div>
-                                <div class="pick-label">MY PICK (WINNER)</div>
+                                <div class="pick-label">AI PICK (WINNER)</div>
                                 <h3>${myPick.name}</h3>
                             </div>
                         </div>

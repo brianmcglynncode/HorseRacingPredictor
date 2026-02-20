@@ -570,7 +570,7 @@ h1.glow-text {
     }
 }
 
-/* MY PICK Card */
+/* AI PICK Card */
 .my-pick-card {
     background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(0, 0, 0, 0.6));
     border: 2px solid var(--accent-gold);

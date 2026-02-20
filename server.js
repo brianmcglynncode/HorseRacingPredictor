@@ -245,52 +245,143 @@ function processRaceData(raceId, scrapedData) {
 }
 
 // Background Scraper Loop (The Time Machine Engine)
+// BULLETPROOF: Guarantees the loop ALWAYS reschedules, even after crashes.
+
+let scrapeLoopRunning = false;
+let consecutiveFailures = 0;
+
 async function startBackgroundScraper() {
     console.log("🕰️ Time Machine: Starting background scraper loop...");
 
+    const scheduleNext = () => {
+        // SCHEDULE NEXT RUN (Randomized: 50 - 70 minutes)
+        const nextRunDelay = (1000 * 60 * 60) + (Math.floor(Math.random() * (1000 * 60 * 20)) - (1000 * 60 * 10));
+        console.log(`💤 Next scrape cycle in ${(nextRunDelay / 1000 / 60).toFixed(1)} minutes...`);
+        setTimeout(() => runScrapeLoop(), nextRunDelay);
+    };
+
     const runScrapeLoop = async () => {
-        console.log("🕰️ Time Machine: Hourly update triggered.");
-        // Prioritize Wednesday races (Day 2) to ensure data is fresh
-        const wednesdayRaces = ['ballymore', 'brown', 'coral', 'championchase', 'cross', 'grandannual', 'bumper'];
-        const otherRaces = Object.keys(RACES).filter(r => !wednesdayRaces.includes(r));
-        const raceIds = [...wednesdayRaces, ...otherRaces];
+        // Guard against double-runs
+        if (scrapeLoopRunning) {
+            console.log("⚠️ Scrape loop already running, skipping...");
+            scheduleNext();
+            return;
+        }
+        scrapeLoopRunning = true;
 
-        for (const raceId of raceIds) {
-            try {
-                const raceConfig = RACES[raceId];
-                console.log(`🕰️ Update: Scraping ${raceId}...`);
-                const data = await scrapeCheltenhamFestival(raceConfig.oc, raceConfig.rp);
+        // OUTER TRY/CATCH: Guarantees scheduleNext() ALWAYS fires
+        try {
+            console.log("🕰️ Time Machine: Hourly update triggered.");
+            console.log(`📊 Memory: ${Math.round(process.memoryUsage().heapUsed / 1024 / 1024)}MB heap used`);
 
-                if (data && data.length > 0) {
-                    processRaceData(raceId, data);
-                    console.log(`✅ Update: Saved snapshot for ${raceId}`);
+            // TIME-AWARE: Check UK time. Don't scrape aggressively at night.
+            const ukHour = new Date().toLocaleString('en-GB', { timeZone: 'Europe/London', hour: 'numeric', hour12: false });
+            const hour = parseInt(ukHour);
+            if (hour >= 0 && hour < 6) {
+                console.log(`🌙 UK time is ${hour}:00 — Night mode. Skipping this cycle (no punters awake).`);
+                scrapeLoopRunning = false;
+                // Schedule next check in 3 hours during night
+                setTimeout(() => runScrapeLoop(), 1000 * 60 * 180);
+                return;
+            }
+
+            // RANDOMIZE RACE ORDER: Never scrape in the same sequence twice
+            const allRaceIds = Object.keys(RACES);
+            // Fisher-Yates shuffle
+            for (let s = allRaceIds.length - 1; s > 0; s--) {
+                const j = Math.floor(Math.random() * (s + 1));
+                [allRaceIds[s], allRaceIds[j]] = [allRaceIds[j], allRaceIds[s]];
+            }
+
+            // RANDOM SUBSET: Don't scrape ALL races every cycle (too robotic)
+            // Scrape 65-85% of races per cycle — data stays fresh enough
+            const subsetSize = Math.floor(allRaceIds.length * (0.65 + Math.random() * 0.2));
+            const raceIds = allRaceIds.slice(0, subsetSize);
+            console.log(`🎲 This cycle: ${raceIds.length}/${allRaceIds.length} races (randomized order)`);
+
+            let successCount = 0;
+            let failCount = 0;
+
+            for (const raceId of raceIds) {
+                try {
+                    const raceConfig = RACES[raceId];
+                    console.log(`🕰️ Update: Scraping ${raceId}... (${successCount + failCount + 1}/${raceIds.length})`);
+
+                    // TIMEOUT WRAPPER: Kill scrape if it hangs for more than 90s
+                    const scrapeTimeout = new Promise((_, reject) =>
+                        setTimeout(() => reject(new Error('Scrape timeout: 90s exceeded')), 90000)
+                    );
+
+                    const data = await Promise.race([
+                        scrapeCheltenhamFestival(raceConfig.oc, raceConfig.rp),
+                        scrapeTimeout
+                    ]);
+
+                    if (data && data.length > 0) {
+                        processRaceData(raceId, data);
+                        successCount++;
+                        console.log(`✅ Update: Saved snapshot for ${raceId}`);
+                    } else {
+                        failCount++;
+                        console.log(`⚠️ No data returned for ${raceId}`);
+                    }
+
+                    // RANDOM DELAY BETWEEN RACES (30s - 90s)
+                    const raceDelay = Math.floor(Math.random() * 60000) + 30000;
+                    console.log(`⏳ Waiting ${(raceDelay / 1000).toFixed(1)}s before next race...`);
+                    await new Promise(r => setTimeout(r, raceDelay));
+
+                } catch (e) {
+                    failCount++;
+                    console.error(`❌ Update Failed for ${raceId}: ${e.message}`);
+                    // Wait longer on error but DON'T let it kill the loop
+                    await new Promise(r => setTimeout(r, 30000));
                 }
 
-                // RANDOM DELAY BETWEEN RACES (30s - 90s)
-                // Breaks fixed pattern
-                const raceDelay = Math.floor(Math.random() * 60000) + 30000;
-                console.log(`⏳ Waiting ${(raceDelay / 1000).toFixed(1)}s before next race...`);
-                await new Promise(r => setTimeout(r, raceDelay));
-
-            } catch (e) {
-                console.error(`❌ Update Failed for ${raceId}:`, e);
-                // Wait longer on error
-                await new Promise(r => setTimeout(r, 60000));
+                // Memory check: if we're using too much, take a breather
+                const memMB = Math.round(process.memoryUsage().heapUsed / 1024 / 1024);
+                if (memMB > 400) {
+                    console.log(`⚠️ High memory (${memMB}MB), pausing for GC...`);
+                    if (global.gc) global.gc();
+                    await new Promise(r => setTimeout(r, 15000));
+                }
             }
+
+            console.log(`🏁 Cycle complete: ${successCount} success, ${failCount} failed out of ${raceIds.length} races`);
+            consecutiveFailures = (successCount === 0) ? consecutiveFailures + 1 : 0;
+
+            // If ALL scrapes failed 3 cycles in a row, back off significantly
+            if (consecutiveFailures >= 3) {
+                console.log(`🚨 ${consecutiveFailures} consecutive total failures. Backing off 3 hours...`);
+                setTimeout(() => runScrapeLoop(), 1000 * 60 * 180);
+                return; // Skip normal scheduleNext
+            }
+
+        } catch (outerError) {
+            // THIS SHOULD NEVER HAPPEN, but if it does, we still reschedule
+            console.error("🚨 CRITICAL: Outer loop error (loop survived):", outerError.message || outerError);
+        } finally {
+            scrapeLoopRunning = false;
+            // ALWAYS schedule next run, no matter what happened
+            scheduleNext();
         }
-
-        // SCHEDULE NEXT RUN (Randomized: 50 - 70 minutes)
-        // Breaks fixed hourly pattern
-        // Base 1 hour +/- 10 mins
-        const nextRunDelay = (1000 * 60 * 60) + (Math.floor(Math.random() * (1000 * 60 * 20)) - (1000 * 60 * 10));
-
-        console.log(`💤 Sleeping for ${(nextRunDelay / 1000 / 60).toFixed(1)} minutes until next cycle...`);
-        setTimeout(runScrapeLoop, nextRunDelay);
     };
 
     // Run IMMEDIATELY on startup
     runScrapeLoop();
 }
+
+// CRASH RECOVERY: If the process hits an unhandled error, log it but don't die
+process.on('uncaughtException', (err) => {
+    console.error('🚨 UNCAUGHT EXCEPTION (process survived):', err.message);
+    console.error(err.stack);
+    // Don't exit — let the loop continue
+});
+
+process.on('unhandledRejection', (reason) => {
+    console.error('🚨 UNHANDLED REJECTION (process survived):', reason);
+    // Don't exit — let the loop continue
+});
 
 // Start the engine
 startBackgroundScraper();

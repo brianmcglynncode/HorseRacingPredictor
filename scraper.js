@@ -2,45 +2,67 @@ const puppeteer = require('puppeteer-extra');
 const StealthPlugin = require('puppeteer-extra-plugin-stealth');
 const fs = require('fs');
 
-// --- ANTI-BLOCKING CONFIGURATION ---
+// --- ANTI-BLOCKING CONFIGURATION (2026 Best Practices) ---
 
+// UPDATED: Current Chrome/Firefox/Edge versions (Feb 2026)
 const USER_AGENTS = [
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/121.0",
-    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/121.0",
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0",
-    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.3 Safari/605.1.15",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:134.0) Gecko/20100101 Firefox/134.0",
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 Edg/133.0.0.0"
 ];
 
-// Add your proxy servers here if you purchase them (e.g., 'http://user:pass@IP:PORT')
-// ROTATING PROXY STRATEGY: Randomly pick one for each session
+// VIEWPORT RANDOMIZATION: Real users have different screen sizes
+const VIEWPORTS = [
+    { width: 1920, height: 1080 },
+    { width: 1536, height: 864 },
+    { width: 1440, height: 900 },
+    { width: 1366, height: 768 },
+    { width: 1280, height: 800 },
+    { width: 1680, height: 1050 },
+];
+
+// Add your proxy servers here (e.g., 'http://user:pass@IP:PORT')
 const PROXIES = [
     // 'http://username:password@1.2.3.4:8080',
-    // 'http://username:password@5.6.7.8:8080'
+];
+
+// REFERRER VARIATION: Don't always come from Google
+const REFERRERS = [
+    'https://www.google.co.uk/',
+    'https://www.google.com/',
+    'https://www.google.co.uk/search?q=cheltenham+festival+odds',
+    'https://www.bing.com/',
+    'https://www.bing.com/search?q=cheltenham+odds',
+    '',  // Direct navigation (no referrer) — some real users type URLs
+    'https://t.co/abc123',  // Looks like Twitter/X link click
 ];
 
 const getRandomElement = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
 puppeteer.use(StealthPlugin());
 
-// Helper for random delay
 const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
 async function scrapeWithRetry(url, scrapeFunction, maxRetries = 3) {
     for (let i = 0; i < maxRetries; i++) {
-        // 1. ROTATE USER AGENT
         const userAgent = getRandomElement(USER_AGENTS);
-
-        // 2. ROTATE PROXY (If available)
+        const viewport = getRandomElement(VIEWPORTS);
         const proxy = PROXIES.length > 0 ? getRandomElement(PROXIES) : null;
 
         const launchArgs = [
             '--no-sandbox',
             '--disable-setuid-sandbox',
-            '--window-size=1920,1080',
+            `--window-size=${viewport.width},${viewport.height}`,
             '--disable-blink-features=AutomationControlled',
-            `--user-agent=${userAgent}`
+            `--user-agent=${userAgent}`,
+            '--disable-dev-shm-usage',    // Prevent crashes on Railway
+            '--disable-gpu',               // Not needed for headless
+            '--lang=en-GB',                // UK locale
+            '--disable-extensions',
         ];
 
         if (proxy) {
@@ -55,43 +77,123 @@ async function scrapeWithRetry(url, scrapeFunction, maxRetries = 3) {
         try {
             const page = await browser.newPage();
 
-            // Authenticate proxy if needed
-            // if (proxy) await page.authenticate({ username: '...', password: '...' });
-
-            await page.setViewport({ width: 1920, height: 1080 });
-
-            // Set realistic headers to look like a UK user coming from Google
-            await page.setExtraHTTPHeaders({
-                'Accept-Language': 'en-GB,en-US;q=0.9,en;q=0.8',
-                'Referer': 'https://www.google.co.uk/'
+            // RANDOMIZED VIEWPORT (not always 1920x1080)
+            await page.setViewport({
+                width: viewport.width,
+                height: viewport.height,
+                deviceScaleFactor: Math.random() > 0.5 ? 1 : 2
             });
 
-            // 3. RANDOM DELAY BEFORE NAVIGATION (Increased significantly)
-            // Wait between 3 and 8 seconds to avoid rapid-fire detection
+            // BLOCK UNNECESSARY RESOURCES: Faster + smaller fingerprint
+            await page.setRequestInterception(true);
+            page.on('request', (req) => {
+                const type = req.resourceType();
+                if (['image', 'stylesheet', 'font', 'media'].includes(type)) {
+                    req.abort();
+                } else {
+                    req.continue();
+                }
+            });
+
+            // REALISTIC HEADERS: Vary the referrer each session
+            const referrer = getRandomElement(REFERRERS);
+            const headers = {
+                'Accept-Language': 'en-GB,en;q=0.9',
+                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+                'DNT': '1',
+                'Sec-Fetch-Dest': 'document',
+                'Sec-Fetch-Mode': 'navigate',
+                'Sec-Fetch-User': '?1',
+                'Upgrade-Insecure-Requests': '1'
+            };
+            if (referrer) {
+                headers['Referer'] = referrer;
+                headers['Sec-Fetch-Site'] = referrer.includes(new URL(url).hostname) ? 'same-origin' : 'cross-site';
+            } else {
+                headers['Sec-Fetch-Site'] = 'none'; // Direct navigation
+            }
+            await page.setExtraHTTPHeaders(headers);
+
+            // NAVIGATOR OVERRIDES: Match a real UK Chrome browser
+            await page.evaluateOnNewDocument(() => {
+                // Timezone: Europe/London
+                Object.defineProperty(Intl.DateTimeFormat.prototype, 'resolvedOptions', {
+                    value: function () {
+                        return { timeZone: 'Europe/London', locale: 'en-GB' };
+                    }
+                });
+
+                // Languages
+                Object.defineProperty(navigator, 'languages', { get: () => ['en-GB', 'en'] });
+                Object.defineProperty(navigator, 'language', { get: () => 'en-GB' });
+
+                // Hardware: look like a real machine
+                Object.defineProperty(navigator, 'hardwareConcurrency', { get: () => 8 });
+                Object.defineProperty(navigator, 'deviceMemory', { get: () => 8 });
+
+                // Platform: match the User-Agent
+                Object.defineProperty(navigator, 'platform', { get: () => 'Win32' });
+
+                // Plugins: Chrome has some by default
+                Object.defineProperty(navigator, 'plugins', {
+                    get: () => [
+                        { name: 'Chrome PDF Viewer', filename: 'internal-pdf-viewer' },
+                        { name: 'Chromium PDF Viewer', filename: 'internal-pdf-viewer' },
+                    ]
+                });
+
+                // WebGL Vendor: look like real GPU
+                const getParameter = WebGLRenderingContext.prototype.getParameter;
+                WebGLRenderingContext.prototype.getParameter = function (parameter) {
+                    if (parameter === 37445) return 'Google Inc. (Intel)';
+                    if (parameter === 37446) return 'ANGLE (Intel, Intel(R) UHD Graphics 630, OpenGL 4.5)';
+                    return getParameter.call(this, parameter);
+                };
+            });
+
+            // RANDOM DELAY BEFORE NAVIGATION (3-8 seconds)
             const setupDelay = Math.floor(Math.random() * 5000) + 3000;
             await delay(setupDelay);
 
-            console.log(`Attempt ${i + 1}/${maxRetries}: Navigating to ${url}... (UA: ${userAgent.substring(0, 20)}...)`);
+            // WARM-UP NAVIGATION: Visit homepage first (50% of the time)
+            // Real users browse homepage → race page, not teleport to deep URLs
+            const domain = new URL(url).origin;
+            if (Math.random() > 0.5) {
+                console.log(`  🏠 Warm-up: Visiting ${domain} first...`);
+                try {
+                    await page.goto(domain, { waitUntil: 'domcontentloaded', timeout: 20000 });
+                    await delay(2000 + Math.random() * 3000); // Browse homepage briefly
+                    await page.mouse.move(Math.floor(Math.random() * 500), Math.floor(Math.random() * 400));
+                    await page.evaluate(() => window.scrollBy({ top: 200, behavior: 'smooth' }));
+                    await delay(1000 + Math.random() * 2000);
+                } catch (e) {
+                    // Homepage warm-up failed, continue to target anyway
+                }
+            }
+
+            console.log(`  Attempt ${i + 1}/${maxRetries}: Navigating to target page...`);
             await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
 
-            // 4. HUMANIZE INTERACTION (Mouse moves, random scrolling)
+            // HUMANIZE: Realistic interaction pattern
             await humanizePage(page);
 
-            // Execute the specific scraping logic
+            // DISMISS COOKIE BANNERS (common detection signal if ignored)
+            await dismissCookieBanner(page);
+
             const data = await scrapeFunction(page);
 
             if (data) {
-                return data; // Success
+                return data;
             } else {
                 throw new Error("Scraper returned null/empty data");
             }
 
         } catch (error) {
             console.error(`Attempt ${i + 1} failed: ${error.message}`);
-            if (i === maxRetries - 1) throw error; // Throw if last attempt
+            if (i === maxRetries - 1) throw error;
 
-            // Exponential Backoff / Increased Retry Delay
-            const retryDelay = 10000 + (i * 5000); // 10s, 15s, 20s...
+            // Exponential Backoff
+            const retryDelay = 15000 + (i * 10000); // 15s, 25s, 35s
             console.log(`Waiting ${(retryDelay / 1000)}s before retry...`);
             await delay(retryDelay);
         } finally {
@@ -100,22 +202,75 @@ async function scrapeWithRetry(url, scrapeFunction, maxRetries = 3) {
     }
 }
 
+// COOKIE BANNER DISMISSAL: Bots that ignore cookie banners are flagged
+async function dismissCookieBanner(page) {
+    try {
+        const cookieSelectors = [
+            'button[id*="accept"]',
+            'button[class*="accept"]',
+            'button[class*="consent"]',
+            'button[class*="agree"]',
+            'a[id*="accept"]',
+            '#onetrust-accept-btn-handler',
+            '.cookie-accept',
+            '[data-testid="cookie-accept"]',
+            'button[title="Accept"]',
+            'button[title="Accept All"]',
+            'button[aria-label*="accept"]',
+            'button[aria-label*="Accept"]'
+        ];
 
-// Helper to simulate human behavior
+        for (const selector of cookieSelectors) {
+            const btn = await page.$(selector);
+            if (btn) {
+                await delay(500 + Math.random() * 1000); // Pause before clicking like a human
+                await btn.click();
+                console.log(`  🍪 Dismissed cookie banner (${selector})`);
+                await delay(500);
+                break;
+            }
+        }
+    } catch (e) {
+        // Ignore — banner may not exist
+    }
+}
+
+// REALISTIC HUMAN BEHAVIOR: Multiple interactions, varied timing
 async function humanizePage(page) {
     try {
-        // Random mouse movement
-        await page.mouse.move(
-            Math.floor(Math.random() * 500),
-            Math.floor(Math.random() * 500)
-        );
+        // 1. Initial pause (reading the page)
+        await delay(1000 + Math.random() * 2000);
 
-        // Random small scroll
-        await page.evaluate(() => {
-            window.scrollBy(0, window.innerHeight / 2);
-        });
+        // 2. Mouse moves to random positions (2-4 moves)
+        const moves = 2 + Math.floor(Math.random() * 3);
+        for (let m = 0; m < moves; m++) {
+            await page.mouse.move(
+                100 + Math.floor(Math.random() * 800),
+                100 + Math.floor(Math.random() * 600)
+            );
+            await delay(200 + Math.random() * 500);
+        }
 
-        await delay(Math.floor(Math.random() * 1000) + 500);
+        // 3. Gradual scroll down (like actually reading)
+        const scrollSteps = 2 + Math.floor(Math.random() * 3);
+        for (let s = 0; s < scrollSteps; s++) {
+            const scrollAmount = 100 + Math.floor(Math.random() * 300);
+            await page.evaluate((amount) => {
+                window.scrollBy({ top: amount, behavior: 'smooth' });
+            }, scrollAmount);
+            await delay(500 + Math.random() * 1500);
+        }
+
+        // 4. Sometimes scroll back up a bit (natural behavior)
+        if (Math.random() > 0.6) {
+            await page.evaluate(() => {
+                window.scrollBy({ top: -150, behavior: 'smooth' });
+            });
+            await delay(300 + Math.random() * 500);
+        }
+
+        // 5. Final pause before scraping
+        await delay(500 + Math.random() * 1000);
 
     } catch (e) {
         // Ignore errors during humanization
