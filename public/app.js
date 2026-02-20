@@ -5,6 +5,82 @@ document.addEventListener('DOMContentLoaded', () => {
     const raceNav = document.querySelector('.race-nav');
     const dayButtons = document.querySelectorAll('.day-btn');
 
+    // --- PAYWALL SYSTEM ---
+    const FREE_RACES = ['supreme', 'championchase'];
+    let isUnlocked = sessionStorage.getItem('hrp_unlocked') === 'true';
+
+    function isRaceFree(raceId) {
+        return FREE_RACES.includes(raceId) || isUnlocked;
+    }
+
+    function unlockAllRaces() {
+        isUnlocked = true;
+        sessionStorage.setItem('hrp_unlocked', 'true');
+        // Re-render current day's buttons to remove locks
+        const activeDay = document.querySelector('.day-btn.active');
+        if (activeDay) {
+            renderRaceButtons(activeDay.textContent.trim());
+        }
+        // Close modal
+        closePaywallModal();
+    }
+
+    function showPaywallModal() {
+        const modal = document.getElementById('paywall-modal');
+        if (modal) {
+            modal.classList.add('visible');
+            const input = modal.querySelector('.paywall-code-input');
+            if (input) { input.value = ''; input.focus(); }
+            const errorEl = modal.querySelector('.paywall-error');
+            if (errorEl) errorEl.style.display = 'none';
+        }
+    }
+
+    function closePaywallModal() {
+        const modal = document.getElementById('paywall-modal');
+        if (modal) modal.classList.remove('visible');
+    }
+
+    function handlePaywallSubmit() {
+        const input = document.querySelector('.paywall-code-input');
+        const errorEl = document.querySelector('.paywall-error');
+        if (input && input.value.trim() === 'Abbeyvale24') {
+            unlockAllRaces();
+        } else {
+            if (errorEl) {
+                errorEl.textContent = 'Invalid code. Please try again.';
+                errorEl.style.display = 'block';
+            }
+            if (input) {
+                input.classList.add('shake');
+                setTimeout(() => input.classList.remove('shake'), 500);
+            }
+        }
+    }
+
+    // Attach modal event listeners after DOM ready
+    setTimeout(() => {
+        const closeBtn = document.querySelector('.paywall-close-btn');
+        if (closeBtn) closeBtn.addEventListener('click', closePaywallModal);
+
+        const submitBtn = document.querySelector('.paywall-submit-btn');
+        if (submitBtn) submitBtn.addEventListener('click', handlePaywallSubmit);
+
+        const codeInput = document.querySelector('.paywall-code-input');
+        if (codeInput) {
+            codeInput.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') handlePaywallSubmit();
+            });
+        }
+
+        const overlay = document.getElementById('paywall-modal');
+        if (overlay) {
+            overlay.addEventListener('click', (e) => {
+                if (e.target === overlay) closePaywallModal();
+            });
+        }
+    }, 0);
+
     // Day -> Races Schedule
     const schedule = {
         'Tuesday': [
@@ -53,13 +129,23 @@ document.addEventListener('DOMContentLoaded', () => {
             const btn = document.createElement('button');
             btn.className = 'race-btn';
             btn.setAttribute('data-race', race.id);
+
+            const locked = !isRaceFree(race.id);
+            if (locked) btn.classList.add('locked');
+
             btn.innerHTML = `
                 <span class="race-time">${race.time}</span>
-                <span class="race-name">${race.name}</span>
+                <span class="race-name">${race.name}${locked ? '<svg class="lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>' : ''}</span>
             `;
 
             // Attach click listener immediately
-            btn.addEventListener('click', () => handleRaceClick(btn));
+            btn.addEventListener('click', () => {
+                if (!isRaceFree(race.id)) {
+                    showPaywallModal();
+                } else {
+                    handleRaceClick(btn);
+                }
+            });
 
             raceNav.appendChild(btn);
         });

@@ -109099,7 +109099,7 @@
         "Brookie": 627,
         "Senecia": 490
       },
-      "lastUpdated": "2026-02-20T08:50:07.662Z",
+      "lastUpdated": "2026-02-20T15:22:24.234Z",
       "latestData": [
         {
           "name": "Champion Chase Betting Odds- Winner",
@@ -109568,17 +109568,18 @@
                   "decimal": 8.5
                 },
                 "Betfair": {
-                  "fraction": "843/100",
-                  "decimal": 9.43
+                  "fraction": "196/25",
+                  "decimal": 8.84
                 },
                 "Matchbook": {
                   "fraction": "",
                   "decimal": 0
                 }
               },
-              "marketMove": "stable",
+              "marketMove": "steamer",
+              "movePercent": 6,
               "openingOdds": 9.43,
-              "velocity": 0
+              "velocity": -0.0015040423048861998
             },
             {
               "name": "Thistle Ask",
@@ -109792,8 +109793,8 @@
                   "decimal": 19
                 },
                 "Betfair": {
-                  "fraction": "88/5",
-                  "decimal": 18.6
+                  "fraction": "181/10",
+                  "decimal": 19.1
                 },
                 "Matchbook": {
                   "fraction": "",
@@ -110328,24 +110329,24 @@
                   "decimal": 41
                 },
                 "BetGoodwin": {
-                  "fraction": "40",
-                  "decimal": 41
+                  "fraction": "33",
+                  "decimal": 34
                 },
                 "BetTom": {
-                  "fraction": "40",
-                  "decimal": 41
+                  "fraction": "33",
+                  "decimal": 34
                 },
                 "BresBet": {
                   "fraction": "66",
                   "decimal": 67
                 },
                 "Skybet": {
-                  "fraction": "33",
-                  "decimal": 34
+                  "fraction": "25",
+                  "decimal": 26
                 },
                 "Paddy Power": {
-                  "fraction": "33",
-                  "decimal": 34
+                  "fraction": "25",
+                  "decimal": 26
                 },
                 "AK Bets": {
                   "fraction": "66",
@@ -110688,17 +110689,18 @@
                   "decimal": 67
                 },
                 "Betfair": {
-                  "fraction": "117",
-                  "decimal": 118
+                  "fraction": "254",
+                  "decimal": 255
                 },
                 "Matchbook": {
                   "fraction": "",
                   "decimal": 0
                 }
               },
-              "marketMove": "stable",
+              "marketMove": "drifter",
+              "movePercent": 116,
               "openingOdds": 118,
-              "velocity": 0
+              "velocity": 0.3492437216430668
             },
             {
               "name": "Captain Guinness",
@@ -110912,17 +110914,18 @@
                   "decimal": 67
                 },
                 "Betfair": {
-                  "fraction": "117",
-                  "decimal": 118
+                  "fraction": "107",
+                  "decimal": 108
                 },
                 "Matchbook": {
                   "fraction": "",
                   "decimal": 0
                 }
               },
-              "marketMove": "stable",
+              "marketMove": "steamer",
+              "movePercent": 8,
               "openingOdds": 118,
-              "velocity": 0
+              "velocity": -0.025492242455698304
             },
             {
               "name": "Brookie",
@@ -111154,75 +111157,75 @@
       "velocityTracking": {
         "Majborough": {
           "lastOdds": 2.82,
-          "lastTime": 1771577407662
+          "lastTime": 1771600944234
         },
         "Marine Nationale": {
           "lastOdds": 3.6,
-          "lastTime": 1771577407662
+          "lastTime": 1771600944234
         },
         "Il Etait Temps": {
           "lastOdds": 9.43,
-          "lastTime": 1771577407662
+          "lastTime": 1771600944234
         },
         "LEau du Sud": {
-          "lastOdds": 9.43,
-          "lastTime": 1771577407662
+          "lastOdds": 8.84,
+          "lastTime": 1771600944234
         },
         "Thistle Ask": {
           "lastOdds": 37,
-          "lastTime": 1771577407662
+          "lastTime": 1771600944234
         },
         "Quilixios": {
           "lastOdds": 21,
-          "lastTime": 1771577407662
+          "lastTime": 1771600944234
         },
         "Found A Fifty": {
           "lastOdds": 45,
-          "lastTime": 1771577407662
+          "lastTime": 1771600944234
         },
         "Jonbon": {
           "lastOdds": 74,
-          "lastTime": 1771577407662
+          "lastTime": 1771600944234
         },
         "Solness": {
           "lastOdds": 49,
-          "lastTime": 1771577407662
+          "lastTime": 1771600944234
         },
         "Irish Panther": {
           "lastOdds": 93,
-          "lastTime": 1771577407662
+          "lastTime": 1771600944234
         },
         "Only By Night": {
           "lastOdds": 78,
-          "lastTime": 1771577407662
+          "lastTime": 1771600944234
         },
         "Saint Segal": {
           "lastOdds": 118,
-          "lastTime": 1771577407662
+          "lastTime": 1771600944234
         },
         "Calico": {
           "lastOdds": 98,
-          "lastTime": 1771577407662
+          "lastTime": 1771600944234
         },
         "JPR One": {
-          "lastOdds": 118,
-          "lastTime": 1771577407662
+          "lastOdds": 255,
+          "lastTime": 1771600944234
         },
         "Captain Guinness": {
           "lastOdds": 81,
-          "lastTime": 1771577407662
+          "lastTime": 1771600944234
         },
         "Libberty Hunter": {
-          "lastOdds": 118,
-          "lastTime": 1771577407662
+          "lastOdds": 108,
+          "lastTime": 1771600944234
         },
         "Brookie": {
           "lastOdds": 627,
-          "lastTime": 1771577407662
+          "lastTime": 1771600944234
         },
         "Senecia": {
           "lastOdds": 490,
-          "lastTime": 1771577407662
+          "lastTime": 1771600944234
         }
       }
     },

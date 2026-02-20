@@ -1181,3 +1181,285 @@ h1.glow-text {
         padding: 2px 6px;
     }
 }
+
+/* ============================= */
+/* --- PAYWALL / LOCK SYSTEM --- */
+/* ============================= */
+
+/* Lock Icon on Race Buttons */
+.lock-icon {
+    width: 12px;
+    height: 12px;
+    margin-left: 5px;
+    vertical-align: middle;
+    opacity: 0.5;
+    stroke: var(--accent-gold);
+    flex-shrink: 0;
+    display: inline-block;
+    position: relative;
+    top: -1px;
+}
+
+.race-btn.locked {
+    position: relative;
+}
+
+.race-btn.locked .race-name {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.race-btn.locked:hover .lock-icon {
+    opacity: 1;
+    animation: lockPulse 1.5s infinite ease-in-out;
+}
+
+@keyframes lockPulse {
+
+    0%,
+    100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.15);
+    }
+}
+
+/* Paywall Modal Overlay */
+.paywall-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.paywall-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Paywall Modal Card */
+.paywall-modal {
+    background: linear-gradient(145deg, rgba(30, 35, 45, 0.95), rgba(15, 18, 25, 0.98));
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    border-radius: 20px;
+    padding: 40px 35px;
+    max-width: 420px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.5),
+        0 0 40px rgba(255, 215, 0, 0.05),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    transform: translateY(20px) scale(0.95);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.paywall-overlay.visible .paywall-modal {
+    transform: translateY(0) scale(1);
+}
+
+/* Close Button */
+.paywall-close-btn {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    background: none;
+    border: none;
+    color: var(--text-dim);
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: color 0.2s, transform 0.2s;
+    line-height: 1;
+}
+
+.paywall-close-btn:hover {
+    color: #fff;
+    transform: scale(1.15);
+}
+
+/* Lock Icon in Modal */
+.paywall-lock-icon {
+    width: 54px;
+    height: 54px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(255, 215, 0, 0.05));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 215, 0, 0.25);
+}
+
+.paywall-lock-icon svg {
+    width: 26px;
+    height: 26px;
+    stroke: var(--accent-gold);
+}
+
+/* Modal Title */
+.paywall-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    background: linear-gradient(to right, #fff, var(--accent-gold));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+}
+
+/* Modal Subtitle */
+.paywall-subtitle {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Input Group */
+.paywall-input-group {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.paywall-code-input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    padding: 12px 16px;
+    color: #fff;
+    font-size: 0.95rem;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.5px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.paywall-code-input::placeholder {
+    color: rgba(255, 255, 255, 0.25);
+}
+
+.paywall-code-input:focus {
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.1);
+}
+
+.paywall-submit-btn {
+    background: linear-gradient(135deg, var(--accent-gold), #e6b800);
+    color: #000;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 24px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    letter-spacing: 0.5px;
+}
+
+.paywall-submit-btn:hover {
+    background: linear-gradient(135deg, #ffe44d, var(--accent-gold));
+    box-shadow: 0 4px 20px rgba(255, 215, 0, 0.3);
+    transform: translateY(-1px);
+}
+
+.paywall-submit-btn:active {
+    transform: translateY(0);
+}
+
+/* Error Message */
+.paywall-error {
+    color: #ff453a;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    padding: 6px 12px;
+    background: rgba(255, 69, 58, 0.08);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 69, 58, 0.15);
+}
+
+/* Hint Text */
+.paywall-hint {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 0.75rem;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* Shake Animation for wrong code */
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    20% {
+        transform: translateX(-8px);
+    }
+
+    40% {
+        transform: translateX(8px);
+    }
+
+    60% {
+        transform: translateX(-6px);
+    }
+
+    80% {
+        transform: translateX(6px);
+    }
+}
+
+.shake {
+    animation: shake 0.5s ease-in-out;
+}
+
+/* Mobile Adjustments for Paywall */
+@media (max-width: 768px) {
+    .paywall-modal {
+        padding: 30px 25px;
+        max-width: 340px;
+    }
+
+    .paywall-title {
+        font-size: 1.3rem;
+    }
+
+    .paywall-subtitle {
+        font-size: 0.8rem;
+    }
+
+    .paywall-input-group {
+        flex-direction: column;
+    }
+
+    .paywall-submit-btn {
+        width: 100%;
+    }
+}
