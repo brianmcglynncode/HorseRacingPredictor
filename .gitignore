@@ -1,3 +1,6 @@
 node_modules
 .env
-
+history.json
+deep_reasoning_history.json
+*.log
+.DS_Store

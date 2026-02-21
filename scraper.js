@@ -459,22 +459,35 @@ async function scrapeCheltenhamFestival(raceUrl, rpUrl) {
         const normalize = (str) => str.toLowerCase().replace(/[^a-z0-9]/g, '');
 
         if (oddsCheckerData && oddsCheckerData.horses) {
-            console.log('Merging Expert Data...');
-            oddsCheckerData.horses.forEach(horse => {
+            console.log('Merging Expert Data & Social Discovery...');
+            const discovery = require('./discovery');
+
+            for (const horse of oddsCheckerData.horses) {
+                // 1. Merge Expert Stats (Racing Post)
                 const expertHorse = expertData.find(e => normalize(e.name) === normalize(horse.name));
                 if (expertHorse) {
                     horse.form = expertHorse.form;
                     horse.trainer = expertHorse.trainer;
-                    horse.jockey = expertHorse.jockey; // Sync Jockey
-                    horse.courseDistanceWin = expertHorse.courseDistanceWin; // Sync C/D
+                    horse.jockey = expertHorse.jockey;
+                    horse.courseDistanceWin = expertHorse.courseDistanceWin;
                     horse.rpr = expertHorse.rpr;
                     horse.age = expertHorse.age;
                     horse.weight = expertHorse.weight;
                     horse.officialRating = expertHorse.officialRating;
-                    // console.log(`Merged ${horse.name}`);
+                    horse.spotlight = expertHorse.spotlight;
                 }
-            });
-            console.log("Merge complete.");
+
+                // 2. Perform Deep Social Research (X / Reddit / Forums)
+                const insights = await discovery.getSocialInsights(horse.name);
+                horse.socialInsights = insights.social;
+                horse.forumData = insights.forum;
+            }
+
+            // Attach race going if available
+            if (expertData[0] && expertData[0].raceGoing) {
+                oddsCheckerData.raceGoing = expertData[0].raceGoing;
+            }
+            console.log("Deep Merge complete.");
         }
 
         return [oddsCheckerData];
