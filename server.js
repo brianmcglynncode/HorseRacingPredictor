@@ -444,6 +444,37 @@ app.get('/api/debug-db', async (req, res) => {
     }
 });
 
+// Admin: Mass Vault Initialization
+app.get('/api/admin/init-vault', async (req, res) => {
+    try {
+        const horses = await db.pool.query('SELECT DISTINCT name FROM horses');
+        const horseList = horses.rows.map(h => h.name);
+
+        // Run in background to avoid timeout
+        (async () => {
+            console.log(`🚀 MASS VAULT INITIALIZATION: Processing ${horseList.length} horses...`);
+            for (const horseName of horseList) {
+                try {
+                    // This will trigger the web hunt and save to vault if not already there
+                    await discovery.getHorseIntelligence(horseName);
+                    // Slow down to stay under stealth limits
+                    await new Promise(r => setTimeout(r, 20000));
+                } catch (e) {
+                    console.error(`❌ Vault init failed for ${horseName}:`, e.message);
+                }
+            }
+            console.log('✅ MASS VAULT INITIALIZATION COMPLETE.');
+        })();
+
+        res.json({
+            success: true,
+            message: `Initialization started in background for ${horseList.length} horses. Check server logs for progress.`
+        });
+    } catch (e) {
+        res.status(500).json({ error: e.message });
+    }
+});
+
 startBackgroundScraper();
 process.on('uncaughtException', (err) => console.error('🚨 UNCAUGHT:', err.message));
 process.on('unhandledRejection', (reason) => console.error('🚨 REJECTION:', reason));
