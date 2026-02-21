@@ -80,6 +80,13 @@ class IntelligenceEngine {
         }
 
         // 5. Synthesis: Return the enriched profile (Old + New)
+        const combinedDossier = [
+            ...existingKnowledge,
+            ...newStories,
+            { type: 'Social Signal', source: 'X / Reddit', content: insights.social, timestamp: new Date().toISOString() },
+            { type: 'Forum Signal', source: 'Stable Whisper', content: insights.forum, timestamp: new Date().toISOString() }
+        ];
+
         return {
             social: insights.social,
             forum: insights.forum,
@@ -87,7 +94,7 @@ class IntelligenceEngine {
             newsBuzz: liveSentiment.news,
             proStories: proConsensus.stories,
             proSentiment: proConsensus.sentimentScore,
-            lifetimeVault: [...existingKnowledge, ...newStories], // The full brain of the horse
+            lifetimeVault: combinedDossier, // The full brain of the horse
             intelligenceTags: [...new Set([...existingTags, ...this.analyzeKnowledgeTags(newStories)])]
         };
     }

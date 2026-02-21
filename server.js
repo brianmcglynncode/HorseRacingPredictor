@@ -400,7 +400,7 @@ app.get('/api/scrape', async (req, res) => {
                     await db.saveNarrative(horse.db_id, horse.aiReasoning);
                     await pool.query(
                         'UPDATE horses SET discovery_dossier = $1, vault_tags = $2 WHERE id = $3',
-                        [JSON.stringify(intel.intelligenceDossier || []), intel.analysisTags || [], horse.db_id]
+                        [JSON.stringify(intel.lifetimeVault || []), intel.intelligenceTags || [], horse.db_id]
                     );
                     updated = true;
                 }

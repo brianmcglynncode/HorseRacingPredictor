@@ -123,7 +123,7 @@ async function saveRaceData(raceId, raceConfig, scrapedDataList) {
                  ON CONFLICT (race_id, name) DO UPDATE 
                  SET jockey = EXCLUDED.jockey, trainer = EXCLUDED.trainer, age = EXCLUDED.age, weight = EXCLUDED.weight, official_rating = EXCLUDED.official_rating, rpr = EXCLUDED.rpr, form = EXCLUDED.form, odds_json = EXCLUDED.odds_json, discovery_dossier = EXCLUDED.discovery_dossier, vault_tags = EXCLUDED.vault_tags
                  RETURNING id`,
-                [raceId, horse.name, horse.jockey, horse.trainer, parseDbInt(horse.age), horse.weight, parseDbInt(horse.officialRating), parseDbInt(horse.rpr), horse.form, JSON.stringify(horse.odds || {}), JSON.stringify(horse.intelligenceDossier || []), horse.analysisTags || []]
+                [raceId, horse.name, horse.jockey, horse.trainer, parseDbInt(horse.age), horse.weight, parseDbInt(horse.officialRating), parseDbInt(horse.rpr), horse.form, JSON.stringify(horse.odds || {}), JSON.stringify(horse.lifetimeVault || []), horse.intelligenceTags || []]
             );
 
             const horseId = horseRes.rows[0].id;

@@ -867,7 +867,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Discovery Logs
             if (horse.discoveryDossier && horse.discoveryDossier.length > 0) {
                 horse.discoveryDossier.forEach(entry => {
-                    discoveryLogs.push({ time: 'Last Sync', horse: horse.name, message: entry.snippet || entry.message || entry });
+                    discoveryLogs.push({ time: 'Last Sync', horse: horse.name, message: entry.content || entry.snippet || entry.message || entry });
                 });
             }
 
