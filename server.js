@@ -375,6 +375,16 @@ app.get('/api/scrape', async (req, res) => {
 
     try {
         let stitchedData = await db.getRaceData(raceId);
+
+        // Critical: If DB has no horses or only 1 horse, but we HAVE history in JSON, force a sync.
+        // This solves the 'Partial Migration' issue where the server booted but failed mid-insert.
+        const history = raceHistory.races[raceId];
+        if ((!stitchedData || !stitchedData[0] || stitchedData[0].horses.length < 2) && history && history.latestData) {
+            console.log(`📡 Relational Gap Detected for ${raceId}. Forcing On-Demand Sync...`);
+            await db.saveRaceData(raceId, RACES[raceId] || {}, history.latestData);
+            stitchedData = await db.getRaceData(raceId); // Recalculate
+        }
+
         if (stitchedData && stitchedData[0] && stitchedData[0].horses && stitchedData[0].horses.length > 0) {
             let updated = false;
             for (const horse of stitchedData[0].horses) {
@@ -387,7 +397,13 @@ app.get('/api/scrape', async (req, res) => {
                     updated = true;
                 }
             }
-            return res.json({ success: true, data: stitchedData, lastUpdated: new Date().toISOString(), cached: true });
+            return res.json({
+                success: true,
+                data: stitchedData,
+                lastUpdated: history ? history.lastUpdated : new Date().toISOString(),
+                cached: true,
+                version: '1.0.5-sync'
+            });
         }
     } catch (e) {
         console.error('API Error:', e);
