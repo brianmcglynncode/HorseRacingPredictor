@@ -195,6 +195,29 @@ if (process.env.DATABASE_URL) {
 async function loadHistory() {
     if (pool) {
         try {
+            // First pass: try migrating local data if table exists but empty
+            if (fs.existsSync(HISTORY_FILE)) {
+                console.log('📦 Checking if migration from local history.json to Postgres is needed...');
+                const rawData = fs.readFileSync(HISTORY_FILE, 'utf8');
+                const historyJson = JSON.parse(rawData);
+
+                if (historyJson.races && Object.keys(historyJson.races).length > 0) {
+                    for (const rId of Object.keys(historyJson.races)) {
+                        try {
+                            // Only insert if it doesn't already exist to prevent overwriting new cloud data
+                            await pool.query(
+                                `INSERT INTO race_history (id, data, updated_at) VALUES ($1, $2, NOW())
+                                 ON CONFLICT (id) DO NOTHING`,
+                                [rId, historyJson.races[rId]]
+                            );
+                        } catch (err) {
+                            console.error(`❌ Migration check failed for ${rId}:`, err.message);
+                        }
+                    }
+                    console.log('✅ Migration check complete.');
+                }
+            }
+
             const res = await pool.query('SELECT id, data FROM race_history');
             for (const row of res.rows) {
                 raceHistory.races[row.id] = row.data;
@@ -210,7 +233,7 @@ async function loadHistory() {
     try {
         if (fs.existsSync(HISTORY_FILE)) {
             raceHistory = JSON.parse(fs.readFileSync(HISTORY_FILE, 'utf8'));
-            console.log('📄 Loaded history from local JSON.');
+            console.log('📄 Loaded history from local JSON fallback.');
         }
     } catch (err) {
         console.error("Error loading local history:", err);
