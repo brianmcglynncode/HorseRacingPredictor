@@ -418,6 +418,7 @@ app.get('/api/debug-db', async (req, res) => {
         const c2 = await db.pool.query('SELECT race_id, count(*) FROM horses GROUP BY race_id');
         const h = await db.pool.query('SELECT race_id, name FROM horses LIMIT 50');
         res.json({
+            version: '1.0.4 - Resync Active',
             totalHorses: c1.rows[0].count,
             raceStats: c2.rows,
             sampleHorses: h.rows
