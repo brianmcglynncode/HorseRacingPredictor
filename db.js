@@ -190,6 +190,16 @@ async function getRaceData(raceId) {
             const narrativeRes = await pool.query('SELECT reasoning_package FROM ai_narrative WHERE horse_id = $1', [hId]);
             const aiReasoning = narrativeRes.rows.length > 0 ? narrativeRes.rows[0].reasoning_package : null;
 
+            // Frontend expects an object with multiple bookmakers to calculate 'averageOdds'
+            let mockOddsDist = {};
+            if (currentOdds > 0) {
+                mockOddsDist = {
+                    'best': { decimal: currentOdds },
+                    'bk1': { decimal: currentOdds },
+                    'bk2': { decimal: currentOdds } // Provide enough data for the frontend to average it
+                };
+            }
+
             constructedHorses.push({
                 db_id: hId,
                 name: hRow.name,
@@ -200,7 +210,7 @@ async function getRaceData(raceId) {
                 officialRating: hRow.official_rating ? hRow.official_rating.toString() : '',
                 rpr: hRow.rpr ? hRow.rpr.toString() : '',
                 form: hRow.form || '',
-                odds: currentOdds > 0 ? { 'best': { decimal: currentOdds } } : {},
+                odds: mockOddsDist,
                 marketMove,
                 openingOdds,
                 movePercent,
