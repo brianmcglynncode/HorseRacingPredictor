@@ -245,14 +245,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!response.ok) throw new Error(`Server returned ${response.status}`);
             const result = await response.json();
 
-            // If it's cached, skip the cinematic animations entirely
-            if (result.cached) {
-                if (result.success && result.data.length > 0) {
-                    renderRaces(result.data, result.lastUpdated, raceId);
-                    racesGrid.classList.remove('hidden');
-                    loader.classList.add('hidden');
-                    return;
-                }
+            // Cinematic Mode Always On for UX
+            const MIN_LOAD_TIME = 4000;
+            const elapsedTime = Date.now() - startTime;
+            if (elapsedTime < MIN_LOAD_TIME) {
+                await new Promise(r => setTimeout(r, MIN_LOAD_TIME - elapsedTime));
             }
 
             // Normal flow for fresh scrapes (Cinema mode)

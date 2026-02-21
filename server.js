@@ -406,8 +406,7 @@ app.get('/api/db-status', async (req, res) => {
     }
 });
 
-// startBackgroundScraper();
-
+startBackgroundScraper();
 process.on('uncaughtException', (err) => console.error('🚨 UNCAUGHT:', err.message));
 process.on('unhandledRejection', (reason) => console.error('🚨 REJECTION:', reason));
 
