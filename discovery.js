@@ -1,6 +1,5 @@
-const fs = require('fs');
-const path = require('path');
 const axios = require('axios');
+const db = require('./db');
 
 /**
  * Intelligence Engine v2 - The Global Ensemble
@@ -9,44 +8,24 @@ const axios = require('axios');
  */
 class IntelligenceEngine {
     constructor() {
-        this.vaultPath = path.join(__dirname, 'intent_vault.json');
-        this.loadVault();
+        this.intentVault = {
+            sourceReliability: {
+                'Timeform': { weight: 1.2 },
+                'ATR': { weight: 1.1 },
+                'Sporting Life': { weight: 1.0 },
+                'GeeGeez': { weight: 0.9 },
+                'Irish Racing': { weight: 0.8 },
+                'Standard Consensus': { weight: 0.5 }
+            },
+            whisperLog: []
+        };
         this.proSources = Object.keys(this.intentVault.sourceReliability);
     }
 
-    loadVault() {
-        try {
-            if (fs.existsSync(this.vaultPath)) {
-                this.intentVault = JSON.parse(fs.readFileSync(this.vaultPath, 'utf8'));
-            } else {
-                // Default structure if file doesn't exist
-                this.intentVault = {
-                    sourceReliability: {
-                        'Timeform': { weight: 1.2 },
-                        'ATR': { weight: 1.1 },
-                        'Sporting Life': { weight: 1.0 },
-                        'GeeGeez': { weight: 0.9 },
-                        'Irish Racing': { weight: 0.8 },
-                        'Standard Consensus': { weight: 0.5 } // Lower weight for generic consensus
-                    },
-                    whisperLog: []
-                };
-                fs.writeFileSync(this.vaultPath, JSON.stringify(this.intentVault, null, 2), 'utf8');
-            }
-        } catch (e) {
-            console.error("Failed to load intent vault:", e);
-            // Fallback to a default structure in case of parsing error
-            this.intentVault = {
-                sourceReliability: {
-                    'Timeform': { weight: 1.2 },
-                    'ATR': { weight: 1.1 },
-                    'Sporting Life': { weight: 1.0 },
-                    'GeeGeez': { weight: 0.9 },
-                    'Irish Racing': { weight: 0.8 },
-                    'Standard Consensus': { weight: 0.5 }
-                },
-                whisperLog: []
-            };
+    setVault(vaultData) {
+        if (vaultData && vaultData.sourceReliability) {
+            this.intentVault = vaultData;
+            this.proSources = Object.keys(this.intentVault.sourceReliability);
         }
     }
 
@@ -54,7 +33,7 @@ class IntelligenceEngine {
         return (this.intentVault.sourceReliability[source] || { weight: 1.0 }).weight;
     }
 
-    updateSourceWeight(source, newWeight) {
+    async updateSourceWeight(source, newWeight) {
         if (typeof newWeight !== 'number' || newWeight < 0) {
             console.warn(`Invalid weight for source ${source}: ${newWeight}. Weight must be a non-negative number.`);
             return false;
@@ -63,14 +42,14 @@ class IntelligenceEngine {
             this.intentVault.sourceReliability[source] = {};
         }
         this.intentVault.sourceReliability[source].weight = newWeight;
+        this.proSources = Object.keys(this.intentVault.sourceReliability);
+
         try {
-            fs.writeFileSync(this.vaultPath, JSON.stringify(this.intentVault, null, 2), 'utf8');
-            console.log(`Updated weight for ${source} to ${newWeight}.`);
-            // Re-initialize proSources if a new source was added
-            this.proSources = Object.keys(this.intentVault.sourceReliability);
+            await db.saveIntentVault(this.intentVault);
+            console.log(`📡 DB Sync: Updated weight for ${source} to ${newWeight} in PostgreSQL.`);
             return true;
         } catch (e) {
-            console.error(`Failed to save updated weight for ${source}:`, e);
+            console.error(`❌ Failed to sync updated weight for ${source} to DB:`, e.message);
             return false;
         }
     }

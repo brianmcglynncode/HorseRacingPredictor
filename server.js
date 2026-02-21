@@ -170,70 +170,36 @@ const RACES = {
 };
 
 require('dotenv').config();
-const { Pool } = require('pg');
+const db = require('./db');
 
 const HISTORY_FILE = path.join(__dirname, 'history.json');
 let raceHistory = { races: {} };
 
-let pool = null;
-if (process.env.DATABASE_URL) {
-    pool = new Pool({
-        connectionString: process.env.DATABASE_URL,
-        ssl: { rejectUnauthorized: false }
-    });
-
-    pool.query(`
-        CREATE TABLE IF NOT EXISTS race_history (
-            id VARCHAR(50) PRIMARY KEY,
-            data JSONB NOT NULL,
-            updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-        );
-    `).then(() => console.log('🐘 PostgreSQL Database Initialized'))
-        .catch(err => console.error('❌ PostgreSQL Init Error:', err.message));
-}
-
 async function loadHistory() {
-    if (pool) {
-        try {
-            // First pass: try migrating local data if table exists but empty
-            if (fs.existsSync(HISTORY_FILE)) {
-                console.log('📦 Checking if migration from local history.json to Postgres is needed...');
-                const rawData = fs.readFileSync(HISTORY_FILE, 'utf8');
-                const historyJson = JSON.parse(rawData);
+    await db.initSchema();
+    const vault = await db.getIntentVault();
+    if (vault) discovery.setVault(vault);
 
-                if (historyJson.races && Object.keys(historyJson.races).length > 0) {
-                    for (const rId of Object.keys(historyJson.races)) {
-                        try {
-                            // Only insert if it doesn't already exist to prevent overwriting new cloud data
-                            await pool.query(
-                                `INSERT INTO race_history (id, data, updated_at) VALUES ($1, $2, NOW())
-                                 ON CONFLICT (id) DO NOTHING`,
-                                [rId, historyJson.races[rId]]
-                            );
-                        } catch (err) {
-                            console.error(`❌ Migration check failed for ${rId}:`, err.message);
-                        }
-                    }
-                    console.log('✅ Migration check complete.');
-                }
-            }
-
-            const res = await pool.query('SELECT id, data FROM race_history');
-            for (const row of res.rows) {
-                raceHistory.races[row.id] = row.data;
-            }
-            console.log(`🐘 Loaded ${res.rowCount} races from PostgreSQL.`);
-            return;
-        } catch (e) {
-            console.error('Failed to load from PostgreSQL:', e.message);
-        }
-    }
-
-    // Fallback to JSON
+    // Fallback/Legacy Memory Map for fast local checks
     try {
         if (fs.existsSync(HISTORY_FILE)) {
             raceHistory = JSON.parse(fs.readFileSync(HISTORY_FILE, 'utf8'));
-            console.log('📄 Loaded history from local JSON fallback.');
+            console.log('📄 Booting from local memory map for speed. PostgreSQL sync active in background.');
+
+            if (db.pool && process.env.DATABASE_URL) {
+                // One-Time Relational Seeding
+                const countRes = await db.pool.query('SELECT count(*) FROM horses');
+                if (countRes.rows[0].count === '0') {
+                    console.log('📦 Relational Migration: 0 horses found. Seeding new SQL engine from JSON...');
+                    for (const rId of Object.keys(raceHistory.races)) {
+                        const histObj = raceHistory.races[rId];
+                        if (histObj && histObj.latestData) {
+                            await db.saveRaceData(rId, RACES[rId] || {}, histObj.latestData).catch(e => null);
+                        }
+                    }
+                    console.log('✅ Relational Migration Seed Complete!');
+                }
+            }
         }
     } catch (err) {
         console.error("Error loading local history:", err);
@@ -243,37 +209,15 @@ async function loadHistory() {
 loadHistory();
 
 async function saveHistory(raceId) {
-    // 1. Save to Database if configured
-    if (pool && raceId) {
-        try {
-            const dataToSave = raceHistory.races[raceId];
-            await pool.query(
-                `INSERT INTO race_history (id, data, updated_at) VALUES ($1, $2, NOW())
-                 ON CONFLICT (id) DO UPDATE SET data = EXCLUDED.data, updated_at = NOW()`,
-                [raceId, dataToSave]
-            );
-        } catch (e) {
-            console.error(`Error saving race ${raceId} to Postgres:`, e.message);
-        }
-    } else if (pool && !raceId) {
-        // Bulk save if no specific raceId provided
-        for (const rId of Object.keys(raceHistory.races)) {
-            try {
-                await pool.query(
-                    `INSERT INTO race_history (id, data, updated_at) VALUES ($1, $2, NOW())
-                     ON CONFLICT (id) DO UPDATE SET data = EXCLUDED.data, updated_at = NOW()`,
-                    [rId, raceHistory.races[rId]]
-                );
-            } catch (e) { }
-        }
+    if (raceId) {
+        // Asynchronously persist to the new robust PostgreSQL Relational Engine!
+        db.saveRaceData(raceId, RACES[raceId], raceHistory.races[raceId].latestData).catch(e => console.error(e));
     }
 
-    // 2. Always maintain local JSON fallback
+    // Always maintain local JSON fallback
     try {
         fs.writeFileSync(HISTORY_FILE, JSON.stringify(raceHistory, null, 2));
-    } catch (err) {
-        console.error("Error saving local history:", err);
-    }
+    } catch (err) { }
 }
 
 function getBestOdds(horse) {
@@ -428,19 +372,29 @@ app.get('/api/scrape', async (req, res) => {
     let raceId = (req.query.raceId || 'supreme').trim();
     if (!RACES[raceId]) return res.status(400).json({ success: false, error: 'Invalid race' });
 
+    try {
+        let stitchedData = await db.getRaceData(raceId);
+        if (stitchedData && stitchedData[0] && stitchedData[0].horses && stitchedData[0].horses.length > 0) {
+            let updated = false;
+            for (const horse of stitchedData[0].horses) {
+                if (!horse.aiReasoning) {
+                    const intel = await discovery.getHorseIntelligence(horse.name);
+                    Object.assign(horse, intel);
+                    // Pass the reconstructed race structure
+                    horse.aiReasoning = narrativeEngine.generateReasoning(horse, stitchedData[0], stitchedData[0].horses);
+                    await db.saveNarrative(horse.db_id, horse.aiReasoning);
+                    updated = true;
+                }
+            }
+            return res.json({ success: true, data: stitchedData, lastUpdated: new Date().toISOString(), cached: true });
+        }
+    } catch (e) {
+        console.error('API Error:', e);
+    }
+
+    // Fallback to memory map if DB hasn't populated yet
     let history = raceHistory.races[raceId];
     if (history && history.latestData) {
-        const raceData = history.latestData[0];
-        let updated = false;
-        for (const horse of raceData.horses) {
-            if (!horse.aiReasoning) {
-                const intel = await discovery.getHorseIntelligence(horse.name);
-                Object.assign(horse, intel);
-                horse.aiReasoning = narrativeEngine.generateReasoning(horse, raceData, raceData.horses);
-                updated = true;
-            }
-        }
-        if (updated) saveHistory(raceId);
         return res.json({ success: true, data: history.latestData, lastUpdated: history.lastUpdated, cached: true });
     }
 
@@ -448,10 +402,10 @@ app.get('/api/scrape', async (req, res) => {
 });
 
 app.get('/api/db-status', async (req, res) => {
-    if (!pool) return res.json({ connected: false, status: 'Not Configured (No DATABASE_URL)' });
+    if (!db.pool || !process.env.DATABASE_URL) return res.json({ connected: false, status: 'Not Configured (No DATABASE_URL)' });
     try {
-        const result = await pool.query('SELECT NOW()');
-        res.json({ connected: true, status: 'Connected', serverTime: result.rows[0].now });
+        const result = await db.pool.query('SELECT NOW()');
+        res.json({ connected: true, status: 'Connected', serverTime: result.rows[0].now, architecture: 'Relational Schema' });
     } catch (e) {
         res.json({ connected: false, status: 'Failed', error: e.message });
     }

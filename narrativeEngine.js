@@ -1,8 +1,3 @@
-const fs = require('fs');
-const path = require('path');
-
-const NARRATIVE_HISTORY_FILE = path.join(__dirname, 'deep_reasoning_history.json');
-
 /**
  * The DeepReasoningEngine - Backend Edition
  * This pulls from the collected 'form stories' and crunches them into
@@ -10,26 +5,7 @@ const NARRATIVE_HISTORY_FILE = path.join(__dirname, 'deep_reasoning_history.json
  */
 class NarrativeEngine {
     constructor() {
-        this.history = { stories: {} };
-        this.loadHistory();
-    }
-
-    loadHistory() {
-        try {
-            if (fs.existsSync(NARRATIVE_HISTORY_FILE)) {
-                this.history = JSON.parse(fs.readFileSync(NARRATIVE_HISTORY_FILE, 'utf8'));
-            }
-        } catch (err) {
-            console.error("Error loading narrative history:", err);
-        }
-    }
-
-    saveHistory() {
-        try {
-            fs.writeFileSync(NARRATIVE_HISTORY_FILE, JSON.stringify(this.history, null, 2));
-        } catch (err) {
-            console.error("Error saving narrative history:", err);
-        }
+        // State now managed directly in Postgres DB
     }
 
     /**
@@ -149,11 +125,6 @@ class NarrativeEngine {
             timestamp: new Date().toISOString()
         };
 
-        if (!this.history.stories[name]) this.history.stories[name] = [];
-        this.history.stories[name].unshift(reasoningPackage);
-        this.history.stories[name] = this.history.stories[name].slice(0, 10);
-
-        this.saveHistory();
         return reasoningPackage;
     }
 
