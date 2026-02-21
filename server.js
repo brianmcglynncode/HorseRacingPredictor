@@ -424,6 +424,16 @@ app.get('/api/scrape', async (req, res) => {
     res.json({ success: true, data: [], lastUpdated: null, cached: false });
 });
 
+app.get('/api/db-status', async (req, res) => {
+    if (!pool) return res.json({ connected: false, status: 'Not Configured (No DATABASE_URL)' });
+    try {
+        const result = await pool.query('SELECT NOW()');
+        res.json({ connected: true, status: 'Connected', serverTime: result.rows[0].now });
+    } catch (e) {
+        res.json({ connected: false, status: 'Failed', error: e.message });
+    }
+});
+
 // startBackgroundScraper();
 
 process.on('uncaughtException', (err) => console.error('🚨 UNCAUGHT:', err.message));
