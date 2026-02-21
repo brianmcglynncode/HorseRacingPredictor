@@ -1630,6 +1630,49 @@ h1.glow-text {
     font-family: 'Outfit', sans-serif;
 }
 
+/* Tip Card X Close Button (Top-Right) */
+.tip-card-close-x {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.25);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.2s, transform 0.2s;
+    line-height: 1;
+    z-index: 2;
+}
+
+.tip-card-close-x:hover {
+    color: rgba(255, 255, 255, 0.7);
+    transform: scale(1.15);
+}
+
+/* Tip Card Close Button (Bottom) */
+.tip-card-close-bottom {
+    display: inline-block;
+    margin-top: 14px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 8px 32px;
+    color: rgba(255, 255, 255, 0.3);
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    letter-spacing: 0.5px;
+}
+
+.tip-card-close-bottom:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.6);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
 /* Fade out animation when dismissed */
 .success-tip-section.dismissed {
     opacity: 0;
