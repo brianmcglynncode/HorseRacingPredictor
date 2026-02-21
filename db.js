@@ -33,6 +33,7 @@ async function initSchema() {
                 odds_json JSONB DEFAULT '{}',
                 discovery_dossier JSONB DEFAULT '[]',
                 vault_tags VARCHAR(255)[] DEFAULT '{}',
+                vault_blobs JSONB DEFAULT '[]',
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                 UNIQUE(race_id, name)
             );
@@ -65,6 +66,17 @@ async function initSchema() {
                 last_full_audit TIMESTAMP,
                 updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             );
+
+            CREATE TABLE IF NOT EXISTS discovery_intelligence_logs (
+                id SERIAL PRIMARY KEY,
+                horse_name VARCHAR(255) NOT NULL,
+                source_type VARCHAR(50), -- 'X', 'Reddit', 'News Article', 'Stable Tour'
+                source_url TEXT UNIQUE,  -- Prevents duplicates
+                raw_snippet TEXT,        -- The actual text found
+                ai_summary TEXT,         -- The cleaned-up version for the UI
+                sentiment_score DECIMAL(3,2), -- -1.0 to 1.0
+                discovered_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            );
         `);
 
         // Ensure odds_json column exists (since CREATE TABLE IF NOT EXISTS won't add it to existing tables)
@@ -79,6 +91,9 @@ async function initSchema() {
                 END IF;
                 IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='horses' AND column_name='vault_tags') THEN
                     ALTER TABLE horses ADD COLUMN vault_tags VARCHAR(255)[] DEFAULT '{}';
+                END IF;
+                IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='horses' AND column_name='vault_blobs') THEN
+                    ALTER TABLE horses ADD COLUMN vault_blobs JSONB DEFAULT '[]';
                 END IF;
             END $$;
         `);
@@ -251,7 +266,8 @@ async function getRaceData(raceId) {
                 velocity,
                 aiReasoning,
                 discoveryDossier: hRow.discovery_dossier || [],
-                vaultTags: hRow.vault_tags || []
+                vaultTags: hRow.vault_tags || [],
+                vaultBlobs: hRow.vault_blobs || []
             });
         }
 
@@ -369,5 +385,40 @@ module.exports = {
     saveIntentVault,
     getHorseKnowledge,
     updateHorseKnowledge,
-    getGlobalStats
+    getGlobalStats,
+    saveIntelLog,
+    getRecentIntelLogs
 };
+
+async function saveIntelLog(horseName, log) {
+    if (!pool || !process.env.DATABASE_URL) return;
+    try {
+        await pool.query(
+            `INSERT INTO discovery_intelligence_logs 
+             (horse_name, source_type, source_url, raw_snippet, ai_summary, sentiment_score) 
+             VALUES ($1, $2, $3, $4, $5, $6)
+             ON CONFLICT (source_url) DO UPDATE SET 
+             discovered_at = NOW(),
+             ai_summary = EXCLUDED.ai_summary`,
+            [horseName, log.type, log.url || `sim-${Date.now()}-${Math.random()}`, log.raw, log.summary, log.sentiment || 0]
+        );
+    } catch (e) {
+        console.error(`Save intel log error for ${horseName}:`, e.message);
+    }
+}
+
+async function getRecentIntelLogs(horseName, limit = 5) {
+    if (!pool || !process.env.DATABASE_URL) return [];
+    try {
+        const res = await pool.query(
+            `SELECT * FROM discovery_intelligence_logs 
+             WHERE horse_name = $1 
+             ORDER BY discovered_at DESC LIMIT $2`,
+            [horseName, limit]
+        );
+        return res.rows;
+    } catch (e) {
+        console.error(`Get recent intel logs error for ${horseName}:`, e.message);
+        return [];
+    }
+}

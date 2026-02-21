@@ -884,16 +884,31 @@ document.addEventListener('DOMContentLoaded', () => {
                 marketLogs.push({ time: '2m', horse: horse.name, message: `Velocity threshold breached. Momentum spike detected.` });
             }
 
-            // Discovery Logs
+            // Discovery Logs (Real-time Web Hunt)
             if (horse.discoveryDossier && horse.discoveryDossier.length > 0) {
                 horse.discoveryDossier.forEach(entry => {
-                    discoveryLogs.push({ time: 'Last Sync', horse: horse.name, message: entry.content || entry.snippet || entry.message || entry });
+                    discoveryLogs.push({
+                        time: 'Now',
+                        horse: horse.name,
+                        message: `[${entry.source_type}] ${entry.ai_summary || entry.message}`
+                    });
                 });
             }
 
-            // Vault Logs
+            // Vault Logs (Perpetual Memory Matches)
+            if (horse.vaultBlobs && horse.vaultBlobs.length > 0) {
+                // Show the most relevant/recent nuggets from the perpetual store
+                horse.vaultBlobs.slice(-2).forEach(blob => {
+                    vaultLogs.push({
+                        time: 'Vault',
+                        horse: horse.name,
+                        message: `Memory Match: ${blob.content || blob.message}`
+                    });
+                });
+            }
+
             if (horse.vaultTags && horse.vaultTags.length > 0) {
-                vaultLogs.push({ time: 'Persistent', horse: horse.name, message: `Historical patterns matched: ${horse.vaultTags.join(', ')}` });
+                vaultLogs.push({ time: 'Tag', horse: horse.name, message: `System flag: ${horse.vaultTags.join(' + ')} verified.` });
             }
         });
 

@@ -393,9 +393,14 @@ app.get('/api/scrape', async (req, res) => {
 
                     // SAVE both the narrative AND the raw logs for the telemetry hub
                     await db.saveNarrative(horse.db_id, horse.aiReasoning);
-                    await pool.query(
-                        'UPDATE horses SET discovery_dossier = $1, vault_tags = $2 WHERE id = $3',
-                        [JSON.stringify(intel.lifetimeVault || []), intel.intelligenceTags || [], horse.db_id]
+                    await db.pool.query(
+                        'UPDATE horses SET discovery_dossier = $1, vault_tags = $2, vault_blobs = $3 WHERE id = $4',
+                        [
+                            JSON.stringify(intel.discoveryLogs || []),
+                            intel.intelligenceTags || [],
+                            JSON.stringify(intel.lifetimeVault || []),
+                            horse.db_id
+                        ]
                     );
                     updated = true;
                 }
