@@ -64,6 +64,17 @@ async function initSchema() {
                 updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             );
         `);
+
+        // Ensure odds_json column exists (since CREATE TABLE IF NOT EXISTS won't add it to existing tables)
+        await pool.query(`
+            DO $$ 
+            BEGIN 
+                IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='horses' AND column_name='odds_json') THEN
+                    ALTER TABLE horses ADD COLUMN odds_json JSONB DEFAULT '{}';
+                END IF;
+            END $$;
+        `);
+
         console.log('🐘 Fully Relational PostgreSQL Schema Initialized (with Horse Vault)');
     } catch (err) {
         console.error('❌ Schema creation failed:', err.message);

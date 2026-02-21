@@ -381,8 +381,8 @@ app.get('/api/scrape', async (req, res) => {
         // Critical: If DB has no horses or only 1 horse, but we HAVE history in JSON, force a sync.
         // This solves the 'Partial Migration' issue where the server booted but failed mid-insert.
         const history = raceHistory.races[raceId];
-        if ((!stitchedData || !stitchedData[0] || stitchedData[0].horses.length < 2) && history && history.latestData) {
-            console.log(`📡 Relational Gap Detected for ${raceId}. Forcing On-Demand Sync...`);
+        if ((!stitchedData || !stitchedData[0] || stitchedData[0].horses.length < 2 || stitchedData[0].bookmakers.length === 0) && history && history.latestData) {
+            console.log(`📡 Relational Gap Detected for ${raceId} (Missing Odds). Forcing On-Demand Sync...`);
             await db.saveRaceData(raceId, RACES[raceId] || {}, history.latestData);
             stitchedData = await db.getRaceData(raceId); // Recalculate
         }
@@ -404,7 +404,7 @@ app.get('/api/scrape', async (req, res) => {
                 data: stitchedData,
                 lastUpdated: history ? history.lastUpdated : new Date().toISOString(),
                 cached: true,
-                version: '1.0.5-sync'
+                version: '1.0.7-active'
             });
         }
     } catch (e) {
@@ -432,14 +432,19 @@ app.get('/api/db-status', async (req, res) => {
 
 app.get('/api/debug-db', async (req, res) => {
     try {
+        const columns = await db.pool.query("SELECT column_name FROM information_schema.columns WHERE table_name = 'horses'");
         const c1 = await db.pool.query('SELECT count(*) FROM horses');
         const c2 = await db.pool.query('SELECT race_id, count(*) FROM horses GROUP BY race_id');
-        const h = await db.pool.query('SELECT race_id, name FROM horses LIMIT 50');
+        const missingOdds = await db.pool.query("SELECT count(*) FROM horses WHERE odds_json = '{}' OR odds_json IS NULL");
+        const sample = await db.pool.query("SELECT name, odds_json FROM horses WHERE odds_json != '{}' LIMIT 2");
+
         res.json({
-            version: '1.0.4 - Resync Active',
+            version: '1.0.7-debug',
+            columns: columns.rows.map(r => r.column_name),
             totalHorses: c1.rows[0].count,
+            missingOdds: missingOdds.rows[0].count,
             raceStats: c2.rows,
-            sampleHorses: h.rows
+            sampleOdds: sample.rows
         });
     } catch (e) {
         res.json({ error: e.message });
