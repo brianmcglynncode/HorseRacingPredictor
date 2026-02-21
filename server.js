@@ -310,11 +310,14 @@ async function startBackgroundScraper() {
 
             let needsUpdate = false;
             if (hoursSinceUpdate >= 24) needsUpdate = true;
+            else if (timeToRace <= 12 && timeToRace > 10 && hoursSinceUpdate >= 2) needsUpdate = true;
             else if (timeToRace <= 5 && timeToRace > 4 && hoursSinceUpdate >= 1) needsUpdate = true;
-            else if (timeToRace <= 1 && timeToRace > 0 && hoursSinceUpdate >= 0.25) needsUpdate = true;
+            else if (timeToRace <= 2 && timeToRace > 1 && hoursSinceUpdate >= 0.5) needsUpdate = true; // High Intensity
+            else if (timeToRace <= 1 && timeToRace > 0.5 && hoursSinceUpdate >= 0.25) needsUpdate = true; // Pre-Race Peak
+            else if (timeToRace <= 0.5 && timeToRace > 0 && hoursSinceUpdate >= 0.1) needsUpdate = true; // 10-Min Final Sync
 
             if (needsUpdate) {
-                console.log(`📡 Intelligence Sync for ${raceId}...`);
+                console.log(`📡 High-Frequency Intelligence Sync for ${raceId}...`);
                 const raceData = history.latestData[0];
                 for (const horse of raceData.horses) {
                     const intel = await discovery.getHorseIntelligence(horse.name);
@@ -327,7 +330,8 @@ async function startBackgroundScraper() {
         }
     };
 
-    setInterval(checkScheduledIntelligence, 1000 * 60 * 15);
+    setInterval(checkScheduledIntelligence, 1000 * 60 * 5); // Faster check every 5 mins
+
     checkScheduledIntelligence();
     runScrapeLoop();
 }

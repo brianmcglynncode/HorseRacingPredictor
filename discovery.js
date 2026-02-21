@@ -80,10 +80,13 @@ class IntelligenceEngine {
 
         const insights = await this.getSocialInsights(horseName);
         const proConsensus = await this.getProfessionalConsensus(horseName);
+        const liveSentiment = await this.getLiveSentiment(horseName);
 
         return {
             social: insights.social,
             forum: insights.forum,
+            liveSentiment: liveSentiment.trending,
+            newsBuzz: liveSentiment.news,
             proStories: proConsensus.stories,
             proSentiment: proConsensus.sentimentScore
         };
@@ -99,19 +102,19 @@ class IntelligenceEngine {
             stories.push({ source: 'Sporting Life', text: 'Confirmed as Hendersons primary target for the week. Stable tour buzz is immense.' });
 
             // Apply Weights
-            rawScore += (10 * this.getWeight('Timeform'));
-            rawScore += (8 * this.getWeight('ATR'));
-            rawScore += (5 * this.getWeight('Sporting Life'));
+            rawScore += (15 * this.getWeight('Timeform'));
+            rawScore += (10 * this.getWeight('ATR'));
+            rawScore += (8 * this.getWeight('Sporting Life'));
 
         } else if (horseName === 'Talk the Talk') {
             stories.push({ source: 'GeeGeez', text: 'Pace map identifies this as the lone front-runner. Tactical advantage on this course is huge.' });
             stories.push({ source: 'Irish Racing', text: 'The sleeper from the Irish camp. Form line through Leopardstown is underestimated.' });
 
-            rawScore += (10 * this.getWeight('GeeGeez'));
-            rawScore += (7 * this.getWeight('Irish Racing'));
+            rawScore += (12 * this.getWeight('GeeGeez'));
+            rawScore += (9 * this.getWeight('Irish Racing'));
         } else {
             stories.push({ source: 'Standard Consensus', text: 'Mixed professional reviews. Generally considered exposed at this level.' });
-            rawScore = 0;
+            rawScore = 5;
         }
 
         return { stories, sentimentScore: Math.round(rawScore) };
@@ -119,15 +122,57 @@ class IntelligenceEngine {
 
     async getSocialInsights(horseName) {
         const insights = { social: "", forum: "" };
-        if (horseName === 'Old Park Star') {
-            insights.social = "Trending on X. Clocker reports suggest a private gallop was 3s faster than usual. Reddit 'eyecatcher' thread mentions it found another gear.";
-            insights.forum = "Stable whisper: Henderson has targeted this specifically for the owner's birthday. Noted as a 'plot horse' on specialist forums.";
-        } else if (horseName === 'Talk the Talk') {
-            insights.social = "Buzzing on r/horseracing as the 'overlooked' each-way steal. Some users flagging 'unlucky' block in its last outing.";
-            insights.forum = "Handicapper forum mentions a 'wind op' that wasn't widely reported until today.";
+
+        // Expanded Social Simulation
+        const xBuzz = [
+            "Heavy steaming in the markets. Sentiment is parabolic.",
+            "Clocker report: Galloped 2s faster than the favorite this morning.",
+            "Late money coming in from sharp accounts.",
+            "Jockey interview suggests high confidence in ground conditions."
+        ];
+
+        const redditBuzz = [
+            "r/horseracing is split, but the 'Smart Money' thread loves the RPR here.",
+            "Unchecked 'eyecatcher' status in the r/cheltenham community.",
+            "Users flagging a hidden wind-op from 3 weeks ago."
+        ];
+
+        const forumBuzz = [
+            "Whisper from the yard: This is the stable's best handicapped horse of the year.",
+            "Targeted for this specific trip since October.",
+            "Breathing issues resolved over the winter; ready to explode."
+        ];
+
+        if (horseName === 'Old Park Star' || horseName === 'Talk the Talk') {
+            insights.social = `${this.getRandom(xBuzz)} | ${this.getRandom(redditBuzz)}`;
+            insights.forum = this.getRandom(forumBuzz);
+        } else {
+            insights.social = "Generic social sentiment. No major outliers detected.";
+            insights.forum = "Standard chatter. No high-conviction whispers.";
         }
+
         return insights;
+    }
+
+    async getLiveSentiment(horseName) {
+        // High-frequency simulation (TikTok/Telegram/YouTube)
+        const trends = [
+            "🔥 Trending on TikTok (Short-Form highlights gaining traction)",
+            "📱 Telegram 'Whale' group mentions (High conviction buy signals)",
+            "📺 YouTube 'Final Word' pundits shifting to this runner",
+            "🚀 Viral 'Insider' clip circulating on WhatsApp groups"
+        ];
+
+        return {
+            trending: this.getRandom(trends),
+            news: "Breaking: Support building in the local press for a massive upset."
+        };
+    }
+
+    getRandom(arr) {
+        return arr[Math.floor(Math.random() * arr.length)];
     }
 }
 
 module.exports = new IntelligenceEngine();
+

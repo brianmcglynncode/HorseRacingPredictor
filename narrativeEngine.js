@@ -44,11 +44,13 @@ class NarrativeEngine {
         const officialStory = (horse.spotlight || "").toLowerCase();
         const socialBuzz = (horse.socialInsights || "").toLowerCase(); // From X/Reddit
         const forumWhispers = (horse.forumData || "").toLowerCase();  // From specialist forums
+        const liveSentiment = (horse.liveSentiment || "").toLowerCase(); // From TikTok/Telegram/YouTube
+        const newsBuzz = (horse.newsBuzz || "").toLowerCase(); // Breaking news
         const proStories = horse.proStories || []; // ARRAY OF PRO ANALYST QUOTES
 
         // Combine for overall sentiment
         let proText = proStories.map(s => s.text).join(" ").toLowerCase();
-        const fullNarrative = `${officialStory} ${socialBuzz} ${forumWhispers} ${proText}`;
+        const fullNarrative = `${officialStory} ${socialBuzz} ${forumWhispers} ${proText} ${liveSentiment} ${newsBuzz}`;
 
         let aiConclusion = "";
         let nuggets = [];
@@ -58,17 +60,24 @@ class NarrativeEngine {
             nuggets.push(`🎓 <strong>Expert Consensus:</strong> Multiple elite analysts (Timeform/ATR) have flagged a hidden tactical edge.`);
         }
 
-        if (socialBuzz.includes('trending') || socialBuzz.includes('buzz')) {
+        if (liveSentiment.includes('trending') || liveSentiment.includes('viral')) {
+            nuggets.push(`🚀 <strong>Viral Momentum:</strong> High-frequency social signals (TikTok/Telegram) are flashing a 'Strong Buy'.`);
+        } else if (socialBuzz.includes('trending') || socialBuzz.includes('buzz')) {
             nuggets.push(`🌐 <strong>Social Heat:</strong> Significant uptick in community buzz detected; sentiment is bullish.`);
         }
 
-        if (horse.proSentiment > 15) {
+        if (horse.proSentiment > 20) {
             nuggets.push(`💎 <strong>Alpha Narrative:</strong> Elite-tier professional alignment on this horse's win potential.`);
+        }
+
+        if (newsBuzz.includes('breaking') || newsBuzz.includes('support')) {
+            nuggets.push(`📡 <strong>News Flash:</strong> Breaking reports indicate a surge of local confidence.`);
         }
 
         if (horse.courseDistanceWin === 'CD') {
             nuggets.push(`🏰 <strong>Track Master:</strong> Proven 'CD' winner over this course.`);
         }
+
 
         if (officialStory.includes('soft') && race.raceGoing === 'Soft') {
             nuggets.push(`🌧️ <strong>Surface Edge:</strong> Pedigree confirms this horse excels on ${race.raceGoing}.`);
