@@ -31,6 +31,8 @@ async function initSchema() {
                 rpr INT,
                 form VARCHAR(255),
                 odds_json JSONB DEFAULT '{}',
+                discovery_dossier JSONB DEFAULT '[]',
+                vault_tags VARCHAR(255)[] DEFAULT '{}',
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                 UNIQUE(race_id, name)
             );
@@ -72,6 +74,12 @@ async function initSchema() {
                 IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='horses' AND column_name='odds_json') THEN
                     ALTER TABLE horses ADD COLUMN odds_json JSONB DEFAULT '{}';
                 END IF;
+                IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='horses' AND column_name='discovery_dossier') THEN
+                    ALTER TABLE horses ADD COLUMN discovery_dossier JSONB DEFAULT '[]';
+                END IF;
+                IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='horses' AND column_name='vault_tags') THEN
+                    ALTER TABLE horses ADD COLUMN vault_tags VARCHAR(255)[] DEFAULT '{}';
+                END IF;
             END $$;
         `);
 
@@ -110,12 +118,12 @@ async function saveRaceData(raceId, raceConfig, scrapedDataList) {
         try {
             // Upsert horse to get ID
             const horseRes = await pool.query(
-                `INSERT INTO horses (race_id, name, jockey, trainer, age, weight, official_rating, rpr, form, odds_json) 
-                 VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) 
+                `INSERT INTO horses (race_id, name, jockey, trainer, age, weight, official_rating, rpr, form, odds_json, discovery_dossier, vault_tags) 
+                 VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) 
                  ON CONFLICT (race_id, name) DO UPDATE 
-                 SET jockey = EXCLUDED.jockey, trainer = EXCLUDED.trainer, age = EXCLUDED.age, weight = EXCLUDED.weight, official_rating = EXCLUDED.official_rating, rpr = EXCLUDED.rpr, form = EXCLUDED.form, odds_json = EXCLUDED.odds_json
+                 SET jockey = EXCLUDED.jockey, trainer = EXCLUDED.trainer, age = EXCLUDED.age, weight = EXCLUDED.weight, official_rating = EXCLUDED.official_rating, rpr = EXCLUDED.rpr, form = EXCLUDED.form, odds_json = EXCLUDED.odds_json, discovery_dossier = EXCLUDED.discovery_dossier, vault_tags = EXCLUDED.vault_tags
                  RETURNING id`,
-                [raceId, horse.name, horse.jockey, horse.trainer, parseDbInt(horse.age), horse.weight, parseDbInt(horse.officialRating), parseDbInt(horse.rpr), horse.form, JSON.stringify(horse.odds || {})]
+                [raceId, horse.name, horse.jockey, horse.trainer, parseDbInt(horse.age), horse.weight, parseDbInt(horse.officialRating), parseDbInt(horse.rpr), horse.form, JSON.stringify(horse.odds || {}), JSON.stringify(horse.intelligenceDossier || []), horse.analysisTags || []]
             );
 
             const horseId = horseRes.rows[0].id;
@@ -241,7 +249,9 @@ async function getRaceData(raceId) {
                 openingOdds,
                 movePercent,
                 velocity,
-                aiReasoning
+                aiReasoning,
+                discoveryDossier: hRow.discovery_dossier || [],
+                vaultTags: hRow.vault_tags || []
             });
         }
 

@@ -395,7 +395,13 @@ app.get('/api/scrape', async (req, res) => {
                     Object.assign(horse, intel);
                     // Pass the reconstructed race structure
                     horse.aiReasoning = narrativeEngine.generateReasoning(horse, stitchedData[0], stitchedData[0].horses);
+
+                    // SAVE both the narrative AND the raw logs for the telemetry hub
                     await db.saveNarrative(horse.db_id, horse.aiReasoning);
+                    await pool.query(
+                        'UPDATE horses SET discovery_dossier = $1, vault_tags = $2 WHERE id = $3',
+                        [JSON.stringify(intel.intelligenceDossier || []), intel.analysisTags || [], horse.db_id]
+                    );
                     updated = true;
                 }
             }
@@ -404,7 +410,7 @@ app.get('/api/scrape', async (req, res) => {
                 data: stitchedData,
                 lastUpdated: history ? history.lastUpdated : new Date().toISOString(),
                 cached: true,
-                version: '1.0.7-active'
+                version: '1.1.0-active'
             });
         }
     } catch (e) {

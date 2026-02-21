@@ -787,6 +787,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             racesGrid.appendChild(container);
 
+            // --- NEURAL TELEMETRY HUB ---
+            renderTelemetryHub(container, race, index);
+
             // Initialize Scrolled Sync Logic
             setTimeout(() => {
                 const tableWrapper = document.getElementById(`table-wrapper-${index}`);
@@ -842,4 +845,82 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 100); // Slight delay for rendering
         });
     }
+
+    function renderTelemetryHub(container, race, index) {
+        const hub = document.createElement('div');
+        hub.className = 'telemetry-hub';
+
+        // 1. Gather logs from all horses
+        const marketLogs = [];
+        const discoveryLogs = [];
+        const vaultLogs = [];
+
+        race.horses.forEach(horse => {
+            // Market Logs
+            if (horse.marketMove === 'steamer') {
+                marketLogs.push({ time: '0m', horse: horse.name, message: `High support detected. Vol: ${Math.abs(horse.velocity || 0).toFixed(2)} pts/m` });
+            }
+            if (horse.highVelocity) {
+                marketLogs.push({ time: '2m', horse: horse.name, message: `Velocity threshold breached. Momentum spike detected.` });
+            }
+
+            // Discovery Logs
+            if (horse.discoveryDossier && horse.discoveryDossier.length > 0) {
+                horse.discoveryDossier.forEach(entry => {
+                    discoveryLogs.push({ time: 'Last Sync', horse: horse.name, message: entry.snippet || entry.message || entry });
+                });
+            }
+
+            // Vault Logs
+            if (horse.vaultTags && horse.vaultTags.length > 0) {
+                vaultLogs.push({ time: 'Persistent', horse: horse.name, message: `Historical patterns matched: ${horse.vaultTags.join(', ')}` });
+            }
+        });
+
+        const getLogHtml = (logs, type) => {
+            if (logs.length === 0) return '<div class="telemetry-empty">No active signals in this sector.</div>';
+            return logs.map(log => `
+                <div class="log-entry ${type}">
+                    <span class="log-time">[${log.time}]</span>
+                    <span class="log-source">${log.horse}:</span>
+                    <span class="log-msg">${log.message}</span>
+                </div>
+            `).join('');
+        };
+
+        hub.innerHTML = `
+            <div class="telemetry-grid">
+                <div class="telemetry-col">
+                    <div class="telemetry-header">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        Market Dynamics
+                    </div>
+                    <div class="telemetry-feed">
+                        ${getLogHtml(marketLogs, 'market')}
+                    </div>
+                </div>
+                <div class="telemetry-col">
+                    <div class="telemetry-header">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+                        Neural Discovery
+                    </div>
+                    <div class="telemetry-feed">
+                        ${getLogHtml(discoveryLogs, 'discovery')}
+                    </div>
+                </div>
+                <div class="telemetry-col">
+                    <div class="telemetry-header">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>
+                        Vault Memory Matches
+                    </div>
+                    <div class="telemetry-feed">
+                        ${getLogHtml(vaultLogs, 'vault')}
+                    </div>
+                </div>
+            </div>
+        `;
+
+        container.appendChild(hub);
+    }
 });
+
