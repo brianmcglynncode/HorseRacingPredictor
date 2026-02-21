@@ -81,43 +81,88 @@ class NarrativeEngine {
         };
 
         const headlines = {
-            alpha: ["The Alpha Narrative", "The Professional Consensus", "The High-Conviction King"],
-            whisper: ["The Paddock Whisper", "The Informed Angle", "The Stable's Choice"],
-            vulnerable: ["The Vulnerable Favorite", "The Market Trap", "The Exposed Kingpin"],
-            shadow: ["The Shadow Winner", "The Tactical Outlier", "The Hidden Gear"],
-            mechanical: ["The Mechanical Upgrade", "The Respiratory Edge", "The Post-Op Specialist"],
-            surface: ["The Ground Arbitrage", "The Surface Specialist", "The Mudlark Factor"],
-            redemption: ["The Unlucky Redemption", "The Traffic-Victim Angle", "The Paddock Eyecatcher"]
+            alpha: ["The Alpha Narrative", "The Professional Consensus", "The High-Conviction King", "The Market Anchor"],
+            whisper: ["The Paddock Whisper", "The Informed Angle", "The Stable's Choice", "The Yard Secret"],
+            vulnerable: ["The Vulnerable Favorite", "The Market Trap", "The Exposed Kingpin", "The Over-Exposed Anchor"],
+            shadow: ["The Shadow Winner", "The Tactical Outlier", "The Hidden Gear", "The Intelligent Longshot"],
+            mechanical: ["The Mechanical Upgrade", "The Respiratory Edge", "The Post-Op Specialist", "The Bio-Mechanical Spike"],
+            surface: ["The Ground Arbitrage", "The Surface Specialist", "The Mudlark Factor", "The Turf Optimizer"],
+            redemption: ["The Unlucky Redemption", "The Traffic-Victim Angle", "The Paddock Eyecatcher", "The Hidden Recovery"]
         };
 
-        const getHeadline = (key) => `<strong>${headlines[key][Math.floor(Math.random() * headlines[key].length)]}:</strong>`;
+        const getHeadline = (key, seed) => {
+            const list = headlines[key];
+            const index = (seed.length + seed.charCodeAt(0)) % list.length;
+            return `<strong>${list[index]}:</strong>`;
+        };
 
         if (isFavorite) {
             if (themes.proConsensus && themes.speed) {
-                aiConclusion = `${getHeadline('alpha')} This isn't just a market favorite; it's a professional alignment. Deep history and sectional analysis identify a 'Big Engine' profile that appears technically superior to the field. This is our primary high-confidence dossier.`;
+                const variants = [
+                    `${getHeadline('alpha', name)} This isn't just a market favorite; it's a professional alignment. Sectional analysis identifies a 'Big Engine' profile that appears technically superior to the field.`,
+                    `${getHeadline('alpha', name)} All primary vectors—market heat, technical rating, and expert stories—align on a singular conclusion. This is the race's technical anchor.`,
+                    `${getHeadline('alpha', name)} Our hub identifies a 'Dominant Consensus'. The probability of a sub-par performance is mathematically negligible based on 3+ years of tracking.`
+                ];
+                aiConclusion = variants[name.length % variants.length];
             } else if (themes.stableWhisper) {
-                aiConclusion = `${getHeadline('whisper')} Private signals and yard whispers confirm peak readiness. The synergy between current market heat and our lifetime vault creates a narrative of strategic certainty.`;
+                const variants = [
+                    `${getHeadline('whisper', name)} Private signals and yard whispers confirm peak readiness. A high-conviction play with strategic certainty.`,
+                    `${getHeadline('whisper', name)} The synergy between current market heat and our lifetime vault suggests a horse that has been targeted specifically for this prize.`,
+                    `${getHeadline('whisper', name)} Intelligence nodes from 3+ sources have flagged an 'Informed Spike'. The yard confidence is reportedly unmatched.`
+                ];
+                aiConclusion = variants[name.length % variants.length];
             } else if (themes.overhyped) {
-                aiConclusion = `${getHeadline('vulnerable')} Multiple specialist analysts are flagged a 'Stamina Doubt' and social sentiment is cooling. We predict a tactical struggle; the favorite is technically exposed at these odds.`;
+                const variants = [
+                    `${getHeadline('vulnerable', name)} Multiple specialist analysts have flagged a 'Stamina Doubt'. We predict a tactical struggle.`,
+                    `${getHeadline('vulnerable', name)} While the public piles in, our engine detects 'Technical Exposure'. The price does not reflect the underlying risk profile.`,
+                    `${getHeadline('vulnerable', name)} Sentiment is cooling among sharp accounts. This favorite is technically over-extended at these odds.`
+                ];
+                aiConclusion = variants[name.length % variants.length];
             } else {
                 aiConclusion = `<strong>Consensus Dominance:</strong> High-confidence profile across all reporting streams. The data, the experts, and the vault stories are in perfect alignment for a standard win-bid.`;
             }
         } else {
             if (themes.stableWhisper || (themes.proConsensus && themes.speed)) {
-                aiConclusion = `${getHeadline('shadow')} While the favorite takes the spotlight, we've uncovered a massive internal profile in our vault for ${name}. 10+ professional sources have aligned on a value-play with 2+ years of supporting data.`;
+                const variants = [
+                    `${getHeadline('shadow', name)} While the favorite takes the spotlight, we've uncovered a massive internal profile in our vault for ${name}. 10+ professional sources have aligned on this value-play.`,
+                    `${getHeadline('shadow', name)} An overlooked 'High-Velocity' profile. While ignored by the casual markets, our engine detects a massive tactical overlap with historical winners.`,
+                    `${getHeadline('shadow', name)} Hidden in plain sight, ${name} has the technical data-points of a Grade 1 runner. Our intelligence hub flags a significant pricing error here.`
+                ];
+                aiConclusion = variants[name.length % variants.length];
             } else if (themes.windOp) {
-                aiConclusion = `${getHeadline('mechanical')} Our vault identifies a clandestine breathing upgrade. On current ground, technical data suggests this horse improves by 4-6 lengths. A major mechanical outlier.`;
+                const variants = [
+                    `${getHeadline('mechanical', name)} Our vault identifies a clandestine breathing upgrade. On current ground, technical data suggests a massive improvements of 4+ lengths.`,
+                    `${getHeadline('mechanical', name)} A major mechanical outlier. Post-op recovery data combined with current track parameters identify this as a highly-efficient engine today.`,
+                    `${getHeadline('mechanical', name)} The 'Respiratory Spike' is the lead narrative here. ${name} is technically optimized for this specific oxygen-demanding trip.`
+                ];
+                aiConclusion = variants[name.length % variants.length];
             } else if (themes.unlucky) {
-                aiConclusion = `${getHeadline('redemption')} Multiple sources confirm ${name} met significant trouble last time out, masking its true ceiling. The public missed the sectional recovery, but our intelligence engine did not.`;
+                const variants = [
+                    `${getHeadline('redemption', name)} Multiple sources confirm ${name} met significant trouble last time out. The public missed the sectional recovery, but our intelligence engine did not.`,
+                    `${getHeadline('redemption', name)} A 'Hidden Eyecatcher'. Despite a poor finishing position, our data confirms elite closing speeds that were masked by tactical interference.`,
+                    `${getHeadline('redemption', name)} The market has written off ${name} after a 'Blooper' run. We predict a massive technical correction today on a clear track.`
+                ];
+                aiConclusion = variants[name.length % variants.length];
             } else if (themes.surface) {
-                aiConclusion = `${getHeadline('surface')} Consensus among specialists is that ${name} improves significantly on this specific going. We predict a class-neutralizing performance that could shock the favorite.`;
+                const variants = [
+                    `${getHeadline('surface', name)} Consensus among specialists is that ${name} improves significantly on this specific going. A class-neutralizing performance is predicted.`,
+                    `${getHeadline('surface', name)} The 'Ground Arbitrage' play. While others struggle, technical data shows ${name} has a foot-perfect efficiency on this surface.`,
+                    `${getHeadline('surface', name)} Our vault identifies ${name} as a rare specialist in these precise moisture levels. Expect a performance far above its official rating.`
+                ];
+                aiConclusion = variants[name.length % variants.length];
             } else {
                 aiConclusion = `<strong>Tactical Divergence:</strong> We have identified a niche narrative for ${name} that is backed by at least two specialist analysts and historical vault patterns. Durable Each-Way option with unique technical backing.`;
             }
         }
 
         if (nuggets.length === 0) {
-            nuggets.push(`🎯 <strong>Form Advantage:</strong> Superior tactical positioning detected by the ensemble.`);
+            const fallbackNuggets = [
+                `🎯 <strong>Form Advantage:</strong> Superior tactical positioning detected by the ensemble.`,
+                `📈 <strong>Data Upside:</strong> Technical indicators suggest this horse is currently 'Unexposed'.`,
+                `⚙️ <strong>Efficiency Hit:</strong> Running style perfectly matches current track bias.`,
+                `📡 <strong>Sharp Signal:</strong> Late money flow patterns suggest high internal confidence.`
+            ];
+            nuggets.push(fallbackNuggets[name.length % fallbackNuggets.length]);
         }
 
         const reasoningPackage = {
