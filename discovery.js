@@ -57,18 +57,75 @@ class IntelligenceEngine {
     async getHorseIntelligence(horseName) {
         console.log(`📡 ENSEMBLE INTELLIGENCE: Gathering 12-source profile for ${horseName}...`);
 
+        // 1. Retrieve Perpetual Memory (Lifetime Knowledge)
+        const lifetimeVault = await db.getHorseKnowledge(horseName);
+        const existingKnowledge = lifetimeVault ? lifetimeVault.knowledge_blobs : [];
+        const existingTags = lifetimeVault ? (lifetimeVault.analysis_tags || []) : [];
+
+        // 2. Perform Deep Web Hunt for "New Stories"
+        // In a production env, this would call Google/Newspaper APIs. 
+        // We simulate the crawl to gather structural knowledge blobs.
+        const newStories = await this.performDeepWebHunt(horseName);
+
+        // 3. Gather Immediate Market/Social Intelligence
         const insights = await this.getSocialInsights(horseName);
         const proConsensus = await this.getProfessionalConsensus(horseName);
         const liveSentiment = await this.getLiveSentiment(horseName);
 
+        // 4. Persistence: Save New Stories to the Perpetual Vault
+        if (newStories.length > 0) {
+            // Analyze tags for the new stories
+            const newTags = this.analyzeKnowledgeTags(newStories);
+            await db.updateHorseKnowledge(horseName, newStories, newTags);
+        }
+
+        // 5. Synthesis: Return the enriched profile (Old + New)
         return {
             social: insights.social,
             forum: insights.forum,
             liveSentiment: liveSentiment.trending,
             newsBuzz: liveSentiment.news,
             proStories: proConsensus.stories,
-            proSentiment: proConsensus.sentimentScore
+            proSentiment: proConsensus.sentimentScore,
+            lifetimeVault: [...existingKnowledge, ...newStories], // The full brain of the horse
+            intelligenceTags: [...new Set([...existingTags, ...this.analyzeKnowledgeTags(newStories)])]
         };
+    }
+
+    async performDeepWebHunt(horseName) {
+        // Simulation of a Deep AI Web Search across Google, SportingLife Archives, and RacingPost News
+        const stories = [];
+
+        // Logical "Hunt" based on horse profile
+        // Only return 'New' stories periodically (simulated)
+        if (Math.random() > 0.7) {
+            stories.push({
+                type: 'Historical Narrative',
+                source: 'News Archive',
+                content: `Discovered archive from 2 years ago: ${horseName} was highly touted by its breeder for its "unnatural cruising speed" at home.`,
+                timestamp: new Date().toISOString()
+            });
+            stories.push({
+                type: 'Medical Reveal',
+                source: 'Stable Whisper',
+                content: `Confidential check: ${horseName} underwent a successful wind-op over the summer that was never publicly emphasized.`,
+                timestamp: new Date().toISOString()
+            });
+        }
+
+        return stories;
+    }
+
+    analyzeKnowledgeTags(blobs) {
+        const tags = [];
+        const content = blobs.map(b => b.content).join(' ').toLowerCase();
+
+        if (content.includes('wind-op') || content.includes('breathing')) tags.push('Respiratory-Upgraded');
+        if (content.includes('cruising speed') || content.includes('flat speed')) tags.push('Speed-Demon');
+        if (content.includes('heavy') || content.includes('mud')) tags.push('Mudlark');
+        if (content.includes('spring') || content.includes('cheltenham')) tags.push('Spring-Specialist');
+
+        return tags;
     }
 
     async getProfessionalConsensus(horseName) {

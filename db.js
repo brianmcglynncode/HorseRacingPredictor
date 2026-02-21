@@ -54,8 +54,16 @@ async function initSchema() {
                 reliability_weight DECIMAL(5,2),
                 updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             );
+
+            CREATE TABLE IF NOT EXISTS horse_knowledge_vault (
+                horse_name VARCHAR(255) PRIMARY KEY,
+                knowledge_blobs JSONB DEFAULT '[]',
+                analysis_tags VARCHAR(255)[], -- e.g. ['stamina_doubts', 'spring_specialist']
+                last_full_audit TIMESTAMP,
+                updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            );
         `);
-        console.log('🐘 Fully Relational PostgreSQL Schema Initialized');
+        console.log('🐘 Fully Relational PostgreSQL Schema Initialized (with Horse Vault)');
     } catch (err) {
         console.error('❌ Schema creation failed:', err.message);
     }
@@ -285,6 +293,36 @@ async function saveIntentVault(vault) {
     }
 }
 
+async function getHorseKnowledge(horseName) {
+    if (!pool || !process.env.DATABASE_URL || !horseName) return null;
+    try {
+        const res = await pool.query('SELECT * FROM horse_knowledge_vault WHERE horse_name = $1', [horseName.toUpperCase()]);
+        return res.rows.length > 0 ? res.rows[0] : null;
+    } catch (e) {
+        return null;
+    }
+}
+
+async function updateHorseKnowledge(horseName, newBlobs = [], tags = []) {
+    if (!pool || !process.env.DATABASE_URL || !horseName) return;
+    const name = horseName.toUpperCase();
+    try {
+        // Use JSONB_CONCAT to append new blobs to the existing array
+        await pool.query(
+            `INSERT INTO horse_knowledge_vault (horse_name, knowledge_blobs, analysis_tags, last_full_audit, updated_at)
+             VALUES ($1, $2, $3, NOW(), NOW())
+             ON CONFLICT (horse_name) DO UPDATE SET 
+                knowledge_blobs = horse_knowledge_vault.knowledge_blobs || EXCLUDED.knowledge_blobs,
+                analysis_tags = ARRAY(SELECT DISTINCT unnest(horse_knowledge_vault.analysis_tags || EXCLUDED.analysis_tags)),
+                last_full_audit = NOW(),
+                updated_at = NOW()`,
+            [name, JSON.stringify(newBlobs), tags]
+        );
+    } catch (e) {
+        console.error(`❌ Vault update error for ${name}:`, e.message);
+    }
+}
+
 module.exports = {
     pool,
     initSchema,
@@ -293,5 +331,7 @@ module.exports = {
     saveNarrative,
     getNarrative,
     getIntentVault,
-    saveIntentVault
+    saveIntentVault,
+    getHorseKnowledge,
+    updateHorseKnowledge
 };
