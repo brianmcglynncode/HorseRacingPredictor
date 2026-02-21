@@ -415,9 +415,13 @@ app.get('/api/db-status', async (req, res) => {
 app.get('/api/debug-db', async (req, res) => {
     try {
         const c1 = await db.pool.query('SELECT count(*) FROM horses');
-        const c2 = await db.pool.query('SELECT count(*) FROM odds_history');
-        const h = await db.pool.query('SELECT id, name FROM horses WHERE race_id=$1', ['supreme']);
-        res.json({ totalHorses: c1.rows[0].count, totalOdds: c2.rows[0].count, supremeHorses: h.rows });
+        const c2 = await db.pool.query('SELECT race_id, count(*) FROM horses GROUP BY race_id');
+        const h = await db.pool.query('SELECT race_id, name FROM horses LIMIT 50');
+        res.json({
+            totalHorses: c1.rows[0].count,
+            raceStats: c2.rows,
+            sampleHorses: h.rows
+        });
     } catch (e) {
         res.json({ error: e.message });
     }
