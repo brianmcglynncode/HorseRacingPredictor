@@ -74,9 +74,20 @@ async function saveRaceData(raceId, raceConfig, scrapedDataList) {
              ON CONFLICT (id) DO NOTHING`,
             [raceId, raceConfig.name || raceId, raceConfig.oc, raceConfig.rp, raceConfig.startTime || null]
         );
+    } catch (e) {
+        console.error(`Error saving race ${raceId} to relational DB:`, e);
+        return; // Can't proceed without race
+    }
 
-        // 2. Process Horses and Odds
-        for (const horse of raceData.horses) {
+    const parseDbInt = (val) => {
+        if (!val) return null;
+        const parsed = parseInt(val);
+        return isNaN(parsed) ? null : parsed;
+    };
+
+    // 2. Process Horses and Odds
+    for (const horse of raceData.horses) {
+        try {
             // Upsert horse to get ID
             const horseRes = await pool.query(
                 `INSERT INTO horses (race_id, name, jockey, trainer, age, weight, official_rating, rpr, form) 
@@ -84,7 +95,7 @@ async function saveRaceData(raceId, raceConfig, scrapedDataList) {
                  ON CONFLICT (race_id, name) DO UPDATE 
                  SET jockey = EXCLUDED.jockey, trainer = EXCLUDED.trainer, age = EXCLUDED.age, weight = EXCLUDED.weight, official_rating = EXCLUDED.official_rating, rpr = EXCLUDED.rpr, form = EXCLUDED.form
                  RETURNING id`,
-                [raceId, horse.name, horse.jockey, horse.trainer, horse.age ? parseInt(horse.age) : null, horse.weight, horse.officialRating ? parseInt(horse.officialRating) : null, horse.rpr ? parseInt(horse.rpr) : null, horse.form]
+                [raceId, horse.name, horse.jockey, horse.trainer, parseDbInt(horse.age), horse.weight, parseDbInt(horse.officialRating), parseDbInt(horse.rpr), horse.form]
             );
 
             const horseId = horseRes.rows[0].id;
@@ -118,10 +129,10 @@ async function saveRaceData(raceId, raceConfig, scrapedDataList) {
             if (horse.aiReasoning) {
                 await saveNarrative(horseId, horse.aiReasoning);
             }
+        } catch (he) {
+            console.error(`Error saving horse ${horse.name} in race ${raceId}:`, he.message);
+            // Continue to the next horse instead of aborting the whole race!
         }
-
-    } catch (e) {
-        console.error('Error saving race data to relational DB:', e);
     }
 }
 

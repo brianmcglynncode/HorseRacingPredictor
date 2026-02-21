@@ -182,17 +182,17 @@ async function loadHistory() {
             console.log('📄 Booting from local memory map for speed. PostgreSQL sync active in background.');
 
             if (db.pool && process.env.DATABASE_URL) {
-                // One-Time Relational Seeding
+                // Relational Seeding
                 const countRes = await db.pool.query('SELECT count(*) FROM horses');
-                if (countRes.rows[0].count === '0') {
-                    console.log('📦 Relational Migration: 0 horses found. Seeding new SQL engine from JSON...');
+                if (parseInt(countRes.rows[0].count) < 300) {
+                    console.log('📦 Relational Migration: Incomplete horses found. Forcing full SQL engine seed from JSON...');
                     for (const rId of Object.keys(raceHistory.races)) {
                         const histObj = raceHistory.races[rId];
                         if (histObj && histObj.latestData) {
                             await db.saveRaceData(rId, RACES[rId] || {}, histObj.latestData).catch(e => null);
                         }
                     }
-                    console.log('✅ Relational Migration Seed Complete!');
+                    console.log('✅ Relational Migration Reseed Complete!');
                 }
             }
         }
