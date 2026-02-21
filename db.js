@@ -235,6 +235,7 @@ async function getRaceData(raceId) {
 
         return [{
             name: raceRes.rows[0].name,
+            bookmakers: ['best', 'bk1', 'bk2'],
             horses: constructedHorses
         }];
 
