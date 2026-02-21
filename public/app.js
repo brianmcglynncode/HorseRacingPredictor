@@ -634,9 +634,15 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <span class="stat-value">${myPick.rpr || 'N/A'}</span>
                             </div>
                         </div>
-                        ${(myPick.isEliteTrainer || myPick.disagreement) ?
+                        ${(myPick.isEliteTrainer || myPick.disagreement || myPick.marketMove !== 'stable' || myPick.isEliteCombo || myPick.courseDistanceWin === 'CD' || myPick.highVelocity || myPick.isHot || myPick.isCold || myPick.groundSuitability === 'perfect') ?
                         `<div class="pick-badge-row">
                                 ${myPick.isEliteTrainer ? '<span class="strategy-badge expert">🎩 ELITE TRAINER</span>' : ''}
+                                ${myPick.isEliteCombo ? '<span class="strategy-badge expert" style="background:rgba(255,215,0,0.2); border-color:var(--accent-gold); color:var(--accent-gold);">⚡ DEADLY DUO</span>' : ''}
+                                ${myPick.courseDistanceWin === 'CD' ? '<span class="strategy-badge" style="background:rgba(0,255,136,0.15); color:#00ff88;">🏰 TRACK SPECIALIST</span>' : ''}
+                                ${myPick.highVelocity ? '<span class="strategy-badge" style="background:rgba(255,0,255,0.2); color:#ff00ff; border:1px solid #ff00ff;">🚀 VELOCITY MOVE</span>' : ''}
+                                ${myPick.isHot ? '<span class="strategy-badge" style="background:rgba(255,69,0,0.2); color:#ff4500; border:1px solid #ff4500;">🔥 HOT FORM</span>' : ''}
+                                ${myPick.isCold ? '<span class="strategy-badge" style="background:rgba(0,191,255,0.2); color:#00bfff; border:1px solid #00bfff;">❄️ COLD</span>' : ''}
+                                ${myPick.groundSuitability === 'perfect' ? '<span class="strategy-badge" style="background:rgba(255,255,255,0.1); color:#fff; border:1px solid rgba(255,255,255,0.3);">🌱 GROUND SUITABLE</span>' : ''}
                                 ${myPick.marketMove === 'steamer' ? `<span class="mover-badge steamer">🔥 STEAMER (-${myPick.movePercent}%)</span>` : ''}
                                 ${myPick.marketMove === 'drifter' ? `<span class="mover-badge drifter">❄️ DRIFTER (+${myPick.movePercent}%)</span>` : ''}
                                 ${myPick.disagreement ? '<span class="strategy-badge" style="background:rgba(255,69,0,0.15); color:#ff4500; border:1px solid rgba(255,69,0,0.3);">⚠️ HIGH RISK/REWARD</span>' : ''}
