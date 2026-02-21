@@ -188,9 +188,11 @@ async function loadHistory() {
 
                 const totalHorses = parseInt(countRes.rows[0].count);
                 const supremeHorses = parseInt(supremeRes.rows[0].count);
+                const checkOdds = await db.pool.query("SELECT count(*) FROM horses WHERE odds_json = '{}' OR odds_json IS NULL");
+                const missingOdds = parseInt(checkOdds.rows[0].count);
 
-                if (totalHorses < 800 || supremeHorses < 5) {
-                    console.log(`📦 Relational Migration: Data gap detected (${totalHorses} total, ${supremeHorses} supreme). Forcing SQL engine seed...`);
+                if (totalHorses < 800 || supremeHorses < 5 || missingOdds > 100) {
+                    console.log(`📦 Relational Migration: Data gap detected (${totalHorses} total, ${missingOdds} missing odds). Forcing SQL engine seed...`);
                     for (const rId of Object.keys(raceHistory.races)) {
                         const histObj = raceHistory.races[rId];
                         if (histObj && histObj.latestData) {

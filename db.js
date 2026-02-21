@@ -30,6 +30,7 @@ async function initSchema() {
                 official_rating INT,
                 rpr INT,
                 form VARCHAR(255),
+                odds_json JSONB DEFAULT '{}',
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                 UNIQUE(race_id, name)
             );
@@ -98,12 +99,12 @@ async function saveRaceData(raceId, raceConfig, scrapedDataList) {
         try {
             // Upsert horse to get ID
             const horseRes = await pool.query(
-                `INSERT INTO horses (race_id, name, jockey, trainer, age, weight, official_rating, rpr, form) 
-                 VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) 
+                `INSERT INTO horses (race_id, name, jockey, trainer, age, weight, official_rating, rpr, form, odds_json) 
+                 VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) 
                  ON CONFLICT (race_id, name) DO UPDATE 
-                 SET jockey = EXCLUDED.jockey, trainer = EXCLUDED.trainer, age = EXCLUDED.age, weight = EXCLUDED.weight, official_rating = EXCLUDED.official_rating, rpr = EXCLUDED.rpr, form = EXCLUDED.form
+                 SET jockey = EXCLUDED.jockey, trainer = EXCLUDED.trainer, age = EXCLUDED.age, weight = EXCLUDED.weight, official_rating = EXCLUDED.official_rating, rpr = EXCLUDED.rpr, form = EXCLUDED.form, odds_json = EXCLUDED.odds_json
                  RETURNING id`,
-                [raceId, horse.name, horse.jockey, horse.trainer, parseDbInt(horse.age), horse.weight, parseDbInt(horse.officialRating), parseDbInt(horse.rpr), horse.form]
+                [raceId, horse.name, horse.jockey, horse.trainer, parseDbInt(horse.age), horse.weight, parseDbInt(horse.officialRating), parseDbInt(horse.rpr), horse.form, JSON.stringify(horse.odds || {})]
             );
 
             const horseId = horseRes.rows[0].id;
@@ -211,16 +212,8 @@ async function getRaceData(raceId) {
             const narrativeRes = await pool.query('SELECT reasoning_package FROM ai_narrative WHERE horse_id = $1', [hId]);
             const aiReasoning = narrativeRes.rows.length > 0 ? narrativeRes.rows[0].reasoning_package : null;
 
-            // Frontend expects an object with multiple bookmakers to calculate 'averageOdds'
-            // and uses 'fraction' internally to calculate and render the visual grid.
-            let mockOddsDist = {};
-            if (currentOdds > 0) {
-                mockOddsDist = {
-                    'best': { decimal: currentOdds, fraction: currentOdds.toFixed(2) },
-                    'bk1': { decimal: currentOdds, fraction: currentOdds.toFixed(2) },
-                    'bk2': { decimal: currentOdds, fraction: currentOdds.toFixed(2) } // Provide enough data for the frontend to average it
-                };
-            }
+            // Use the real odds distribution from the DB
+            let realOdds = hRow.odds_json || {};
 
             constructedHorses.push({
                 db_id: hId,
@@ -232,7 +225,7 @@ async function getRaceData(raceId) {
                 officialRating: hRow.official_rating ? hRow.official_rating.toString() : '',
                 rpr: hRow.rpr ? hRow.rpr.toString() : '',
                 form: hRow.form || '',
-                odds: mockOddsDist,
+                odds: realOdds,
                 marketMove,
                 openingOdds,
                 movePercent,
@@ -241,9 +234,15 @@ async function getRaceData(raceId) {
             });
         }
 
+        // Dynamically identify all unique bookmakers across all horses in this race
+        const bookieSet = new Set();
+        constructedHorses.forEach(h => {
+            if (h.odds) Object.keys(h.odds).forEach(b => bookieSet.add(b));
+        });
+
         return [{
             name: raceRes.rows[0].name,
-            bookmakers: ['best', 'bk1', 'bk2'],
+            bookmakers: Array.from(bookieSet),
             horses: constructedHorses
         }];
 
