@@ -8,9 +8,6 @@ const port = process.env.PORT || 3000;
 app.use(express.static('public'));
 app.use(express.json());
 
-const fs = require('fs');
-const path = require('path');
-
 // Race Configuration Map (Full Festival Card with Start Times)
 const RACES = {
     // --- TUESDAY (Day 1: March 10, 2026) ---
@@ -166,8 +163,6 @@ const RACES = {
 
 require('dotenv').config();
 const db = require('./db');
-
-const HISTORY_FILE = path.join(__dirname, 'history.json');
 let raceHistory = { races: {} };
 
 async function loadHistory() {
@@ -175,52 +170,52 @@ async function loadHistory() {
     const vault = await db.getIntentVault();
     if (vault) discovery.setVault(vault);
 
-    // Fallback/Legacy Memory Map for fast local checks
-    try {
-        if (fs.existsSync(HISTORY_FILE)) {
-            raceHistory = JSON.parse(fs.readFileSync(HISTORY_FILE, 'utf8'));
-            console.log('📄 Booting from local memory map for speed. PostgreSQL sync active in background.');
+    if (db.pool && process.env.DATABASE_URL) {
+        console.log('📡 Relational Engine: Initializing from PostgreSQL...');
+        const raceIds = Object.keys(RACES);
 
-            if (db.pool && process.env.DATABASE_URL) {
-                // Relational Seeding
-                const countRes = await db.pool.query('SELECT count(*) FROM horses');
-                const supremeRes = await db.pool.query('SELECT count(*) FROM horses WHERE race_id = $1', ['supreme']);
+        for (const rId of raceIds) {
+            const stitched = await db.getRaceData(rId);
+            if (stitched && stitched.length > 0) {
+                const raceData = stitched[0];
+                raceHistory.races[rId] = {
+                    openingLines: {},
+                    velocityTracking: {},
+                    lastUpdated: new Date().toISOString(), // Approximation
+                    latestData: stitched
+                };
 
-                const totalHorses = parseInt(countRes.rows[0].count);
-                const supremeHorses = parseInt(supremeRes.rows[0].count);
-                const checkOdds = await db.pool.query("SELECT count(*) FROM horses WHERE odds_json = '{}' OR odds_json IS NULL");
-                const missingOdds = parseInt(checkOdds.rows[0].count);
-
-                if (totalHorses < 800 || supremeHorses < 5 || missingOdds > 100) {
-                    console.log(`📦 Relational Migration: Data gap detected (${totalHorses} total, ${missingOdds} missing odds). Forcing SQL engine seed...`);
-                    for (const rId of Object.keys(raceHistory.races)) {
-                        const histObj = raceHistory.races[rId];
-                        if (histObj && histObj.latestData) {
-                            console.log(`📡 Syncing ${rId}...`);
-                            await db.saveRaceData(rId, RACES[rId] || {}, histObj.latestData).catch(e => console.error(`Sync error ${rId}:`, e.message));
-                        }
+                // Re-hydrate the local memory map for velocity tracking
+                raceData.horses.forEach(horse => {
+                    if (horse.openingOdds > 0) {
+                        raceHistory.races[rId].openingLines[horse.name] = horse.openingOdds;
+                        // Initialize velocity tracking with current state
+                        const bestOdds = getBestOdds(horse);
+                        raceHistory.races[rId].velocityTracking[horse.name] = {
+                            lastOdds: bestOdds || horse.openingOdds,
+                            lastTime: Date.now()
+                        };
                     }
-                    console.log('✅ Relational Migration Sync Complete!');
-                }
+                });
+                console.log(`✅ ${rId} Hydrated from DB (${raceData.horses.length} horses)`);
             }
         }
-    } catch (err) {
-        console.error("Error loading local history:", err);
+        console.log('🏁 PostgreSQL Data Load Complete.');
+    } else {
+        console.warn('⚠️ No Database URL found. Running in ephemeral mode (all data will reset on restart).');
     }
 }
+
 // Trigger load
 loadHistory();
 
 async function saveHistory(raceId) {
-    if (raceId) {
-        // Asynchronously persist to the new robust PostgreSQL Relational Engine!
-        db.saveRaceData(raceId, RACES[raceId], raceHistory.races[raceId].latestData).catch(e => console.error(e));
+    if (raceId && raceHistory.races[raceId]) {
+        // Asynchronously persist to the robust PostgreSQL Relational Engine!
+        db.saveRaceData(raceId, RACES[raceId], raceHistory.races[raceId].latestData).catch(e => {
+            console.error(`❌ DB Save Error for ${raceId}:`, e.message);
+        });
     }
-
-    // Always maintain local JSON fallback
-    try {
-        fs.writeFileSync(HISTORY_FILE, JSON.stringify(raceHistory, null, 2));
-    } catch (err) { }
 }
 
 function getBestOdds(horse) {
