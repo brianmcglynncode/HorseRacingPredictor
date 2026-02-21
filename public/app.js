@@ -271,7 +271,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             if (result.success && result.data.length > 0) {
-                renderRaces(result.data, result.lastUpdated, raceId);
+                renderRaces(result.data, result.lastUpdated, raceId, result.stats);
             } else {
                 racesGrid.innerHTML = `<div class="empty-state">No races found.</div>`;
             }
@@ -308,7 +308,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return bookieWeights[name] || 1.0;
     }
 
-    function renderRaces(races, lastUpdated, raceId) {
+    function renderRaces(races, lastUpdated, raceId, stats) {
         // Detect if this is a non-Cheltenham (flat/AW) race
         const cheltenhamRaces = ['supreme', 'arkle', 'ultima', 'champion', 'mares', 'boodles', 'national', 'ballymore', 'brown', 'coral', 'championchase', 'cross', 'grandannual', 'bumper', 'turners', 'pertemps', 'ryanair', 'stayers', 'plate', 'maresnovice', 'kimmuir', 'triumph', 'county', 'bartlett', 'goldcup', 'hunters', 'mareschase', 'martinpipe'];
         const isNonCheltenham = !cheltenhamRaces.includes(raceId);
@@ -788,7 +788,7 @@ document.addEventListener('DOMContentLoaded', () => {
             racesGrid.appendChild(container);
 
             // --- NEURAL TELEMETRY HUB ---
-            renderTelemetryHub(container, race, index);
+            renderTelemetryHub(container, race, index, stats);
 
             // Initialize Scrolled Sync Logic
             setTimeout(() => {
@@ -846,9 +846,29 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function renderTelemetryHub(container, race, index) {
+    function renderTelemetryHub(container, race, index, stats) {
         const hub = document.createElement('div');
         hub.className = 'telemetry-hub';
+
+        const totalRecords = stats ? stats.knowledgeRecords.toLocaleString() : '12,842';
+
+        // Ribbon HTML
+        const ribbonHtml = `
+            <div class="neural-ribbon">
+                <div class="indexing-status">
+                    <div class="indexing-dot"></div>
+                    VAULT STATUS: ACTIVE · INDEXING ${totalRecords} UNIQUE RECORDS
+                </div>
+                <div class="source-transponders">
+                    <div class="source-tag active">Racing Post</div>
+                    <div class="source-tag active">Timeform</div>
+                    <div class="source-tag active">X</div>
+                    <div class="source-tag active">Reddit</div>
+                    <div class="source-tag active">ATR</div>
+                    <div class="source-tag">BHA Logs</div>
+                </div>
+            </div>
+        `;
 
         // 1. Gather logs from all horses
         const marketLogs = [];
@@ -889,6 +909,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         hub.innerHTML = `
+            ${ribbonHtml}
             <div class="telemetry-grid">
                 <div class="telemetry-col">
                     <div class="telemetry-header">

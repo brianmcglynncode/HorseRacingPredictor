@@ -405,11 +405,13 @@ app.get('/api/scrape', async (req, res) => {
                     updated = true;
                 }
             }
+            const stats = await db.getGlobalStats();
             return res.json({
                 success: true,
                 data: stitchedData,
                 lastUpdated: history ? history.lastUpdated : new Date().toISOString(),
                 cached: true,
+                stats: stats,
                 version: '1.1.0-active'
             });
         }
