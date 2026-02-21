@@ -184,15 +184,21 @@ async function loadHistory() {
             if (db.pool && process.env.DATABASE_URL) {
                 // Relational Seeding
                 const countRes = await db.pool.query('SELECT count(*) FROM horses');
-                if (parseInt(countRes.rows[0].count) < 300) {
-                    console.log('📦 Relational Migration: Incomplete horses found. Forcing full SQL engine seed from JSON...');
+                const supremeRes = await db.pool.query('SELECT count(*) FROM horses WHERE race_id = $1', ['supreme']);
+
+                const totalHorses = parseInt(countRes.rows[0].count);
+                const supremeHorses = parseInt(supremeRes.rows[0].count);
+
+                if (totalHorses < 800 || supremeHorses < 5) {
+                    console.log(`📦 Relational Migration: Data gap detected (${totalHorses} total, ${supremeHorses} supreme). Forcing SQL engine seed...`);
                     for (const rId of Object.keys(raceHistory.races)) {
                         const histObj = raceHistory.races[rId];
                         if (histObj && histObj.latestData) {
-                            await db.saveRaceData(rId, RACES[rId] || {}, histObj.latestData).catch(e => null);
+                            console.log(`📡 Syncing ${rId}...`);
+                            await db.saveRaceData(rId, RACES[rId] || {}, histObj.latestData).catch(e => console.error(`Sync error ${rId}:`, e.message));
                         }
                     }
-                    console.log('✅ Relational Migration Reseed Complete!');
+                    console.log('✅ Relational Migration Sync Complete!');
                 }
             }
         }

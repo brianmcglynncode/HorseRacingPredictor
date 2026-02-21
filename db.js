@@ -102,10 +102,12 @@ async function saveRaceData(raceId, raceConfig, scrapedDataList) {
 
             // Get Best Odds
             let bestDecimal = 0;
-            if (horse.odds) {
+            if (horse.odds && typeof horse.odds === 'object' && Object.keys(horse.odds).length > 0) {
                 Object.values(horse.odds).forEach(o => {
-                    if (o.decimal > bestDecimal) bestDecimal = o.decimal;
+                    if (o && o.decimal > bestDecimal) bestDecimal = o.decimal;
                 });
+            } else if (horse.openingOdds) {
+                bestDecimal = parseFloat(horse.openingOdds);
             }
 
             // Record Odds if > 0
