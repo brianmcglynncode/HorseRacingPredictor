@@ -191,12 +191,13 @@ async function getRaceData(raceId) {
             const aiReasoning = narrativeRes.rows.length > 0 ? narrativeRes.rows[0].reasoning_package : null;
 
             // Frontend expects an object with multiple bookmakers to calculate 'averageOdds'
+            // and uses 'fraction' internally to calculate and render the visual grid.
             let mockOddsDist = {};
             if (currentOdds > 0) {
                 mockOddsDist = {
-                    'best': { decimal: currentOdds },
-                    'bk1': { decimal: currentOdds },
-                    'bk2': { decimal: currentOdds } // Provide enough data for the frontend to average it
+                    'best': { decimal: currentOdds, fraction: currentOdds.toFixed(2) },
+                    'bk1': { decimal: currentOdds, fraction: currentOdds.toFixed(2) },
+                    'bk2': { decimal: currentOdds, fraction: currentOdds.toFixed(2) } // Provide enough data for the frontend to average it
                 };
             }
 

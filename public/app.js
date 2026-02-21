@@ -238,7 +238,25 @@ document.addEventListener('DOMContentLoaded', () => {
         allRaceBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
 
-        // Immediate fetch
+        // Immediate loader setup and UI reset
+        allRaceBtns.forEach(b => b.disabled = true);
+        loader.classList.remove('hidden');
+        racesGrid.classList.add('hidden');
+
+        const loadingMessages = [
+            `<span><img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg" style="height:16px; filter: invert(1);"> OpenAI: Computing Market Variances...</span>`,
+            `<span><img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Google_Gemini_logo.svg" style="height:16px;"> Gemini: Cross-referencing Tipsters...</span>`,
+            `<span><strong style="color:#d97757; font-family:serif; font-size:18px;">Anthropic</strong> Claude: Processing Ground Bias...</span>`,
+            `<span><strong style="font-family:monospace; font-size:16px; color:#fff;">xAI</strong> Grok: Evaluating Real-time Steamers...</span>`
+        ];
+
+        loaderText.innerHTML = loadingMessages[0];
+        let msgIndex = 0;
+        const intervalId = setInterval(() => {
+            msgIndex = (msgIndex + 1) % loadingMessages.length;
+            loaderText.innerHTML = loadingMessages[msgIndex];
+        }, 800);
+
         try {
             const startTime = Date.now();
             const response = await fetch(`/api/scrape?raceId=${raceId}`);
@@ -252,23 +270,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 await new Promise(r => setTimeout(r, MIN_LOAD_TIME - elapsedTime));
             }
 
-            // Normal flow for fresh scrapes (Cinema mode)
-            allRaceBtns.forEach(b => b.disabled = true);
-            loader.classList.remove('hidden');
-            racesGrid.classList.add('hidden');
-
-            const loadingMessages = [
-                `<span><img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg" style="height:16px; filter: invert(1);"> Analyzing profiles...</span>`,
-                `<span><img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Google_Gemini_logo.svg" style="height:16px;"> Cross-referencing...</span>`
-            ];
-
-            loaderText.innerHTML = loadingMessages[0];
-            let msgIndex = 0;
-            const intervalId = setInterval(() => {
-                msgIndex = (msgIndex + 1) % loadingMessages.length;
-                loaderText.innerHTML = loadingMessages[msgIndex];
-            }, 800);
-
             if (result.success && result.data.length > 0) {
                 renderRaces(result.data, result.lastUpdated, raceId);
             } else {
@@ -279,6 +280,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (error) {
             console.error('Fetch error:', error);
             racesGrid.innerHTML = `<div class="empty-state">Error: ${error.message}</div>`;
+            clearInterval(intervalId);
         } finally {
             loader.classList.add('hidden');
             racesGrid.classList.remove('hidden');
