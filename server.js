@@ -169,23 +169,87 @@ const RACES = {
     }
 };
 
+require('dotenv').config();
+const { Pool } = require('pg');
+
 const HISTORY_FILE = path.join(__dirname, 'history.json');
 let raceHistory = { races: {} };
 
-// Load history on startup
-try {
-    if (fs.existsSync(HISTORY_FILE)) {
-        raceHistory = JSON.parse(fs.readFileSync(HISTORY_FILE, 'utf8'));
-    }
-} catch (err) {
-    console.error("Error loading history:", err);
+let pool = null;
+if (process.env.DATABASE_URL) {
+    pool = new Pool({
+        connectionString: process.env.DATABASE_URL,
+        ssl: { rejectUnauthorized: false }
+    });
+
+    pool.query(`
+        CREATE TABLE IF NOT EXISTS race_history (
+            id VARCHAR(50) PRIMARY KEY,
+            data JSONB NOT NULL,
+            updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        );
+    `).then(() => console.log('🐘 PostgreSQL Database Initialized'))
+        .catch(err => console.error('❌ PostgreSQL Init Error:', err.message));
 }
 
-function saveHistory() {
+async function loadHistory() {
+    if (pool) {
+        try {
+            const res = await pool.query('SELECT id, data FROM race_history');
+            for (const row of res.rows) {
+                raceHistory.races[row.id] = row.data;
+            }
+            console.log(`🐘 Loaded ${res.rowCount} races from PostgreSQL.`);
+            return;
+        } catch (e) {
+            console.error('Failed to load from PostgreSQL:', e.message);
+        }
+    }
+
+    // Fallback to JSON
+    try {
+        if (fs.existsSync(HISTORY_FILE)) {
+            raceHistory = JSON.parse(fs.readFileSync(HISTORY_FILE, 'utf8'));
+            console.log('📄 Loaded history from local JSON.');
+        }
+    } catch (err) {
+        console.error("Error loading local history:", err);
+    }
+}
+// Trigger load
+loadHistory();
+
+async function saveHistory(raceId) {
+    // 1. Save to Database if configured
+    if (pool && raceId) {
+        try {
+            const dataToSave = raceHistory.races[raceId];
+            await pool.query(
+                `INSERT INTO race_history (id, data, updated_at) VALUES ($1, $2, NOW())
+                 ON CONFLICT (id) DO UPDATE SET data = EXCLUDED.data, updated_at = NOW()`,
+                [raceId, dataToSave]
+            );
+        } catch (e) {
+            console.error(`Error saving race ${raceId} to Postgres:`, e.message);
+        }
+    } else if (pool && !raceId) {
+        // Bulk save if no specific raceId provided
+        for (const rId of Object.keys(raceHistory.races)) {
+            try {
+                await pool.query(
+                    `INSERT INTO race_history (id, data, updated_at) VALUES ($1, $2, NOW())
+                     ON CONFLICT (id) DO UPDATE SET data = EXCLUDED.data, updated_at = NOW()`,
+                    [rId, raceHistory.races[rId]]
+                );
+            } catch (e) { }
+        }
+    }
+
+    // 2. Always maintain local JSON fallback
     try {
         fs.writeFileSync(HISTORY_FILE, JSON.stringify(raceHistory, null, 2));
     } catch (err) {
-        console.error("Error saving history:", err);
+        console.error("Error saving local history:", err);
     }
 }
 
@@ -258,7 +322,7 @@ function processRaceData(raceId, scrapedData) {
 
     history.latestData = scrapedData;
     history.lastUpdated = now;
-    saveHistory();
+    saveHistory(raceId);
     return scrapedData;
 }
 
@@ -325,7 +389,7 @@ async function startBackgroundScraper() {
                     horse.aiReasoning = narrativeEngine.generateReasoning(horse, raceData, raceData.horses);
                 }
                 history.lastUpdated = new Date().toISOString();
-                saveHistory();
+                saveHistory(raceId);
             }
         }
     };
@@ -353,14 +417,14 @@ app.get('/api/scrape', async (req, res) => {
                 updated = true;
             }
         }
-        if (updated) saveHistory();
+        if (updated) saveHistory(raceId);
         return res.json({ success: true, data: history.latestData, lastUpdated: history.lastUpdated, cached: true });
     }
 
     res.json({ success: true, data: [], lastUpdated: null, cached: false });
 });
 
-startBackgroundScraper();
+// startBackgroundScraper();
 
 process.on('uncaughtException', (err) => console.error('🚨 UNCAUGHT:', err.message));
 process.on('unhandledRejection', (reason) => console.error('🚨 REJECTION:', reason));
