@@ -162,11 +162,6 @@ const RACES = {
     },
 
     // --- SPECIAL RACES ---
-    'southwell730': {
-        oc: 'https://www.oddschecker.com/horse-racing/southwell/19:30/winner',
-        rp: 'https://www.racingpost.com/racecards/59/southwell-aw/2026-02-20/904206',
-        startTime: '2026-02-20T19:30:00Z'
-    }
 };
 
 require('dotenv').config();
